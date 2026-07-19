@@ -372,7 +372,7 @@ const JOBS=[
  {id:"drill", card:"JOB 1042 — DRILL 4 HOLES Ø0.257, 0.55 DEEP — 6061-T6", stockLength:4.25,
   tool:"twist", stickTarget:1.1, stickTol:0.15, stickWhy:"hole depth 0.55 + clamp clearance — set to the line",
   gtitle:"DRILL CYCLE", anim:"drill",
-  prog:["T1 M06 (0.257 TWIST DRILL)","G90 G{{o}} X0.6 Y0.7","S3500 M{{s}}","G43 H01 Z1.0 M{{c}}","G81 G99 Z-0.55 R0.1 F8.","X1.2 / X1.8 / X2.4","G80 G00 Z1.0 M09"],
+  prog:["T1 M06 (0.257 TWIST DRILL)","G90 G{{o}} G00 X0.6 Y0.7","S3500 M{{s}}","G43 H01 Z1.0 M{{c}}","G81 G99 Z-0.55 R0.1 F8.","X1.2 / X1.8 / X2.4","G80 G00 Z1.0 M09","M05","G28 G91 Z0.","M30"],
   blanks:{o:{ans:["54"],label:"G__ work offset"}, s:{ans:["03","3"],label:"M__ spindle CW"}, c:{ans:["08","8"],label:"M__ coolant on"}},
   hints:{tool:["The print says HOLES.","Drills make holes. Flat or ball endmills don't start holes well.","Pick the twist drill — the pointed one."],
          stick:["Enough to reach depth, no more.","Short = crash into the clamp. Long = wander and snap.","Put the tool tip right on the gold line."],
@@ -380,7 +380,7 @@ const JOBS=[
  {id:"pocket", card:"JOB 1043 — ROUGH SQUARE POCKET 2.0 x 1.4, 0.375 DEEP — 6061-T6", stockLength:5.50,
   tool:"end", stickTarget:1.4, stickTol:0.15, stickWhy:"pocket depth + holder clearance — set to the line",
   gtitle:"POCKET ROUGHING", anim:"pocket",
-  prog:["T2 M06 (1/2 END MILL)","G90 G{{o}} X0. Y0.","S6100 M{{s}}","G43 H02 Z1.0 M{{c}}","G01 Z-0.375 F12.","(SPIRAL POCKET PATH)","G00 Z1.0 M09"],
+  prog:["T2 M06 (1/2 END MILL)","G90 G{{o}} G00 X0. Y0.","S6100 M{{s}}","G43 H02 Z1.0 M{{c}}","G01 Z-0.375 F12.","G01 (SPIRAL POCKET PATH)","G00 Z1.0 M09","M05","G28 G91 Z0.","M30"],
   blanks:{o:{ans:["54"],label:"G__ work offset"}, s:{ans:["03","3"],label:"M__ spindle CW"}, c:{ans:["08","8"],label:"M__ coolant on"}},
   hints:{tool:["Square pocket, flat floor.","A flat-bottom cutter leaves a flat floor. Drills can't drive sideways.","Pick the end mill — flat tip with flutes."],
          stick:["Reach the floor of the pocket plus a little.","Too much stickout on an end mill = chatter marks all over your wall.","Tip on the gold line. That's the number."],
@@ -388,7 +388,7 @@ const JOBS=[
  {id:"dome", card:"JOB 1044 — FINISH 3D DOME SURFACE R0.75 — 6061-T6", stockLength:3.75,
   tool:"ball", stickTarget:1.3, stickTol:0.15, stickWhy:"curve depth + clearance — set to the line",
   gtitle:"3D FINISHING", anim:"dome",
-  prog:["T3 M06 (3/8 BALL MILL)","G90 G{{o}} X-1.0 Y0.","S8000 M{{s}}","G43 H03 Z1.0 M{{c}}","(3D CONTOUR PASSES)","G00 Z1.0 M09"],
+  prog:["T3 M06 (3/8 BALL MILL)","G90 G{{o}} G00 X-1.0 Y0.","S8000 M{{s}}","G43 H03 Z1.0 M{{c}}","G01 (3D CONTOUR PASSES)","G00 Z1.0 M09","M05","G28 G91 Z0.","M30"],
   blanks:{o:{ans:["54"],label:"G__ work offset"}, s:{ans:["03","3"],label:"M__ spindle CW"}, c:{ans:["08","8"],label:"M__ coolant on"}},
   hints:{tool:["Curved surface. Which tip matches a curve?","A ball nose blends 3D surfaces smooth. Flat tools leave steps.","Pick the ball mill — round tip."],
          stick:["Reach the low point of the dome.","Finishing hates vibration — don't hang it out further than the line.","Tip on the gold line."],
@@ -545,10 +545,12 @@ function followPath(path,openWhenThere=false,run=true){cancelMove();if(!path.len
 function walkToStation(sprite,openWhenThere=false){followPath(pathToStation(sprite),openWhenThere);}
 
 /* ================= INTERACT -> TASKS ================= */
+const STATION_SFX={nox_terminal:"terminal_wake",saw_t1:"bandsaw_vise_clamp",tool_cart:"tool_drawer_open",presetter_t4:"probe_touch",toolcrib_rfid_t4:"rfid_tool_scan",vmc_t2:"machine_vise_clamp",lathe_cnc_t2:"lathe_chuck_clamp",planning_desk:"planning_paperwork",chalkboard:"chalk_marker",mill_manual_t1:"manual_mill_run",bench_deburr_t1:"deburr_tool",network_node_t3:"network_connect",handoff_terminal_t4:"handoff_confirm",nox_pallet:"pallet_delivery",whiteboard:"mission_board_update",amr_t5:"amr_drive",cobot_t5:"cobot_motion"};
 function interact(){
   const worker=nearWorker();if(worker){talkWorker(worker);return;}
   const p=nearStation(); if(!p){cv.dataset.interaction="too-far";say("Move beside a station before using it.","Follow the pulsing objective or click a machine to walk into interaction range.");return;}
   cv.dataset.interaction=p.sprite;
+  if(STATION_SFX[p.sprite])playSfx(STATION_SFX[p.sprite]);
   if(p.sprite==="nox_terminal"){openNoxOrder();return;}
   if(p.sprite==="saw_t1"){if(!state.job){say("No traveler, no cut length.","Accept a customer job at planning first.");return;}openSawTask();return;}
   if(p.sprite==="tool_cart"||p.sprite==="presetter_t4"){openToolTask();return;}
@@ -556,7 +558,7 @@ function interact(){
     if(!state.rawStockReady){say("The vise is empty — raw stock has not been cut.","Cut the blank at the BANDSAW first.");return;}
     if(!state.toolReady||state.toolsSet.length<3){say("The setup sheet calls for three gauged tools.","Finish the full tool kit at the TOOL CART.");return;}
     openVmcTask();return;}
-  if(p.sprite==="lathe_cnc_t2"){openOverlay("CNC LATHE — EQUIPMENT VIEW","Inspect the workholding, stock, turret, tailstock, and control before setup.");showEquipmentView("lathe-open-v1");tctrl.innerHTML='<button id="latheClose" class="grn">INSPECTION COMPLETE ▸</button>';document.getElementById("latheClose").onclick=closeOverlay;tz("ZACH: Chuck pressure, stickout, tool clearance. A lathe remembers every shortcut.");return;}
+  if(p.sprite==="lathe_cnc_t2"){openOverlay("CNC LATHE — EQUIPMENT VIEW","Inspect the workholding, stock, turret, tailstock, and control before setup.");showEquipmentView("lathe-open-v1");setTimeout(()=>playSfx("lathe_turret_index"),700);tctrl.innerHTML='<button id="latheClose" class="grn">INSPECTION COMPLETE ▸</button>';document.getElementById("latheClose").onclick=closeOverlay;tz("ZACH: Chuck pressure, stickout, tool clearance. A lathe remembers every shortcut.");return;}
   if(p.sprite==="planning_desk"){state.job=JOBS[jobIdx%JOBS.length];state.rawStockReady=false;state.toolReady=false;state.toolsSet=[];
     say("Job card: "+state.job.card,"First operation: cut the raw blank at the bandsaw.");mission("planning_desk");updateGuide();return;}
   checkNear();
@@ -565,7 +567,7 @@ function interact(){
 /* ================= TASK OVERLAY CORE ================= */
 const task=document.getElementById("task"), tscene=document.getElementById("tscene"), tx=tscene.getContext("2d");
 const tctrl=document.getElementById("tcontrols");
-let taskAnim=null, hintI=0, attempts=0, curHints=[];
+let taskAnim=null, hintI=0, attempts=0, curHints=[],cycleTimers=[],machineMotionMode=null;
 let activeTaskTutorialId=null;
 function contextTaskTutorialId(){if(task.classList.contains("open")&&activeTaskTutorialId)return activeTaskTutorialId;if(!state.materialOrders.length)return"order_material";if(!state.job)return"accept_job";if(!state.rawStockReady)return"cut_raw_stock";if(!state.tool)return"select_primary_tool";if(!state.stickout)return"set_stickout";if(!state.toolReady)return"complete_tool_kit";return"prove_gcode";}
 function showTaskGuide(id=contextTaskTutorialId()){const guide=PRODUCTION_TASK_TUTORIALS.find(x=>x.id===id)||PRODUCTION_TASK_TUTORIALS[0];document.getElementById("taskGuideTitle").textContent=guide.id.replaceAll("_"," ").toUpperCase()+" · "+guide.location;document.getElementById("taskGuideStatus").textContent="VALIDATION STATUS: "+guide.status.toUpperCase();const im=document.getElementById("taskGuideImage");im.src=guide.imageType==="equipment"?assetUrl(EQUIPMENT_VIEWS[guide.image]):guide.imageType==="nox"?assetUrl(NOX_MATERIALS_ART):assetUrl(SPRITES[guide.image]);document.getElementById("taskGuideNarration").textContent="ZACH: "+guide.text;document.getElementById("taskGuidePrereq").textContent=guide.prerequisites;document.getElementById("taskGuideSteps").innerHTML=guide.instructions.map(x=>"<li>"+x+"</li>").join("");document.getElementById("taskGuideSuccess").textContent=guide.success;document.getElementById("taskGuideModal").dataset.taskTutorial=guide.id;document.getElementById("taskGuideModal").classList.add("open");playZach(guide.voice);}
@@ -574,7 +576,8 @@ function tz(msg){document.getElementById("tztext").textContent=msg;}
 function openOverlay(title,jobCard){document.getElementById("ttitle").textContent=title;
   document.getElementById("tjob").textContent=jobCard;
   task.classList.add("open"); hintI=0; attempts=0;}
-function closeOverlay(){task.classList.remove("open");cancelAnimationFrame(taskAnim);taskAnim=null;tctrl.innerHTML="";updateGuide();}
+function clearCycleTimers(){cycleTimers.forEach(clearTimeout);cycleTimers=[];}
+function closeOverlay(){task.classList.remove("open");cancelAnimationFrame(taskAnim);taskAnim=null;clearCycleTimers();stopSfxLoop();machineMotionMode=null;tctrl.innerHTML="";updateGuide();}
 function showEquipmentView(id){const im=document.getElementById("tview");im.src=assetUrl(EQUIPMENT_VIEWS[id]);im.style.display="block";tscene.style.display="none";}
 function showNoxMaterialsView(){const im=document.getElementById("tview");im.src=assetUrl(NOX_MATERIALS_ART);im.style.display="block";tscene.style.display="none";}
 function showTaskCanvas(){document.getElementById("tview").style.display="none";tscene.style.display="block";}
@@ -606,7 +609,7 @@ function openNoxOrder(){
 function placeNoxOrder(item){
   const status=document.getElementById("noxStatus");
   if(coins<item.cost){status.textContent="ORDER DECLINED — NOT ENOUGH COINS";return;}
-  coins-=item.cost;addCoins(0);state.materialOrders.push({sku:item.sku,qty:1,status:"NEXT-DAY DELIVERY"});
+  playSfx("terminal_confirm");setTimeout(()=>playSfx("pallet_delivery",{volume:.75}),500);coins-=item.cost;addCoins(0);state.materialOrders.push({sku:item.sku,qty:1,status:"NEXT-DAY DELIVERY"});
   status.textContent="ORDER CONFIRMED · "+item.sku+" · NEXT-DAY DELIVERY TO RECEIVING";
   say("NOX order confirmed: "+item.name,"Material will arrive at receiving with certification.");
   updateGuide();
@@ -660,7 +663,7 @@ function openToolTask(){
   [["twist","TWIST DRILL"],["end","END MILL"],["ball","BALL MILL"]].forEach(([kind,label])=>{
     const b=document.createElement("div");b.className="toolbtn";
     b.innerHTML=toolArt(kind)+'<span>'+label+'</span><small>'+(kind==="twist"?'POINTED · HOLES':kind==="end"?'FLAT · POCKETS':'ROUND · CONTOURS')+'</small>';
-    b.onclick=()=>{ if(kind===J.tool){state.tool=kind;stepStickout();}
+    b.onclick=()=>{ if(kind===J.tool){playSfx("toolholder_load");state.tool=kind;stepStickout();}
       else{attempts++;tz("ZACH: "+wrongToolMsg(kind,J));playZach("zach_response_try_again");} };
     tctrl.appendChild(b);
   });
@@ -692,7 +695,7 @@ function stepStickout(){
   document.getElementById("lockin").onclick=()=>{
     const v=parseFloat(sl.value), J=state.job;
     if(Math.abs(v-J.stickTarget)<=J.stickTol){
-      state.stickout=v;state.toolsSet=["PRIMARY"];
+      playSfx("tool_torque_click");state.stickout=v;state.toolsSet=["PRIMARY"];
       tz("ZACH: Primary tool is on the line. A CNC setup needs more than one tool — finish the kit.");
       sceneStick(v,true);
       setTimeout(stepToolKit,500);
@@ -720,7 +723,7 @@ function sceneStick(v,locked=false){
 }
 function stepToolKit(){showEquipmentView("tool-cart-open-v1");curHints=["The probe establishes where the stock is.","The chamfer tool breaks sharp edges before inspection.","A complete kit is primary cutter, probe, and chamfer tool."];tz("ZACH: Gauge the probe and chamfer tool before loading the machine.");
   tctrl.innerHTML='<div class="ttl">SETUP SHEET · 1 / 3 TOOLS READY</div><button class="kitTool" data-tool="PROBE">'+toolArt("probe")+'<span>GAUGE T90 · TOUCH PROBE</span></button><button class="kitTool" data-tool="CHAMFER">'+toolArt("chamfer")+'<span>GAUGE T4 · CHAMFER MILL</span></button><button id="installKit" class="grn" disabled>INSTALL 3-TOOL KIT ▸</button>';
-  document.querySelectorAll(".kitTool").forEach(b=>b.onclick=()=>{if(!state.toolsSet.includes(b.dataset.tool))state.toolsSet.push(b.dataset.tool);b.textContent="✔ "+b.textContent;b.disabled=true;document.querySelector("#tcontrols .ttl").textContent="SETUP SHEET · "+state.toolsSet.length+" / 3 TOOLS READY";document.getElementById("installKit").disabled=state.toolsSet.length<3;});
+  document.querySelectorAll(".kitTool").forEach(b=>b.onclick=()=>{playSfx(b.dataset.tool==="PROBE"?"probe_touch":"toolholder_load");if(!state.toolsSet.includes(b.dataset.tool))state.toolsSet.push(b.dataset.tool);b.textContent="✔ "+b.textContent;b.disabled=true;document.querySelector("#tcontrols .ttl").textContent="SETUP SHEET · "+state.toolsSet.length+" / 3 TOOLS READY";document.getElementById("installKit").disabled=state.toolsSet.length<3;});
   document.getElementById("installKit").onclick=()=>{state.toolReady=true;mission("task_tool");closeOverlay();say("Three tools gauged and installed: cutter, probe, chamfer.","Stock and tool kit are ready. Open the VMC for the G/M-code proof.");};}
 
 /* ================= TASK 2: VMC G/M + RUN ================= */
@@ -737,7 +740,7 @@ function openVmcTask(){
   }
   progHtml+="</div>";
   tctrl.innerHTML=progHtml+
-    '<div class="gline"><button id="cycst" class="grn">▶ CYCLE START</button></div>';
+    '<div class="gline"><button id="cycst" class="grn">▶ CYCLE START</button></div><details><summary class="ttl">TRUE G & M CODE · READ THE MODAL SEQUENCE</summary><div class="hint">M06 TOOL CHANGE → G90 ABSOLUTE → G54 WORK OFFSET → G00 RAPID CLEAR → M03 SPINDLE CW → G43 H TOOL LENGTH → M08 COOLANT → G01/G81 CONTROLLED CUT → G80 CANCEL CYCLE → G00 RETRACT → M09 COOLANT OFF → M05 SPINDLE STOP → G28 RETURN → M30 END/REWIND</div></details>';
   sceneVmcIdle();
   document.getElementById("cycst").onclick=()=>{
     let allOk=true;
@@ -761,10 +764,16 @@ function sceneVmcIdle(){
 function runAnim(J){
   showTaskCanvas();
   cancelAnimationFrame(taskAnim);
-  playSfx("cnc_door_close");setTimeout(()=>playSfx("spindle_start"),350);setTimeout(()=>playSfx("coolant_on"),1200);setTimeout(()=>playSfx(J.tool==="twist"?"drill_cut_aluminum":J.tool==="ball"?"ball_mill_cut_aluminum":"end_mill_cut_aluminum",{loop:true}),2200);
+  clearCycleTimers();machineMotionMode=null;tscene.dataset.motionCode="STARTUP";
+  playSfx("cnc_door_close");
+  cycleTimers.push(setTimeout(()=>playSfx("cnc_tool_change"),700));
+  cycleTimers.push(setTimeout(()=>playSfx("spindle_start"),1800));
+  cycleTimers.push(setTimeout(()=>playSfx("coolant_on"),4200));
   let t=0; const chips=[];
   const pathPts=buildPath(J);
   let seg=0, segT=0, cut=[];
+  const cuttingSfx=J.tool==="twist"?"drill_cut_aluminum":J.tool==="ball"?"ball_mill_cut_aluminum":"end_mill_cut_aluminum";
+  function setMachineMotion(mode){if(machineMotionMode===mode)return;machineMotionMode=mode;tscene.dataset.motionCode=mode;if(mode==="G0")playSfx("cnc_rapid_traverse",{loop:true});else playSfx(cuttingSfx,{loop:true});}
   function frame_(){
     t++;
     tx.fillStyle="#0a0d12";tx.fillRect(0,0,480,260);
@@ -772,20 +781,21 @@ function runAnim(J){
     tx.fillStyle="#14161c";tx.fillRect(0,0,480,30);
     tx.fillStyle="#e8b93b";tx.font="15px VT323, monospace";tx.fillText(J.gtitle+" — CYCLE RUNNING",10,20);
     tx.fillStyle=(t>>4)%2?"#d0433f":"#7a2a28";tx.fillRect(455,8,14,14);tx.strokeStyle="#000";tx.strokeRect(455,8,14,14);
+    const nextPoint=pathPts[Math.min(seg+1,pathPts.length-1)];setMachineMotion(nextPoint?.rapid?"G0":"G1");
     if(J.anim==="drill"||J.anim==="dome"){ sideScene(J,pathPts,seg,segT,cut,chips,t); }
     else { topScene(J,pathPts,seg,segT,cut,chips,t); }
     // advance along path
-    segT+=pathPts[seg]&&pathPts[seg].rapid?0.10:0.035;
+    segT+=nextPoint?.rapid?0.10:0.035;
     if(segT>=1){segT=0;seg++;}
     if(seg>=pathPts.length-1){ finishRun(J); return; }
     taskAnim=requestAnimationFrame(frame_);
   }
-  taskAnim=requestAnimationFrame(frame_);
+  cycleTimers.push(setTimeout(()=>{tscene.dataset.motionCode="G0";taskAnim=requestAnimationFrame(frame_);},5000));
 }
 function lerp(a,b,t){return a+(b-a)*t;}
 function buildPath(J){
   if(J.anim==="drill"){
-    const pts=[]; const holes=[120,200,280,360]; const topY=70,botY=190;
+    const pts=[{x:60,y:50}]; const holes=[120,200,280,360]; const topY=70,botY=190;
     let first=true;
     for(const hx of holes){
       pts.push({x:hx,y:60,rapid:true});
@@ -797,7 +807,7 @@ function buildPath(J){
     return pts;
   }
   if(J.anim==="pocket"){
-    const pts=[{x:240,y:130,rapid:true}];
+    const pts=[{x:70,y:40},{x:240,y:130,rapid:true}];
     let l=170,r=310,tp=90,b=170;
     for(let i=0;i<3;i++){
       pts.push({x:l,y:tp});pts.push({x:r,y:tp});pts.push({x:r,y:b});pts.push({x:l,y:b});pts.push({x:l,y:tp});
@@ -807,7 +817,7 @@ function buildPath(J){
     return pts;
   }
   // dome: side-view arc passes
-  const pts=[{x:80,y:60,rapid:true}];
+  const pts=[{x:60,y:40},{x:80,y:60,rapid:true}];
   for(let p=0;p<3;p++){
     const dir=p%2===0;
     for(let i=0;i<=20;i++){
@@ -832,7 +842,7 @@ function sideScene(J,pts,seg,segT,cut,chips,t){
   const a=pts[seg]||pts[pts.length-1], b=pts[Math.min(seg+1,pts.length-1)];
   const X=lerp(a.x,b.x,segT), Y=lerp(a.y,b.y,segT);
   // carved holes record
-  if(!a.rapid&&!b.rapid){cut.push({x:X,y:Y});}
+  if(!b.rapid){cut.push({x:X,y:Y});}
   tx.fillStyle="#0a0d12";
   for(const c of cut){ if(J.anim==="drill"){tx.fillRect(c.x-5,150,10,Math.max(0,c.y-150));} else {tx.fillRect(c.x-6,c.y,12,220-c.y);} }
   // coolant + chips while feeding
@@ -854,7 +864,7 @@ function topScene(J,pts,seg,segT,cut,chips,t){
   tx.fillStyle="#b08a5e";tx.fillRect(140,70,200,120);tx.strokeStyle="#000";tx.strokeRect(140,70,200,120);
   const a=pts[seg]||pts[pts.length-1], b=pts[Math.min(seg+1,pts.length-1)];
   const X=lerp(a.x,b.x,segT), Y=lerp(a.y,b.y,segT);
-  if(!a.rapid&&!b.rapid)cut.push({x:X,y:Y});
+  if(!b.rapid)cut.push({x:X,y:Y});
   // cut trail (pocket floor)
   tx.fillStyle="#7a5a3a";
   for(const c of cut){tx.beginPath();tx.arc(c.x,c.y,9,0,Math.PI*2);tx.fill();}
@@ -870,7 +880,7 @@ function topScene(J,pts,seg,segT,cut,chips,t){
 function finishRun(J){
   activeTaskTutorialId="review_quality_result";
   cancelAnimationFrame(taskAnim);
-  stopSfxLoop();playSfx("spindle_stop");setTimeout(()=>playSfx("coolant_off"),900);
+  clearCycleTimers();stopSfxLoop();machineMotionMode=null;tscene.dataset.motionCode="M30";playSfx("coolant_off");setTimeout(()=>playSfx("spindle_stop"),350);setTimeout(()=>playSfx("cnc_door_open"),3500);
   const g=grade();
   tx.fillStyle="rgba(5,6,9,.6)";tx.fillRect(0,0,480,260);
   tx.fillStyle="#e8b93b";tx.font="34px VT323, monospace";tx.fillText("PART COMPLETE",130,110);
