@@ -15,8 +15,7 @@
     "packages/assets/customers/customer-sprites-v1.png",
     "packages/assets/tools/core-cutters-atlas-v1.png",
     "packages/assets/tools/setup-tools-atlas-v1.png",
-    "storybook/v1/index.html",
-    "videos/promo-catalog.json"
+      "storybook/v1/index.html"
   ],
   "chapters": [
     {

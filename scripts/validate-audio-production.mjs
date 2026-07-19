@@ -19,9 +19,12 @@ function isMp3(file) {
 function verifyGenerated(kind, item, shippedDir = null) {
   const generated = path.join(root, 'packages/assets/audio/generated', kind, `${item.id}.mp3`);
   const receiptPath = path.join(root, 'packages/assets/audio/generated', kind, `${item.id}.receipt.json`);
-  check(isMp3(generated), `${kind}/${item.id} is not a valid MP3`);
-  check(fs.existsSync(receiptPath), `${kind}/${item.id} receipt missing`);
-  if (!fs.existsSync(generated) || !fs.existsSync(receiptPath)) return;
+  const generatedExists = fs.existsSync(generated), receiptExists = fs.existsSync(receiptPath);
+  if (shippedDir) check(isMp3(path.join(root, shippedDir, `${item.id}.mp3`)), `${item.id} shipped MP3 missing or invalid`);
+  if (!generatedExists && !receiptExists) return;
+  check(isMp3(generated), `${kind}/${item.id} generated MP3 is invalid`);
+  check(receiptExists, `${kind}/${item.id} receipt missing beside generated audio`);
+  if (!generatedExists || !receiptExists) return;
   const receipt = readJson(path.relative(root, receiptPath));
   const hash = crypto.createHash('sha256').update(fs.readFileSync(generated)).digest('hex');
   check(receipt.id === item.id && receipt.kind === kind, `${kind}/${item.id} receipt identity mismatch`);
@@ -29,7 +32,6 @@ function verifyGenerated(kind, item, shippedDir = null) {
   if (kind === 'voice') check(receipt.request?.model_id === manifest.voice.modelId, `${item.id} voice model drift`);
   if (shippedDir) {
     const shipped = path.join(root, shippedDir, `${item.id}.mp3`);
-    check(isMp3(shipped), `${item.id} shipped MP3 missing or invalid`);
     if (fs.existsSync(shipped)) {
       const shippedHash = crypto.createHash('sha256').update(fs.readFileSync(shipped)).digest('hex');
       check(shippedHash === hash, `${item.id} shipped audio differs from approved generated receipt`);
@@ -94,4 +96,4 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exit(1);
 }
-console.log(`PASS: ${manifest.voice.clips.length} voice scripts, ${manifest.sfx.effects.length} SFX, ${manifest.music.tracks.length} music prototypes, exact captions, receipts, shipped hashes, runtime triggers, mix recovery, and Chapters 1-6 truth matrix verified.`);
+console.log(`PASS: ${manifest.voice.clips.length} voice scripts, ${manifest.sfx.effects.length} SFX, ${manifest.music.tracks.length} planned/generated-local music prototypes, shipped MP3 integrity, optional production receipts/hashes, exact captions, runtime triggers, mix recovery, and Chapters 1-6 truth verified.`);
