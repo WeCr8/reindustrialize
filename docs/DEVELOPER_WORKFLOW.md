@@ -29,6 +29,8 @@ Provider credentials belong only in ignored `.env` or the hosting secret manager
 
 `scripts/build_level_viewer_v4.py` is authoritative for the current playable HTML. Do not hand-edit `apps/wecr8-info/prototypes/shop-floor-viewer.html`; regenerate it. Long-term, migrate the runtime into typed modules so browser gameplay and `game-core` share one state contract.
 
+Large rendered marketing videos are deliberately not required in a clean source checkout. The Cloudflare builder includes the current real-gameplay MP4 when present and otherwise emits a working poster/link fallback; promo-media release checks remain responsible for approving publishable video files.
+
 ## Debugging
 
 - Reproduce with a fresh browser context before changing state manually.

@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'apps', 'wecr8-info', 'prototypes', 'shop-floor-viewer.html');
 const landingSource = path.join(root, 'apps', 'playreind-landing', 'index.html');
+const marketingVideo = path.join(root, 'videos', 'horizontal-demos', 'reindustrialize-human-bot-demo-60s-v5.mp4');
 const out = path.join(root, 'cloudflare-dist');
 const assetDir = path.join(out, 'assets', 'runtime');
 const landingAssetDir = path.join(out, 'assets', 'landing');
@@ -53,9 +54,12 @@ html = html.replace('im.src=stop.imageType==="equipment"?"data:image/png;base64,
 
 if (Buffer.byteLength(html) > maxAssetBytes) throw new Error(`Generated index.html remains larger than Cloudflare's 25 MiB limit.`);
 fs.writeFileSync(path.join(out, 'game', 'index.html'), html);
-fs.copyFileSync(landingSource, path.join(out, 'index.html'));
+let landingHtml = fs.readFileSync(landingSource, 'utf8');
+const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
+if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video controls[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" style="display:grid;place-items:center;min-height:360px;background:url(\'/assets/landing/title-screen.png\') center/cover;color:#fff;font:900 28px Arial Black;text-decoration:none;text-shadow:3px 3px #000">▶ PLAY THE LIVE ALPHA</a>');
+fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
 fs.copyFileSync(path.join(root, 'packages', 'assets', 'title-screen-zach-v2.png'), path.join(landingAssetDir, 'title-screen.png'));
-fs.copyFileSync(path.join(root, 'videos', 'horizontal-demos', 'reindustrialize-human-bot-demo-60s-v5.mp4'), path.join(out, 'media', 'gameplay-demo-v5.mp4'));
+if (includeMarketingVideo) fs.copyFileSync(marketingVideo, path.join(out, 'media', 'gameplay-demo-v5.mp4'));
 fs.writeFileSync(path.join(out, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
@@ -84,10 +88,11 @@ const report = {
   domain: 'PlayReInd.com',
   generatedAt: new Date().toISOString(),
   source: path.relative(root, source).replaceAll('\\', '/'),
-  files: extracted + 8,
+  files: extracted + (includeMarketingVideo ? 8 : 7),
   extractedRuntimeAssets: extracted,
   indexBytes: Buffer.byteLength(html),
   largestAsset: largest,
+  marketingVideoIncluded: includeMarketingVideo,
   cloudflareIndividualAssetLimitBytes: maxAssetBytes
 };
 fs.writeFileSync(path.join(out, 'deployment-report.json'), JSON.stringify(report, null, 2));

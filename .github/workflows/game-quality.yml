@@ -39,6 +39,7 @@ jobs:
       - run: pnpm test:unit
       - run: pnpm validate:content
       - run: pnpm cloudflare:build
+      - run: python tests/e2e_cloudflare_site.py
       - run: python tests/e2e_startup_performance.py
       - run: python tests/e2e_save_pause_settings.py
       - run: python tests/e2e_gamepad.py
