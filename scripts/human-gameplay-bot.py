@@ -1,6 +1,7 @@
 """Human-style gameplay bot: visible controls, natural cursor motion, pauses, recovery, and real completion."""
 import argparse
 import json
+import os
 import random
 import shutil
 import time
@@ -8,7 +9,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-URL = (ROOT / "apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri()
+URL = os.environ.get(
+    "PLAYREIND_GAME_URL",
+    (ROOT / "apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri(),
+)
 RAW_DIR = ROOT / "tmp/recordings/raw"
 PUBLIC_DIR = ROOT / "demo/remotion/public/captures"
 REPORT_DIR = ROOT / "tmp/bot-runs"
