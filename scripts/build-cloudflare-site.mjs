@@ -55,6 +55,8 @@ html = html.replace('im.src=stop.imageType==="equipment"?"data:image/png;base64,
 if (Buffer.byteLength(html) > maxAssetBytes) throw new Error(`Generated index.html remains larger than Cloudflare's 25 MiB limit.`);
 fs.writeFileSync(path.join(out, 'game', 'index.html'), html);
 let landingHtml = fs.readFileSync(landingSource, 'utf8');
+const analyticsTag = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KRCJP5MHXH');</script>`;
+landingHtml = landingHtml.replace('</head>', `${analyticsTag}</head>`);
 const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
 if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video controls[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);

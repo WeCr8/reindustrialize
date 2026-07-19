@@ -20,6 +20,8 @@ try:
         errors = []
         desktop.on("pageerror", lambda error: errors.append(str(error)))
         desktop.goto(URL, wait_until="networkidle")
+        assert desktop.locator('script[src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"]').count() == 1
+        assert desktop.evaluate("typeof gtag === 'function' && Array.isArray(dataLayer)")
         assert "outgrow it" in desktop.locator("h1").inner_text().lower()
         assert desktop.locator("video, .videoFallback").first.is_visible()
         assert desktop.locator("a[href='/game/']").count() >= 3
