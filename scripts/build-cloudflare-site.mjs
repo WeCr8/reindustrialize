@@ -56,7 +56,7 @@ if (Buffer.byteLength(html) > maxAssetBytes) throw new Error(`Generated index.ht
 fs.writeFileSync(path.join(out, 'game', 'index.html'), html);
 let landingHtml = fs.readFileSync(landingSource, 'utf8');
 const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
-if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video controls[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" style="display:grid;place-items:center;min-height:360px;background:url(\'/assets/landing/title-screen.png\') center/cover;color:#fff;font:900 28px Arial Black;text-decoration:none;text-shadow:3px 3px #000">▶ PLAY THE LIVE ALPHA</a>');
+if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video controls[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
 fs.copyFileSync(path.join(root, 'packages', 'assets', 'title-screen-zach-v2.png'), path.join(landingAssetDir, 'title-screen.png'));
 if (includeMarketingVideo) fs.copyFileSync(marketingVideo, path.join(out, 'media', 'gameplay-demo-v5.mp4'));

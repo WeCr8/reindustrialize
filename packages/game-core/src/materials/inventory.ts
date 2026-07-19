@@ -10,6 +10,9 @@ export interface StockLine { sku: string; qty: number; certed: boolean }
 export interface PendingOrder { sku: string; qty: number; certed: boolean; arrivesAt: Tick; rush: boolean }
 
 export function orderCost(item: CatalogItem, qty: number, opts: { cert: boolean; rush: boolean }, priceDrift = 1) {
+  if (!Number.isInteger(qty) || qty <= 0) throw new RangeError("quantity must be a positive integer");
+  if (!Number.isFinite(item.basePrice) || item.basePrice < 0) throw new RangeError("base price must be non-negative");
+  if (!Number.isFinite(priceDrift) || priceDrift <= 0) throw new RangeError("price drift must be positive");
   let unit = item.basePrice * priceDrift;
   if (opts.cert) unit *= 1.1;
   if (opts.rush) unit *= 1.5;
@@ -20,6 +23,8 @@ export function placeOrder(
   s: GameState & { stock?: StockLine[]; pendingOrders?: PendingOrder[] },
   item: CatalogItem, qty: number, opts: { cert: boolean; rush: boolean }, priceDrift = 1
 ): { ok: boolean; reason?: string } {
+  if (!Number.isInteger(qty) || qty <= 0) return { ok: false, reason: "invalid_quantity" };
+  if (opts.cert === false && item.certRequired) return { ok: false, reason: "cert_required" };
   const cost = orderCost(item, qty, opts, priceDrift);
   if (s.player.coins < cost) return { ok: false, reason: "insufficient_coins" };
   if (item.unlocksAtTier && s.player.tier < item.unlocksAtTier) return { ok: false, reason: "tier_locked" };

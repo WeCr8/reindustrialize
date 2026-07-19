@@ -19,6 +19,25 @@
       {"id":"opening_first_job","order":4,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"ZACH · YOUR FIRST CUSTOMER","text":"Your first customer job is on the planning desk. I advise. You own every decision.","voice":"zach_first_job"},
       {"id":"opening_powerhouse_goal","order":5,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"YOUR LONG-TERM GOAL","text":"Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse."}
     ],
+    "first_customer": [
+      {"id":"first_customer_call","order":1,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"CHAPTER 1 · THE FIRST PROMISE","text":"Your first customer job is on the planning desk. I advise. You own every decision.","voice":"zach_first_job"},
+      {"id":"first_customer_owner","order":2,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"FOUNDER DECISION · ACCEPT THE WORK","text":"The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.","voice":"zach_first_customer_owner"}
+    ],
+    "nox_delivery": [
+      {"id":"nox_delivery_arrives","order":1,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"MATERIAL RECEIVING · NOX DELIVERY","text":"The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.","voice":"zach_nox_delivery"}
+    ],
+    "first_verified_article": [
+      {"id":"first_article_evidence","order":1,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"QUALITY GATE · FIRST ARTICLE","text":"The first part is evidence, not inventory. Inspect it before you commit the rest of the material.","voice":"zach_first_article"},
+      {"id":"first_article_record","order":2,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"PROCESS VERIFIED · RECORD THE RESULT","text":"Good part. Record what worked so the next operator can repeat it.","voice":"zach_quality_pass"}
+    ],
+    "first_hire": [
+      {"id":"first_hire_team","order":1,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"TEAM MILESTONE · FIRST HIRE","text":"Hire for the work you need now and the capability you will need next. A strong team compounds.","voice":"zach_hiring"},
+      {"id":"first_hire_owner","order":2,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"FOUNDER RESPONSIBILITY · LEAD THE TEAM","text":"You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.","voice":"zach_first_hire_owner"}
+    ],
+    "garage_graduation": [
+      {"id":"garage_graduation_proof","order":1,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"CHAPTER 1 COMPLETE · THE FIRST PROMISE","text":"Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.","voice":"zach_garage_graduation"},
+      {"id":"garage_graduation_expansion","order":2,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"ZACH · THE NEXT FACILITY","text":"You have outgrown the garage. Now build systems, not just parts.","voice":"zach_expansion"}
+    ],
     "job_shop_expansion": [
       {"id":"expansion_move","order":1,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"CHAPTER 2 · THE JOB SHOP","text":"{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires."},
       {"id":"expansion_systems","order":2,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"ZACH · BUILD THE SYSTEM","text":"This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them.","voice":"zach_job_shop"},
@@ -26,11 +45,10 @@
     ]
   },
   "plannedSequences": [
-    {"id":"nox_supplier_intro","status":"planned","needs":["five-shot scene art","supplier SFX","player/Zach dock variants","runtime trigger"]},
-    {"id":"nox_delivery","status":"planned","needs":["truck and pallet animation","delivery SFX","receiving-state trigger"]},
+    {"id":"nox_supplier_art_upgrade","status":"planned","needs":["dedicated player/Zach supplier dock variants","truck arrival animation"],"fallback":"Implemented Chapter 1 delivery beat uses active founder-overlay shop art and existing pallet-delivery SFX."},
     {"id":"shop_class_open","status":"planned","needs":["chalkboard scene art","chalk and tool-tap SFX","first-entry trigger"]},
-    {"id":"first_article_inspection","status":"planned","needs":["inspection scene art","measurement SFX","pass/fail branches"]},
-    {"id":"first_hire","status":"planned","needs":["team introduction scene","candidate-specific portrait","hire trigger"]},
+    {"id":"first_article_art_upgrade","status":"planned","needs":["dedicated inspection scene art","branch-specific failed-article scene"],"fallback":"Passing first-article milestone is implemented with exact narration; machine result supplies the grade."},
+    {"id":"first_hire_art_upgrade","status":"planned","needs":["candidate-specific founder-and-team story scenes"],"fallback":"First-hire milestone is implemented using the selected founder overlay; candidate portraits remain in the hiring UI."},
     {"id":"chapters_3_to_6","status":"planned","needs":["chapter entry and graduation sequences","facility art","voice scripts","music and SFX","runtime gates"]}
   ]
 }

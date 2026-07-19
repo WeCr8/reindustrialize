@@ -20,9 +20,13 @@ try:
         errors = []
         desktop.on("pageerror", lambda error: errors.append(str(error)))
         desktop.goto(URL, wait_until="networkidle")
-        assert "industrial powerhouse" in desktop.locator("h1").inner_text().lower()
+        assert "outgrow it" in desktop.locator("h1").inner_text().lower()
         assert desktop.locator("video, .videoFallback").first.is_visible()
         assert desktop.locator("a[href='/game/']").count() >= 3
+        assert desktop.locator(".heroMedia").bounding_box()["y"] < 800
+        assert desktop.locator(".proof span").count() == 4
+        assert "first playable alpha" in desktop.locator("body").inner_text().lower()
+        assert "planned" in desktop.locator(".route").inner_text().lower()
         desktop.screenshot(path=ROOT / "tmp" / "playreind-landing-desktop.png", full_page=True)
         desktop.locator("a[href='/game/']").first.click()
         desktop.wait_for_url("**/game/")
@@ -35,6 +39,8 @@ try:
         mobile.goto(URL, wait_until="networkidle")
         assert mobile.locator("h1").is_visible()
         assert mobile.locator("a[href='/game/']").first.is_visible()
+        assert mobile.locator(".heroMedia").is_visible()
+        assert mobile.locator("body").evaluate("el => el.scrollWidth <= innerWidth")
         mobile.screenshot(path=ROOT / "tmp" / "playreind-landing-mobile.png", full_page=True)
         browser.close()
 finally:

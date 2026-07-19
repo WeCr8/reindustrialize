@@ -4,6 +4,7 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 URL = (ROOT / "apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri()
+EXPECTED_ZACH_VOICES = len(list((ROOT / "packages/assets/audio/zach").glob("*.mp3")))
 
 
 def stand_by(page, sprite):
@@ -50,7 +51,7 @@ with sync_playwright() as p:
     page.locator("#companyName").fill("Zach Precision Works")
     page.locator("#newGame").click()
     assert page.locator("#intro").is_visible()
-    assert page.evaluate("Object.keys(ZACH_VOICE).length") == 61
+    assert page.evaluate("Object.keys(ZACH_VOICE).length") == EXPECTED_ZACH_VOICES
     assert page.evaluate("REUSABLE_ZACH.clips.length") == 12
     assert page.evaluate("companyName") == "ZACH PRECISION WORKS"
     assert page.evaluate("playerName") == "JORDAN RIVERA"
@@ -82,6 +83,9 @@ with sync_playwright() as p:
     page.locator(".noxOrder").first.click()
     page.locator("#tclose").click()
     assert page.evaluate("state.materialOrders.length") == 1
+    page.wait_for_function("document.querySelector('#intro').dataset.storyBeat === 'nox_delivery_arrives'")
+    page.locator("#introNext").click()
+    page.wait_for_function("document.querySelector('#intro').classList.contains('closed')")
 
     tool_index = {"twist": 0, "end": 1, "ball": 2}
     for job_number in range(1, 6):
@@ -126,6 +130,11 @@ with sync_playwright() as p:
         page.locator("#tdone").wait_for(timeout=20000)
         page.locator("#tdone").click()
         assert page.evaluate("state.jobsShipped") == job_number
+        if job_number == 1:
+            assert page.locator("#intro").is_visible()
+            assert page.locator("#intro").get_attribute("data-story-beat") == "first_article_evidence"
+            page.locator("#introNext").click()
+            page.locator("#introNext").click()
         if job_number < 5:
             assert not page.locator("#intro").is_visible()
 
@@ -134,12 +143,11 @@ with sync_playwright() as p:
     assert page.locator("#shipProgress").inner_text() == "JOBS SHIPPED 5 / 5"
     assert page.evaluate("gradeAverage()") >= 3
     assert page.locator("#intro").is_visible()
-    assert "THE JOB SHOP" in page.locator("#introKicker").inner_text()
+    assert "CHAPTER 1 COMPLETE" in page.locator("#introKicker").inner_text()
     assert page.locator("#introArt").get_attribute("data-variant") == "expansion-female"
     assert not page.locator("#b2").is_disabled()
-    page.locator("#introNext").click()
-    page.locator("#introNext").click()
-    page.locator("#introNext").click()
+    for _ in range(5):
+        page.locator("#introNext").click()
     assert page.evaluate("map.id") == "bay_02"
     assert not errors, errors
     browser.close()

@@ -11,6 +11,7 @@ with sync_playwright() as p:
  page.locator("#hireNext").click();assert "Luis Ortega" in page.locator("#hireCard").inner_text();assert "CNC Operator" in page.locator("#hireCard").inner_text()
  page.locator("#viewProfile").click();assert page.locator("#profile").is_visible();assert "QUALIFIED" in page.locator("#profile").inner_text();assert page.evaluate("getComputedStyle(document.querySelector('#profile .atlasPortrait')).backgroundImage.includes(IMG[HIRE_ROSTER.profileAtlas].src)")
  before=int(page.locator("#coins").inner_text());page.locator("#profileHire").click();assert int(page.locator("#coins").inner_text())==before-1800;assert page.locator("#profileHire").inner_text()=="HIRED"
+ page.wait_for_function("document.querySelector('#intro').dataset.storyBeat === 'first_hire_team'");page.locator("#introNext").click();page.locator("#introNext").click();page.locator("#profileAssign").wait_for()
  page.locator("#profileAssign").select_option("vmc_t2");assert page.evaluate("workers[0].assignment")=="vmc_t2"
  page.locator("#profileBack").click();page.locator("#hireClose").click();page.wait_for_timeout(2500)
  assert page.locator("#cv").get_attribute("data-worker-count")=="1";assert page.locator("#cv").get_attribute("data-assigned-workers")=="1";assert "VMC" in page.evaluate("workers[0].status")

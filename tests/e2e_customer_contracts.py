@@ -21,7 +21,9 @@ with sync_playwright() as p:
     page.click("#acceptContract")
     assert page.evaluate("state.pendingContract.id") == "rfq_northstar_1042"
     assert page.evaluate("state.contracts[0].status") == "accepted"
-    page.click("#customerClose")
+    page.wait_for_function("document.querySelector('#intro').dataset.storyBeat === 'first_customer_call'")
+    page.click("#introNext")
+    page.click("#introNext")
     page.evaluate("P.x=6;P.y=2;interact()")
     assert page.evaluate("state.job.id") == "drill"
     assert page.evaluate("state.job.contract.customer") == "Northstar Robotics"

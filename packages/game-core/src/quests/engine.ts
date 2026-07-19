@@ -34,6 +34,10 @@ export class QuestEngine {
   }
 
   private complete(s: GameState, def: QuestDef) {
+    if (s.completedQuests.includes(def.id)) {
+      s.activeQuests = s.activeQuests.filter(q => q !== def.id);
+      return;
+    }
     s.activeQuests = s.activeQuests.filter(q => q !== def.id);
     s.completedQuests.push(def.id);
     s.player.coins += def.rewards.coins ?? 0;
