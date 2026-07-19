@@ -27,6 +27,9 @@ pre_founder_art = {n.replace("story-pre-founder-", "").replace("-v1.png", ""): b
 title_art = base64.b64encode(open(os.path.join(ROOT, "packages", "assets", "title-screen-zach-v2.png"), "rb").read()).decode()
 nox_materials_art = base64.b64encode(open(os.path.join(ROOT, "packages", "assets", "materials", "nox-metals-exterior-v1.png"), "rb").read()).decode()
 equipment_views = {n[:-4]: base64.b64encode(open(os.path.join(ROOT, "packages", "assets", "equipment", n), "rb").read()).decode() for n in os.listdir(os.path.join(ROOT, "packages", "assets", "equipment")) if n.endswith(".png")}
+tool_art_dir = os.path.join(ROOT, "packages", "assets", "tools")
+tool_art = {n[:-4]: base64.b64encode(open(os.path.join(tool_art_dir, n), "rb").read()).decode()
+            for n in os.listdir(tool_art_dir) if n.endswith(".png") and not n.endswith("-source.png")}
 hire_roster = json.load(open(os.path.join(ROOT, "data", "hiring-roster.json")))
 founder_profiles = json.load(open(os.path.join(ROOT, "data", "founder-profiles.json")))
 workforce_conversations = json.load(open(os.path.join(ROOT, "data", "workforce-conversations.json")))
@@ -115,6 +118,12 @@ flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padd
 border:3px solid #4a4f58;outline:2px solid #000;padding:6px 10px;cursor:pointer;color:#c4c9d0;font-size:16px;}
 .toolbtn:active{border-color:var(--gold);}
 .toolbtn canvas{width:48px;height:96px;}
+.toolArt{display:inline-block;width:96px;height:156px;background-repeat:no-repeat;background-color:#080b10;border:2px solid #2c3540;image-rendering:pixelated;}
+.toolArt.core{background-size:300% 100%;}.toolArt.setup{background-size:200% 100%;}
+.toolArt.twist{background-position:0% 50%;}.toolArt.end{background-position:50% 50%;}.toolArt.ball{background-position:100% 50%;}
+.toolArt.probe{background-position:0% 50%;}.toolArt.chamfer{background-position:100% 50%;}
+.toolMeasure{display:flex;align-items:center;gap:10px;background:#080b10;border:2px solid #2c3540;padding:4px 10px;}
+.kitTool{display:flex;align-items:center;gap:8px}.kitTool .toolArt{width:42px;height:68px;border:0;pointer-events:none}
 #stick{width:min(300px,60vw);}
 input[type=range]{accent-color:var(--gold);height:30px;}
 .gline{display:flex;gap:6px;flex-wrap:wrap;font-size:20px;align-items:center;}
@@ -260,11 +269,13 @@ const CHAPTER_PROGRESSION=__CHAPTER_PROGRESSION__,FACILITIES=__FACILITIES__.faci
 const TITLE_ART="__TITLE_ART__";
 const NOX_MATERIALS_ART="__NOX_MATERIALS_ART__";
 const EQUIPMENT_VIEWS=__EQUIPMENT_VIEWS__;
+const TOOL_ART=__TOOL_ART__;
 const HIRE_ROSTER=__HIRE_ROSTER__,HIRE_IMAGES=__HIRE_IMAGES__,FOUNDER_PROFILES=__FOUNDER_PROFILES__,WORKFORCE_CONVERSATIONS=__WORKFORCE_CONVERSATIONS__;const hired=new Set(),workers=[];
 const MENTOR=__MENTOR__;
 const REUSABLE_ZACH=__REUSABLE_ZACH__;
 const ZACH_VOICE=__ZACH_VOICE__;let zachAudio=null,voiceEnabled=localStorage.getItem("reindustrialize.voice")!=="off",voiceVolume=Number(localStorage.getItem("reindustrialize.voiceVolume")||"1");
 const assetUrl=(value,mime="image/png")=>value.startsWith("/")?value:"data:"+mime+";base64,"+value;
+function toolArt(kind){const setup=kind==="probe"||kind==="chamfer",key=setup?"setup-tools-atlas-v1":"core-cutters-atlas-v1";return '<span class="toolArt '+(setup?'setup ':'core ')+kind+'" style="background-image:url('+assetUrl(TOOL_ART[key])+')" aria-hidden="true"></span>';}
 function audioStatus(text,bad=false){const el=document.getElementById("audioState");if(el){el.textContent=text;el.style.color=bad?"#ff8075":"var(--green)";}}
 function updateVoiceButton(){const b=document.getElementById("bvoice");if(!b)return;b.textContent=voiceEnabled?"🔊 VOICE ON":"🔇 VOICE OFF";b.classList.toggle("on",voiceEnabled);audioStatus(voiceEnabled?"VOICE: READY":"VOICE: MUTED");}
 function playZach(id){if(!id)return Promise.resolve(false);if(!ZACH_VOICE[id]){audioStatus("VOICE: CLIP MISSING",true);return Promise.resolve(false);}if(!voiceEnabled){audioStatus("VOICE: MUTED — PRESS VOICE ON",true);return Promise.resolve(false);}if(zachAudio)zachAudio.pause();zachAudio=new Audio(assetUrl(ZACH_VOICE[id],"audio/mpeg"));zachAudio.volume=Math.max(0,Math.min(1,voiceVolume));zachAudio.onplaying=()=>audioStatus("VOICE: ZACH SPEAKING");zachAudio.onended=()=>audioStatus("VOICE: READY");zachAudio.onerror=()=>audioStatus("VOICE: AUDIO ERROR — PRESS TEST ZACH",true);return zachAudio.play().then(()=>true).catch(()=>{audioStatus("VOICE: BLOCKED — PRESS TEST ZACH",true);return false;});}
@@ -640,9 +651,7 @@ function openToolTask(){
   tctrl.innerHTML="";
   [["twist","TWIST DRILL"],["end","END MILL"],["ball","BALL MILL"]].forEach(([kind,label])=>{
     const b=document.createElement("div");b.className="toolbtn";
-    const c=document.createElement("canvas");c.width=48;c.height=96;
-    const g=c.getContext("2d");drawHolder(g,24,26);drawTool(g,kind,24,26,1.1,52);
-    b.appendChild(c);const s=document.createElement("span");s.textContent=label;b.appendChild(s);
+    b.innerHTML=toolArt(kind)+'<span>'+label+'</span><small>'+(kind==="twist"?'POINTED · HOLES':kind==="end"?'FLAT · POCKETS':'ROUND · CONTOURS')+'</small>';
     b.onclick=()=>{ if(kind===J.tool){state.tool=kind;stepStickout();}
       else{attempts++;tz("ZACH: "+wrongToolMsg(kind,J));playZach("zach_response_try_again");} };
     tctrl.appendChild(b);
@@ -666,7 +675,7 @@ function stepStickout(){
   showTaskCanvas();
   const J=state.job; curHints=J.hints.stick; hintI=0;
   tz("ZACH: Right tool. Now stick it out to the GOLD LINE — "+J.stickWhy+".");
-  tctrl.innerHTML='<input type="range" id="stick" min="0.5" max="2.2" step="0.05" value="0.6">'+
+  tctrl.innerHTML='<div class="toolMeasure">'+toolArt(J.tool)+'<div><b>MEASURE HOLDER FACE TO CUTTING TIP</b><br><span class="hint">Short for rigidity · long enough for clearance</span></div></div><input type="range" id="stick" min="0.5" max="2.2" step="0.05" value="0.6">'+
     '<span id="stickval" style="color:#e8b93b;font-size:22px">0.60"</span>'+
     '<button id="lockin" class="grn">LOCK IN ▸</button>';
   const sl=document.getElementById("stick"), sv=document.getElementById("stickval");
@@ -702,7 +711,7 @@ function sceneStick(v,locked=false){
   if(locked){tx.fillStyle="#3fd08a";tx.font="22px VT323, monospace";tx.fillText("✔ GAUGED",70,120);}
 }
 function stepToolKit(){showEquipmentView("tool-cart-open-v1");curHints=["The probe establishes where the stock is.","The chamfer tool breaks sharp edges before inspection.","A complete kit is primary cutter, probe, and chamfer tool."];tz("ZACH: Gauge the probe and chamfer tool before loading the machine.");
-  tctrl.innerHTML='<div class="ttl">SETUP SHEET · 1 / 3 TOOLS READY</div><button class="kitTool" data-tool="PROBE">GAUGE T90 · TOUCH PROBE</button><button class="kitTool" data-tool="CHAMFER">GAUGE T4 · CHAMFER MILL</button><button id="installKit" class="grn" disabled>INSTALL 3-TOOL KIT ▸</button>';
+  tctrl.innerHTML='<div class="ttl">SETUP SHEET · 1 / 3 TOOLS READY</div><button class="kitTool" data-tool="PROBE">'+toolArt("probe")+'<span>GAUGE T90 · TOUCH PROBE</span></button><button class="kitTool" data-tool="CHAMFER">'+toolArt("chamfer")+'<span>GAUGE T4 · CHAMFER MILL</span></button><button id="installKit" class="grn" disabled>INSTALL 3-TOOL KIT ▸</button>';
   document.querySelectorAll(".kitTool").forEach(b=>b.onclick=()=>{if(!state.toolsSet.includes(b.dataset.tool))state.toolsSet.push(b.dataset.tool);b.textContent="✔ "+b.textContent;b.disabled=true;document.querySelector("#tcontrols .ttl").textContent="SETUP SHEET · "+state.toolsSet.length+" / 3 TOOLS READY";document.getElementById("installKit").disabled=state.toolsSet.length<3;});
   document.getElementById("installKit").onclick=()=>{state.toolReady=true;mission("task_tool");closeOverlay();say("Three tools gauged and installed: cutter, probe, chamfer.","Stock and tool kit are ready. Open the VMC for the G/M-code proof.");};}
 
@@ -946,6 +955,7 @@ html = (html.replace("__SPRITES__", json.dumps(sprites))
             .replace("__TITLE_ART__", title_art)
             .replace("__NOX_MATERIALS_ART__", nox_materials_art)
             .replace("__EQUIPMENT_VIEWS__", json.dumps(equipment_views))
+            .replace("__TOOL_ART__", json.dumps(tool_art))
             .replace("__HIRE_ROSTER__", json.dumps(hire_roster))
             .replace("__HIRE_IMAGES__", json.dumps(hire_images))
             .replace("__FOUNDER_PROFILES__", json.dumps(founder_profiles))
