@@ -106,6 +106,9 @@ fs.writeFileSync(path.join(out, '_headers'), `/*
 
 /game/index.html
   Cache-Control: public, max-age=0, must-revalidate
+
+/release.json
+  Cache-Control: public, max-age=0, must-revalidate
 `);
 fs.writeFileSync(path.join(out, '_redirects'), `/game /game/ 301
 /play /game/ 301
