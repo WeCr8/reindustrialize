@@ -1,7 +1,7 @@
 {
   "storybookVersion": 1,
   "gameBuild": "0.7.0-alpha",
-  "slideCount": 92,
+  "slideCount": 91,
   "founderCount": 10,
   "policy": {
     "oneSlidePerBeat": true,
@@ -1204,32 +1204,17 @@
     {
       "number": 87,
       "section": "Planned Story Gaps",
-      "title": "NOX SUPPLIER INTRO",
+      "title": "NOX SUPPLIER ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
       "image": null,
       "status": "planned",
       "instructions": [
-        "five-shot scene art",
-        "supplier SFX",
-        "player/Zach dock variants",
-        "runtime trigger"
+        "dedicated player/Zach supplier dock variants",
+        "truck arrival animation"
       ]
     },
     {
       "number": 88,
-      "section": "Planned Story Gaps",
-      "title": "NOX DELIVERY",
-      "text": "Not yet implemented. Required before this story beat may be presented as complete.",
-      "image": null,
-      "status": "planned",
-      "instructions": [
-        "truck and pallet animation",
-        "delivery SFX",
-        "receiving-state trigger"
-      ]
-    },
-    {
-      "number": 89,
       "section": "Planned Story Gaps",
       "title": "SHOP CLASS OPEN",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -1242,33 +1227,30 @@
       ]
     },
     {
-      "number": 90,
+      "number": 89,
       "section": "Planned Story Gaps",
-      "title": "FIRST ARTICLE INSPECTION",
+      "title": "FIRST ARTICLE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
       "image": null,
       "status": "planned",
       "instructions": [
-        "inspection scene art",
-        "measurement SFX",
-        "pass/fail branches"
+        "dedicated inspection scene art",
+        "branch-specific failed-article scene"
+      ]
+    },
+    {
+      "number": 90,
+      "section": "Planned Story Gaps",
+      "title": "FIRST HIRE ART UPGRADE",
+      "text": "Not yet implemented. Required before this story beat may be presented as complete.",
+      "image": null,
+      "status": "planned",
+      "instructions": [
+        "candidate-specific founder-and-team story scenes"
       ]
     },
     {
       "number": 91,
-      "section": "Planned Story Gaps",
-      "title": "FIRST HIRE",
-      "text": "Not yet implemented. Required before this story beat may be presented as complete.",
-      "image": null,
-      "status": "planned",
-      "instructions": [
-        "team introduction scene",
-        "candidate-specific portrait",
-        "hire trigger"
-      ]
-    },
-    {
-      "number": 92,
       "section": "Planned Story Gaps",
       "title": "CHAPTERS 3 TO 6",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
