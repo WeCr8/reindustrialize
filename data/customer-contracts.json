@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "channels": ["shop_phone", "jobline_email", "mobile_jobline"],
+  "reputationRules": {
+    "starting": 50,
+    "acceptMinimum": 0,
+    "onTimeA": 6,
+    "onTimeB": 4,
+    "onTimeC": 2,
+    "late": -4,
+    "declineBeforeAcceptance": 0
+  },
+  "customers": [
+    {
+      "id": "northstar_robotics",
+      "atlasCell": 0,
+      "contact": "Avery Stone",
+      "title": "Strategic Sourcing Manager",
+      "company": "Northstar Robotics",
+      "industry": "Industrial robotics integration",
+      "description": "A growing automation integrator that needs dependable machined brackets and end-effector components in small, repeatable batches.",
+      "relationship": "New prospect",
+      "preferredChannel": "shop_phone",
+      "offer": {
+        "id": "rfq_northstar_1042",
+        "subject": "RFQ · Robot sensor brackets",
+        "jobFamily": "drill",
+        "quantity": 12,
+        "unitPrice": 165,
+        "dueShifts": 3,
+        "material": "6061-T6",
+        "requirements": ["Four Ø0.257 holes", "Material certification", "First article before batch", "Deburred edges"],
+        "message": "We need a responsive local shop for a pilot robot cell. Can you prove the first bracket and protect the delivery date?"
+      }
+    },
+    {
+      "id": "great_lakes_mobility",
+      "atlasCell": 1,
+      "contact": "Jordan Ellis",
+      "title": "Prototype Program Buyer",
+      "company": "Great Lakes Mobility",
+      "industry": "Electric mobility components",
+      "description": "A regional mobility supplier buying prototype fixtures and low-volume aluminum components before vehicle programs enter production.",
+      "relationship": "Qualified prospect",
+      "preferredChannel": "jobline_email",
+      "offer": {
+        "id": "rfq_glm_1043",
+        "subject": "Prototype pocketed mounting plates",
+        "jobFamily": "pocket",
+        "quantity": 8,
+        "unitPrice": 240,
+        "dueShifts": 4,
+        "material": "6061-T6",
+        "requirements": ["2.0 × 1.4 pocket", "Flat pocket floor", "Inspection report", "Protected finish"],
+        "message": "Our prototype build moved forward. Review the print and tell us whether your current capacity supports eight plates this week."
+      }
+    },
+    {
+      "id": "meridian_medical",
+      "atlasCell": 2,
+      "contact": "Samira Rahman",
+      "title": "Manufacturing Engineer",
+      "company": "Meridian Medical Systems",
+      "industry": "Medical-device manufacturing",
+      "description": "A controlled medical-device manufacturer that values traceability, documented inspection, clean handling, and disciplined change control.",
+      "relationship": "Reputation 60 required",
+      "preferredChannel": "jobline_email",
+      "offer": {
+        "id": "rfq_meridian_1044",
+        "subject": "Precision contoured instrument component",
+        "jobFamily": "dome",
+        "quantity": 6,
+        "unitPrice": 390,
+        "dueShifts": 5,
+        "material": "6061-T6",
+        "minimumReputation": 60,
+        "requirements": ["R0.75 contoured surface", "First-article record", "Full material traceability", "No unapproved process changes"],
+        "message": "We are qualifying a second source. Quality records and change discipline matter as much as the finished geometry."
+      }
+    },
+    {
+      "id": "frontier_energy_controls",
+      "atlasCell": 3,
+      "contact": "Daniel Kim",
+      "title": "Operations Director",
+      "company": "Frontier Energy Controls",
+      "industry": "Energy and industrial controls",
+      "description": "A field-equipment producer seeking responsive machining support for control enclosures, rugged mounts, and service-critical replacement parts.",
+      "relationship": "Reputation 70 required",
+      "preferredChannel": "shop_phone",
+      "offer": {
+        "id": "rfq_frontier_1045",
+        "subject": "Service-critical control mounts",
+        "jobFamily": "pocket",
+        "quantity": 20,
+        "unitPrice": 275,
+        "dueShifts": 3,
+        "material": "6061-T6",
+        "minimumReputation": 70,
+        "requirements": ["Expedited delivery", "Serialized parts", "Inspection report", "Clean shift handoff"],
+        "message": "A field retrofit created an urgent need. We will pay for speed, but only if the shop communicates risk before the due date."
+      }
+    }
+  ]
+}
