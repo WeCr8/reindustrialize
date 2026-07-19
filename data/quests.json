@@ -1,0 +1,442 @@
+{
+ "quests": [
+  {
+   "id": "tut_01_first_cut",
+   "type": "tutorial",
+   "tier": 1,
+   "lesson": "Every job starts with square stock.",
+   "steps": [
+    {
+     "event": "job.accepted"
+    },
+    {
+     "event": "machine.cycle_complete",
+     "filter": {
+      "class": "saw"
+     }
+    }
+   ],
+   "rewards": {
+    "coins": 150,
+    "xp": 50
+   },
+   "zachIntro": [
+    "Welcome to the bay. It's empty, it's ours, and it's America's.",
+    "First job's on the board. Cut some stock."
+   ],
+   "zachOutro": [
+    "Square stock, square parts.",
+    "Now let's make some chips."
+   ]
+  },
+  {
+   "id": "tut_02_first_part",
+   "type": "tutorial",
+   "tier": 1,
+   "lesson": "Routing work across stations is the job.",
+   "steps": [
+    {
+     "event": "machine.cycle_complete",
+     "filter": {
+      "class": "mill"
+     }
+    },
+    {
+     "event": "machine.cycle_complete",
+     "filter": {
+      "class": "bench"
+     }
+    },
+    {
+     "event": "job.shipped"
+    }
+   ],
+   "rewards": {
+    "coins": 300,
+    "xp": 100
+   },
+   "zachIntro": [
+    "Mill it, deburr it, ship it.",
+    "The route is the recipe."
+   ],
+   "zachOutro": [
+    "First part out the door. Feel that?",
+    "That's a shop being born."
+   ]
+  },
+  {
+   "id": "first_cnc_setup",
+   "type": "tier_gate",
+   "tier": 2,
+   "lesson": "Setups, not cycle time, eat small shops alive.",
+   "steps": [
+    {
+     "event": "machine.purchased",
+     "filter": {
+      "class": "vmc"
+     }
+    },
+    {
+     "event": "setup.completed"
+    },
+    {
+     "event": "job.shipped",
+     "filter": {
+      "machineClass": "vmc"
+     }
+    }
+   ],
+   "rewards": {
+    "coins": 800,
+    "xp": 250,
+    "unlock": "rfq_board_t2"
+   },
+   "zachIntro": [
+    "Big iron just landed.",
+    "Your first setup decides your whole day."
+   ],
+   "zachOutro": [
+    "Clean setup, clean parts.",
+    "Now we can quote real work."
+   ]
+  },
+  {
+   "id": "connect_machine_live",
+   "type": "tier_gate",
+   "tier": 3,
+   "lesson": "Machine monitoring turns invisible downtime into money.",
+   "steps": [
+    {
+     "event": "machine.purchased",
+     "filter": {
+      "mtconnect": true
+     }
+    },
+    {
+     "event": "network.node_installed"
+    },
+    {
+     "event": "machine.connected"
+    },
+    {
+     "event": "dashboard.viewed",
+     "count": 1
+    }
+   ],
+   "rewards": {
+    "coins": 1500,
+    "xp": 400,
+    "unlock": "oee_dashboard"
+   },
+   "zachIntro": [
+    "That machine's been lying to you about its uptime.",
+    "Let's wire it up and see the truth."
+   ],
+   "zachOutro": [
+    "See that idle bar? That's money leaking.",
+    "Now we can fix what we can see."
+   ]
+  },
+  {
+   "id": "preset_revolution",
+   "type": "tier_gate",
+   "tier": 4,
+   "lesson": "Offline tool presetting reclaims spindle time.",
+   "steps": [
+    {
+     "event": "machine.purchased",
+     "filter": {
+      "class": "toolroom"
+     }
+    },
+    {
+     "event": "tool.preset",
+     "count": 10
+    },
+    {
+     "event": "setup.completed",
+     "filter": {
+      "presetTools": true
+     }
+    }
+   ],
+   "rewards": {
+    "coins": 3000,
+    "xp": 600,
+    "unlock": "toolroom_of_the_year_trophy"
+   },
+   "zachIntro": [
+    "Touching off on the machine is paying spindle rates for measurement.",
+    "Preset offline. Cut sooner."
+   ],
+   "zachOutro": [
+    "Ten tools preset and that setup flew.",
+    "This is how the best toolrooms in the country run."
+   ]
+  },
+  {
+   "id": "clean_handoff_streak",
+   "type": "tier_gate",
+   "tier": 4,
+   "lesson": "Shift handoffs are where shops silently bleed.",
+   "steps": [
+    {
+     "event": "handoff.completed",
+     "filter": {
+      "quality": "clean"
+     },
+     "count": 7
+    }
+   ],
+   "rewards": {
+    "coins": 2500,
+    "xp": 600,
+    "skillPoint": "communication"
+   },
+   "zachIntro": [
+    "Night shift can't read your mind.",
+    "Seven clean handoffs. In a row. Go."
+   ],
+   "zachOutro": [
+    "Seven for seven. No mystery scrap, no lost notes.",
+    "THIS is what separates good shops from great ones."
+   ]
+  },
+  {
+   "id": "first_robot_install",
+   "type": "tier_gate",
+   "tier": 5,
+   "lesson": "Automation ROI = downtime now for throughput forever.",
+   "steps": [
+    {
+     "event": "robot.purchased"
+    },
+    {
+     "event": "robot.install_started"
+    },
+    {
+     "event": "robot.programmed"
+    },
+    {
+     "event": "machine.cycle_complete",
+     "filter": {
+      "tendedBy": "robot"
+     },
+     "count": 20
+    }
+   ],
+   "rewards": {
+    "coins": 5000,
+    "xp": 1000,
+    "unlock": "lights_out_mode"
+   },
+   "zachIntro": [
+    "The arm's in the crate. Installing it will hurt for a shift.",
+    "Robots don't fix a bad process \u2014 they run it faster. Ours is good. Let's go."
+   ],
+   "zachOutro": [
+    "Twenty cycles untouched by human hands.",
+    "Tonight, we try lights-out."
+   ]
+  },
+  {
+   "id": "sm_connect_real_machine",
+   "type": "shop_mode",
+   "tier": 3,
+   "lesson": "Your real shop deserves real visibility.",
+   "steps": [
+    {
+     "event": "bridge.machine_connected"
+    }
+   ],
+   "rewards": {
+    "coins": 5000,
+    "xp": 1200,
+    "badge": "LIVE"
+   },
+   "zachIntro": [
+    "Enough simulation. You've got real iron on a real floor.",
+    "Connect one machine. For real. I'll wait."
+   ],
+   "zachOutro": [
+    "That gold LIVE badge? That's a real machine, talking.",
+    "Welcome to the connected shop."
+   ]
+  },
+  {
+   "id": "sm_handoff_week",
+   "type": "shop_mode",
+   "tier": 4,
+   "lesson": "Real handoff discipline compounds.",
+   "steps": [
+    {
+     "event": "bridge.handoff_completed",
+     "count": 7
+    }
+   ],
+   "rewards": {
+    "coins": 6000,
+    "xp": 1500,
+    "skillPoint": "communication"
+   },
+   "zachIntro": [
+    "Your crew. Your floor. Seven real clean handoffs this week."
+   ],
+   "zachOutro": [
+    "Your night shift just thanked you. Quietly. In their heads."
+   ]
+  },
+  {
+   "id": "tut_00_suit_up",
+   "type": "tutorial",
+   "tier": 1,
+   "lesson": "This is your shop and your machinist.",
+   "steps": [
+    {
+     "event": "avatar.created"
+    }
+   ],
+   "rewards": {
+    "coins": 50,
+    "xp": 25
+   },
+   "zachIntro": [
+    "Before we cut anything \u2014 who's running this shop?",
+    "Pick your machinist. Any of them can build an empire."
+   ],
+   "zachOutro": [
+    "Looking sharp. Let's go make chips."
+   ]
+  },
+  {
+   "id": "nox_first_order",
+   "type": "tutorial",
+   "tier": 1,
+   "lesson": "No material, no parts. Know your distributor.",
+   "steps": [
+    {
+     "event": "material.ordered",
+     "filter": {
+      "vendor": "vendor_nox"
+     }
+    },
+    {
+     "event": "material.received"
+    }
+   ],
+   "rewards": {
+    "coins": 200,
+    "xp": 75,
+    "unlock": "nox_catalog_full"
+   },
+   "zachIntro": [
+    "Can't cut air. Call NOX Metals \u2014 Dana will set you up.",
+    "Start with 6061. It's forgiving and it's everywhere."
+   ],
+   "zachOutro": [
+    "Bar stock on the dock. Smell that? That's inventory.",
+    "Watch lead times on steel \u2014 plan ahead or pay rush."
+   ]
+  },
+  {
+   "id": "gcode_first_run",
+   "type": "tier_gate",
+   "tier": 2,
+   "lesson": "G-code parameters come from math and material, not guessing.",
+   "steps": [
+    {
+     "event": "gcode.challenge_passed",
+     "filter": {
+      "id": "gc_01_spindle_up"
+     }
+    },
+    {
+     "event": "gcode.challenge_passed",
+     "filter": {
+      "id": "gc_03_offsets"
+     }
+    },
+    {
+     "event": "machine.cycle_complete",
+     "filter": {
+      "class": "vmc"
+     }
+    }
+   ],
+   "rewards": {
+    "coins": 600,
+    "xp": 300,
+    "skillPoint": "cnc_programming"
+   },
+   "zachIntro": [
+    "The VMC won't run until the program's right. Fill in the blanks.",
+    "RPM comes off the material cert. Offsets tell it where the part lives."
+   ],
+   "zachOutro": [
+    "You just wrote real G-code. That runs on real machines.",
+    "Every parameter had a reason. Remember the reasons."
+   ]
+  },
+  {
+   "id": "nox_cert_matters",
+   "type": "tier_gate",
+   "tier": 6,
+   "lesson": "Aerospace = traceability. No cert, no part.",
+   "steps": [
+    {
+     "event": "material.ordered",
+     "filter": {
+      "certed": true
+     }
+    },
+    {
+     "event": "job.shipped",
+     "filter": {
+      "customer": "cust_aero"
+     }
+    }
+   ],
+   "rewards": {
+    "coins": 8000,
+    "xp": 1500,
+    "unlock": "lta_contracts"
+   },
+   "zachIntro": [
+    "Meridian wants certs on everything. Order accordingly.",
+    "Ten percent more from NOX beats a hundred percent rejection."
+   ],
+   "zachOutro": [
+    "Certed material, clean paper trail, shipped on time.",
+    "THAT is aerospace manufacturing."
+   ]
+  },
+  {
+   "id": "shopclass_enroll",
+   "type": "tutorial",
+   "tier": 1,
+   "lesson": "The chalkboard corner is where the floor's math lives.",
+   "steps": [
+    {
+     "event": "shopclass.entered"
+    },
+    {
+     "event": "shopclass.lesson_passed",
+     "count": 1
+    }
+   ],
+   "rewards": {
+    "coins": 100,
+    "xp": 100,
+    "unlock": "shopclass_all"
+   },
+   "zachIntro": [
+    "See that chalkboard in the corner? That's Shop Class.",
+    "Every lesson unlocks something real on this floor."
+   ],
+   "zachOutro": [
+    "First lesson down. Five more on the board.",
+    "Come back anytime \u2014 the chalk doesn't wear out."
+   ]
+  }
+ ]
+}

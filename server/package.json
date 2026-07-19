@@ -1,0 +1,1 @@
+{"name":"@wecr8/game-server","version":"0.1.0","private":true,"type":"module","scripts":{"dev":"node src/dev-server.js","start":"node src/dev-server.js"},"dependencies":{"qrcode":"^1.5.4","ws":"^8.18.3"}}

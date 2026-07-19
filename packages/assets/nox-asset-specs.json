@@ -1,0 +1,13 @@
+{
+  "note": "Sprite/scene specs for NOX visuals. Run through skills/sprite-spec. Reference photos: NOX Detroit facility press coverage (Michigan Enjoyer profile), noxmetals.co. Real brand = get logo/colors from NOX partnership kit; placeholder uses black + steel + orange accent until sign-off.",
+  "assets": [
+    {"id":"nox_truck","canvas":"96x48","states":["drive_4f","dock_idle"],"desc":"black semi + box trailer, NOX wordmark placeholder on side, chrome stack"},
+    {"id":"nox_pallet","canvas":"32x32","states":["drop_2f","idle","cert_sparkle_2f"],"desc":"banded aluminum plate stack on pallet, green cert tag"},
+    {"id":"nox_terminal_prop","canvas":"32x32","states":["idle","glow_2f"],"desc":"planning desk PC, chunky CRT, NOX-NET green screen"},
+    {"id":"nox_facility_backdrop","canvas":"320x120","states":["static"],"desc":"cutscene bg: automated saw line, robot gantry, plate racks, spark cluster anim point"},
+    {"id":"detroit_skyline_backdrop","canvas":"320x80","states":["static"],"desc":"cutscene bg: Detroit silhouette w/ Renaissance Center, sunrise band #e8491d"},
+    {"id":"nox_rep_dana","canvas":"32x48","states":["idle","talk","deliver"],"desc":"NOX rep, black tee + hi-vis vest, tablet in hand (their reps quote from software, not clipboards)"},
+    {"id":"shopclass_chalkboard","canvas":"64x48","states":["blank","title","lesson_1..6"],"desc":"rolling chalkboard, chalk tray, per-lesson board art (formulas in chalk white + gold underline)"},
+    {"id":"sfm_wall_chart","canvas":"32x48","states":["static"],"desc":"laminated speeds/feeds chart, coffee stain, one corner curling"}
+  ]
+}

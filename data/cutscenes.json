@@ -1,0 +1,44 @@
+{
+  "note": "Shot-by-shot specs for in-engine cutscenes. Letterboxed, skippable after first view. Art via sprite-spec skill; timing in ticks (60/s render, 1s sim ticks paused during scenes).",
+  "playerVariantPolicy": {
+    "rule": "Every story image containing the player must support every launch founder. Runtime selection follows the avatar chosen at company creation; founders with the same back-facing workwear silhouette may share a gender scene family while retaining distinct floor sprites and selection portraits.",
+    "avatarSceneMap": {"av_m_01":"male","av_m_founder_02_hd":"male","av_f_founder_hd":"female","av_f_founder_02_hd":"female","av_m_blonde_hd":"male","av_f_blonde_hd":"female","av_m_middle_eastern_hd":"male","av_f_middle_eastern_hd":"female","av_m_indian_hd":"male","av_f_indian_hd":"female"},
+    "identityOverlay": "Every active story card renders the exact selected 32-bit founder sprite in a scene badge so hair, skin tone, and individual appearance remain visible even when cinematic backgrounds share a back-facing workwear composition.",
+    "invariants": ["Zach retains his black hat and gray shacket", "camera and equipment remain identical between variants", "only the player identity changes"],
+    "implemented": {
+      "title": {"male": "story-title-male-founder-v1.png", "female": "story-title-female-founder-v1.png"},
+      "opening": {"male": "story-opening-male-founder-v1.png", "female": "story-opening-female-founder-v1.png"},
+      "jobShopExpansion": {"male": "story-expansion-male-founder-v1.png", "female": "story-expansion-female-founder-v1.png"}
+    }
+  },
+  "cutscenes": [
+    {
+      "id": "cs_nox_intro",
+      "trigger": "first time opening the NOX catalog at the planning desk",
+      "music": "day_shift_loop (low-pass filtered)",
+      "shots": [
+        {"shot": 1, "duration_s": 3, "scene": "Detroit skyline at dawn, pixel silhouette (Renaissance Center towers), orange #e8491d sunrise band", "text": "DETROIT, MICHIGAN", "sfx": "distant_city"},
+        {"shot": 2, "duration_s": 4, "scene": "Interior: automated plate saw line. Robot gantry picks a 7075 plate; saw sparks (2-frame). Conveyor labels boxes", "text": "NOX METALS — AI-POWERED METAL SUPPLY", "sfx": "saw_cut_loop"},
+        {"shot": 3, "duration_s": 3, "scene": "Terminal POV: NOX-NET quote screen types itself, price stamps in", "text": "QUOTES IN MILLISECONDS. NOT DAYS.", "sfx": "keyboard_clatter, cash_stamp"},
+        {"shot": 4, "duration_s": 4, "scene": "Black semi with NOX box trailer rolls left-to-right across the player's shop exterior, air brake hiss, dock door opens", "text": "NEXT-DAY ON YOUR DOCK. CERTS INCLUDED.", "sfx": "truck_airbrake"},
+        {"shot": 5, "duration_s": 3, "scene": "Zach at the dock, thumbs up, avatar beside him. Gold quest banner slides in", "text": "MORE METAL. REINDUSTRIALIZE.", "sfx": "quest_jingle"}
+      ]
+    },
+    {
+      "id": "cs_nox_delivery",
+      "trigger": "every material.received event (short version, 2.5s, non-blocking)",
+      "shots": [
+        {"shot": 1, "duration_s": 1.2, "scene": "NOX truck slides into dock lane (screen right edge)", "sfx": "truck_short"},
+        {"shot": 2, "duration_s": 1.3, "scene": "Pallet drops at receiving tile with dust puff; stock counter ticks up; cert tag sparkles if certed", "sfx": "pallet_thud, coin_tick"}
+      ]
+    },
+    {
+      "id": "cs_shopclass_open",
+      "trigger": "first time entering the Shop Class corner",
+      "shots": [
+        {"shot": 1, "duration_s": 3, "scene": "Corner of the bay: chalkboard on wheels, two shop stools, pegboard with tools. Zach flips the board from blank to 'SHOP CLASS' in chalk letters", "text": "SHOP CLASS — TAUGHT BY ZACH", "sfx": "chalk_squeak"},
+        {"shot": 2, "duration_s": 2, "scene": "Zach taps the board with a 1/2 endmill like a pointer", "text": "\"Everything on this floor obeys math. Let me show you.\"", "sfx": "tap_tap"}
+      ]
+    }
+  ]
+}

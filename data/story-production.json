@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "rules": {
+    "voiceTextMustMatch": true,
+    "activeBeatRequiresVisual": true,
+    "playerBeatRequiresIdentityOverlay": true,
+    "captionsAlwaysVisible": true
+  },
+  "sequences": {
+    "pre_founder": [
+      {"id":"pre_founder_welcome","order":1,"status":"implemented","visual":"opening","containsPlayer":false,"kicker":"ZACH · WELCOME TO REINDUSTRIALIZE","text":"Welcome to Reindustrialize. You are about to launch a manufacturing company of your own, starting with an almost-empty garage and one chance to prove the shop can deliver.","voice":"zach_pre_founder_welcome"},
+      {"id":"pre_founder_path","order":2,"status":"implemented","visual":"opening","containsPlayer":false,"kicker":"ZACH · FROM GARAGE TO POWERHOUSE","text":"Every manufacturing powerhouse starts with small decisions made well: the right material, a safe setup, a good part, a reliable team, and a promise kept to the customer.","voice":"zach_pre_founder_path"},
+      {"id":"pre_founder_choice","order":3,"status":"implemented","visual":"title","containsPlayer":false,"kicker":"ZACH · BUILD YOUR FOUNDER","text":"Choose the founder who represents you, give them a name, and name the company you want to build. I will mentor you, but every decision belongs to you.","voice":"zach_pre_founder_choice"}
+    ],
+    "opening": [
+      {"id":"opening_founding_day","order":1,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"PROLOGUE · FOUNDING DAY","text":"{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous."},
+      {"id":"opening_welcome_shop","order":2,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"ZACH · WELCOME TO THE SHOP","text":"Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse.","voice":"zach_shop_welcome"},
+      {"id":"opening_mentor_role","order":3,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"ZACH · YOUR SHOP TEACHER & BUSINESS MENTOR","text":"I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks.","voice":"zach_welcome"},
+      {"id":"opening_first_job","order":4,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"ZACH · YOUR FIRST CUSTOMER","text":"Your first customer job is on the planning desk. I advise. You own every decision.","voice":"zach_first_job"},
+      {"id":"opening_powerhouse_goal","order":5,"status":"implemented","visual":"opening","containsPlayer":true,"kicker":"YOUR LONG-TERM GOAL","text":"Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse."}
+    ],
+    "job_shop_expansion": [
+      {"id":"expansion_move","order":1,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"CHAPTER 2 · THE JOB SHOP","text":"{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires."},
+      {"id":"expansion_systems","order":2,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"ZACH · BUILD THE SYSTEM","text":"This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them.","voice":"zach_job_shop"},
+      {"id":"expansion_outgrown","order":3,"status":"implemented","visual":"expansion","containsPlayer":true,"kicker":"ZACH · THE NEXT FACILITY","text":"You have outgrown the garage. Now build systems, not just parts.","voice":"zach_expansion"}
+    ]
+  },
+  "plannedSequences": [
+    {"id":"nox_supplier_intro","status":"planned","needs":["five-shot scene art","supplier SFX","player/Zach dock variants","runtime trigger"]},
+    {"id":"nox_delivery","status":"planned","needs":["truck and pallet animation","delivery SFX","receiving-state trigger"]},
+    {"id":"shop_class_open","status":"planned","needs":["chalkboard scene art","chalk and tool-tap SFX","first-entry trigger"]},
+    {"id":"first_article_inspection","status":"planned","needs":["inspection scene art","measurement SFX","pass/fail branches"]},
+    {"id":"first_hire","status":"planned","needs":["team introduction scene","candidate-specific portrait","hire trigger"]},
+    {"id":"chapters_3_to_6","status":"planned","needs":["chapter entry and graduation sequences","facility art","voice scripts","music and SFX","runtime gates"]}
+  ]
+}

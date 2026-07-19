@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "scenes": {
+    "title": {"file": "title-screen-zach-v2.png", "role": "game-entry", "aspect": "16:9"},
+    "prologue_day_one": {"file": "opening-shop-zach-v2.png", "role": "story", "unlocks": "bay_01"},
+    "chapter_02_job_shop": {"file": "job-shop-expansion-zach-v2.png", "role": "story", "unlocks": "bay_02"}
+  },
+  "maps": {"bay_01": {"background": "sprites/bay_01_hd_bg.png", "mode": "atmosphere-underlay", "interactiveLayers": ["machines", "player", "labels", "effects"]}},
+  "futureSlots": ["connected_plant", "smart_factory", "lights_out_complex", "american_titan_campus"],
+  "contract": {"format": "png", "composition": "16:9", "text": "HTML overlay only", "style": "detailed 32-bit HD-2D pixel art"}
+}

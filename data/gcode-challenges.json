@@ -1,0 +1,110 @@
+{
+  "note": "Blanks use {{id}} tokens. Validation: 'exact' list, or 'range' computed from the job's REAL material (NOX catalog sfm/machinability) and tool dia — answers change when the material changes. Dialect: Haas/Fanuc at launch (mirrors jobline-gcode extension dialects).",
+  "formulas": {
+    "rpm": "RPM = (SFM * 3.82) / toolDia",
+    "feed": "F = RPM * numFlutes * chipLoad"
+  },
+  "challenges": [
+    {
+      "id": "gc_01_spindle_up", "tier": 2, "machineClass": "vmc",
+      "lesson": "Spindle speed comes from material SFM, not vibes.",
+      "context": {"tool": "1/2 in 4-flute carbide endmill", "toolDia": 0.5, "flutes": 4},
+      "program": [
+        "T1 M06 (1/2 CARBIDE EM)",
+        "G90 G54 G00 X0. Y0.",
+        "S{{rpm}} M{{spindleOn}}",
+        "G43 H01 Z1.0"
+      ],
+      "blanks": {
+        "rpm": {"validate": "range", "compute": "rpmFromMaterial", "tolerance": 0.25, "hint": "RPM = (SFM x 3.82) / dia. Check what NOX shipped you."},
+        "spindleOn": {"validate": "exact", "answers": ["03","3"], "hint": "Clockwise. Righty-tighty."}
+      },
+      "zachFail": ["That RPM would either rub or burn. Look at the material cert on the bar.", "SFM times 3.82, divided by diameter. Every time."],
+      "zachPass": ["Spindle's singing. That's the right note for this alloy."]
+    },
+    {
+      "id": "gc_02_feed_it", "tier": 2, "machineClass": "vmc",
+      "lesson": "Feed rate is chip load math, and chip load keeps tools alive.",
+      "context": {"tool": "1/2 in 4-flute carbide endmill", "toolDia": 0.5, "flutes": 4, "chipLoad": 0.002},
+      "program": [
+        "G00 Z0.1",
+        "G01 Z-0.25 F{{plungeFeed}}",
+        "G01 X4.0 F{{cutFeed}}"
+      ],
+      "blanks": {
+        "cutFeed": {"validate": "range", "compute": "feedFromRpm", "tolerance": 0.3, "hint": "F = RPM x flutes x chip load (0.002 here)."},
+        "plungeFeed": {"validate": "range", "compute": "feedFromRpm", "scale": 0.4, "tolerance": 0.5, "hint": "Plunge slower than you cut. Around half or less."}
+      },
+      "zachFail": ["Chip load too thin rubs and work-hardens. Too fat snaps the tool. Do the math."],
+      "zachPass": ["Nice sixes coming off. That's a happy endmill."]
+    },
+    {
+      "id": "gc_03_offsets", "tier": 2, "machineClass": "vmc",
+      "lesson": "Work offsets and tool length offsets are how the machine knows where the part IS.",
+      "context": {},
+      "program": [
+        "T2 M06 (SPOT DRILL)",
+        "G90 G{{workOffset}} G00 X1.0 Y1.0",
+        "G{{tlo}} H02 Z1.0 M08"
+      ],
+      "blanks": {
+        "workOffset": {"validate": "exact", "answers": ["54"], "hint": "First work offset. The classic."},
+        "tlo": {"validate": "exact", "answers": ["43"], "hint": "Tool length compensation, positive direction."}
+      },
+      "zachFail": ["No offset means the machine thinks the part is at machine zero. It is not. Crash city."],
+      "zachPass": ["G54, G43 H02. The machine knows where everything lives now."]
+    },
+    {
+      "id": "gc_04_drill_cycle", "tier": 3, "machineClass": "vmc",
+      "lesson": "Canned cycles: R plane, Z depth, and getting out clean.",
+      "context": {"tool": "letter F drill for 5/16-18 tap"},
+      "program": [
+        "G{{cycle}} G99 Z-0.55 R{{rPlane}} F8.0",
+        "X2.0",
+        "X3.0",
+        "G{{cancel}} G00 Z1.0 M09"
+      ],
+      "blanks": {
+        "cycle": {"validate": "exact", "answers": ["81"], "hint": "Basic drill cycle, feed in, rapid out."},
+        "rPlane": {"validate": "range", "min": 0.05, "max": 0.2, "hint": "Close enough to save air-cutting, high enough to clear clamps. 0.1 is the old faithful."},
+        "cancel": {"validate": "exact", "answers": ["80"], "hint": "Cancel the cycle before you rapid away."}
+      },
+      "zachFail": ["Forget G80 and every move after this drills a hole. Ask me how I know."],
+      "zachPass": ["Three holes, one line each. That's why canned cycles exist."]
+    },
+    {
+      "id": "gc_05_lathe_turn", "tier": 3, "machineClass": "lathe",
+      "lesson": "Lathes think in constant surface speed.",
+      "context": {"stock": "from active job material"},
+      "program": [
+        "G{{css}} S{{sfm}} (CONSTANT SURFACE SPEED)",
+        "G50 S3000 (SPINDLE CLAMP)",
+        "M{{spindleOn}}",
+        "G01 X1.95 Z-2.0 F0.008"
+      ],
+      "blanks": {
+        "css": {"validate": "exact", "answers": ["96"], "hint": "Constant surface speed mode."},
+        "sfm": {"validate": "range", "compute": "sfmFromMaterial", "tolerance": 0.2, "hint": "In G96, S is surface feet. Straight off the NOX cert."},
+        "spindleOn": {"validate": "exact", "answers": ["03","3"], "hint": "Spindle forward."}
+      },
+      "zachFail": ["In G96 that S number is FEET PER MINUTE, not RPM. Big difference near center."],
+      "zachPass": ["Constant surface speed, clamped at 3000. Textbook."]
+    },
+    {
+      "id": "gc_06_program_end", "tier": 2, "machineClass": "vmc",
+      "lesson": "End programs like a professional: coolant off, home, rewind.",
+      "context": {},
+      "program": [
+        "G00 Z2.0 M{{coolantOff}}",
+        "G28 G91 Z0.",
+        "M{{end}}"
+      ],
+      "blanks": {
+        "coolantOff": {"validate": "exact", "answers": ["09","9"], "hint": "Coolant off."},
+        "end": {"validate": "exact", "answers": ["30"], "hint": "End and rewind — ready for the next part."}
+      },
+      "zachFail": ["M02 works but M30 rewinds for the next guy. Be the next guy's favorite."],
+      "zachPass": ["Clean finish. Program's ready to run all day."]
+    }
+  ]
+}

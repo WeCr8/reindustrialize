@@ -1,0 +1,224 @@
+{
+ "vendors": [
+  {
+   "id": "vendor_nox",
+   "name": "NOX Metals",
+   "type": "metal_distributor",
+   "tagline": "Quotes in milliseconds. Metal on your dock next day.",
+   "unlocksAtTier": 1,
+   "npc": {
+    "id": "nox_rep_dana",
+    "name": "Dana from NOX",
+    "role": "vendor",
+    "voice": [
+     "NOX Metals \u2014 what are we cutting today?",
+     "6061 I can have on your dock tomorrow. 4140 pre-hard, give me three days.",
+     "You want certs with that? Aerospace work, you'd better say yes.",
+     "Prices moved this week. Steel's up. Aluminum's holding."
+    ],
+    "spriteSpec": {
+     "sheet": "nox_rep_dana",
+     "base": "32x48",
+     "states": [
+      "idle",
+      "talk",
+      "deliver"
+     ]
+    }
+   },
+   "mechanics": {
+    "orderFlow": "planning desk -> NOX catalog -> pick material/size/qty -> pay -> lead time in ticks -> delivery event at receiving dock",
+    "leadTimes": "in-stock items fast; specials slow; rush option costs 1.5x",
+    "certs": "NOX includes mill certs FREE (matches real offering). Legacy vendor charges +10% and 2x lead for certs. Aero jobs rejected without certs.",
+    "priceDrift": "seeded weekly +-8% drift per family; teaches buying ahead vs cash flow",
+    "wrongMaterial": "using wrong alloy for a job = guaranteed scrap at inspection + Zach root-cause dialog",
+    "instantQuote": "NOX-NET terminal returns price instantly (NESTING... animation, <1s). Legacy vendor = phone-tag minigame: quote arrives after 300-900 ticks.",
+    "cutToSize": "NOX ships plate cut to job dimensions - skips the saw station entirely for those jobs (real time saved, teachable)."
+   },
+   "catalog": [
+    {
+     "sku": "AL6061-T6-BAR",
+     "name": "6061-T6 Aluminum Bar",
+     "family": "aluminum",
+     "basePrice": 40,
+     "unit": "per bar (12ft)",
+     "leadTicks": 600,
+     "stock": "always",
+     "machinability": 1.0,
+     "sfm": {
+      "carbide": 800
+     },
+     "certIncluded": true
+    },
+    {
+     "sku": "AL7075-T651-PLT",
+     "name": "7075-T651 Plate",
+     "family": "aluminum",
+     "basePrice": 110,
+     "unit": "per plate",
+     "leadTicks": 600,
+     "stock": "usually",
+     "machinability": 0.9,
+     "sfm": {
+      "carbide": 600
+     },
+     "certIncluded": true
+    },
+    {
+     "sku": "AL7050-T7451-PLT",
+     "name": "7050-T7451 Plate",
+     "family": "aluminum",
+     "basePrice": 150,
+     "unit": "per plate",
+     "leadTicks": 600,
+     "stock": "usually",
+     "machinability": 0.9,
+     "sfm": {
+      "carbide": 600
+     },
+     "certIncluded": true,
+     "note": "aerospace structural"
+    },
+    {
+     "sku": "AL5052-H32-SHT",
+     "name": "5052-H32 Sheet",
+     "family": "aluminum",
+     "basePrice": 30,
+     "unit": "per sheet",
+     "leadTicks": 600,
+     "stock": "always",
+     "machinability": 0.95,
+     "sfm": {
+      "carbide": 700
+     },
+     "certIncluded": true
+    },
+    {
+     "sku": "ST1018-CF-BAR",
+     "name": "1018 Cold Finish Steel Bar",
+     "family": "steel",
+     "basePrice": 35,
+     "unit": "per bar (12ft)",
+     "leadTicks": 600,
+     "stock": "special",
+     "machinability": 0.75,
+     "sfm": {
+      "carbide": 350
+     },
+     "certIncluded": true
+    },
+    {
+     "sku": "ST4140-PH-BAR",
+     "name": "4140 Pre-Hard Bar",
+     "family": "steel",
+     "basePrice": 90,
+     "unit": "per bar (12ft)",
+     "leadTicks": 1800,
+     "stock": "special",
+     "machinability": 0.55,
+     "sfm": {
+      "carbide": 250
+     },
+     "certIncluded": true
+    },
+    {
+     "sku": "DOM1020-TUBE",
+     "name": "DOM 1020 Tubing",
+     "family": "steel",
+     "basePrice": 75,
+     "unit": "per length",
+     "leadTicks": 1200,
+     "stock": "special",
+     "machinability": 0.7,
+     "sfm": {
+      "carbide": 300
+     },
+     "note": "honing/shock-body jobs",
+     "certIncluded": true
+    },
+    {
+     "sku": "SS304-BAR",
+     "name": "304 Stainless Bar",
+     "family": "stainless",
+     "basePrice": 120,
+     "unit": "per bar (12ft)",
+     "leadTicks": 1800,
+     "stock": "special",
+     "machinability": 0.45,
+     "sfm": {
+      "carbide": 220
+     },
+     "certIncluded": true
+    },
+    {
+     "sku": "TI6AL4V-BAR",
+     "name": "Ti-6Al-4V Bar",
+     "family": "titanium",
+     "basePrice": 600,
+     "unit": "per bar (6ft)",
+     "leadTicks": 3600,
+     "stock": "special",
+     "machinability": 0.25,
+     "sfm": {
+      "carbide": 150
+     },
+     "unlocksAtTier": 6,
+     "certRequired": true,
+     "certIncluded": true
+    }
+   ],
+   "realCompany": {
+    "status": "REAL COMPANY - partnership sign-off required before shipping",
+    "site": "noxmetals.co",
+    "hq": "Detroit, MI",
+    "facts": "AI-powered supplier; aluminum plate/bar cut to size (6061/7075/7050/5000-series), Inconel & stainless by request; instant quotes; next-day delivery; DFARS; mill certs included",
+    "gameAlignment": "Their stated mission is to reindustrialize America - same name as the game. Co-marketing candidate."
+   }
+  },
+  {
+   "id": "vendor_legacy",
+   "name": "Legacy Metal Service Center",
+   "type": "metal_distributor",
+   "tagline": "Leave a message after the tone.",
+   "unlocksAtTier": 1,
+   "npc": {
+    "id": "legacy_rep_gus",
+    "name": "Gus",
+    "role": "vendor",
+    "voice": [
+     "Yeah we got that. Probably. Lemme check the yard.",
+     "Quote? Fax machine's down. Call back Thursday.",
+     "Certs cost extra. Everything costs extra."
+    ],
+    "spriteSpec": {
+     "sheet": "legacy_rep_gus",
+     "base": "32x48",
+     "states": [
+      "idle",
+      "talk"
+     ]
+    }
+   },
+   "mechanics": {
+    "orderFlow": "phone-tag minigame: request quote -> wait 300-900 ticks -> price arrives (sometimes wrong alloy)",
+    "certs": "+10% and doubles lead time",
+    "teaches": "why the old material pipeline bleeds shops dry - the contrast IS the lesson (and the co-marketing)"
+   },
+   "catalog": [
+    {
+     "sku": "MYSTERY-DROP",
+     "name": "Yard Drop (alloy unverified)",
+     "family": "mixed",
+     "basePrice": 15,
+     "leadTicks": 2400,
+     "stock": "maybe",
+     "machinability": 0.6,
+     "sfm": {
+      "carbide": 300
+     },
+     "note": "cheap, uncertified, risky - scrap roulette"
+    }
+   ]
+  }
+ ]
+}

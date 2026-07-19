@@ -1,0 +1,20 @@
+{
+  "defaultMode": "disabled",
+  "cloudFeaturesEnabled": false,
+  "modes": {
+    "disabled": {"auth": false, "cloudSaves": false, "description": "Current release-safe mode; gameplay remains independent of a cloud backend."},
+    "local": {"auth": true, "cloudSaves": true, "description": "Supabase CLI stack for developers only; bind to localhost and never expose publicly."},
+    "supabase": {"auth": true, "cloudSaves": true, "description": "Direct managed Supabase with project-owned migrations and deployment controls."},
+    "lovable-supabase": {"auth": true, "cloudSaves": true, "description": "Lovable frontend workflow using the same Supabase schema, Auth, and RLS policies."}
+  },
+  "releaseGate": [
+    "gameplay and save-format acceptance complete",
+    "local migration reset and RLS tests pass",
+    "separate staging project passes account and save E2E",
+    "production redirect URLs and email templates approved",
+    "MFA required for maintainers and leaked-password protection enabled",
+    "backup, restore, deletion, privacy, and incident procedures approved",
+    "no service-role or database secret is present in browser artifacts",
+    "PUBLIC_CLOUD_FEATURES_ENABLED changed only through reviewed release configuration"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "note": "Player characters are silent protagonists — Zach remains the only teaching voice. Avatars affect appearance only, never stats.",
+  "creation": {
+    "step1": "Choose from multiple male and female founder appearances",
+    "step2": "Compare every selectable founder in a visual card using the same 32-bit style used on the shop floor",
+    "step3": "Name your founder independently from the manufacturing company",
+    "step4": "Launch the company; avatar choice is cosmetic and never changes stats"
+  },
+  "avatars": [
+    {"id":"av_m_01","body":"male","name":"Founder A","look":"dark wavy hair, navy work jacket, charcoal hoodie, tan work pants and safety boots","selectableAtLaunch":true,"spriteSpec":{"sheet":"av_m_01","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_m_founder_02_hd","body":"male","name":"Founder B","look":"short textured curls, navy work jacket, charcoal hoodie, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"male","spriteSpec":{"sheet":"av_m_founder_02_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_m_02","body":"male","name":"Machinist M2","look":"clean-shaven, safety glasses on head, rolled sleeves","spriteSpec":{"sheet":"av_m_02","base":"32x48","states":["idle","walk4dir","work","carry","plan","celebrate"],"accentSlots":["glasses","shirtTrim"]}},
+    {"id":"av_f_founder_hd","body":"female","name":"Founder C","look":"dark brown low ponytail, navy work jacket, charcoal shirt, tan work pants and safety boots","selectableAtLaunch":true,"spriteSpec":{"sheet":"av_f_founder_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_f_founder_02_hd","body":"female","name":"Founder D","look":"auburn micro-braids in a low ponytail, navy work jacket, charcoal shirt, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"female","spriteSpec":{"sheet":"av_f_founder_02_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_m_blonde_hd","body":"male","name":"Founder E","look":"short sandy-blonde hair, light stubble, navy work jacket, charcoal hoodie, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"male","spriteSpec":{"sheet":"av_m_blonde_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_f_blonde_hd","body":"female","name":"Founder F","look":"blonde low ponytail, navy work jacket, charcoal shirt, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"female","spriteSpec":{"sheet":"av_f_blonde_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_m_middle_eastern_hd","body":"male","name":"Founder G","look":"warm olive skin, dark wavy hair, trimmed beard, navy work jacket, charcoal hoodie, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"male","spriteSpec":{"sheet":"av_m_middle_eastern_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_f_middle_eastern_hd","body":"female","name":"Founder H","look":"warm olive skin, dark curly low bun, navy work jacket, charcoal shirt, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"female","spriteSpec":{"sheet":"av_f_middle_eastern_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_m_indian_hd","body":"male","name":"Founder I","look":"medium brown skin, dark styled hair, trimmed beard, navy work jacket, charcoal hoodie, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"male","spriteSpec":{"sheet":"av_m_indian_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_f_indian_hd","body":"female","name":"Founder J","look":"medium brown skin, dark braided low ponytail, navy work jacket, charcoal shirt, tan work pants and safety boots","selectableAtLaunch":true,"sceneFamily":"female","spriteSpec":{"sheet":"av_f_indian_hd","base":"64x96","states":["idle","walk"],"style":"detailed 32-bit"}},
+    {"id":"av_f_02","body":"female","name":"Machinist F2","look":"short hair, ball cap backwards, work apron","spriteSpec":{"sheet":"av_f_02","base":"32x48","states":["idle","walk4dir","work","carry","plan","celebrate"],"accentSlots":["cap","apronStrap"]}}
+  ],
+  "playerVerbs": {
+    "move": "walk4dir pathing on the tile grid; walk distance costs ticks (layout matters)",
+    "runEquipment": "stand at a machine's operator tile -> setup/run; CNC machines require passing the G-code challenge first",
+    "doTasks": "carry stock between stations, deburr, inspect, preset tools",
+    "planJobs": "at the planning desk: open RFQ board, set routes, order material from NOX"
+  }
+}

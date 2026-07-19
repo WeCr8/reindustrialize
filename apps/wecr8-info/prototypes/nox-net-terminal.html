@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOX-NET — REINDUSTRIALIZE ordering terminal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  :root{
+    --navy:#1a2e44; --orange:#e8491d; --sky:#4a9fd4; --gold:#e8b93b;
+    --green:#3fd08a; --greendim:#1d7a4f; --alert:#d0433f; --panel:#14161c;
+    --steel:#4a4f58; --steel2:#6e747f;
+  }
+  *{box-sizing:border-box; margin:0; padding:0; image-rendering:pixelated;}
+  html,body{height:100%;}
+  body{
+    background:#0b0d12; color:var(--green);
+    font-family:'VT323', monospace; font-size:20px; line-height:1.25;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    padding:14px; overflow-x:hidden;
+  }
+  /* ============ CUTSCENE ============ */
+  #cutscene{position:fixed; inset:0; background:#000; z-index:50; display:flex; flex-direction:column; justify-content:center; align-items:center;}
+  #cutscene .bars{position:absolute; left:0; right:0; height:11%; background:#000; z-index:3;}
+  #cutscene .bars.top{top:0} #cutscene .bars.bot{bottom:0}
+  .scene{position:relative; width:min(720px,96vw); height:300px; overflow:hidden; border:4px solid var(--gold); background:linear-gradient(#1a2e44 0 55%, #2b2f36 55% 100%);}
+  .sun{position:absolute; left:0; right:0; top:38%; height:26px; background:var(--orange); opacity:.9;}
+  .skyline{position:absolute; bottom:45%; left:0; right:0; height:90px; display:flex; align-items:flex-end; gap:6px; padding:0 20px;}
+  .bldg{background:#0e1826; width:34px;}
+  .bldg.ren{width:26px; height:88px; background:#0e1826; position:relative;}
+  .bldg.ren::after{content:''; position:absolute; top:-10px; left:8px; width:10px; height:10px; background:#0e1826;}
+  .road{position:absolute; bottom:0; left:0; right:0; height:45%;}
+  .truck{position:absolute; bottom:26px; left:-260px; width:220px; height:84px; transition:left 2.6s cubic-bezier(.2,.7,.3,1);}
+  .trailer{position:absolute; left:0; bottom:18px; width:150px; height:56px; background:#111; border:3px solid #000; display:flex; align-items:center; justify-content:center;}
+  .trailer span{color:#fff; font-size:26px; letter-spacing:2px;}
+  .trailer b{color:var(--orange)}
+  .cab{position:absolute; left:150px; bottom:18px; width:56px; height:44px; background:#16181d; border:3px solid #000;}
+  .cab::after{content:''; position:absolute; top:6px; right:6px; width:14px; height:12px; background:var(--sky);}
+  .wheel{position:absolute; bottom:2px; width:20px; height:20px; background:#000; border-radius:50%; border:3px solid var(--steel2);}
+  .caption{margin-top:14px; color:var(--gold); font-size:26px; letter-spacing:2px; text-align:center; min-height:32px;}
+  .subcap{color:#c4c9d0; font-size:20px; text-align:center; min-height:24px;}
+  #skipBtn{position:absolute; bottom:16px; right:18px; z-index:5; background:none; border:2px solid var(--steel2); color:var(--steel2); font-family:inherit; font-size:18px; padding:2px 10px; cursor:pointer;}
+  #skipBtn:hover{color:var(--gold); border-color:var(--gold);}
+  /* ============ FRAME / MODES ============ */
+  #modebar{display:flex; gap:8px; align-items:center;}
+  .modebtn{font-family:inherit; font-size:18px; background:var(--panel); color:var(--steel2); border:2px solid var(--steel); padding:3px 12px; cursor:pointer;}
+  .modebtn.on{color:var(--gold); border-color:var(--gold);}
+  #coins{color:var(--gold); font-size:22px; margin-left:10px;}
+  #wrap{position:relative;}
+  /* CRT computer frame */
+  .crtframe{background:#23262d; border:6px solid #101216; border-radius:10px; padding:16px 16px 34px; box-shadow:0 8px 0 #0a0b0e;}
+  .crtframe::after{content:'WeCr8 TERMINAL • MODEL PD-86'; position:absolute; bottom:12px; left:0; right:0; text-align:center; color:#5a5f6a; font-size:14px; letter-spacing:2px;}
+  /* Phone frame */
+  .phoneframe{background:#16181d; border:6px solid #000; border-radius:22px; padding:26px 10px 30px; box-shadow:0 8px 0 #0a0b0e; position:relative;}
+  .phoneframe::before{content:''; position:absolute; top:10px; left:50%; transform:translateX(-50%); width:60px; height:8px; background:#000; border-radius:4px;}
+  .phoneframe::after{content:''; position:absolute; bottom:8px; left:50%; transform:translateX(-50%); width:44px; height:10px; border:2px solid #333; border-radius:6px;}
+  /* Screen */
+  #screen{
+    position:relative; background:#03130b; overflow:hidden;
+    border:3px solid #000;
+    width:min(680px, 92vw); height:430px; padding:12px 14px;
+  }
+  .phone #screen{width:min(340px, 88vw); height:520px; font-size:18px;}
+  #screen::before{ /* scanlines */
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:9;
+    background:repeating-linear-gradient(0deg, rgba(0,0,0,.22) 0 2px, transparent 2px 4px);
+  }
+  #screen::after{ /* phosphor vignette */
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:8;
+    background:radial-gradient(ellipse at center, transparent 55%, rgba(0,20,8,.55) 100%);
+  }
+  .hdr{display:flex; justify-content:space-between; border-bottom:2px solid var(--greendim); padding-bottom:4px; margin-bottom:8px; color:var(--green);}
+  .hdr b{color:#fff;} .hdr .o{color:var(--orange);}
+  .dim{color:var(--greendim);} .wht{color:#e6ffe6;} .gld{color:var(--gold);} .org{color:var(--orange);} .skyc{color:var(--sky);} .red{color:var(--alert);}
+  .row{display:flex; justify-content:space-between; gap:10px; padding:2px 4px; cursor:pointer; border:2px solid transparent;}
+  .row:hover,.row.sel{border-color:var(--green); background:rgba(63,208,138,.08);}
+  .row .nm{flex:1;}
+  fieldset{border:2px solid var(--greendim); padding:8px 10px; margin:8px 0;}
+  legend{color:var(--gold); padding:0 6px;}
+  label{display:flex; justify-content:space-between; align-items:center; gap:8px; margin:4px 0;}
+  input[type=number], select{
+    font-family:inherit; font-size:inherit; background:#062017; color:var(--green);
+    border:2px solid var(--greendim); width:110px; padding:1px 6px;
+  }
+  input:focus, select:focus{outline:none; border-color:var(--green);}
+  .btn{
+    display:inline-block; font-family:inherit; font-size:inherit; cursor:pointer;
+    background:#062017; color:var(--gold); border:2px solid var(--gold); padding:3px 14px; margin-top:6px;
+  }
+  .btn:hover{background:var(--gold); color:#03130b;}
+  .btn.g{color:var(--green); border-color:var(--green);}
+  .btn.g:hover{background:var(--green); color:#03130b;}
+  .btn:disabled{opacity:.4; cursor:default;}
+  .quote-line{display:flex; justify-content:space-between; padding:1px 4px;}
+  .stamp{
+    display:inline-block; border:3px solid var(--gold); color:var(--gold); padding:2px 10px; font-size:28px;
+    transform:rotate(-4deg) scale(1); animation:stampin .25s ease-out;
+  }
+  @keyframes stampin{from{transform:rotate(-14deg) scale(2.2); opacity:0} to{transform:rotate(-4deg) scale(1); opacity:1}}
+  .blink{animation:blink 1s steps(1) infinite;} @keyframes blink{50%{opacity:0}}
+  .nest{white-space:pre; color:var(--sky); font-size:16px; line-height:1.1;}
+  /* delivery mini-scene */
+  #dock{position:relative; height:120px; border:2px solid var(--greendim); margin-top:8px; overflow:hidden; background:linear-gradient(#0a1622 0 60%, #21252c 60% 100%);}
+  #dtruck{position:absolute; bottom:14px; right:-240px; width:200px; height:70px; transition:right 1.4s ease-out;}
+  #dtruck .trailer{width:132px; height:48px; bottom:14px;} #dtruck .trailer span{font-size:20px;}
+  #dtruck .cab{left:132px; width:48px; height:38px; bottom:14px;}
+  .pallet{position:absolute; bottom:14px; left:24px; width:44px; height:0; background:var(--steel2); border:0 solid #000; transition:height .3s;}
+  .pallet.in{height:26px; border-width:3px;}
+  .pallet::after{content:'CERT'; position:absolute; top:-14px; right:-6px; font-size:12px; color:var(--green); opacity:0; transition:opacity .3s .3s;}
+  .pallet.cert::after{opacity:1;}
+  /* Zach dialog */
+  #zach{
+    width:min(720px,96vw); background:var(--panel); border:4px solid var(--gold);
+    display:flex; gap:12px; padding:10px; align-items:flex-start; min-height:86px;
+  }
+  #zface{width:64px; height:64px; flex:none; background:var(--navy); border:3px solid #000; position:relative;}
+  /* pixel zach: cap + beard via css blocks */
+  #zface::before{content:''; position:absolute; left:10px; top:8px; width:44px; height:14px; background:#16181d;}   /* cap */
+  #zface::after{content:''; position:absolute; left:14px; top:22px; width:36px; height:30px; background:#c9a05e;}   /* face */
+  #zface .beard{position:absolute; left:14px; top:38px; width:36px; height:16px; background:#5a4632; z-index:2;}
+  #zface .eyes{position:absolute; left:20px; top:28px; width:24px; height:4px; z-index:3; background:
+    linear-gradient(90deg,#000 0 4px, transparent 4px 20px, #000 20px 24px);}
+  #ztext{flex:1; color:#e6e6e6; font-size:21px;}
+  #zname{color:var(--gold);}
+  .hint{color:#8a919c; font-size:16px; margin-top:2px;}
+</style>
+</head>
+<body>
+
+<!-- ================= CUTSCENE ================= -->
+<div id="cutscene">
+  <div class="bars top"></div><div class="bars bot"></div>
+  <div class="scene" id="sceneBox">
+    <div class="sun"></div>
+    <div class="skyline">
+      <div class="bldg" style="height:40px"></div><div class="bldg" style="height:62px"></div>
+      <div class="bldg ren"></div><div class="bldg" style="height:74px;width:22px"></div>
+      <div class="bldg" style="height:50px"></div><div class="bldg" style="height:30px;width:46px"></div>
+      <div class="bldg" style="height:58px"></div>
+    </div>
+    <div class="road"></div>
+    <div class="truck" id="csTruck">
+      <div class="trailer"><span><b>NOX</b> METALS</span></div>
+      <div class="cab"></div>
+      <div class="wheel" style="left:14px"></div><div class="wheel" style="left:58px"></div>
+      <div class="wheel" style="left:104px"></div><div class="wheel" style="left:168px"></div>
+    </div>
+  </div>
+  <div class="caption" id="csCap"></div>
+  <div class="subcap" id="csSub"></div>
+  <button id="skipBtn">SKIP ▸</button>
+</div>
+
+<!-- ================= GAME UI ================= -->
+<div id="modebar">
+  <span class="dim">DEVICE:</span>
+  <button class="modebtn on" id="mComp">🖥 SHOP PC</button>
+  <button class="modebtn" id="mPhone">📱 PHONE</button>
+  <span id="coins">⛁ <span id="coinVal">2500</span></span>
+</div>
+
+<div id="wrap" class="crtframe">
+  <div id="screen"></div>
+</div>
+
+<div id="zach">
+  <div id="zface"><div class="beard"></div><div class="eyes"></div></div>
+  <div>
+    <div id="zname">ZACH — LVL 34 CNC SPECIALIST</div>
+    <div id="ztext"></div>
+    <div class="hint" id="zhint"></div>
+  </div>
+</div>
+
+<script>
+/* ================= DATA (mirrors data/vendors.json) ================= */
+const CATALOG = [
+  {sku:"AL6061-T6-BAR",  nm:"6061-T6 BAR",      fam:"AL", base:40,  sfm:800, mach:1.00, stock:"IN STOCK",  lead:"NEXT DAY", tip:"Forgiving and everywhere. Start here."},
+  {sku:"AL7075-T651-PLT",nm:"7075-T651 PLATE",  fam:"AL", base:110, sfm:600, mach:0.90, stock:"IN STOCK",  lead:"NEXT DAY", tip:"Aircraft strength. Watch your workholding."},
+  {sku:"AL7050-T7451-PLT",nm:"7050-T7451 PLATE",fam:"AL", base:150, sfm:600, mach:0.90, stock:"IN STOCK",  lead:"NEXT DAY", tip:"Aero structural. Certs matter on this one."},
+  {sku:"AL5052-H32-SHT", nm:"5052-H32 SHEET",   fam:"AL", base:30,  sfm:700, mach:0.95, stock:"IN STOCK",  lead:"NEXT DAY", tip:"Formable. Brackets and boxes."},
+  {sku:"SS304-BAR",      nm:"304 STAINLESS BAR",fam:"SS", base:120, sfm:220, mach:0.45, stock:"SPECIAL",   lead:"3 DAYS",   tip:"Gummy. Rigid setup, positive tools."},
+  {sku:"IN718-BAR",      nm:"INCONEL 718 BAR",  fam:"NI", base:900, sfm:80,  mach:0.15, stock:"SPECIAL",   lead:"5 DAYS",   tip:"Hot-section stuff. Slow down. Way down."},
+];
+const state = { coins: 2500, mode:"comp", view:"boot", sel:0, item:null, dims:{L:12,W:4,T:1,qty:2}, quote:null, stock:[] };
+
+/* ================= HELPERS ================= */
+const $ = s => document.querySelector(s);
+const screen = $("#screen");
+function zach(text, hint=""){ $("#ztext").textContent = text; $("#zhint").textContent = hint; }
+function coins(){ $("#coinVal").textContent = state.coins; }
+function esc(s){ return s.replace(/</g,"&lt;"); }
+
+/* ================= CUTSCENE ================= */
+const shots = [
+  {cap:"DETROIT, MICHIGAN", sub:"", act:()=>{}},
+  {cap:"NOX METALS — AI-POWERED METAL SUPPLY", sub:"robots pick • saw cuts • boxes labeled", act:()=>{}},
+  {cap:"QUOTES IN MILLISECONDS. NOT DAYS.", sub:"", act:()=>{}},
+  {cap:"NEXT-DAY ON YOUR DOCK. CERTS INCLUDED.", sub:"", act:()=>{ $("#csTruck").style.left = "calc(100% + 40px)"; }},
+  {cap:"MORE METAL. REINDUSTRIALIZE.", sub:"press any key", act:()=>{}},
+];
+let shotI = 0, csTimer;
+function playShot(){
+  if(shotI >= shots.length){ endCutscene(); return; }
+  const s = shots[shotI];
+  $("#csCap").textContent = s.cap; $("#csSub").textContent = s.sub; s.act();
+  if(shotI===2){ setTimeout(()=>{ $("#csTruck").style.left="-260px"; },50); }
+  shotI++; csTimer = setTimeout(playShot, shotI===4?2600:2600);
+}
+function endCutscene(){
+  clearTimeout(csTimer);
+  $("#cutscene").style.display="none";
+  boot();
+}
+$("#skipBtn").onclick = endCutscene;
+document.addEventListener("keydown", e=>{ if($("#cutscene").style.display!=="none" && shotI>=shots.length) endCutscene(); });
+setTimeout(()=>{ $("#csTruck").style.left="-260px"; playShot(); }, 400);
+
+/* ================= MODE TOGGLE ================= */
+$("#mComp").onclick = ()=>setMode("comp");
+$("#mPhone").onclick = ()=>setMode("phone");
+function setMode(m){
+  state.mode=m;
+  $("#mComp").classList.toggle("on", m==="comp");
+  $("#mPhone").classList.toggle("on", m==="phone");
+  $("#wrap").className = m==="comp" ? "crtframe" : "phoneframe phone";
+  document.body.classList.toggle("phone", m==="phone");
+  render();
+}
+
+/* ================= TERMINAL VIEWS ================= */
+function hdr(title){
+  return `<div class="hdr"><span><b>NOX</b><span class="o">-NET</span> v2.6</span><span>${title}</span><span class="dim">${state.mode==="comp"?"TTY0":"CELL"}</span></div>`;
+}
+function boot(){
+  state.view="boot"; screen.innerHTML = hdr("CONNECTING");
+  const lines = [
+    "DIALING NOX-NET ..... CARRIER 2400",
+    "HANDSHAKE OK", "AUTH: WECR8-SHOP-001 .... ACCEPTED",
+    "INVENTORY SYNC: 6 FAMILIES / LIVE",
+    "", "WELCOME TO NOX-NET. AMERICA RUNS ON METAL.", ""
+  ];
+  let i=0, out = document.createElement("div");
+  screen.appendChild(out);
+  const t = setInterval(()=>{
+    if(i>=lines.length){ clearInterval(t); menu(); return; }
+    out.innerHTML += esc(lines[i++])+"<br>";
+  }, 220);
+  zach("Can't cut air. Let's get metal on the dock.", "This terminal lives on your planning desk in-game.");
+}
+function menu(){
+  state.view="menu";
+  screen.innerHTML = hdr("MAIN MENU") + `
+    <br>
+    <div class="row" onclick="catalogView()"><span class="gld">[F1]</span><span class="nm">BROWSE CATALOG</span><span class="dim">6 items</span></div>
+    <div class="row" onclick="stockView()"><span class="gld">[F2]</span><span class="nm">MY DOCK / RECEIVED</span><span class="dim">${state.stock.length} pallets</span></div>
+    <div class="row"><span class="gld">[F3]</span><span class="nm">ORDER STATUS</span><span class="dim">--</span></div>
+    <div class="row"><span class="gld">[F4]</span><span class="nm">MILL CERT ARCHIVE</span><span class="skyc">INCLUDED FREE</span></div>
+    <br><span class="dim">▸ tap a line or press F-key</span><span class="blink">_</span>`;
+  zach("Browse the catalog. Aluminum ships next day — steel and exotics take longer. Plan ahead.");
+}
+function catalogView(){
+  state.view="catalog";
+  let rows = CATALOG.map((c,i)=>`
+    <div class="row ${i===state.sel?'sel':''}" onclick="pick(${i})">
+      <span class="wht">${c.nm}</span>
+      <span class="dim">${c.sfm} SFM</span>
+      <span class="${c.stock==='IN STOCK'?'skyc':'org'}">${c.stock}</span>
+      <span class="gld">⛁${c.base}</span>
+    </div>`).join("");
+  screen.innerHTML = hdr("CATALOG") + rows + `<br><span class="dim">▸ select material • [ESC] menu</span>`;
+  zach("SFM is printed right there. That number sets your spindle speed later — remember it.");
+}
+function pick(i){
+  state.sel=i; state.item = CATALOG[i]; state.quote=null;
+  const c = state.item;
+  state.view="dims";
+  screen.innerHTML = hdr("CUT TO SIZE") + `
+    <span class="wht">${c.nm}</span> <span class="dim">// ${c.stock} // LEAD: ${c.lead}</span>
+    <fieldset><legend>DIMENSIONS (IN)</legend>
+      <label>LENGTH <input type="number" id="dL" value="${state.dims.L}" min="1" max="144"></label>
+      <label>WIDTH  <input type="number" id="dW" value="${state.dims.W}" min="1" max="60"></label>
+      <label>THICK  <input type="number" id="dT" value="${state.dims.T}" min="0.125" step="0.125" max="8"></label>
+      <label>QTY    <input type="number" id="dQ" value="${state.dims.qty}" min="1" max="50"></label>
+    </fieldset>
+    <div class="quote-line"><span class="dim">MILL CERT + DFARS</span><span class="skyc">INCLUDED ✔</span></div>
+    <button class="btn" onclick="getQuote()">GET INSTANT QUOTE ▸</button>
+    <button class="btn g" onclick="catalogView()">◂ BACK</button>`;
+  zach(c.tip);
+}
+function getQuote(){
+  state.dims = { L:+$("#dL").value||1, W:+$("#dW").value||1, T:+$("#dT").value||0.5, qty:+$("#dQ").value||1 };
+  state.view="nesting";
+  screen.innerHTML = hdr("NESTING") + `<br><span class="skyc">NOX NEST ▸ OPTIMIZING CUT PATH</span><br><div class="nest" id="nest"></div>`;
+  const steps = [
+    "reading live inventory ......... OK",
+    "plates considered .............. 1,204",
+    "bin-pack combinations .......... 148,882",
+    "drop-stock reuse ............... FOUND",
+    "cut path ....................... LOCKED",
+    "landed price ................... ▼"
+  ];
+  let i=0;
+  const t=setInterval(()=>{
+    if(i>=steps.length){ clearInterval(t); showQuote(); return; }
+    $("#nest").textContent += steps[i++]+"\n";
+  }, 260);
+}
+function calcPrice(){
+  const {L,W,T,qty}=state.dims, c=state.item;
+  const vol = L*W*T;                       // in^3
+  const unit = Math.max(8, Math.round(c.base * (vol/48) )); // 48in^3 ~ base unit
+  const cut = 4 * qty;                     // cut fee per piece
+  return { unit, cut, total: unit*qty + cut };
+}
+function showQuote(){
+  const q = calcPrice(); state.quote=q;
+  const c = state.item, {qty}=state.dims;
+  state.view="quote";
+  screen.innerHTML = hdr("QUOTE — 0.4ms") + `
+    <span class="wht">${c.nm}</span> <span class="dim">${state.dims.L}×${state.dims.W}×${state.dims.T}in ×${qty}</span>
+    <br><br>
+    <div class="quote-line"><span>MATERIAL (×${qty})</span><span>⛁${q.unit*qty}</span></div>
+    <div class="quote-line"><span>SAW CUTS</span><span>⛁${q.cut}</span></div>
+    <div class="quote-line"><span class="dim">MILL CERTS</span><span class="skyc">⛁0 — INCLUDED</span></div>
+    <div class="quote-line"><span class="dim">BROKER MARKUPS</span><span class="skyc">⛁0 — NONE</span></div>
+    <br><span class="stamp">TOTAL ⛁${q.total}</span>
+    <span class="dim"> // LEAD: ${c.lead}</span><br>
+    <button class="btn" onclick="confirmOrder()" ${state.coins<q.total?"disabled":""}>CONFIRM ORDER ▸</button>
+    <button class="btn g" onclick="pick(${state.sel})">◂ EDIT</button>
+    ${state.coins<q.total?'<br><span class="red">INSUFFICIENT COINS — ship more jobs</span>':''}`;
+  zach("Instant number, certs in the box, no phone tag. THAT is how material buying should feel.",
+       "In-game: the Legacy vendor makes you wait 300–900 ticks for a quote. The contrast is the lesson.");
+}
+function confirmOrder(){
+  state.coins -= state.quote.total; coins();
+  state.view="delivery";
+  screen.innerHTML = hdr("ORDER CONFIRMED") + `
+    <span class="gld">PO #${Math.floor(1000+Math.random()*9000)} ACCEPTED</span> — <span class="skyc">TRUCK DISPATCHED</span>
+    <div id="dock">
+      <div class="pallet" id="pallet"></div>
+      <div id="dtruck">
+        <div class="trailer"><span><b style="color:#fff">NOX</b> <span style="color:var(--orange)">METALS</span></span></div>
+        <div class="cab"></div>
+        <div class="wheel" style="left:12px"></div><div class="wheel" style="left:50px"></div><div class="wheel" style="left:92px"></div><div class="wheel" style="left:148px"></div>
+      </div>
+    </div>
+    <div id="dmsg" class="dim">inbound...</div>`;
+  setTimeout(()=>{ $("#dtruck").style.right="10px"; }, 60);
+  setTimeout(()=>{ $("#pallet").classList.add("in","cert"); $("#dmsg").innerHTML='<span class="skyc">RECEIVED ✔ material.received → quest progress + stock updated</span>'; }, 1700);
+  setTimeout(()=>{
+    state.stock.push({nm:state.item.nm, qty:state.dims.qty, sfm:state.item.sfm});
+    screen.innerHTML += `<button class="btn" onclick="menu()">◂ MENU</button> <button class="btn g" onclick="catalogView()">ORDER MORE ▸</button>`;
+    zach("Bar stock on the dock. Smell that? That's inventory.",
+         "Next in-game step: that "+state.item.sfm+" SFM feeds your G-code challenge — RPM = (SFM × 3.82) ÷ dia.");
+  }, 2300);
+}
+function stockView(){
+  state.view="stock";
+  const rows = state.stock.length
+    ? state.stock.map(s=>`<div class="quote-line"><span class="wht">${s.nm}</span><span class="dim">×${s.qty} // ${s.sfm} SFM // CERT ✔</span></div>`).join("")
+    : `<span class="dim">dock is empty. order something.</span>`;
+  screen.innerHTML = hdr("MY DOCK") + "<br>" + rows + `<br><button class="btn g" onclick="menu()">◂ MENU</button>`;
+  zach(state.stock.length ? "Certed and traceable. Aerospace-ready paper trail." : "Empty dock, empty schedule. Call it in.");
+}
+document.addEventListener("keydown", e=>{
+  if(state.view==="menu"){ if(e.key==="F1"){e.preventDefault();catalogView();} if(e.key==="F2"){e.preventDefault();stockView();} }
+  if(e.key==="Escape" && state.view!=="boot") menu();
+});
+coins();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "policyVersion": 1,
+  "currentEdition": "v1",
+  "editions": [
+    {
+      "edition": "v1",
+      "gameRelease": "0.7.0-alpha",
+      "status": "released-review-proof",
+      "manifest": "v1/storybook-manifest.json",
+      "viewer": "v1/index.html",
+      "slides": "v1/slides",
+      "slideCount": 92,
+      "founderCount": 10,
+      "publishingStatus": "source-ready-not-publication-ready"
+    }
+  ]
+}

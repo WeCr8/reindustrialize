@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "playerGoal": "Outgrow every facility through manufacturing mastery, then build a large-scale American manufacturing campus.",
+  "moveRule": "A facility move requires quality, delivery, process mastery, and capital. Production volume alone never unlocks the next building.",
+  "facilities": [
+    {
+      "id": "garage_bay",
+      "chapter": 1,
+      "name": "The Inherited Bay",
+      "scale": "garage",
+      "map": "bay_01",
+      "floorAreaSqFt": 2400,
+      "fantasy": "Turn an almost-empty rented bay into a shop capable of shipping dependable work.",
+      "pressure": "The first CNC, material staging, and inspection area compete for the same limited floor space.",
+      "moveGate": {"jobsInChapter": 5, "distinctJobFamilies": 3, "minimumAverageQuality": 3.0, "certifiedMaterialOrders": 1, "shopClassLessons": 1, "availableCapital": 10000},
+      "next": "job_shop"
+    },
+    {
+      "id": "job_shop",
+      "chapter": 2,
+      "name": "The Job Shop",
+      "scale": "small_factory",
+      "map": "bay_02",
+      "floorAreaSqFt": 12000,
+      "fantasy": "Build departments, hire the first team, and manage multiple jobs at once.",
+      "pressure": "More machines create scheduling, tooling, inspection, and handoff failures.",
+      "moveGate": {"jobsInChapter": 8, "minimumAverageQuality": 4.0, "onTimeRate": 0.85, "headcount": 3, "concurrentJobsCompleted": 5, "documentedInspections": 8, "positiveCashShifts": 3, "availableCapital": 85000},
+      "next": "connected_plant"
+    },
+    {
+      "id": "connected_plant",
+      "chapter": 3,
+      "name": "The Connected Plant",
+      "scale": "regional_factory",
+      "map": "plant_01",
+      "floorAreaSqFt": 45000,
+      "fantasy": "Operate machining cells, quality, shipping, maintenance, and planning as one visible system.",
+      "pressure": "The player can no longer personally see every machine or handoff.",
+      "moveGate": {"jobsInChapter": 10, "minimumAverageQuality": 4.0, "onTimeRate": 0.88, "machinesConnected": 8, "oeeDays": 10, "rootCauseRecoveries": 3, "headcount": 8},
+      "next": "smart_factory"
+    },
+    {
+      "id": "smart_factory",
+      "chapter": 4,
+      "name": "The Smart Factory",
+      "scale": "large_factory",
+      "map": "factory_01",
+      "floorAreaSqFt": 120000,
+      "fantasy": "Design automated cells, controlled tooling, repeatable handoffs, and disciplined production flow.",
+      "pressure": "Automation multiplies good processes and bad processes equally.",
+      "moveGate": {"jobsInChapter": 12, "minimumAverageQuality": 4.2, "onTimeRate": 0.90, "cleanHandoffStreak": 14, "toolsPreset": 100, "automatedCells": 3, "processImprovements": 5},
+      "next": "lights_out_complex"
+    },
+    {
+      "id": "lights_out_complex",
+      "chapter": 5,
+      "name": "The Lights-Out Complex",
+      "scale": "huge_factory",
+      "map": "factory_02",
+      "floorAreaSqFt": 350000,
+      "fantasy": "Run coordinated production halls with pallet systems, cobots, AMRs, and unattended night shifts.",
+      "pressure": "Reliability, maintenance, material flow, and recovery planning become existential.",
+      "moveGate": {"jobsInChapter": 14, "minimumAverageQuality": 4.3, "onTimeRate": 0.92, "robotCycles": 500, "lightsOutNights": 10, "scrapRateMax": 0.03, "recoveryDrills": 5},
+      "next": "american_titan_campus"
+    },
+    {
+      "id": "american_titan_campus",
+      "chapter": 6,
+      "name": "American Titan Campus",
+      "scale": "manufacturing_campus",
+      "map": "campus_01",
+      "floorAreaSqFt": 1000000,
+      "fantasy": "Lead a multi-building manufacturer serving aerospace, energy, robotics, and American industry.",
+      "pressure": "Build leaders, preserve knowledge, develop apprentices, and keep a vast organization aligned.",
+      "endState": "The apprentice becomes the mentor for the next generation while the campus continues operating."
+    }
+  ]
+}

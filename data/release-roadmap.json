@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "lastVerified": "2026-07-18",
+  "currentRelease": {
+    "label": "First Playable Alpha",
+    "build": "0.7",
+    "status": "completable_slice",
+    "publicProductionReady": false,
+    "scope": "Garage Bay opening through Job Shop arrival",
+    "newPlayerMinutes": [30, 45],
+    "automatedE2E": true
+  },
+  "finalRelease": {
+    "label": "1.0 Full Campaign",
+    "status": "planned",
+    "chapters": 6,
+    "levels": 30,
+    "facilities": 6,
+    "mainStoryHours": [10, 12],
+    "completionistHours": [16, 20],
+    "easterEggs": 24
+  },
+  "milestones": [
+    {"order": 0, "id": "first_playable", "status": "complete", "exit": "Garage campaign completes E2E and enters Job Shop"},
+    {"order": 1, "id": "chapter_1_release_complete", "status": "in_progress", "exit": "Inspection, shipping, Shop Class gate, family gate, save/continue, settings, and accessibility complete"},
+    {"order": 2, "id": "chapter_2_management_loop", "status": "planned", "exit": "Concurrent VMC/lathe work, staff assignment, payroll, inspection, and Connected Plant move complete"},
+    {"order": 3, "id": "connected_and_smart_factory_alpha", "status": "planned", "exit": "Chapters 3 and 4 playable with connectivity, OEE, tooling, handoffs, cells, and automation"},
+    {"order": 4, "id": "content_complete_alpha", "status": "planned", "exit": "Chapters 5 and 6, ending, all facilities, 24 Easter eggs, and credits playable"},
+    {"order": 5, "id": "full_campaign_beta", "status": "planned", "exit": "All content locked; saves, balance, accessibility, performance, browsers, controllers, audio, and security validated"},
+    {"order": 6, "id": "release_candidate", "status": "planned", "exit": "No blocker defects; migration, telemetry, recovery, privacy, deployment, rollback, and human asset review approved"},
+    {"order": 7, "id": "version_1_0", "status": "planned", "exit": "Signed release gate and production deployment of complete six-chapter campaign"}
+  ]
+}

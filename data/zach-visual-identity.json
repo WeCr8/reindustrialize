@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "role": "mentor_only",
+  "authoritativeReferences": [
+    "C:/Users/zach/OneDrive/Pictures/20260610_141856.jpg",
+    "C:/Users/zach/OneDrive/Pictures/Screenshot_20260627_131144_Gallery.jpg",
+    "C:/Users/zach/OneDrive/Pictures/Update_ffa.jpg"
+  ],
+  "approvedLook": {
+    "headwear": "black fitted cap",
+    "face": "long narrow face, blue-gray eyes, short brown-and-gray beard",
+    "build": "tall and lean",
+    "outerwear": "heavy charcoal-gray shacket with structured collar and chest pockets",
+    "lower": "blue jeans and brown work shoes",
+    "demeanor": "calm, encouraging, credible shop-floor mentor"
+  },
+  "activeAssets": {
+    "title": {"male": "story-title-male-founder-v1.png", "female": "story-title-female-founder-v1.png"},
+    "prologue": {"male": "story-opening-male-founder-v1.png", "female": "story-opening-female-founder-v1.png"},
+    "chapter2": {"male": "story-expansion-male-founder-v1.png", "female": "story-expansion-female-founder-v1.png"},
+    "dialogPortrait": "sprites/zach_portrait.png",
+    "floorSprite": "sprites/guide_zach.png"
+  },
+  "rules": [
+    "Zach is never the playable character.",
+    "Keep the black cap in active game portraits and scenes.",
+    "Use the charcoal shacket rather than a suit, hoodie, or office attire.",
+    "Preserve the selected player founder as a visually separate character.",
+    "Every scene containing the player requires matching male and female variants."
+  ]
+}

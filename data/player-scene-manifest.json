@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "identityPolicy": "Every active player scene uses a cinematic body-family background plus the exact selected founder sprite overlay.",
+  "founders": {
+    "av_m_01": {"family":"male"},
+    "av_m_founder_02_hd": {"family":"male"},
+    "av_f_founder_hd": {"family":"female"},
+    "av_f_founder_02_hd": {"family":"female"},
+    "av_m_blonde_hd": {"family":"male"},
+    "av_f_blonde_hd": {"family":"female"},
+    "av_m_middle_eastern_hd": {"family":"male"},
+    "av_f_middle_eastern_hd": {"family":"female"},
+    "av_m_indian_hd": {"family":"male"},
+    "av_f_indian_hd": {"family":"female"}
+  },
+  "scenes": {
+    "title": {"active":true,"chapter":0,"containsPlayer":true,"identityOverlay":true,"assets":{"male":"story-title-male-founder-v1.png","female":"story-title-female-founder-v1.png"}},
+    "opening": {"active":true,"chapter":1,"containsPlayer":true,"identityOverlay":true,"assets":{"male":"story-opening-male-founder-v1.png","female":"story-opening-female-founder-v1.png"}},
+    "expansion": {"active":true,"chapter":2,"containsPlayer":true,"identityOverlay":true,"assets":{"male":"story-expansion-male-founder-v1.png","female":"story-expansion-female-founder-v1.png"}}
+  },
+  "newSceneTemplate": {
+    "active": false,
+    "chapter": 0,
+    "containsPlayer": true,
+    "identityOverlay": true,
+    "assets": {"male":"story-SCENE-male-founder-v1.png","female":"story-SCENE-female-founder-v1.png"}
+  }
+}

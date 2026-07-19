@@ -1,0 +1,181 @@
+{
+ "version": "0.5.0",
+ "cdn": "https://assets.wecr8.info/game/",
+ "entries": {
+  "tileset": {
+   "file": "sprites/tileset.png",
+   "sha256": "e67ca9f6355a",
+   "frames": 7,
+   "fw": 32,
+   "fh": 32
+  },
+  "vmc_t2": {
+   "file": "sprites/vmc_t2.png",
+   "sha256": "eb56b10643c7",
+   "frames": 2,
+   "fw": 96,
+   "fh": 96
+  },
+  "lathe_cnc_t2": {
+   "file": "sprites/lathe_cnc_t2.png",
+   "sha256": "2c556bcc810c",
+   "frames": 2,
+   "fw": 96,
+   "fh": 64
+  },
+  "saw_t1": {
+   "file": "sprites/saw_t1.png",
+   "sha256": "b880b1304107",
+   "frames": 2,
+   "fw": 64,
+   "fh": 64
+  },
+  "mill_manual_t1": {
+   "file": "sprites/mill_manual_t1.png",
+   "sha256": "009ab4fd1e2a",
+   "frames": 1,
+   "fw": 64,
+   "fh": 64
+  },
+  "bench_deburr_t1": {
+   "file": "sprites/bench_deburr_t1.png",
+   "sha256": "4e4a196e2c18",
+   "frames": 1,
+   "fw": 64,
+   "fh": 32
+  },
+  "tool_cart": {
+   "file": "sprites/tool_cart.png",
+   "sha256": "958414d1a5cd",
+   "frames": 1,
+   "fw": 64,
+   "fh": 64
+  },
+  "presetter_t4": {
+   "file": "sprites/presetter_t4.png",
+   "sha256": "a689f05eb48f",
+   "frames": 1,
+   "fw": 64,
+   "fh": 64
+  },
+  "toolcrib_rfid_t4": {
+   "file": "sprites/toolcrib_rfid_t4.png",
+   "sha256": "c4ef1b7e1ec1",
+   "frames": 1,
+   "fw": 64,
+   "fh": 64
+  },
+  "handoff_terminal_t4": {
+   "file": "sprites/handoff_terminal_t4.png",
+   "sha256": "e7af76b7baac",
+   "frames": 1,
+   "fw": 32,
+   "fh": 32
+  },
+  "nox_terminal": {
+   "file": "sprites/nox_terminal.png",
+   "sha256": "594a1076d625",
+   "frames": 1,
+   "fw": 32,
+   "fh": 32
+  },
+  "network_node_t3": {
+   "file": "sprites/network_node_t3.png",
+   "sha256": "9a87f7797973",
+   "frames": 1,
+   "fw": 32,
+   "fh": 32
+  },
+  "amr_t5": {
+   "file": "sprites/amr_t5.png",
+   "sha256": "3f25b921abd0",
+   "frames": 1,
+   "fw": 32,
+   "fh": 32
+  },
+  "planning_desk": {
+   "file": "sprites/planning_desk.png",
+   "sha256": "b0d62467ecb3",
+   "frames": 1,
+   "fw": 64,
+   "fh": 32
+  },
+  "whiteboard": {
+   "file": "sprites/whiteboard.png",
+   "sha256": "0a18a47e8d7b",
+   "frames": 1,
+   "fw": 64,
+   "fh": 48
+  },
+  "chalkboard": {
+   "file": "sprites/chalkboard.png",
+   "sha256": "5ca5a40018ca",
+   "frames": 1,
+   "fw": 64,
+   "fh": 48
+  },
+  "cobot_t5": {
+   "file": "sprites/cobot_t5.png",
+   "sha256": "421545f34f1a",
+   "frames": 3,
+   "fw": 32,
+   "fh": 32
+  },
+  "guide_zach": {
+   "file": "sprites/guide_zach.png",
+   "sha256": "a6ce34180ab4",
+   "frames": 2,
+   "fw": 32,
+   "fh": 48
+  },
+  "av_m_01": {
+   "file": "sprites/av_m_01.png",
+   "sha256": "689bbc0797d1",
+   "frames": 2,
+   "fw": 32,
+   "fh": 48
+  },
+  "av_m_02": {
+   "file": "sprites/av_m_02.png",
+   "sha256": "b0863af1ad80",
+   "frames": 2,
+   "fw": 32,
+   "fh": 48
+  },
+  "av_f_01": {
+   "file": "sprites/av_f_01.png",
+   "sha256": "ac77225caddf",
+   "frames": 2,
+   "fw": 32,
+   "fh": 48
+  },
+  "av_f_02": {
+   "file": "sprites/av_f_02.png",
+   "sha256": "961c1883caae",
+   "frames": 2,
+   "fw": 32,
+   "fh": 48
+  },
+  "nox_rep_dana": {
+   "file": "sprites/nox_rep_dana.png",
+   "sha256": "43149278ee0e",
+   "frames": 2,
+   "fw": 32,
+   "fh": 48
+  },
+  "zach_portrait": {
+   "file": "sprites/zach_portrait.png",
+   "sha256": "031f5d1fd369",
+   "frames": 1,
+   "fw": 64,
+   "fh": 64
+  },
+  "nox_pallet": {
+   "file": "sprites/nox_pallet.png",
+   "sha256": "46f212b36038",
+   "frames": 1,
+   "fw": 32,
+   "fh": 32
+  }
+ }
+}

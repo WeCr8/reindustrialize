@@ -1,0 +1,24 @@
+{
+  "categories": [
+    {"id":"machining","label":"MACHINING","questions":[
+      {"id":"raw_stock","question":"Why cut raw stock before CNC?","answer":"The saw gives the CNC a controlled blank. Leave finish allowance so the mill can face clean material, but not so much that you waste cycle time and stock.","voice":"zach_cut_stock"},
+      {"id":"stickout","question":"Why does tool stickout matter?","answer":"Every extra bit of stickout acts like a longer lever. Keep enough reach for the feature and holder clearance, then stop. Short and rigid beats long and hopeful.","voice":"zach_tool_setup"},
+      {"id":"gcode","question":"What should I check before cycle start?","answer":"Trace the program block by block: work offset, tool and length offset, spindle direction, coolant, safe approach, cutting path, and retract. Know where the tool will go before you press start.","voice":"zach_gcode_intro"}
+    ]},
+    {"id":"quality","label":"QUALITY","questions":[
+      {"id":"first_article","question":"Why inspect the first article?","answer":"The first part proves the setup. Check it before the remaining material becomes inventory—or repeated scrap. Record the result and the correction.","voice":"zach_first_article"},
+      {"id":"certs","question":"Why keep material certifications?","answer":"A cert connects the part to alloy, heat lot, chemistry, and properties. Keep that chain intact so you can prove what the customer received.","voice":"zach_order_stock"},
+      {"id":"scrap","question":"What should I do after scrap?","answer":"Contain the problem, identify the cause, change the process, and verify the correction. Scrap is tuition only when the lesson changes the next part.","voice":"zach_scrap_lesson"}
+    ]},
+    {"id":"people","label":"PEOPLE","questions":[
+      {"id":"hire","question":"When should I hire?","answer":"Hire when recurring work exceeds your reliable capacity and cash can carry the wage through a slow stretch. Define the work and the training plan before filling the chair.","voice":"zach_hiring"},
+      {"id":"handoff","question":"What makes a good handoff?","answer":"Write what ran, what comes next, and what looks unusual. Include counts, offsets, tool life, inspection status, and the exact point where the next person starts."},
+      {"id":"training","question":"How do I grow an operator?","answer":"Explain the standard, demonstrate it, let them perform it, then verify understanding. Give responsibility in steps and teach the reason behind every control point."}
+    ]},
+    {"id":"business","label":"BUSINESS","questions":[
+      {"id":"cash","question":"Should I buy another machine?","answer":"Only when demand, staffing, floor space, tooling, and cash support it. Utilization without profitable work is an expensive way to make noise.","voice":"zach_cash_warning"},
+      {"id":"pricing","question":"How should I price a job?","answer":"Price material, setup, cycle time, inspection, outside services, risk, overhead, and margin. A busy shop can still go broke when quotes ignore the whole route."},
+      {"id":"outgrow","question":"When have I outgrown this facility?","answer":"When safe flow, reliable delivery, people development, and profitable demand are constrained by the building—not by unfinished process discipline.","voice":"zach_expansion"}
+    ]}
+  ]
+}

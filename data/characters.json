@@ -1,0 +1,174 @@
+{
+ "characters": [
+  {
+   "id": "guide_zach",
+   "role": "guide",
+   "name": "Zach",
+   "title": "LVL 34 CNC Specialist",
+   "archetype": "teacher and game guide",
+   "portrait": "zach_portrait",
+   "voiceRules": "shop-floor plainspoken, encouraging, zero corporate fluff; teaches the why",
+   "voice": [
+    "We are here to help reindustrialize and help manufacturing dominate in America.",
+    "A bad handoff costs you a whole shift. Write it down or lose it.",
+    "You can't improve what you can't see. Let's get that machine talking.",
+    "Scrap isn't failure. Scrap you don't learn from is failure.",
+    "Everything on this floor obeys math. Let me show you."
+   ],
+   "spriteSpec": {
+    "sheet": "guide_zach",
+    "base": "32x48",
+    "states": [
+     "idle",
+     "walk",
+     "talk",
+     "celebrate",
+     "point",
+     "teach_point",
+     "teach_write",
+     "teach_nod"
+    ]
+   },
+   "portraitVariants": [
+    "default",
+    "zach_chalk_dust"
+   ],
+   "roles": [
+    "game guide",
+    "Shop Class teacher"
+   ]
+  },
+  {
+   "id": "op_rosie",
+   "role": "operator",
+   "name": "Rosie",
+   "archetype": "young-gun apprentice",
+   "hireCost": 800,
+   "wagePerShift": 60,
+   "skills": {
+    "cnc_programming": 1,
+    "automation": 0,
+    "problem_solving": 2,
+    "communication": 1
+   },
+   "growth": {
+    "fast": [
+     "automation"
+    ],
+    "slow": [
+     "communication"
+    ]
+   },
+   "flaw": "skips handoff notes when rushed",
+   "arcQuest": "rosie_learns_handoffs",
+   "voice": [
+    "Cycle's done \u2014 want me to break edges too?",
+    "I can program the cobot. Probably. Mostly.",
+    "Wrote it all in the handoff. Every word. You're welcome, night shift."
+   ],
+   "spriteSpec": {
+    "sheet": "op_rosie",
+    "base": "32x48",
+    "states": [
+     "idle",
+     "walk",
+     "work",
+     "talk",
+     "celebrate"
+    ]
+   }
+  },
+  {
+   "id": "op_earl",
+   "role": "operator",
+   "name": "Earl",
+   "archetype": "30-year journeyman",
+   "hireCost": 2400,
+   "wagePerShift": 140,
+   "skills": {
+    "cnc_programming": 4,
+    "automation": 1,
+    "problem_solving": 4,
+    "communication": 3
+   },
+   "growth": {
+    "fast": [
+     "communication"
+    ],
+    "slow": [
+     "automation"
+    ]
+   },
+   "flaw": "distrusts new tech until it proves itself",
+   "arcQuest": "earl_meets_the_cobot",
+   "voice": [
+    "Ran these parts before you were born. Differently, mind you.",
+    "The machine's fine. Check your workholding.",
+    "Alright. The robot can load. I'll allow it."
+   ],
+   "spriteSpec": {
+    "sheet": "op_earl",
+    "base": "32x48",
+    "states": [
+     "idle",
+     "walk",
+     "work",
+     "talk",
+     "celebrate"
+    ]
+   }
+  },
+  {
+   "id": "bot_crimson",
+   "role": "robot",
+   "name": "CR-1 'Crimson'",
+   "archetype": "machine-tending cobot",
+   "installDowntimeTicks": 600,
+   "maintPerWeek": 150,
+   "stats": {
+    "throughput": 1.2,
+    "faultRate": 0.04,
+    "programmingGate": {
+     "automation": 3
+    }
+   },
+   "glyphs": [
+    "OK",
+    "LOAD",
+    "FAULT",
+    "TEACH"
+   ],
+   "spriteSpec": {
+    "sheet": "cobot_t5",
+    "base": "32x32",
+    "states": [
+     "idle",
+     "move",
+     "pick",
+     "place",
+     "fault"
+    ]
+   }
+  },
+  {
+   "id": "cust_aero",
+   "role": "customer",
+   "name": "Meridian Aerospace",
+   "archetype": "demanding tier-1 aero buyer",
+   "unlocksAtTier": 6,
+   "voice": [
+    "AS9100 or no PO.",
+    "Zero escapes. We mean zero.",
+    "On-time and on-spec \u2014 do that twice and we'll talk LTA."
+   ],
+   "spriteSpec": {
+    "sheet": "cust_aero",
+    "base": "32x48",
+    "states": [
+     "idle",
+     "talk"
+    ]
+   }
+  }
+ ]
+}

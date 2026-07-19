@@ -1,0 +1,10 @@
+import {readFile,stat} from 'node:fs/promises';
+const source=await readFile('demo/remotion/src/real-gameplay-promo.tsx','utf8');
+const root=await readFile('demo/remotion/src/root.tsx','utf8');
+const catalog=JSON.parse(await readFile('videos/promo-catalog.json','utf8'));
+await stat('demo/remotion/public/captures/reindustrialize-full-gameplay-garage-to-job-shop-v3.webm');
+if(!source.includes('OffthreadVideo')||!source.includes('metadata.source'))throw new Error('V4 demos are not sourced from recorded gameplay video');
+for(const id of ['RealGameplayDemoHorizontalV4','RealGameplayFeature45V4','RealGameplayVerticalShortV4','RealGameplaySquareV4'])if(!root.includes(id))throw new Error(`Missing real-gameplay composition ${id}`);
+const v4=catalog.videos.filter(x=>x.id.endsWith('-v4'));
+if(v4.length!==4||v4.some(x=>!x.purpose.includes('real gameplay')))throw new Error('V4 catalog must contain four explicitly real-gameplay exports');
+console.log('PASS: 4 V4 demo compositions and catalog entries are sourced from the validated continuous gameplay recording');

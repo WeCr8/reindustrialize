@@ -1,0 +1,287 @@
+{
+ "tileset": {
+  "file": "tileset.png",
+  "w": 224,
+  "h": 32,
+  "frames": 7,
+  "fw": 32,
+  "fh": 32,
+  "sha256": "e67ca9f6355a"
+ },
+ "vmc_t2": {
+  "file": "vmc_t2.png",
+  "w": 192,
+  "h": 192,
+  "frames": 1,
+  "fw": 192,
+  "fh": 192,
+  "sha256": "eb56b10643c7"
+ },
+ "lathe_cnc_t2": {
+  "file": "lathe_cnc_t2.png",
+  "w": 192,
+  "h": 128,
+  "frames": 1,
+  "fw": 192,
+  "fh": 128,
+  "sha256": "2c556bcc810c"
+ },
+ "saw_t1": {
+  "file": "saw_t1.png",
+  "w": 128,
+  "h": 128,
+  "frames": 1,
+  "fw": 128,
+  "fh": 128,
+  "sha256": "b880b1304107"
+ },
+ "mill_manual_t1": {
+  "file": "mill_manual_t1.png",
+  "w": 128,
+  "h": 128,
+  "frames": 1,
+  "fw": 128,
+  "fh": 128,
+  "sha256": "009ab4fd1e2a"
+ },
+ "bench_deburr_t1": {
+  "file": "bench_deburr_t1.png",
+  "w": 128,
+  "h": 64,
+  "frames": 1,
+  "fw": 128,
+  "fh": 64,
+  "sha256": "4e4a196e2c18"
+ },
+ "tool_cart": {
+  "file": "tool_cart.png",
+  "w": 128,
+  "h": 128,
+  "frames": 1,
+  "fw": 128,
+  "fh": 128,
+  "sha256": "958414d1a5cd"
+ },
+ "presetter_t4": {
+  "file": "presetter_t4.png",
+  "w": 64,
+  "h": 64,
+  "frames": 1,
+  "fw": 64,
+  "fh": 64,
+  "sha256": "a689f05eb48f"
+ },
+ "toolcrib_rfid_t4": {
+  "file": "toolcrib_rfid_t4.png",
+  "w": 64,
+  "h": 64,
+  "frames": 1,
+  "fw": 64,
+  "fh": 64,
+  "sha256": "c4ef1b7e1ec1"
+ },
+ "handoff_terminal_t4": {
+  "file": "handoff_terminal_t4.png",
+  "w": 32,
+  "h": 32,
+  "frames": 1,
+  "fw": 32,
+  "fh": 32,
+  "sha256": "e7af76b7baac"
+ },
+ "nox_terminal": {
+  "file": "nox_terminal.png",
+  "w": 32,
+  "h": 32,
+  "frames": 1,
+  "fw": 32,
+  "fh": 32,
+  "sha256": "594a1076d625"
+ },
+ "network_node_t3": {
+  "file": "network_node_t3.png",
+  "w": 32,
+  "h": 32,
+  "frames": 1,
+  "fw": 32,
+  "fh": 32,
+  "sha256": "9a87f7797973"
+ },
+ "amr_t5": {
+  "file": "amr_t5.png",
+  "w": 32,
+  "h": 32,
+  "frames": 1,
+  "fw": 32,
+  "fh": 32,
+  "sha256": "3f25b921abd0"
+ },
+ "planning_desk": {
+  "file": "planning_desk.png",
+  "w": 128,
+  "h": 64,
+  "frames": 1,
+  "fw": 128,
+  "fh": 64,
+  "sha256": "b0d62467ecb3"
+ },
+ "whiteboard": {
+  "file": "whiteboard.png",
+  "w": 64,
+  "h": 48,
+  "frames": 1,
+  "fw": 64,
+  "fh": 48,
+  "sha256": "0a18a47e8d7b"
+ },
+ "chalkboard": {
+  "file": "chalkboard.png",
+  "w": 64,
+  "h": 48,
+  "frames": 1,
+  "fw": 64,
+  "fh": 48,
+  "sha256": "5ca5a40018ca"
+ },
+ "cobot_t5": {
+  "file": "cobot_t5.png",
+  "w": 96,
+  "h": 32,
+  "frames": 3,
+  "fw": 32,
+  "fh": 32,
+  "sha256": "421545f34f1a"
+ },
+ "guide_zach": {
+  "file": "guide_zach.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "a6ce34180ab4"
+ },
+ "av_m_01": {
+  "file": "av_m_01.png",
+  "w": 128,
+  "h": 96,
+  "frames": 2,
+  "fw": 64,
+  "fh": 96,
+  "sha256": "689bbc0797d1"
+ },
+ "av_f_founder_hd": {
+  "file": "av_f_founder_hd.png",
+  "w": 128,
+  "h": 96,
+  "frames": 2,
+  "fw": 64,
+  "fh": 96,
+  "sha256": "female-founder-hd-v1"
+ },
+ "av_m_founder_02_hd": {
+  "file": "av_m_founder_02_hd.png",
+  "w": 128,
+  "h": 96,
+  "frames": 2,
+  "fw": 64,
+  "fh": 96,
+  "sha256": "df64b5444d71"
+ },
+ "av_f_founder_02_hd": {
+  "file": "av_f_founder_02_hd.png",
+  "w": 128,
+  "h": 96,
+  "frames": 2,
+  "fw": 64,
+  "fh": 96,
+  "sha256": "92db263a6937"
+ },
+ "av_m_blonde_hd": {"file":"av_m_blonde_hd.png","w":128,"h":96,"frames":2,"fw":64,"fh":96,"sha256":"87131204e48d"},
+ "av_f_blonde_hd": {"file":"av_f_blonde_hd.png","w":128,"h":96,"frames":2,"fw":64,"fh":96,"sha256":"f126ff6d8ad1"},
+ "av_m_middle_eastern_hd": {"file":"av_m_middle_eastern_hd.png","w":128,"h":96,"frames":2,"fw":64,"fh":96,"sha256":"110c622ccff0"},
+ "av_f_middle_eastern_hd": {"file":"av_f_middle_eastern_hd.png","w":128,"h":96,"frames":2,"fw":64,"fh":96,"sha256":"12306c3833b0"},
+ "av_m_indian_hd": {"file":"av_m_indian_hd.png","w":128,"h":96,"frames":2,"fw":64,"fh":96,"sha256":"61b338b62e15"},
+ "av_f_indian_hd": {"file":"av_f_indian_hd.png","w":128,"h":96,"frames":2,"fw":64,"fh":96,"sha256":"0566a43c9051"},
+ "av_m_02": {
+  "file": "av_m_02.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "b0863af1ad80"
+ },
+ "av_f_01": {
+  "file": "av_f_01.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "ac77225caddf"
+ },
+ "av_f_02": {
+  "file": "av_f_02.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "961c1883caae"
+ },
+ "op_rosie": {
+  "file": "op_rosie.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "9622c8428ba0"
+ },
+ "op_earl": {
+  "file": "op_earl.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "505b0b1dcc81"
+ },
+ "cust_aero": {
+  "file": "cust_aero.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "8eeb678ccfab"
+ },
+ "nox_rep_dana": {
+  "file": "nox_rep_dana.png",
+  "w": 64,
+  "h": 48,
+  "frames": 2,
+  "fw": 32,
+  "fh": 48,
+  "sha256": "43149278ee0e"
+ },
+ "zach_portrait": {
+  "file": "zach_portrait.png",
+  "w": 64,
+  "h": 64,
+  "frames": 1,
+  "fw": 64,
+  "fh": 64,
+  "sha256": "031f5d1fd369"
+ },
+ "nox_pallet": {
+  "file": "nox_pallet.png",
+  "w": 64,
+  "h": 64,
+  "frames": 1,
+  "fw": 64,
+  "fh": 64,
+  "sha256": "46f212b36038"
+ }
+}

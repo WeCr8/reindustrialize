@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "campaignTime": {"mainStoryHours": [10, 12], "completionistHours": [16, 20], "easterEggCount": 24},
+  "designRule": "A chapter is completed through breadth, quality, and business capability. Raw repetition never unlocks a facility.",
+  "levelScale": {
+    "maximumLevel": 30,
+    "levelsPerChapter": 5,
+    "chapterPhases": ["orient", "learn", "prove", "operate", "graduate"],
+    "xpCurve": "nextLevelXp = round(750 * level^1.35)",
+    "rule": "XP fills a level, but the phase competency must also be demonstrated before promotion."
+  },
+  "qualityScores": {"A": 5, "B": 4, "C": 3, "D": 2, "F": 1},
+  "chapters": [
+    {
+      "chapter": 1, "levels": [1, 5], "facility": "garage_bay", "targetHours": [0.5, 0.75],
+      "title": "Founder and Apprentice", "graduation": "Garage-Capable Manufacturer",
+      "taskArcs": ["name and open the company", "order certified 6061 material", "accept and plan work", "complete drill, pocket, and 3D jobs", "tool selection and stickout", "G-code proofing", "grade and ship five customer jobs"],
+      "gate": {"jobsShipped": 5, "minimumAverageQuality": 3.0, "distinctJobFamilies": 3, "certifiedMaterialOrders": 1, "shopClassLessons": 1}
+    },
+    {
+      "chapter": 2, "levels": [6, 10], "facility": "job_shop", "targetHours": [1.5, 2],
+      "title": "From Craftsperson to Team", "graduation": "Job-Shop Owner",
+      "taskArcs": ["quote and route repeat work", "hire operator and programmer", "assign qualifications", "run VMC and lathe jobs concurrently", "build inspection and shipping disciplines", "cover payroll and reinvest profit"],
+      "gate": {"jobsShippedInChapter": 8, "minimumAverageQuality": 4.0, "onTimeRate": 0.85, "headcount": 3, "concurrentJobsCompleted": 5, "documentedInspections": 8, "positiveCashShifts": 3}
+    },
+    {
+      "chapter": 3, "levels": [11, 15], "facility": "connected_plant", "targetHours": [1.5, 2],
+      "title": "Manage What You Cannot See", "graduation": "Connected-Plant Leader",
+      "taskArcs": ["connect machines", "read OEE and downtime", "schedule machining cells", "establish maintenance and toolroom ownership", "recover bottlenecks", "lead a multi-shift team"],
+      "gate": {"jobsShippedInChapter": 10, "minimumAverageQuality": 4.0, "onTimeRate": 0.88, "machinesConnected": 8, "oeeReviewDays": 10, "rootCauseRecoveries": 3, "headcount": 8}
+    },
+    {
+      "chapter": 4, "levels": [16, 20], "facility": "smart_factory", "targetHours": [2, 2.25],
+      "title": "Standardize and Automate", "graduation": "Smart-Factory Architect",
+      "taskArcs": ["preset and control tools", "standardize digital handoffs", "design fixtures and cells", "install safe cobots", "validate automation capability", "improve flow without hiding defects"],
+      "gate": {"jobsShippedInChapter": 12, "minimumAverageQuality": 4.2, "onTimeRate": 0.9, "toolsPreset": 100, "cleanHandoffStreak": 14, "validatedAutomatedCells": 3, "processImprovements": 5}
+    },
+    {
+      "chapter": 5, "levels": [21, 25], "facility": "lights_out_complex", "targetHours": [2, 2.5],
+      "title": "Reliability at Industrial Scale", "graduation": "Lights-Out Operations Leader",
+      "taskArcs": ["design unattended-ready processes", "coordinate robots and AMRs", "protect material flow", "build preventive maintenance", "plan fault recovery", "complete reliable night production"],
+      "gate": {"jobsShippedInChapter": 14, "minimumAverageQuality": 4.3, "onTimeRate": 0.92, "maximumScrapRate": 0.03, "robotCycles": 500, "successfulLightsOutNights": 10, "recoveryDrills": 5}
+    },
+    {
+      "chapter": 6, "levels": [26, 30], "facility": "american_titan_campus", "targetHours": [2.5, 3],
+      "title": "Build the Institution", "graduation": "American Manufacturing Titan",
+      "taskArcs": ["operate multiple buildings", "win and execute strategic programs", "protect aerospace traceability", "develop department leaders", "launch an apprentice academy", "transfer knowledge and establish the mentor legacy"],
+      "gate": {"jobsShippedInChapter": 16, "minimumAverageQuality": 4.5, "onTimeRate": 0.95, "certifiedProgramJobs": 10, "longTermAgreements": 3, "departmentLeaders": 6, "apprenticesGraduated": 3, "profitableWeeks": 8}
+    }
+  ],
+  "easterEggs": {"total": 24, "perChapter": 4, "visibleEnvironmental": 3, "deepInteractionChain": 1, "rewards": ["cosmetics", "lore", "music", "modest coins"], "neverRequiredForGraduation": true},
+  "antiGrind": {
+    "repeatedJobFamilyCredit": "After three identical jobs in a chapter, additional copies award economy rewards but reduced mastery credit.",
+    "failureRecovery": "D and F grades trigger teaching and a recovery job; they never hard-lock the campaign.",
+    "graduation": "Every gate combines volume, quality, process breadth, and organizational capability."
+  }
+}

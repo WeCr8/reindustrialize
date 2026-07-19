@@ -1,0 +1,1 @@
+-- Intentionally empty. Never seed real identities, emails, credentials, or production saves.

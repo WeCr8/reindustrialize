@@ -1,0 +1,51 @@
+{
+  "fps": 30,
+  "voiceovers": {
+    "zach_welcome": {
+      "startFrame": 45,
+      "durationFrames": 162,
+      "transcript": "I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks.",
+      "segments": [
+        {"from":0,"to":34,"text":"I'm Zach."},
+        {"from":34,"to":91,"text":"I'll teach you how real shops win"},
+        {"from":91,"to":162,"text":"while you choose the customers, equipment, people, and risks."}
+      ]
+    },
+    "zach_expansion": {
+      "startFrame": 45,
+      "durationFrames": 97,
+      "transcript": "You have outgrown the garage. Now build systems, not just parts.",
+      "segments": [
+        {"from":0,"to":48,"text":"You have outgrown the garage."},
+        {"from":48,"to":97,"text":"Now build systems, not just parts."}
+      ]
+    },
+    "player_review_launch": {
+      "role":"player","startFrame":45,"durationFrames":216,
+      "transcript":"I started in a garage, named my own company, and Zach helped me turn one small job into a real manufacturing business.",
+      "segments":[
+        {"from":0,"to":60,"text":"I started in a garage,"},
+        {"from":60,"to":119,"text":"named my own company,"},
+        {"from":119,"to":216,"text":"and Zach helped me turn one small job into a real manufacturing business."}
+      ]
+    },
+    "player_review_gameplay": {
+      "role":"player","startFrame":45,"durationFrames":237,
+      "transcript":"I actually cut the stock, set the CNC tools, checked the G code, and inspected my first part. Every step feels connected.",
+      "segments":[
+        {"from":0,"to":75,"text":"I actually cut the stock, set the CNC tools,"},
+        {"from":75,"to":164,"text":"checked the G code, and inspected my first part."},
+        {"from":164,"to":237,"text":"Every step feels connected."}
+      ]
+    },
+    "player_review_growth": {
+      "role":"player","startFrame":45,"durationFrames":227,
+      "transcript":"What hooked me was outgrowing the garage, hiring a team, and choosing bigger equipment until my shop became a manufacturing powerhouse.",
+      "segments":[
+        {"from":0,"to":75,"text":"What hooked me was outgrowing the garage,"},
+        {"from":75,"to":140,"text":"hiring a team, and choosing bigger equipment"},
+        {"from":140,"to":227,"text":"until my shop became a manufacturing powerhouse."}
+      ]
+    }
+  }
+}

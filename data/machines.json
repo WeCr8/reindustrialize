@@ -1,0 +1,418 @@
+{
+ "$schema": "../packages/game-core/src/machines/schema.ts",
+ "machines": [
+  {
+   "id": "bench_deburr_t1",
+   "name": "Deburr Bench",
+   "class": "bench",
+   "tier": 1,
+   "inspiration": "generic",
+   "footprint": [
+    2,
+    1
+   ],
+   "price": 300,
+   "powerDraw": 0,
+   "cycleSpeed": 0.6,
+   "quality": 0.85,
+   "reliability": 0.99,
+   "requiresOperatorSkill": {},
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": false
+   },
+   "spriteSpec": {
+    "sheet": "bench_deburr_t1",
+    "states": [
+     "idle",
+     "running"
+    ],
+    "frames": {
+     "running": 2
+    }
+   },
+   "questHooks": [
+    "first_finish"
+   ],
+   "zachTip": "Sharp edges ship complaints. Break every edge."
+  },
+  {
+   "id": "saw_t1",
+   "name": "Horizontal Bandsaw",
+   "class": "saw",
+   "tier": 1,
+   "inspiration": "generic 9x16",
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 900,
+   "powerDraw": 1,
+   "cycleSpeed": 0.7,
+   "quality": 0.9,
+   "reliability": 0.96,
+   "requiresOperatorSkill": {},
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": false
+   },
+   "spriteSpec": {
+    "sheet": "saw_t1",
+    "states": [
+     "idle",
+     "running",
+     "alarm"
+    ],
+    "frames": {
+     "running": 3
+    }
+   },
+   "questHooks": [
+    "first_cut"
+   ],
+   "zachTip": "Square stock, square parts. Check your blade."
+  },
+  {
+   "id": "mill_manual_t1",
+   "name": "Knee Mill",
+   "class": "mill",
+   "tier": 1,
+   "inspiration": "Bridgeport",
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 2500,
+   "powerDraw": 1,
+   "cycleSpeed": 0.5,
+   "quality": 0.88,
+   "reliability": 0.97,
+   "requiresOperatorSkill": {},
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": false
+   },
+   "spriteSpec": {
+    "sheet": "mill_manual_t1",
+    "states": [
+     "idle",
+     "running",
+     "setup"
+    ],
+    "frames": {
+     "running": 3
+    }
+   },
+   "questHooks": [
+    "first_part"
+   ],
+   "zachTip": "Every machinist starts here. Feel the cut."
+  },
+  {
+   "id": "vmc_t2",
+   "name": "3-Axis VMC",
+   "class": "vmc",
+   "tier": 2,
+   "inspiration": "Haas VF-2SS",
+   "footprint": [
+    3,
+    3
+   ],
+   "price": 12000,
+   "powerDraw": 3,
+   "cycleSpeed": 1.0,
+   "quality": 0.92,
+   "reliability": 0.95,
+   "requiresOperatorSkill": {
+    "cnc_programming": 2
+   },
+   "automation": {
+    "cobotTendable": true,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "vmc_t2",
+    "states": [
+     "idle",
+     "running",
+     "alarm",
+     "setup"
+    ],
+    "frames": {
+     "running": 4
+    }
+   },
+   "questHooks": [
+    "first_cnc_setup",
+    "connect_machine_live"
+   ],
+   "zachTip": "Warm the spindle up. Cold machine, scrapped part."
+  },
+  {
+   "id": "lathe_cnc_t2",
+   "name": "CNC Lathe",
+   "class": "lathe",
+   "tier": 2,
+   "inspiration": "Haas ST-10",
+   "footprint": [
+    3,
+    2
+   ],
+   "price": 10000,
+   "powerDraw": 3,
+   "cycleSpeed": 1.0,
+   "quality": 0.92,
+   "reliability": 0.95,
+   "requiresOperatorSkill": {
+    "cnc_programming": 2
+   },
+   "automation": {
+    "cobotTendable": true,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "lathe_cnc_t2",
+    "states": [
+     "idle",
+     "running",
+     "alarm",
+     "setup"
+    ],
+    "frames": {
+     "running": 4
+    }
+   },
+   "questHooks": [
+    "first_turned_part"
+   ],
+   "zachTip": "Chuck pressure matters. Thin walls remember everything."
+  },
+  {
+   "id": "network_node_t3",
+   "name": "MTConnect Node",
+   "class": "infra",
+   "tier": 3,
+   "inspiration": "MTConnect agent + managed switch",
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 1800,
+   "powerDraw": 1,
+   "cycleSpeed": 1.0,
+   "quality": 1.0,
+   "reliability": 0.99,
+   "requiresOperatorSkill": {
+    "software_dev": 1
+   },
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "network_node_t3",
+    "states": [
+     "idle",
+     "running"
+    ],
+    "frames": {
+     "running": 2
+    }
+   },
+   "questHooks": [
+    "connect_machine_live"
+   ],
+   "zachTip": "You can't improve what you can't see."
+  },
+  {
+   "id": "presetter_t4",
+   "name": "Tool Presetter",
+   "class": "toolroom",
+   "tier": 4,
+   "inspiration": "ZOLLER",
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 38000,
+   "powerDraw": 2,
+   "cycleSpeed": 1.0,
+   "quality": 0.99,
+   "reliability": 0.98,
+   "requiresOperatorSkill": {
+    "problem_solving": 3
+   },
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "presetter_t4",
+    "states": [
+     "idle",
+     "running"
+    ],
+    "frames": {
+     "running": 2
+    }
+   },
+   "questHooks": [
+    "preset_revolution"
+   ],
+   "zachTip": "Touching off on the machine is paying spindle rates for measurement."
+  },
+  {
+   "id": "toolcrib_rfid_t4",
+   "name": "RFID Tool Crib",
+   "class": "toolroom",
+   "tier": 4,
+   "inspiration": "ToolingHero HERO-CART",
+   "footprint": [
+    2,
+    2
+   ],
+   "price": 22000,
+   "powerDraw": 1,
+   "cycleSpeed": 1.0,
+   "quality": 1.0,
+   "reliability": 0.99,
+   "requiresOperatorSkill": {
+    "communication": 2
+   },
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "toolcrib_rfid_t4",
+    "states": [
+     "idle",
+     "running"
+    ],
+    "frames": {
+     "running": 2
+    }
+   },
+   "questHooks": [
+    "no_more_missing_tools"
+   ],
+   "zachTip": "A missing 1/2 inch endmill costs an hour of hunting. Tag it."
+  },
+  {
+   "id": "handoff_terminal_t4",
+   "name": "Shift Handoff Terminal",
+   "class": "infra",
+   "tier": 4,
+   "inspiration": "JobLine.ai",
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 6000,
+   "powerDraw": 1,
+   "cycleSpeed": 1.0,
+   "quality": 1.0,
+   "reliability": 0.99,
+   "requiresOperatorSkill": {
+    "communication": 2
+   },
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "handoff_terminal_t4",
+    "states": [
+     "idle",
+     "running"
+    ],
+    "frames": {
+     "running": 2
+    }
+   },
+   "questHooks": [
+    "clean_handoff_streak"
+   ],
+   "zachTip": "Night shift can't read your mind. Write it down or lose it."
+  },
+  {
+   "id": "cobot_t5",
+   "name": "Cobot Arm",
+   "class": "robot",
+   "tier": 5,
+   "inspiration": "UR10e class",
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 45000,
+   "powerDraw": 2,
+   "cycleSpeed": 1.2,
+   "quality": 0.95,
+   "reliability": 0.93,
+   "requiresOperatorSkill": {
+    "automation": 3
+   },
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "cobot_t5",
+    "states": [
+     "idle",
+     "move",
+     "pick",
+     "place",
+     "fault"
+    ],
+    "frames": {
+     "move": 4
+    }
+   },
+   "questHooks": [
+    "first_robot_install",
+    "lights_out_night"
+   ],
+   "zachTip": "Robots don't fix a bad process. They run it faster."
+  },
+  {
+   "id": "amr_t5",
+   "name": "AMR Pallet Bot",
+   "class": "robot",
+   "tier": 5,
+   "inspiration": "MiR class",
+   "footprint": [
+    1,
+    1
+   ],
+   "price": 60000,
+   "powerDraw": 2,
+   "cycleSpeed": 1.0,
+   "quality": 1.0,
+   "reliability": 0.94,
+   "requiresOperatorSkill": {
+    "automation": 4
+   },
+   "automation": {
+    "cobotTendable": false,
+    "mtconnect": true
+   },
+   "spriteSpec": {
+    "sheet": "amr_t5",
+    "states": [
+     "idle",
+     "move",
+     "fault"
+    ],
+    "frames": {
+     "move": 4
+    }
+   },
+   "questHooks": [
+    "material_flow_master"
+   ],
+   "zachTip": "If people keep stepping into its lane, the lane is in the wrong place."
+  }
+ ]
+}

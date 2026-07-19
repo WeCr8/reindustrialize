@@ -1,0 +1,8 @@
+{
+  "release": "0.7.0-alpha",
+  "status": "first-playable-alpha",
+  "storybookEdition": "v1",
+  "storybookRequired": true,
+  "storySchemaVersion": 1,
+  "gameplayEvidenceVersion": 5
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "speaker": "Zach Goodbody",
+  "policy": "Reusable mentor responses must support the player's decision without claiming ownership of the player's company or replacing task captions.",
+  "clips": [
+    {"id":"zach_response_check_print","tags":["print","planning","setup"],"use":"Before material, tooling, inspection, or route decisions"},
+    {"id":"zach_response_slow_down","tags":["help","recovery","teaching"],"use":"After repeated uncertainty without an unsafe condition"},
+    {"id":"zach_response_safe_stop","tags":["safety","machine","recovery"],"use":"When setup state is incomplete or potentially unsafe"},
+    {"id":"zach_response_try_again","tags":["retry","encouragement"],"use":"After a recoverable incorrect answer"},
+    {"id":"zach_response_good_correction","tags":["quality","root-cause","encouragement"],"use":"After the player fixes the process"},
+    {"id":"zach_response_verify","tags":["inspection","quality","documentation"],"use":"After completing an operation"},
+    {"id":"zach_response_explain_why","tags":["shop-class","principle","help"],"use":"Before deeper teaching or a follow-up explanation"},
+    {"id":"zach_response_handoff","tags":["people","shift","documentation"],"use":"At job pause, shift change, or delegation"},
+    {"id":"zach_response_cash","tags":["business","cash","pricing"],"use":"Before purchases, quotes, and expansion decisions"},
+    {"id":"zach_response_ask_question","tags":["help","encouragement"],"use":"When the player opens mentor help"},
+    {"id":"zach_response_nice_work","tags":["success","standard-work","team"],"use":"After a high-quality completion"},
+    {"id":"zach_response_next_step","tags":["objective","guidance"],"use":"After Zach provides contextual next-step help"}
+  ]
+}

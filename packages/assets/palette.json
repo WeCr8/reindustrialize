@@ -1,0 +1,6 @@
+{"name":"reindustrialize-32",
+ "brand":{"navy":"#1a2e44","orange":"#e8491d","sky":"#4a9fd4"},
+ "hud":{"gold":"#e8b93b","terminalGreen":"#3fd08a","alert":"#d0433f","purple":"#9b59d0","panel":"#14161c","panelBorder":"#e8b93b"},
+ "steelRamp":["#2b2f36","#4a4f58","#6e747f","#9aa1ab","#c4c9d0"],
+ "warm":["#5a4632","#8a6a48","#c9a05e"],
+ "rules":"All sprites quantize to these + black/white. Ingest fails at >2% off-palette."}

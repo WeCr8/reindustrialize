@@ -1,0 +1,1 @@
+{"name":"@wecr8/game-ui","version":"0.1.0","type":"module","main":"src/index.ts","peerDependencies":{"react":"^18"},"dependencies":{"@wecr8/game-core":"workspace:*","@wecr8/auth":"workspace:*"}}

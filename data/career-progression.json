@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "principle": "The player progresses by building organizational capability, not merely purchasing equipment.",
+  "reputation": {
+    "range": [0, 100],
+    "bands": [
+      {"id": "unknown", "min": 0, "offers": "local repair and simple commercial work"},
+      {"id": "trusted", "min": 35, "offers": "repeat production and regional industrial work"},
+      {"id": "preferred", "min": 60, "offers": "medical, defense-support, and demanding production contracts"},
+      {"id": "strategic", "min": 80, "offers": "aerospace LTAs, energy programs, and national accounts"},
+      {"id": "titan", "min": 95, "offers": "multi-year programs and export-scale manufacturing"}
+    ],
+    "gains": ["A/B delivery grades", "on-time shipments", "clean audits", "repeat customer success"],
+    "losses": ["quality escapes", "late rejected work", "missing certifications", "uncommunicated disruptions"]
+  },
+  "workforce": {
+    "levels": [
+      {"id": "apprentice", "skillPoints": 0, "can": ["assist", "deburr", "material handling"]},
+      {"id": "operator", "skillPoints": 4, "can": ["run proven jobs", "inspect in-process", "write handoffs"]},
+      {"id": "setup_tech", "skillPoints": 9, "can": ["set tools", "set work offsets", "prove programs"]},
+      {"id": "programmer", "skillPoints": 15, "can": ["create programs", "optimize cycles", "train operators"]},
+      {"id": "cell_lead", "skillPoints": 22, "can": ["own a cell", "schedule people", "lead recovery"]},
+      {"id": "department_lead", "skillPoints": 30, "can": ["own metrics", "develop staff", "approve process changes"]}
+    ],
+    "retentionDrivers": ["safe work", "clear priorities", "training", "good tools", "clean handoffs", "credible leadership"]
+  },
+  "customers": [
+    {"tier": 1, "segment": "local_commercial", "needs": ["speed", "basic dimensional quality"], "risk": "price pressure"},
+    {"tier": 2, "segment": "industrial_oem", "needs": ["repeatability", "documented inspection", "delivery"], "risk": "schedule volatility"},
+    {"tier": 3, "segment": "medical_and_defense_support", "needs": ["traceability", "controlled revisions", "process discipline"], "risk": "audit failure"},
+    {"tier": 4, "segment": "aerospace", "needs": ["certified material", "zero escapes", "FAI", "on-time delivery"], "risk": "rejection and reputation loss"},
+    {"tier": 5, "segment": "strategic_programs", "needs": ["capacity assurance", "resilience", "executive visibility"], "risk": "program-wide penalties"}
+  ],
+  "departments": [
+    {"id": "production", "unlocksAtFacility": "garage_bay", "systems": ["saw", "manual machining", "CNC machining", "deburr"]},
+    {"id": "quality", "unlocksAtFacility": "job_shop", "systems": ["inspection plans", "calibration", "nonconformance"]},
+    {"id": "planning", "unlocksAtFacility": "job_shop", "systems": ["RFQ", "routing", "scheduling", "purchasing"]},
+    {"id": "maintenance", "unlocksAtFacility": "connected_plant", "systems": ["PM", "alarms", "spares", "recovery"]},
+    {"id": "toolroom", "unlocksAtFacility": "connected_plant", "systems": ["presetting", "RFID", "tool life"]},
+    {"id": "automation", "unlocksAtFacility": "smart_factory", "systems": ["cobots", "pallet systems", "AMRs", "safety"]},
+    {"id": "engineering", "unlocksAtFacility": "smart_factory", "systems": ["process design", "fixtures", "CAM", "continuous improvement"]},
+    {"id": "supply_chain", "unlocksAtFacility": "lights_out_complex", "systems": ["supplier quality", "capacity", "certs", "multi-site material flow"]},
+    {"id": "apprentice_academy", "unlocksAtFacility": "american_titan_campus", "systems": ["curriculum", "mentorship", "knowledge transfer"]}
+  ],
+  "chapterUnlocks": [
+    {"chapter": 1, "facility": "garage_bay", "machines": ["bench_deburr_t1", "saw_t1", "mill_manual_t1"], "skills": ["cnc_programming", "problem_solving"], "storyGoal": "ship the first five dependable jobs"},
+    {"chapter": 2, "facility": "job_shop", "machines": ["vmc_t2", "lathe_cnc_t2"], "skills": ["communication"], "storyGoal": "turn personal craftsmanship into a repeatable team process"},
+    {"chapter": 3, "facility": "connected_plant", "machines": ["network_node_t3"], "skills": ["software_dev"], "storyGoal": "see and coordinate a floor too large to manage by walking around"},
+    {"chapter": 4, "facility": "smart_factory", "machines": ["presetter_t4", "toolcrib_rfid_t4", "handoff_terminal_t4"], "skills": ["automation"], "storyGoal": "standardize tooling, information, and handoffs"},
+    {"chapter": 5, "facility": "lights_out_complex", "machines": ["cobot_t5", "amr_t5"], "skills": [], "storyGoal": "make reliable unattended production possible"},
+    {"chapter": 6, "facility": "american_titan_campus", "machines": [], "skills": [], "storyGoal": "build leaders and preserve manufacturing knowledge beyond the player"}
+  ],
+  "economySinks": ["wages", "maintenance", "scrap", "training", "rent and utilities", "facility moves", "automation integration", "quality systems"],
+  "prestigeLoop": {"name": "Mentor Legacy", "unlock": "complete american_titan_campus", "effect": "Start a new regional shop with retained blueprints and mentor bonuses while the original campus remains on the leaderboard."}
+}

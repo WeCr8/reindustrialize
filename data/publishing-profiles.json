@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "canonicalSource": "storybook/<edition>/storybook-manifest.json",
+  "profiles": {
+    "digital_storybook": {"target":"responsive HTML and EPUB","layout":"reflowable or fixed after editorial choice","status":"planned"},
+    "comic_ebook": {"target":"fixed-layout EPUB or KPF","readingDirection":"left-to-right","status":"planned"},
+    "short_print_book": {"target":"print-ready single-page PDF","recommendedWorkingTrim":"8.27 x 10.12 inches","bleed":"0.125 inches top, bottom, and outside","minimumImageDpi":300,"status":"planned"},
+    "comic_print_book": {"target":"print-ready single-page PDF","recommendedWorkingTrim":"7.17 x 10.12 inches","bleed":"0.125 inches top, bottom, and outside","minimumImageDpi":300,"status":"planned"}
+  },
+  "warning": "Working profiles are not upload approval. Recheck the current distributor previewer, page-count, color, trim, margin, cover, metadata, rights, and ISBN requirements before publication."
+}

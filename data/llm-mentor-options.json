@@ -1,0 +1,10 @@
+{
+  "enabled": false,
+  "defaultMode": "scripted",
+  "providers": {
+    "openrouter-free": {"apiBase":"https://openrouter.ai/api/v1","model":"openrouter/free","note":"Zero-cost router for prototypes; availability and selected model vary."},
+    "groq": {"apiBase":"https://api.groq.com/openai/v1","model":"set-current-approved-model","note":"Fast OpenAI-compatible option with account-specific free-plan limits."},
+    "huggingface": {"apiBase":"https://router.huggingface.co/v1","model":"set-current-approved-model","note":"Small monthly experimentation credits; not an unlimited production free tier."}
+  },
+  "releaseGates": ["two-user abuse and rate-limit tests pass","prompt-injection and unsafe-machining evaluation passes","privacy and retention disclosures approved","provider data-use policy approved","daily budget and shutdown control configured","scripted fallback remains available","answers never trigger machine state directly","human review set covers machining, quality, people, and business questions"]
+}

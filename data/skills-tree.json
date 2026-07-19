@@ -1,0 +1,9 @@
+{
+  "playerSkills": [
+    {"id":"cnc_programming","name":"CNC Programming","color":"#3fd08a","maxLevel":5,"effectPerLevel":{"cycleSpeed":0.04,"setupScrapChance":-0.05},"levelUpVia":["ship_cnc_jobs","setup_minigame_perfect"]},
+    {"id":"automation","name":"Automation","color":"#3fd08a","maxLevel":5,"effectPerLevel":{"robotThroughput":0.06,"lightsOutTicks":300},"levelUpVia":["robot_installs","lights_out_nights"]},
+    {"id":"software_dev","name":"Software Dev","color":"#4a9fd4","maxLevel":5,"effectPerLevel":{"dashboardSlots":1,"alertSpeed":0.1},"levelUpVia":["build_shop_apps","connect_machines"]},
+    {"id":"problem_solving","name":"Problem Solving","color":"#e8b93b","maxLevel":5,"effectPerLevel":{"breakdownRecovery":0.08,"rootCauseBonus":0.1},"levelUpVia":["recovery_quests","root_cause_minigame"]},
+    {"id":"communication","name":"Communication","color":"#9b59d0","maxLevel":5,"effectPerLevel":{"handoffQuality":0.08,"operatorMorale":0.05},"levelUpVia":["clean_handoffs","operator_arc_quests"]}
+  ]
+}
