@@ -29,7 +29,8 @@ try:
         if desktop.locator("video").count():
             assert desktop.locator("video track[kind='captions'][default]").count() == 1
             assert "gameplay-hero-v7.mp4" in desktop.locator("video").evaluate("el => el.currentSrc")
-            desktop.locator("#soundToggle").click()
+            assert desktop.locator("#soundBeacon").is_visible()
+            desktop.locator("#soundBeacon").click()
             desktop.wait_for_timeout(1200)
             assert desktop.locator("video").evaluate("el => !el.muted && !el.paused && el.readyState >= 3")
         assert desktop.locator("a[href='/game/']").count() >= 3
@@ -50,6 +51,7 @@ try:
         assert mobile.locator("h1").is_visible()
         assert mobile.locator("a[href='/game/']").first.is_visible()
         assert mobile.locator(".hero").is_visible()
+        assert mobile.locator("#soundBeacon").is_visible()
         assert mobile.locator("body").evaluate("el => el.scrollWidth <= innerWidth")
         mobile.screenshot(path=ROOT / "tmp" / "playreind-landing-mobile.png", full_page=True)
         browser.close()
