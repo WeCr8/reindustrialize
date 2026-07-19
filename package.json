@@ -77,7 +77,7 @@
   "storybook:check:version": "node scripts/validate-storybook-versioning.mjs",
   "storybook:release": "pnpm storybook:build && pnpm storybook:export && pnpm storybook:check",
   "test:e2e": "pnpm release:gate && pnpm test:e2e:run",
-  "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py"
+  "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
  },
  "devDependencies": {
   "wrangler": "^4.34.0",
