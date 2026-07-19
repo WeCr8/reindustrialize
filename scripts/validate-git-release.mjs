@@ -7,6 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const fail = [];
 const output = execFileSync('git', ['ls-files', '--cached'], { cwd: root, encoding: 'utf8' });
 const files = output.split(/\r?\n/).filter(Boolean);
+const publishedReleaseMedia = new Set(['apps/playreind-landing/public/media/gameplay-demo-v6.mp4']);
 const forbidden = [
   /^\.env(?!\.example$)(?:\.|$)/,
   /^cloudflare-dist\//,
@@ -26,7 +27,7 @@ const secretPatterns = [
 ];
 
 for (const relative of files) {
-  if (forbidden.some(pattern => pattern.test(relative))) fail.push(`forbidden tracked path: ${relative}`);
+  if (!publishedReleaseMedia.has(relative) && forbidden.some(pattern => pattern.test(relative))) fail.push(`forbidden tracked path: ${relative}`);
   const absolute = path.join(root, relative);
   if (!fs.existsSync(absolute)) continue;
   const stat = fs.statSync(absolute);

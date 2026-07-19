@@ -1,4 +1,8 @@
-# REINDUSTRIALIZE — 16-bit Manufacturing Sim by WeCr8 Solutions
+# REINDUSTRIALIZE — 32-bit Manufacturing RPG by WeCr8 Solutions
+
+> **Release identity:** Development targets `0.7.0-alpha`. After each deployment, compare the current checkout with [https://playreind.com/release.json](https://playreind.com/release.json) and read [the public release notes](https://playreind.com/release-notes/). The source release note is [docs/releases/0.7.0-alpha.md](docs/releases/0.7.0-alpha.md).
+
+> **Amazon Luna preparation:** See [docs/AMAZON_LUNA_RELEASE_PREPARATION.md](docs/AMAZON_LUNA_RELEASE_PREPARATION.md). The bundle prepares listing, review, controller/TV, privacy, and artifact requirements but deliberately stops before identity authorization or submission.
 
 > **Build and test status:** See [FINAL_E2E_STATUS.md](FINAL_E2E_STATUS.md) for the verified gameplay journey, controls, facility progression, and remaining release work.
 

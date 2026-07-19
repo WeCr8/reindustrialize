@@ -24,6 +24,9 @@ try:
         assert desktop.evaluate("typeof gtag === 'function' && Array.isArray(dataLayer)")
         assert "outgrow it" in desktop.locator("h1").inner_text().lower()
         assert desktop.locator("video, .videoFallback").first.is_visible()
+        if desktop.locator("video").count():
+            assert desktop.locator("video track[kind='captions'][default]").count() == 1
+            assert "gameplay-demo-v6.mp4" in desktop.locator("video").evaluate("el => el.currentSrc")
         assert desktop.locator("a[href='/game/']").count() >= 3
         assert desktop.locator(".heroMedia").bounding_box()["y"] < 800
         assert desktop.locator(".proof span").count() == 4

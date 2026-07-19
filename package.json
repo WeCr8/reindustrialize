@@ -1,6 +1,6 @@
 {
   "name": "reindustrialize",
- "version": "0.1.0",
+ "version": "0.7.0-alpha",
  "private": true,
  "packageManager": "pnpm@10.24.0",
  "engines": {"node": ">=22 <23", "pnpm": ">=10.24 <11"},
@@ -30,6 +30,7 @@
     "release:gate": "node scripts/validate-release-gate.mjs && node scripts/validate-equipment-sfx.mjs && node scripts/validate-customer-contracts.mjs && node scripts/validate-visual-storybook.mjs && node scripts/validate-storybook-versioning.mjs && node scripts/validate-workforce-and-founders.mjs",
     "workforce:check": "node scripts/validate-workforce-and-founders.mjs",
     "bot:test:workforce": "python tests/e2e_workforce_conversations.py",
+    "test:e2e:mobile": "python tests/e2e_mobile_game.py",
     "roadmap:check": "node scripts/validate-release-roadmap.mjs",
     "bundle:game": "python scripts/build_level_viewer_v4.py && pnpm release:gate && pnpm test:e2e:run && powershell.exe -ExecutionPolicy Bypass -File scripts/build-game-bundle.ps1",
     "assets:check": "node scripts/validate-runtime-assets.mjs",
@@ -39,6 +40,8 @@
     "tour:check": "node scripts/validate-shop-tour.mjs",
     "tasks:check": "node scripts/validate-production-task-tutorials.mjs",
     "backend:check": "node scripts/validate-backend-readiness.mjs",
+    "amazon:luna:check": "node scripts/validate-amazon-luna-release.mjs",
+    "release:identity": "pnpm cloudflare:build && node -e \"const r=require('./cloudflare-dist/release.json'); console.log(r.version, r.sourceRevision, r.builtAt)\"",
     "llm:check": "node scripts/validate-llm-mentor.mjs",
     "promo:check": "node scripts/validate-promo-videos.mjs",
     "promo:check:voice": "node scripts/validate-promo-voiceovers.mjs",
@@ -93,7 +96,7 @@
     "storybook:check:version": "node scripts/validate-storybook-versioning.mjs",
     "storybook:release": "pnpm storybook:build && pnpm storybook:export && pnpm storybook:check",
     "test:e2e": "pnpm release:gate && pnpm test:e2e:run",
-    "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_chapter_one_story.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_title_control_selection.py && python tests/e2e_startup_performance.py && python tests/e2e_save_pause_settings.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
+    "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_chapter_one_story.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_title_control_selection.py && python tests/e2e_mobile_game.py && python tests/e2e_startup_performance.py && python tests/e2e_save_pause_settings.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
   },
   "devDependencies": {
     "@remotion/cli": "^4.0.491",

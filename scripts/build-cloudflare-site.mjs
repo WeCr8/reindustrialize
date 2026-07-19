@@ -1,12 +1,14 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'apps', 'wecr8-info', 'prototypes', 'shop-floor-viewer.html');
 const landingSource = path.join(root, 'apps', 'playreind-landing', 'index.html');
-const marketingVideo = path.join(root, 'videos', 'horizontal-demos', 'reindustrialize-human-bot-demo-60s-v5.mp4');
+const releaseManifestSource = path.join(root, 'data', 'release-manifest.json');
+const marketingVideo = path.join(root, 'apps', 'playreind-landing', 'public', 'media', 'gameplay-demo-v6.mp4');
 const out = path.join(root, 'cloudflare-dist');
 const assetDir = path.join(out, 'assets', 'runtime');
 const landingAssetDir = path.join(out, 'assets', 'landing');
@@ -51,17 +53,42 @@ html = html.replace(/"([A-Za-z0-9+/]{1024,}={0,2})"/g, (quoted, encoded) => {
   return mime ? JSON.stringify(emitAsset(bytes, mime)) : quoted;
 });
 html = html.replace('im.src=stop.imageType==="equipment"?"data:image/png;base64,"+EQUIPMENT_VIEWS[stop.image]:stop.imageType==="nox"?"data:image/png;base64,"+NOX_MATERIALS_ART:"data:image/png;base64,"+SPRITES[stop.image]', 'im.src=stop.imageType==="equipment"?assetUrl(EQUIPMENT_VIEWS[stop.image]):stop.imageType==="nox"?assetUrl(NOX_MATERIALS_ART):assetUrl(SPRITES[stop.image])');
+html = html.replace('</head>', '<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://playreind.com/game/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"></head>');
 
 if (Buffer.byteLength(html) > maxAssetBytes) throw new Error(`Generated index.html remains larger than Cloudflare's 25 MiB limit.`);
 fs.writeFileSync(path.join(out, 'game', 'index.html'), html);
 let landingHtml = fs.readFileSync(landingSource, 'utf8');
+landingHtml = landingHtml.replaceAll('/media/gameplay-demo-v5.mp4', '/media/gameplay-demo-v6.mp4');
+landingHtml = landingHtml.replace('</video>', '<track kind="captions" src="/assets/landing/gameplay-demo-v6.vtt" srclang="en" label="English" default></video>');
 const analyticsTag = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KRCJP5MHXH');</script>`;
 landingHtml = landingHtml.replace('</head>', `${analyticsTag}</head>`);
 const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
 if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video controls[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
+const publicSource = path.join(root, 'apps', 'playreind-landing', 'public');
+if (!fs.existsSync(publicSource)) throw new Error(`Missing landing discovery files: ${publicSource}`);
+fs.cpSync(publicSource, out, {recursive: true});
+const releaseManifest = JSON.parse(fs.readFileSync(releaseManifestSource, 'utf8'));
+let sourceRevision = process.env.CF_PAGES_COMMIT_SHA || process.env.GITHUB_SHA || 'unknown';
+if (sourceRevision === 'unknown') {
+  try { sourceRevision = execFileSync('git', ['rev-parse', 'HEAD'], {cwd: root, encoding: 'utf8'}).trim(); } catch {}
+}
+const releaseRecord = {
+  product: 'REINDUSTRIALIZE',
+  channel: 'alpha',
+  version: releaseManifest.release,
+  status: releaseManifest.status,
+  sourceRevision,
+  builtAt: new Date().toISOString(),
+  gameplayEvidenceVersion: releaseManifest.gameplayEvidenceVersion,
+  storybookEdition: releaseManifest.storybookEdition,
+  liveUrl: 'https://playreind.com/',
+  gameUrl: 'https://playreind.com/game/'
+};
+fs.writeFileSync(path.join(out, 'release.json'), JSON.stringify(releaseRecord, null, 2));
 fs.copyFileSync(path.join(root, 'packages', 'assets', 'title-screen-zach-v2.png'), path.join(landingAssetDir, 'title-screen.png'));
-if (includeMarketingVideo) fs.copyFileSync(marketingVideo, path.join(out, 'media', 'gameplay-demo-v5.mp4'));
+fs.copyFileSync(path.join(root, 'apps', 'playreind-landing', 'gameplay-demo-v6.vtt'), path.join(landingAssetDir, 'gameplay-demo-v6.vtt'));
+if (includeMarketingVideo) fs.copyFileSync(marketingVideo, path.join(out, 'media', 'gameplay-demo-v6.mp4'));
 fs.writeFileSync(path.join(out, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
