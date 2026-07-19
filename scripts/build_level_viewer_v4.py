@@ -38,6 +38,8 @@ reusable_voice = json.load(open(os.path.join(ROOT, "data", "zach-reusable-voice-
 hire_images = {n[:-4]: base64.b64encode(open(os.path.join(ROOT, "packages", "assets", "hires", n), "rb").read()).decode() for n in os.listdir(os.path.join(ROOT, "packages", "assets", "hires")) if n.endswith(".png")}
 voice_dir = os.path.join(ROOT, "packages", "assets", "audio", "zach")
 zach_voice = {n[:-4]: base64.b64encode(open(os.path.join(voice_dir, n), "rb").read()).decode() for n in os.listdir(voice_dir) if n.endswith(".mp3")}
+sfx_dir = os.path.join(ROOT, "packages", "assets", "audio", "sfx")
+sfx_audio = {n[:-4]: base64.b64encode(open(os.path.join(sfx_dir, n), "rb").read()).decode() for n in os.listdir(sfx_dir) if n.endswith(".mp3")}
 
 html = r"""<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8">
@@ -179,6 +181,7 @@ transform:rotate(-4deg);animation:stampin .25s ease-out;}
   <button id="btour">SHOP TOUR</button>
   <button id="btaskguide">TASK GUIDE</button>
   <button id="bvoice" class="on">🔊 VOICE ON</button>
+  <button id="bsfx" class="on">🔊 MACHINES ON</button>
   <button id="testVoice">TEST ZACH</button>
   <span id="audioState" class="hint" aria-live="polite">VOICE: READY</span>
   <span class="hint"><kbd>←↑↓→</kbd> walk · <kbd>E</kbd>/<kbd>ENTER</kbd> open station · tap ● on mobile</span>
@@ -274,7 +277,11 @@ const HIRE_ROSTER=__HIRE_ROSTER__,HIRE_IMAGES=__HIRE_IMAGES__,FOUNDER_PROFILES=_
 const MENTOR=__MENTOR__;
 const REUSABLE_ZACH=__REUSABLE_ZACH__;
 const ZACH_VOICE=__ZACH_VOICE__;let zachAudio=null,voiceEnabled=localStorage.getItem("reindustrialize.voice")!=="off",voiceVolume=Number(localStorage.getItem("reindustrialize.voiceVolume")||"1");
+const SFX_AUDIO=__SFX_AUDIO__;let sfxLoop=null,sfxEnabled=localStorage.getItem("reindustrialize.sfx")!=="off",sfxVolume=Number(localStorage.getItem("reindustrialize.sfxVolume")||"0.7");
 const assetUrl=(value,mime="image/png")=>value.startsWith("/")?value:"data:"+mime+";base64,"+value;
+function playSfx(id,{loop=false,volume=1}={}){if(!sfxEnabled||!SFX_AUDIO[id])return null;const audio=new Audio(assetUrl(SFX_AUDIO[id],"audio/mpeg"));audio.loop=loop;audio.volume=Math.max(0,Math.min(1,sfxVolume*volume));audio.play().catch(()=>{});if(loop){stopSfxLoop();sfxLoop=audio;}return audio;}
+function stopSfxLoop(){if(sfxLoop){sfxLoop.pause();sfxLoop.currentTime=0;sfxLoop=null;}}
+function updateSfxButton(){const b=document.getElementById("bsfx");b.textContent=sfxEnabled?"🔊 MACHINES ON":"🔇 MACHINES OFF";b.classList.toggle("on",sfxEnabled);}
 function toolArt(kind){const setup=kind==="probe"||kind==="chamfer",key=setup?"setup-tools-atlas-v1":"core-cutters-atlas-v1";return '<span class="toolArt '+(setup?'setup ':'core ')+kind+'" style="background-image:url('+assetUrl(TOOL_ART[key])+')" aria-hidden="true"></span>';}
 function audioStatus(text,bad=false){const el=document.getElementById("audioState");if(el){el.textContent=text;el.style.color=bad?"#ff8075":"var(--green)";}}
 function updateVoiceButton(){const b=document.getElementById("bvoice");if(!b)return;b.textContent=voiceEnabled?"🔊 VOICE ON":"🔇 VOICE OFF";b.classList.toggle("on",voiceEnabled);audioStatus(voiceEnabled?"VOICE: READY":"VOICE: MUTED");}
@@ -303,6 +310,7 @@ document.querySelectorAll(".avatarChoice").forEach(b=>b.onclick=()=>{selectedAva
 document.getElementById("newGame").onclick=()=>{companyName=document.getElementById("companyName").value.trim().toUpperCase()||"AMERICAN FORGE WORKS";playerName=document.getElementById("founderName").value.trim().toUpperCase()||"ALEX MORGAN";document.getElementById("playerName").textContent=playerName;document.getElementById("playerNameM").textContent=playerName;introSequence="opening";setStoryArt("opening");introPages=makePrologue();introStep=0;renderIntro();document.getElementById("titleScreen").classList.add("closed");};
 document.getElementById("titleSettings").onclick=()=>document.getElementById("connect").classList.add("open");
 document.getElementById("bvoice").onclick=()=>{voiceEnabled=!voiceEnabled;localStorage.setItem("reindustrialize.voice",voiceEnabled?"on":"off");if(!voiceEnabled&&zachAudio)zachAudio.pause();updateVoiceButton();if(voiceEnabled)playZach("zach_welcome");};
+document.getElementById("bsfx").onclick=()=>{sfxEnabled=!sfxEnabled;localStorage.setItem("reindustrialize.sfx",sfxEnabled?"on":"off");if(!sfxEnabled)stopSfxLoop();updateSfxButton();if(sfxEnabled)playSfx("machine_power_on",{volume:.65});};updateSfxButton();
 document.getElementById("testVoice").onclick=()=>{voiceEnabled=true;voiceVolume=1;localStorage.setItem("reindustrialize.voice","on");localStorage.setItem("reindustrialize.voiceVolume","1");updateVoiceButton();playZach("zach_welcome");};
 updateVoiceButton();
 document.getElementById("credits").onclick=()=>alert("REINDUSTRIALIZE\nA manufacturing RPG by WeCr8 Solutions\nZach is the mentor. You build the shop.");
@@ -630,12 +638,12 @@ function drawHolder(g,x0,y0){ g.fillStyle="#2b2f36"; g.fillRect(x0-16,y0-28,32,2
   g.fillStyle="#e8b93b"; g.fillRect(x0-16,y0-28,32,3); }
 
 /* ================= RAW STOCK: BANDSAW ================= */
-function openSawTask(){const J=state.job;openOverlay("BANDSAW — CUT RAW STOCK",J.card);showTaskCanvas();curHints=["Saw blanks need finish allowance.","Set the stop to the traveler length, not the final print length.","The gold line is the required saw length: "+J.stockLength.toFixed(2)+' inches.'];
+function openSawTask(){const J=state.job;openOverlay("BANDSAW — CUT RAW STOCK",J.card);showTaskCanvas();playSfx("bandsaw_power_on");curHints=["Saw blanks need finish allowance.","Set the stop to the traveler length, not the final print length.","The gold line is the required saw length: "+J.stockLength.toFixed(2)+' inches.'];
 playZach("zach_cut_stock");
   tz("ZACH: Every CNC job starts as raw stock. Set the stop, cut the blank, and leave the finish allowance.");
   tctrl.innerHTML='<input type="range" id="cutLength" min="3" max="6.5" step="0.05" value="3"><span id="cutLengthValue" style="color:#e8b93b;font-size:22px"></span><button id="cutStock" class="grn">CLAMP & CUT ▸</button>';
   const sl=document.getElementById("cutLength"),value=document.getElementById("cutLengthValue");const render=()=>{const v=Number(sl.value);value.textContent=v.toFixed(2)+' in';drawSawCut(v,J.stockLength);};sl.oninput=render;render();
-  document.getElementById("cutStock").onclick=()=>{const v=Number(sl.value);if(Math.abs(v-J.stockLength)>.08){attempts++;tz("ZACH: That blank misses the traveler length. Reset the stop before cutting.");return;}state.rawStockReady=true;drawSawCut(v,J.stockLength,true);tz("ZACH: Blank cut, labeled, and ready for CNC setup.");setTimeout(()=>{closeOverlay();say("Raw blank ready at "+v.toFixed(2)+' inches.',"Next: gauge the full CNC tool kit.");},700);};}
+  document.getElementById("cutStock").onclick=()=>{const v=Number(sl.value);if(Math.abs(v-J.stockLength)>.08){attempts++;tz("ZACH: That blank misses the traveler length. Reset the stop before cutting.");return;}playSfx("bandsaw_cut");state.rawStockReady=true;drawSawCut(v,J.stockLength,true);tz("ZACH: Blank cut, labeled, and ready for CNC setup.");setTimeout(()=>{playSfx("bandsaw_power_off");closeOverlay();say("Raw blank ready at "+v.toFixed(2)+' inches.',"Next: gauge the full CNC tool kit.");},700);};}
 function drawSawCut(v,target,done=false){tx.fillStyle="#0e1826";tx.fillRect(0,0,480,260);tx.fillStyle="#b9c2cb";tx.fillRect(75,105,330,58);tx.fillStyle="#76818c";tx.fillRect(75+v/6.5*330,95,8,78);const x=75+target/6.5*330;tx.strokeStyle="#e8b93b";tx.lineWidth=3;tx.beginPath();tx.moveTo(x,70);tx.lineTo(x,190);tx.stroke();tx.fillStyle="#e8b93b";tx.font="20px VT323, monospace";tx.fillText("CUT "+target.toFixed(2)+' in',x-42,55);tx.fillStyle=done?"#3fd08a":"#9aa1ab";tx.fillText(done?"✔ STOCK READY":"SET THE MATERIAL STOP",150,225);}
 
 /* ================= TASK 1: TOOL SETUP ================= */
@@ -720,7 +728,7 @@ function openVmcTask(){
   activeTaskTutorialId="prove_gcode";
   playZach("zach_gcode_intro");
   const J=state.job; curHints=J.hints.g; hintI=0;
-  openOverlay("VMC — "+J.gtitle, J.card);showEquipmentView("vmc-open-v1");
+  openOverlay("VMC — "+J.gtitle, J.card);showEquipmentView("vmc-open-v1");playSfx("machine_power_on",{volume:.7});
   tz("ZACH: Program's missing three words. Offset, spindle, coolant. Fill them and press CYCLE START.");
   // program with inputs
   let progHtml='<div class="gcode">';
@@ -753,6 +761,7 @@ function sceneVmcIdle(){
 function runAnim(J){
   showTaskCanvas();
   cancelAnimationFrame(taskAnim);
+  playSfx("cnc_door_close");setTimeout(()=>playSfx("spindle_start"),350);setTimeout(()=>playSfx("coolant_on"),1200);setTimeout(()=>playSfx(J.tool==="twist"?"drill_cut_aluminum":J.tool==="ball"?"ball_mill_cut_aluminum":"end_mill_cut_aluminum",{loop:true}),2200);
   let t=0; const chips=[];
   const pathPts=buildPath(J);
   let seg=0, segT=0, cut=[];
@@ -861,6 +870,7 @@ function topScene(J,pts,seg,segT,cut,chips,t){
 function finishRun(J){
   activeTaskTutorialId="review_quality_result";
   cancelAnimationFrame(taskAnim);
+  stopSfxLoop();playSfx("spindle_stop");setTimeout(()=>playSfx("coolant_off"),900);
   const g=grade();
   tx.fillStyle="rgba(5,6,9,.6)";tx.fillRect(0,0,480,260);
   tx.fillStyle="#e8b93b";tx.font="34px VT323, monospace";tx.fillText("PART COMPLETE",130,110);
@@ -869,7 +879,7 @@ function finishRun(J){
   addCoins(pay); mission("task_vmc");state.toolReady=false;state.rawStockReady=false;state.toolsSet=[];state.jobsShipped++;state.grades.push({A:5,B:4,C:3,D:2,F:1}[g]);awardFounderXp(60+({A:5,B:4,C:3,D:2,F:1}[g])*10);jobIdx++; state.job=null;updateGuide();
   tz("ZACH: "+(g==="A"?"First-try clean. THAT'S craftsmanship — "+pay+" coins.":g<="C"?"Shipped at grade "+g+". Review the misses at Shop Class and the next one's an A. +"+pay+" coins.":"It shipped, barely. Shop Class. Tonight. +"+pay+" coins."));
   tctrl.innerHTML='<button id="tdone" class="grn">BACK TO THE FLOOR ▸</button>';
-  document.getElementById("tdone").onclick=()=>{closeOverlay();
+  document.getElementById("tdone").onclick=()=>{playSfx("machine_power_off",{volume:.7});closeOverlay();
     say("Grade "+g+" recorded. "+state.jobsShipped+" of "+CHAPTER_ONE_TARGET+" Garage jobs shipped.",state.jobsShipped<CHAPTER_ONE_TARGET?"Return to planning for the next customer order.":"Garage mastery proven. Prepare to move your company.");
     if(state.jobsShipped>=CHAPTER_ONE_TARGET&&gradeAverage()>=3)showExpansion();};
 }
@@ -962,7 +972,8 @@ html = (html.replace("__SPRITES__", json.dumps(sprites))
             .replace("__WORKFORCE_CONVERSATIONS__", json.dumps(workforce_conversations))
             .replace("__MENTOR__", json.dumps(mentor_conversations))
             .replace("__REUSABLE_ZACH__", json.dumps(reusable_voice))
-            .replace("__ZACH_VOICE__", json.dumps(zach_voice)))
+            .replace("__ZACH_VOICE__", json.dumps(zach_voice))
+            .replace("__SFX_AUDIO__", json.dumps(sfx_audio)))
 out = os.path.join(ROOT, "apps", "wecr8-info", "prototypes", "shop-floor-viewer.html")
 with open(out, "w", encoding="utf-8") as f: f.write(html)
 print("wrote", out, len(html)//1024, "KB")

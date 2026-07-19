@@ -11,7 +11,7 @@
   "cloudflare:dev": "pnpm cloudflare:build && wrangler dev",
   "cloudflare:deploy": "pnpm cloudflare:build && wrangler deploy",
   "build": "pnpm release:gate && pnpm -r build",
-  "release:gate": "node scripts/validate-release-gate.mjs && node scripts/validate-visual-storybook.mjs && node scripts/validate-storybook-versioning.mjs && node scripts/validate-workforce-and-founders.mjs",
+  "release:gate": "node scripts/validate-release-gate.mjs && node scripts/validate-equipment-sfx.mjs && node scripts/validate-visual-storybook.mjs && node scripts/validate-storybook-versioning.mjs && node scripts/validate-workforce-and-founders.mjs",
   "workforce:check": "node scripts/validate-workforce-and-founders.mjs",
   "bot:test:workforce": "python tests/e2e_workforce_conversations.py",
   "roadmap:check": "node scripts/validate-release-roadmap.mjs",
