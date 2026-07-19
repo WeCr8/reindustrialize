@@ -10,6 +10,8 @@
 
 > **Developer workflow:** Follow [docs/DEVELOPER_WORKFLOW.md](docs/DEVELOPER_WORKFLOW.md). `pnpm game:verify` runs strict types, deterministic unit tests, content/release contracts, backend boundaries, bug-bounty checks, and the Git security guard. `pnpm game:verify:full` adds all browser E2E, the Cloudflare artifact, and the dependency audit.
 
+> **Independent expert review:** See [docs/MULTI_DISCIPLINE_GAME_REVIEW.md](docs/MULTI_DISCIPLINE_GAME_REVIEW.md). The reusable senior game-developer, narrative-designer, and manufacturing-business reviewer contracts live in `data/review-agents.json` and are validated by `pnpm agents:review:check`.
+
 > **Verified game bundle:** Run `pnpm bundle:game` to rebuild the standalone game, enforce release and E2E gates, exclude secrets, produce SHA-256 checksums, and create the versioned Windows/web ZIP under `dist/`.
 
 > **Story production status:** See [STORY_AUDIO_VISUAL_CHECKLIST.md](STORY_AUDIO_VISUAL_CHECKLIST.md) for the ordered storyline, exact voice-caption pairs, required images, runtime triggers, and missing future scenes.

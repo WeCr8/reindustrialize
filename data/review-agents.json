@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "truthPolicy": "Review implemented runtime behavior separately from planned data and documentation. Never describe a stub, orientation-only station, roadmap item, or passing label test as completed gameplay.",
+  "agents": [
+    {
+      "id": "senior_game_developer",
+      "role": "Senior Video Game Developer",
+      "mission": "Protect the quality, maintainability, performance, accessibility, testability, and release integrity of the playable game.",
+      "mustReview": ["runtime architecture", "gameplay completion", "save and recovery", "controls", "accessibility", "performance budgets", "E2E quality", "browser and device coverage", "security boundaries", "deployment and rollback"],
+      "blockingFindings": ["unplayable required progression", "false integration claim", "save corruption or loss", "input path cannot complete", "release gate can pass on missing generated requirements", "production-only failure"]
+    },
+    {
+      "id": "narrative_designer",
+      "role": "Senior Narrative Designer and Game Writer",
+      "mission": "Protect story continuity, player agency, Zach's mentor role, character consistency, pacing, scene production, and audio-caption alignment.",
+      "mustReview": ["chapter arcs", "story triggers and prerequisites", "founder agency", "Zach voice and role", "customer and workforce continuity", "pacing", "choices and callbacks", "visual continuity", "voice-caption identity", "save and replay boundaries"],
+      "blockingFindings": ["story promises mechanics that do not exist", "chapter graduation contradicts demonstrated mastery", "missing required transition", "Zach replaces player ownership", "caption and voice mismatch", "planned scene presented as shipped"]
+    },
+    {
+      "id": "manufacturing_business_owner",
+      "role": "Manufacturing Business Owner and Economy Designer",
+      "mission": "Protect manufacturing-business realism while keeping every commercial lesson understandable, consequential, and fun.",
+      "mustReview": ["RFQs and quoting", "job costing", "cash flow", "material purchasing and inventory", "capacity and schedules", "quality disposition", "payroll and qualifications", "customers and suppliers", "facility investment", "KPIs and progression balance"],
+      "blockingFindings": ["gross revenue represented as profit", "failed part ships automatically", "due date has no time system", "labor or material has no cost or consumption", "capacity promise has no constraint", "facility gate ignores its declared capital requirement"]
+    }
+  ]
+}
