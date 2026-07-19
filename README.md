@@ -8,6 +8,8 @@
 
 > **Game-development audit:** See [docs/GAME_DEVELOPMENT_REPO_AUDIT.md](docs/GAME_DEVELOPMENT_REPO_AUDIT.md) for the repository-wide production assessment, implemented recovery/settings/diagnostics foundation, remaining release blockers, and standard developer commands. Run `pnpm game:doctor` before starting work and `pnpm game:smoke` before handing off a gameplay change.
 
+> **Developer workflow:** Follow [docs/DEVELOPER_WORKFLOW.md](docs/DEVELOPER_WORKFLOW.md). `pnpm game:verify` runs strict types, deterministic unit tests, content/release contracts, backend boundaries, bug-bounty checks, and the Git security guard. `pnpm game:verify:full` adds all browser E2E, the Cloudflare artifact, and the dependency audit.
+
 > **Verified game bundle:** Run `pnpm bundle:game` to rebuild the standalone game, enforce release and E2E gates, exclude secrets, produce SHA-256 checksums, and create the versioned Windows/web ZIP under `dist/`.
 
 > **Story production status:** See [STORY_AUDIO_VISUAL_CHECKLIST.md](STORY_AUDIO_VISUAL_CHECKLIST.md) for the ordered storyline, exact voice-caption pairs, required images, runtime triggers, and missing future scenes.

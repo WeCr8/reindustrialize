@@ -21,14 +21,15 @@ export class QuestEngine {
     for (const qid of [...s.activeQuests]) {
       const def = this.defs.get(qid); if (!def) continue;
       const prog = this.progress.get(qid) ?? def.steps.map(() => 0);
-      const idx = prog.findIndex((c, i) => c < (def.steps[i].count ?? 1));
+      const idx = prog.findIndex((c, i) => c < (def.steps[i]?.count ?? 1));
       if (idx === -1) continue;
       const stepDef = def.steps[idx];
+      if (!stepDef) continue;
       if (stepDef.event !== ev.type) continue;
       if (stepDef.filter && !matches(stepDef.filter, ev.data ?? {})) continue;
-      prog[idx]++;
+      prog[idx] = (prog[idx] ?? 0) + 1;
       this.progress.set(qid, prog);
-      if (prog.every((c, i) => c >= (def.steps[i].count ?? 1))) this.complete(s, def);
+      if (prog.every((c, i) => c >= (def.steps[i]?.count ?? 1))) this.complete(s, def);
     }
   }
 

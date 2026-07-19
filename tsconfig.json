@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "useUnknownInCatchVariables": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@wecr8/game-core": ["packages/game-core/src/index.ts"],
+      "@wecr8/game-ui": ["packages/game-ui/src/index.ts"],
+      "@wecr8/auth": ["packages/auth/src/index.ts"],
+      "@wecr8/backend": ["packages/backend/src/config.ts"]
+    },
+    "types": ["node", "react", "react-dom"]
+  },
+  "include": ["packages/**/*.ts", "packages/**/*.tsx", "apps/**/*.ts", "apps/**/*.tsx", "server/**/*.ts"],
+  "exclude": ["node_modules", "dist", "cloudflare-dist", "demo"]
+}

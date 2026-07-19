@@ -14,7 +14,7 @@ export function rng(seed: number) {
 export function createGame(seed: number, mode: "arcade" | "shop"): GameState {
   return {
     seed, tick: 0, mode,
-    player: { name: "Player", level: 1, xp: 0, coins: 500, reputation: 50, tier: 1,
+    player: { name: "Player", avatarId: "av_m_01", level: 1, xp: 0, coins: 500, reputation: 50, tier: 1,
       skills: { cnc_programming: 0, automation: 0, software_dev: 0, problem_solving: 0, communication: 0 } },
     bay: { id: "bay_01", machines: [] },
     staff: [], jobs: [], activeQuests: ["tut_01_first_cut"], completedQuests: [], eventLog: [],
@@ -23,7 +23,7 @@ export function createGame(seed: number, mode: "arcade" | "shop"): GameState {
 
 /** Player intents enter here; everything is logged for replay. */
 export function dispatch(s: GameState, quests: QuestEngine, type: string, data?: Record<string, unknown>): GameState {
-  const ev: GameEvent = { t: s.tick, type, data };
+  const ev: GameEvent = data ? { t: s.tick, type, data } : { t: s.tick, type };
   s.eventLog.push(ev);
   quests.onEvent(s, ev);
   return s;

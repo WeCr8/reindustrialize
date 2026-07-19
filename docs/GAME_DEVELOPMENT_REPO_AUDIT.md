@@ -20,6 +20,8 @@ This pass added the missing general game-development foundation: local recovery 
 - Lazy startup budget, gamepad, phone pairing, story, tutorial, audio sequence, campaign, workforce, and full Garage completion E2E tests.
 - Content, asset-signature, story-order, tutorial, equipment-SFX, customer, founder, workforce, roadmap, backend-readiness, security, and Git-release validators.
 - CI with pinned Node/pnpm/Python, frozen dependencies, Chromium installation, build budgets, and recovery/input smoke tests.
+- Strict TypeScript validation now covers every workspace source package; deterministic unit tests cover simulation, quests, saves, material ordering, and G-code calculations.
+- Repository tool versions are pinned through package metadata, `.node-version`, and `.python-version`.
 
 ## Remaining release blockers
 

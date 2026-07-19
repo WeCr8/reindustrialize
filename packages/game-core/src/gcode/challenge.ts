@@ -31,7 +31,7 @@ export function checkAnswers(
     const raw = (answers[id] ?? "").trim();
     if (b.validate === "exact") {
       const ok = b.answers.some(a => a.toLowerCase() === raw.toLowerCase());
-      return { id, ok, hint: ok ? undefined : b.hint };
+      return ok ? { id, ok } : { id, ok, hint: b.hint };
     }
     const val = Number(raw);
     if (!Number.isFinite(val)) return { id, ok: false, hint: b.hint };
@@ -49,7 +49,7 @@ export function checkAnswers(
     } else {
       ok = val >= (b.min ?? -Infinity) && val <= (b.max ?? Infinity);
     }
-    return { id, ok, hint: ok ? undefined : b.hint };
+    return ok ? { id, ok } : { id, ok, hint: b.hint };
   });
   return { pass: results.every(r => r.ok), results };
 }
