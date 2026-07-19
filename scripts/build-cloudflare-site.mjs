@@ -8,7 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'apps', 'wecr8-info', 'prototypes', 'shop-floor-viewer.html');
 const landingSource = path.join(root, 'apps', 'playreind-landing', 'index.html');
 const releaseManifestSource = path.join(root, 'data', 'release-manifest.json');
-const marketingVideo = path.join(root, 'apps', 'playreind-landing', 'public', 'media', 'gameplay-demo-v6.mp4');
+const marketingVideo = path.join(root, 'apps', 'playreind-landing', 'public', 'media', 'gameplay-hero-v7.mp4');
 const out = path.join(root, 'cloudflare-dist');
 const assetDir = path.join(out, 'assets', 'runtime');
 const landingAssetDir = path.join(out, 'assets', 'landing');
@@ -58,12 +58,10 @@ html = html.replace('</head>', '<meta name="robots" content="index,follow,max-im
 if (Buffer.byteLength(html) > maxAssetBytes) throw new Error(`Generated index.html remains larger than Cloudflare's 25 MiB limit.`);
 fs.writeFileSync(path.join(out, 'game', 'index.html'), html);
 let landingHtml = fs.readFileSync(landingSource, 'utf8');
-landingHtml = landingHtml.replaceAll('/media/gameplay-demo-v5.mp4', '/media/gameplay-demo-v6.mp4');
-landingHtml = landingHtml.replace('</video>', '<track kind="captions" src="/assets/landing/gameplay-demo-v6.vtt" srclang="en" label="English" default></video>');
 const analyticsTag = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KRCJP5MHXH');</script>`;
 landingHtml = landingHtml.replace('</head>', `${analyticsTag}</head>`);
 const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
-if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video controls[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
+if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
 const publicSource = path.join(root, 'apps', 'playreind-landing', 'public');
 if (!fs.existsSync(publicSource)) throw new Error(`Missing landing discovery files: ${publicSource}`);
@@ -87,8 +85,6 @@ const releaseRecord = {
 };
 fs.writeFileSync(path.join(out, 'release.json'), JSON.stringify(releaseRecord, null, 2));
 fs.copyFileSync(path.join(root, 'packages', 'assets', 'title-screen-zach-v2.png'), path.join(landingAssetDir, 'title-screen.png'));
-fs.copyFileSync(path.join(root, 'apps', 'playreind-landing', 'gameplay-demo-v6.vtt'), path.join(landingAssetDir, 'gameplay-demo-v6.vtt'));
-if (includeMarketingVideo) fs.copyFileSync(marketingVideo, path.join(out, 'media', 'gameplay-demo-v6.mp4'));
 fs.writeFileSync(path.join(out, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin

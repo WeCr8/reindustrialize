@@ -72,7 +72,8 @@
       {"id":"zach_response_next_step","text":"You have the next step. Do it carefully, confirm the result, then come back if something does not match."},
       {"id":"player_review_launch","role":"player","voiceId":"bIHbv24MWmeRgasZH58o","text":"I started in a garage, named my own company, and Zach helped me turn one small job into a real manufacturing business."},
       {"id":"player_review_gameplay","role":"player","voiceId":"bIHbv24MWmeRgasZH58o","text":"I actually cut the stock, set the CNC tools, checked the G code, and inspected my first part. Every step feels connected."},
-      {"id":"player_review_growth","role":"player","voiceId":"bIHbv24MWmeRgasZH58o","text":"What hooked me was outgrowing the garage, hiring a team, and choosing bigger equipment until my shop became a manufacturing powerhouse."}
+      {"id":"player_review_growth","role":"player","voiceId":"bIHbv24MWmeRgasZH58o","text":"What hooked me was outgrowing the garage, hiring a team, and choosing bigger equipment until my shop became a manufacturing powerhouse."},
+      {"id":"hero_campaign_v7","role":"player","voiceId":"bIHbv24MWmeRgasZH58o","modelId":"eleven_v3","text":"[confident] American manufacturing is moving again. [building excitement] In REINDUSTRIALIZE, you do not watch from the sidelines. You build the company. Start in an empty garage. Choose your founder. Learn from Zach. Win the work, order certified material, cut stock, set tools, read real G and M code, and inspect the first article. Then hire the team, expand the floor, and turn one reliable job into a manufacturing powerhouse. [inspiring] This is where builders learn how production really works—one decision, one part, and one promise kept at a time. Your first shift starts now."}
     ]
   },
   "music": {

@@ -12,9 +12,9 @@ test("public discovery files use canonical production URLs and honest release la
   assert.equal(manifest.start_url,"/game/");assert.equal(manifest.icons[0].src,"/favicon.svg");
 });
 
-test("landing metadata exposes canonical, favicon, manifest, social image, and WebSite identity",()=>{
+test("landing metadata exposes canonical, favicon, manifest, social image, and VideoGame identity",()=>{
   const html=fs.readFileSync("apps/playreind-landing/index.html","utf8"),favicon=fs.readFileSync(base+"favicon.svg","utf8");
-  for(const marker of ['rel="canonical" href="https://playreind.com/"','rel="icon" href="/favicon.svg"','rel="manifest" href="/site.webmanifest"','property="og:image"','"@type":"WebSite"'])assert.ok(html.includes(marker),marker);
+  for(const marker of ['rel="canonical" href="https://playreind.com/"','rel="icon" href="/favicon.svg"','rel="manifest" href="/site.webmanifest"','property="og:image"','"@type":"VideoGame"'])assert.ok(html.includes(marker),marker);
   assert.match(favicon,/viewBox="0 0 512 512"/);
 });
 

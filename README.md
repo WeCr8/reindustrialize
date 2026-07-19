@@ -34,7 +34,7 @@
 
 > **Current promo slate:** V2 exports preserve V1 and add running/proximity gameplay across horizontal, vertical, square, long-form, Zach, founder, growth, and scripted-player cuts. See [videos/README.md](videos/README.md); rebuild all current exports with `pnpm media:render:v2` and verify them with `pnpm promo:check:v2-media`.
 
-> **Find the recommended demos:** Open [DEMO_VIDEO_INDEX.md](DEMO_VIDEO_INDEX.md) or run `OPEN_DEMO_VIDEOS.ps1`. V5 is the current recommended slate: a human-style bot completes the live campaign through visible controls, and its uninterrupted run supplies every frame in the new demos. Re-record with `pnpm bot:record:v5`; regenerate all cuts with `pnpm bot:render:slate:v5`.
+> **Current website film:** The V7 homepage campaign film uses real human-bot gameplay, expressive ElevenLabs narration, music ducking, burned-in captions, WebVTT captions, and a tested play-with-sound control. Render it with `pnpm hero:render:v7` and validate it with `pnpm hero:check:v7`. The broader V5 gameplay slate remains indexed in [DEMO_VIDEO_INDEX.md](DEMO_VIDEO_INDEX.md).
 
 > **Visual storybook review:** Open [storybook/v1/index.html](storybook/v1/index.html) for numbered slide-by-slide review of the prologue, all ten founder options, every founder scene variant, the shop tour, production tutorials, and planned art gaps. Rebuild and export every slide with `pnpm storybook:release`.
 

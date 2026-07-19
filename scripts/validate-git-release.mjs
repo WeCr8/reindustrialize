@@ -7,7 +7,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const fail = [];
 const output = execFileSync('git', ['ls-files', '--cached'], { cwd: root, encoding: 'utf8' });
 const files = output.split(/\r?\n/).filter(Boolean);
-const publishedReleaseMedia = new Set(['apps/playreind-landing/public/media/gameplay-demo-v6.mp4']);
+const publishedReleaseMedia = new Set(['apps/playreind-landing/public/media/gameplay-demo-v6.mp4','apps/playreind-landing/public/media/gameplay-hero-v7.mp4']);
 const forbidden = [
   /^\.env(?!\.example$)(?:\.|$)/,
   /^cloudflare-dist\//,

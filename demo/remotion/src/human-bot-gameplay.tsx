@@ -44,3 +44,31 @@ export const HeroGameplayDemoV6:React.FC=()=>{const {durationInFrames}=useVideoC
  <Sequence from={zachStart} durationInFrames={zach.durationFrames}><Audio src={staticFile('audio/zach_welcome.mp3')} volume={.96}/><Caption voice="zach_welcome"/></Sequence>
  {heroV6Segments.map((segment,index)=>{const start=cursor;cursor+=segment.duration;return <Sequence key={`${segment.from}-${index}`} from={start} durationInFrames={segment.duration}><AbsoluteFill><OffthreadVideo muted playbackRate={segment.playbackRate} startFrom={segment.from} src={staticFile(bot.source)} style={{width:'100%',height:'100%',objectFit:'cover'}}/><HeroLabel label={segment.label}/></AbsoluteFill></Sequence>})}
  </AbsoluteFill>};
+
+const campaignV7Segments=[
+ {from:0,duration:240,label:'FOUND YOUR COMPANY'},
+ {from:450,duration:240,label:'MOVE WITH PURPOSE'},
+ {from:2100,duration:240,label:'WIN THE WORK · SOURCE THE STOCK'},
+ {from:2700,duration:240,label:'CUT · TOOL · PROVE THE CODE'},
+ {from:3300,duration:240,label:'RUN THE PROCESS'},
+ {from:4110,duration:240,label:'INSPECT · DELIVER · GROW'},
+];
+const campaignV7Captions=[
+ {from:45,to:190,text:'American manufacturing is moving again.'},
+ {from:190,to:350,text:'In REINDUSTRIALIZE, you do not watch from the sidelines. You build the company.'},
+ {from:350,to:520,text:'Start in an empty garage. Choose your founder. Learn from Zach.'},
+ {from:520,to:690,text:'Win the work, order certified material, and cut stock.'},
+ {from:690,to:850,text:'Set tools, read real G and M code, and inspect the first article.'},
+ {from:850,to:1040,text:'Then hire the team, expand the floor, and turn one reliable job into a manufacturing powerhouse.'},
+ {from:1040,to:1215,text:'This is where builders learn how production really works—'},
+ {from:1215,to:1360,text:'one decision, one part, and one promise kept at a time.'},
+ {from:1360,to:1440,text:'Your first shift starts now.'},
+];
+const CampaignCaption:React.FC=()=>{const frame=useCurrentFrame();const cue=campaignV7Captions.find(x=>frame>=x.from&&frame<x.to);if(!cue)return null;return <div style={{position:'absolute',left:'7%',right:'7%',bottom:'8%',display:'flex',justifyContent:'center'}}><div style={{maxWidth:1420,padding:'14px 22px',background:'rgba(3,8,12,.88)',borderLeft:'6px solid #f4bf35',color:'#fff',font:'800 34px/1.22 Arial',textAlign:'center',textShadow:'2px 2px #000',boxShadow:'0 12px 45px #000b'}}>{cue.text}</div></div>};
+export const HeroCampaignV7:React.FC=()=>{const {durationInFrames}=useVideoConfig();const frame=useCurrentFrame();let cursor=0;return <AbsoluteFill style={{background:'#02070b',overflow:'hidden'}}>
+ <Audio loop src={staticFile('audio/garage_shift.mp3')} volume={(f)=>interpolate(f,[0,30,durationInFrames-30,durationInFrames-1],[0,.055,.055,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'})}/>
+ <Sequence from={30} durationInFrames={1310}><Audio src={staticFile('audio/hero_campaign_v7.mp3')} volume={1}/></Sequence>
+ {campaignV7Segments.map((segment,index)=>{const start=cursor;cursor+=segment.duration;return <Sequence key={segment.from} from={start} durationInFrames={segment.duration}><AbsoluteFill><OffthreadVideo muted startFrom={segment.from} src={staticFile(bot.source)} style={{width:'100%',height:'100%',objectFit:'cover',transform:'scale(1.035)',filter:'contrast(1.08) saturate(.92) brightness(.82)'}}/><div style={{position:'absolute',inset:0,background:'linear-gradient(90deg,rgba(2,7,11,.72),transparent 46%,rgba(2,7,11,.24)),radial-gradient(circle at 50% 44%,transparent 45%,rgba(0,0,0,.55) 100%)'}}/><div style={{position:'absolute',top:36,left:48,color:'#f4bf35',font:'900 21px Arial Black',letterSpacing:5}}>REINDUSTRIALIZE</div><div style={{position:'absolute',top:38,right:48,color:'#e9f0f4',font:'800 15px monospace',letterSpacing:2}}>REAL GAMEPLAY · BUILD 0.7</div><div style={{position:'absolute',left:48,top:'20%',maxWidth:690,color:'#fff'}}><div style={{color:'#40df91',font:'900 18px monospace',letterSpacing:3}}>0{index+1} / 06</div><div style={{marginTop:12,font:'900 54px/.98 Arial Black',textTransform:'uppercase',textShadow:'4px 4px #000'}}>{segment.label}</div></div></AbsoluteFill></Sequence>})}
+ <CampaignCaption/>
+ <div style={{position:'absolute',left:0,bottom:0,height:6,width:`${(frame/(durationInFrames-1))*100}%`,background:'#f4bf35',boxShadow:'0 0 18px #f4bf35'}}/>
+ </AbsoluteFill>};
