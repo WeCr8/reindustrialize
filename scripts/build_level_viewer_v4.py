@@ -304,9 +304,18 @@ function playZach(id){if(!id)return Promise.resolve(false);if(!ZACH_VOICE[id]){a
 let preFounderStep=0,preFounderStarted=false;const preFounderBeats=STORY_PRODUCTION.sequences.pre_founder;
 function renderPreFounder(play=false){const beat=preFounderBeats[preFounderStep];document.getElementById("preFounderArt").src=assetUrl(PRE_FOUNDER_ART[beat.id.replace("pre_founder_","")]);document.getElementById("preFounderKicker").textContent=beat.kicker;document.getElementById("preFounderText").textContent=beat.text;document.getElementById("preFounderNext").textContent=!preFounderStarted?"▶ PLAY ZACH'S INTRO":preFounderStep===preFounderBeats.length-1?"CHOOSE YOUR FOUNDER ▸":"CONTINUE ▸";if(play)playZach(beat.voice);}
 document.getElementById("preFounderNext").onclick=()=>{if(!preFounderStarted){preFounderStarted=true;renderPreFounder(true);return;}preFounderStep++;if(preFounderStep<preFounderBeats.length){renderPreFounder(true);return;}if(zachAudio)zachAudio.pause();document.getElementById("preFounder").classList.add("closed");};renderPreFounder(false);
-const IMG={}; let loaded=0, total=Object.keys(SPRITES).length;
-for(const k in SPRITES){const im=new Image();im.onload=()=>{if(++loaded===total)start();};
-im.src=assetUrl(SPRITES[k]);IMG[k]=im;}
+const IMG={};
+const CORE_SPRITES=new Set(["tileset","bay_01_hd_bg","zach_portrait",...Object.keys(SCENE_MANIFEST.founders),...MAPS.bay_01.placements.map(p=>p.sprite)]);
+let loaded=0,total=CORE_SPRITES.size;
+function loadSprite(key,priority="auto"){
+  if(!SPRITES[key])return Promise.resolve(null);
+  if(IMG[key])return IMG[key]._ready||Promise.resolve(IMG[key]);
+  const im=new Image();IMG[key]=im;im.decoding="async";im.fetchPriority=priority;
+  im._ready=new Promise(resolve=>{im.onload=()=>{if(map)draw();resolve(im)};im.onerror=()=>resolve(null)});
+  im.src=assetUrl(SPRITES[key]);return im._ready;
+}
+function ensureMapSprites(nextMap){return Promise.all(["tileset",nextMap.id==="bay_01"?"bay_01_hd_bg":null,...nextMap.placements.map(p=>p.sprite),selectedAvatar].filter(Boolean).map(k=>loadSprite(k,k===selectedAvatar?"high":"auto")));}
+Promise.all([...CORE_SPRITES].map(k=>loadSprite(k,"high"))).then(()=>{loaded=total;start();});
 document.getElementById("dportimg").src=assetUrl(SPRITES["zach_portrait"]);
 document.getElementById("tzportimg").src=assetUrl(SPRITES["zach_portrait"]);
 document.getElementById("introArt").src=assetUrl(OPENING);
@@ -337,7 +346,7 @@ function assignWorker(h,value){const w=workerFor(h.id);if(!w||(!h.qualifications
 function hireCandidate(h){if(hired.has(h.id))return;if(coins<h.hireCost)return alert("Not enough coins.");coins-=h.hireCost;hired.add(h.id);workers.push({id:h.id,candidate:h,x:P.x+1,y:P.y,assignment:null,status:'MEANDERING',nextMove:0,workPulse:0});addCoins(0);renderHires();}
 function renderHires(){const h=HIRE_ROSTER.candidates[hireIndex],root=document.getElementById("hireCard");document.getElementById("hireCount").textContent=(hireIndex+1)+" / "+HIRE_ROSTER.candidates.length;root.innerHTML='<div class="hireCard panel"><img src="data:image/png;base64,'+HIRE_IMAGES[hireKey(h)]+'"><h3>'+h.name+'</h3><div class="role">'+h.title+' · '+h.shift.toUpperCase()+' SHIFT</div><div>'+h.strength+'</div><div>HIRE '+h.hireCost+' · WAGE '+h.wagePerShift+'/SHIFT</div><div class="hireActions"><button id="viewProfile">VIEW PROFILE</button><button id="hireNow" '+(hired.has(h.id)?'disabled':'')+'>'+(hired.has(h.id)?'HIRED':'HIRE')+'</button></div></div>';document.getElementById("viewProfile").onclick=()=>showProfile(h);document.getElementById("hireNow").onclick=()=>hireCandidate(h);}
 function showProfile(h){const p=document.getElementById("profile");document.getElementById("roster").style.display="none";p.className="open panel";const skills=Object.entries(h.skills).map(([k,v])=>'<div class="skillRow"><span>'+k.replaceAll("_"," ").toUpperCase()+'</span><span>'+"■".repeat(v)+"□".repeat(5-v)+'</span></div>').join("");p.innerHTML='<div class="profileGrid"><img src="data:image/png;base64,'+HIRE_IMAGES[hireKey(h)]+'"><div><div class="ttl">CANDIDATE PROFILE</div><h2>'+h.name+'</h2><div class="role">'+h.title+' · '+h.shift.toUpperCase()+' SHIFT</div>'+skills+'<p><b>STRENGTH:</b> '+h.strength+'</p><p><b>GROWTH:</b> '+h.growthTo.replaceAll("_"," ").toUpperCase()+'</p><p><b>WATCH:</b> '+h.flaw+'</p><p class="qual"><b>QUALIFIED:</b> '+h.qualifications.join(" · ")+'</p><p>HIRE '+h.hireCost+' · WAGE '+h.wagePerShift+'/SHIFT</p><button id="profileBack">◀ BACK TO CANDIDATES</button> <button id="profileHire" '+(hired.has(h.id)?'disabled':'')+'>'+(hired.has(h.id)?'HIRED':'HIRE '+h.name.toUpperCase())+'</button></div></div>';document.getElementById("profileBack").onclick=()=>{p.className="";document.getElementById("roster").style.display="block";renderHires();};document.getElementById("profileHire").onclick=()=>{hireCandidate(h);showProfile(h);};}
-document.getElementById("hirePrev").onclick=()=>{hireIndex=(hireIndex-1+HIRE_ROSTER.candidates.length)%HIRE_ROSTER.candidates.length;renderHires();};document.getElementById("hireNext").onclick=()=>{hireIndex=(hireIndex+1)%HIRE_ROSTER.candidates.length;renderHires();};document.getElementById("bteam").onclick=()=>{hireIndex=0;renderHires();document.getElementById("hire").classList.add("open");};document.getElementById("hireClose").onclick=()=>document.getElementById("hire").classList.remove("open");
+document.getElementById("hirePrev").onclick=()=>{hireIndex=(hireIndex-1+HIRE_ROSTER.candidates.length)%HIRE_ROSTER.candidates.length;renderHires();};document.getElementById("hireNext").onclick=()=>{hireIndex=(hireIndex+1)%HIRE_ROSTER.candidates.length;renderHires();};document.getElementById("bteam").onclick=()=>{loadSprite(HIRE_ROSTER.spriteAtlas);loadSprite(HIRE_ROSTER.profileAtlas);hireIndex=0;renderHires();document.getElementById("hire").classList.add("open");};document.getElementById("hireClose").onclick=()=>document.getElementById("hire").classList.remove("open");
 document.getElementById("talkHire").onclick=()=>{const h=HIRE_ROSTER.candidates[hireIndex],w=workerFor(h.id);if(w)talkWorker(w);else say('Hire '+h.name+' before starting an employee conversation.','Review qualifications, wage, strength, and growth path first.');};
 function renderCampaign(){const root=document.getElementById("campaignGrid");root.innerHTML=CHAPTER_PROGRESSION.chapters.map((chapter,index)=>{const facility=FACILITIES.find(x=>x.id===chapter.facility),state=index===0?"playable":index===1?"development":"locked",label=index===0?"PLAYABLE OPENING CHAPTER":index===1?"IN DEVELOPMENT":"LOCKED · FUTURE CHAPTER",gate=Object.entries(chapter.gate).slice(0,3).map(([k,v])=>k.replaceAll(/([A-Z])/g," $1").toUpperCase()+": "+v).join(" · ");return '<article class="chapterCard '+state+'" data-chapter="'+chapter.chapter+'"><span class="chapterStatus">'+label+'</span><h3>CHAPTER '+chapter.chapter+' · '+chapter.title.toUpperCase()+'</h3><div class="chapterFacility">'+facility.name.toUpperCase()+' · '+facility.floorAreaSqFt.toLocaleString()+' SQ FT</div><div class="chapterTime">TARGET '+chapter.targetHours[0]+'–'+chapter.targetHours[1]+' HOURS</div><p>'+facility.fantasy+'</p><div class="chapterGate">GRADUATION: '+gate+'</div></article>'}).join("");}
 document.getElementById("bcampaign").onclick=()=>{renderCampaign();document.getElementById("campaign").classList.add("open");};document.getElementById("campaignClose").onclick=()=>document.getElementById("campaign").classList.remove("open");
@@ -466,7 +475,7 @@ addEventListener("resize",fit); addEventListener("orientationchange",()=>setTime
 function clampCam(){ if(!map)return;
   cam.x=Math.max(0,Math.min(P.x-Math.floor(VW/2), map.size[0]-VW));
   cam.y=Math.max(0,Math.min(P.y-Math.floor(VH/2), map.size[1]-VH));}
-function setMap(id){cancelMove();map=MAPS[id]; P.x=map.spawn[0]; P.y=map.spawn[1];P.rx=P.x;P.ry=P.y;P.fromX=P.x;P.fromY=P.y; fit(); clampCam();
+function setMap(id){cancelMove();map=MAPS[id];ensureMapSprites(map).then(draw); P.x=map.spawn[0]; P.y=map.spawn[1];P.rx=P.x;P.ry=P.y;P.fromX=P.x;P.fromY=P.y; fit(); clampCam();
   if(ambienceAudio)startAmbience(ambienceForMap());
   say("Job card's on the planning desk. Then hit the tool cart, then the VMC.","Follow NEXT ACHIEVABLE STEP. The pulsing gold box marks your target.");updateGuide();}
 function tileAt(x,y){ const [w,h]=map.size;
@@ -482,14 +491,14 @@ function draw(){
   cx.setTransform(1,0,0,1,0,0); cx.clearRect(0,0,cv.width,cv.height);
   cx.translate(-cam.x*T,-cam.y*T);
   if(map.id==="bay_01"){
-    cx.drawImage(IMG.bay_01_hd_bg,0,0,map.size[0]*T,map.size[1]*T);
+    if(IMG.bay_01_hd_bg?.complete)cx.drawImage(IMG.bay_01_hd_bg,0,0,map.size[0]*T,map.size[1]*T);else{cx.fillStyle="#111923";cx.fillRect(0,0,map.size[0]*T,map.size[1]*T);}
   }else{
     for(let y=cam.y;y<Math.min(map.size[1],cam.y+VH);y++)
       for(let x=cam.x;x<Math.min(map.size[0],cam.x+VW);x++)
-        cx.drawImage(IMG.tileset,tileAt(x,y)*32,0,32,32,x*T,y*T,T,T);
+        if(IMG.tileset?.complete)cx.drawImage(IMG.tileset,tileAt(x,y)*32,0,32,32,x*T,y*T,T,T);
   }
   if(overlays){
-    if(map.amrLane){const[a,b]=map.amrLane;for(let x=a[0];x<=b[0];x++)cx.drawImage(IMG.tileset,2*32,0,32,32,x*T,a[1]*T,T,T);}
+    if(map.amrLane&&IMG.tileset?.complete){const[a,b]=map.amrLane;for(let x=a[0];x<=b[0];x++)cx.drawImage(IMG.tileset,2*32,0,32,32,x*T,a[1]*T,T,T);}
     for(const[zx,zy]of map.powerDrops){cx.fillStyle="#e8b93b";cx.fillRect(zx*T+12,zy*T+12,8,8);cx.strokeStyle="#000";cx.strokeRect(zx*T+12,zy*T+12,8,8);}
     if(map.netLane){const[a,b]=map.netLane;cx.strokeStyle="#4a9fd4";cx.setLineDash([6,4]);cx.beginPath();cx.moveTo(a[0]*T,a[1]*T+6);cx.lineTo((b[0]+1)*T,b[1]*T+6);cx.stroke();cx.setLineDash([]);}
     cx.fillStyle="rgba(74,159,212,.14)";const zr=map.zones.receiving;cx.fillRect(zr[0][0]*T,zr[0][1]*T,(zr[1][0]-zr[0][0]+1)*T,(zr[1][1]-zr[0][1]+1)*T);
@@ -498,11 +507,11 @@ function draw(){
   const items=[...map.placements].sort((a,b)=>(a.tile[1]+a.footprint[1])-(b.tile[1]+b.footprint[1]));
   let pd=false;
   for(const p of items){
-    const a=ATLAS[p.sprite]; if(!a)continue;
+    const a=ATLAS[p.sprite],spriteImage=IMG[p.sprite]; if(!a||!spriteImage?.complete)continue;
     if(!pd&&P.y+1<=p.tile[1]+p.footprint[1]){drawP();pd=true;}
     let fi=0; if(running&&a.frames>1)fi=frame%2;
     const dw=p.footprint[0]*T,dh=Math.min(p.footprint[1]*T,a.fh*(dw/a.fw));
-    cx.drawImage(IMG[p.sprite],fi*a.fw,0,a.fw,a.fh,p.tile[0]*T,p.tile[1]*T+(p.footprint[1]*T-dh),dw,dh);
+    cx.drawImage(spriteImage,fi*a.fw,0,a.fw,a.fh,p.tile[0]*T,p.tile[1]*T+(p.footprint[1]*T-dh),dw,dh);
     if(overlays&&p.label){cx.font="13px VT323, monospace";
       cx.strokeStyle="#000";cx.lineWidth=3;cx.strokeText(p.label,p.tile[0]*T+1,p.tile[1]*T-3);
       cx.fillStyle="#e8b93b";cx.fillText(p.label,p.tile[0]*T+1,p.tile[1]*T-3);}
@@ -515,11 +524,11 @@ function draw(){
   if(moveTarget){const pulse=.55+.35*Math.sin(Date.now()/120);cx.save();cx.strokeStyle=`rgba(63,208,138,${pulse})`;cx.lineWidth=3;cx.beginPath();cx.arc(moveTarget.x*T+T/2,moveTarget.y*T+T/2,10+4*pulse,0,Math.PI*2);cx.stroke();cx.beginPath();cx.moveTo(moveTarget.x*T+18,moveTarget.y*T+32);cx.lineTo(moveTarget.x*T+46,moveTarget.y*T+32);cx.moveTo(moveTarget.x*T+32,moveTarget.y*T+18);cx.lineTo(moveTarget.x*T+32,moveTarget.y*T+46);cx.stroke();cx.restore();}
   const glow=cx.createLinearGradient(0,0,0,map.size[1]*T);glow.addColorStop(0,"rgba(5,10,16,.18)");glow.addColorStop(.55,"rgba(0,0,0,0)");glow.addColorStop(1,"rgba(3,6,10,.18)");cx.fillStyle=glow;cx.fillRect(cam.x*T,cam.y*T,VW*T,VH*T);
 }
-function drawP(){ const a=ATLAS[selectedAvatar];cv.dataset.playerAvatar=selectedAvatar;const moving=performance.now()-P.moveAt<P.moveDuration,run=moving&&P.running,walkFrame=moving?Math.floor(performance.now()/(run?48:90))%2:0;cv.dataset.motion=run?"running":moving?"walking":"idle";
+function drawP(){ const a=ATLAS[selectedAvatar],playerImage=IMG[selectedAvatar];if(!a||!playerImage?.complete){loadSprite(selectedAvatar,"high");return}cv.dataset.playerAvatar=selectedAvatar;const moving=performance.now()-P.moveAt<P.moveDuration,run=moving&&P.running,walkFrame=moving?Math.floor(performance.now()/(run?48:90))%2:0;cv.dataset.motion=run?"running":moving?"walking":"idle";
   const now=performance.now(),stride=run?Math.sin(now/38):Math.sin(now/62),bob=moving?Math.abs(stride)*(run?5:2):0;
   cx.fillStyle=run?"rgba(0,0,0,.22)":"rgba(0,0,0,.3)";cx.beginPath();cx.ellipse(P.rx*T+32,P.ry*T+57,run?28:24,run?5:6,0,0,Math.PI*2);cx.fill();
   if(run){const trail=P.facing==="left"?1:P.facing==="right"?-1:0;cx.save();cx.strokeStyle="rgba(226,235,239,.42)";cx.lineWidth=3;for(let i=0;i<3;i++){const yy=P.ry*T+23+i*11;cx.beginPath();cx.moveTo(P.rx*T+32+trail*20,yy);cx.lineTo(P.rx*T+32+trail*(34+i*5),yy);cx.stroke();}cx.fillStyle="rgba(190,176,145,.42)";cx.beginPath();cx.arc(P.rx*T+22-stride*8,P.ry*T+58,3+Math.abs(stride)*3,0,Math.PI*2);cx.fill();}
-  const py=P.ry*T-32-bob;cx.save();cx.translate(P.rx*T+32,P.ry*T+18);cx.rotate(run?(P.facing==="left"?-.09:P.facing==="right"?.09:stride*.025):0);cx.scale(1+(run?Math.abs(stride)*.025:0),1-(run?Math.abs(stride)*.018:0));cx.translate(-(P.rx*T+32),-(P.ry*T+18));if(P.facing==="left"){cx.translate(P.rx*T+64,0);cx.scale(-1,1);cx.drawImage(IMG[selectedAvatar],walkFrame*a.fw,0,a.fw,a.fh,0,py,64,96);}else cx.drawImage(IMG[selectedAvatar],walkFrame*a.fw,0,a.fw,a.fh,P.rx*T,py,64,96);cx.restore();}
+  const py=P.ry*T-32-bob;cx.save();cx.translate(P.rx*T+32,P.ry*T+18);cx.rotate(run?(P.facing==="left"?-.09:P.facing==="right"?.09:stride*.025):0);cx.scale(1+(run?Math.abs(stride)*.025:0),1-(run?Math.abs(stride)*.018:0));cx.translate(-(P.rx*T+32),-(P.ry*T+18));if(P.facing==="left"){cx.translate(P.rx*T+64,0);cx.scale(-1,1);cx.drawImage(playerImage,walkFrame*a.fw,0,a.fw,a.fh,0,py,64,96);}else cx.drawImage(playerImage,walkFrame*a.fw,0,a.fw,a.fh,P.rx*T,py,64,96);cx.restore();}
 function nearStation(){let best=null,bestD=Infinity;
   for(const p of map.placements){const[px,py]=p.tile,[fw,fh]=p.footprint;
     const dx=Math.max(px-P.x,0,P.x-(px+fw-1)),dy=Math.max(py-P.y,0,P.y-(py+fh-1)),d=dx+dy;

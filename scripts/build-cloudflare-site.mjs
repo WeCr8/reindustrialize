@@ -65,7 +65,13 @@ fs.writeFileSync(path.join(out, '_headers'), `/*
 /assets/runtime/*
   Cache-Control: public, max-age=31536000, immutable
 
+/media/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
 /index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/game/index.html
   Cache-Control: public, max-age=0, must-revalidate
 `);
 fs.writeFileSync(path.join(out, '_redirects'), `/game /game/ 301
