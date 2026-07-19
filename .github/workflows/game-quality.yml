@@ -33,6 +33,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pip install playwright
       - run: python -m playwright install --with-deps chromium
+      - run: pnpm storybook:release
       - run: pnpm game:doctor
       - run: pnpm typecheck
       - run: pnpm test:unit

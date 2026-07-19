@@ -22,7 +22,7 @@ Provider credentials belong only in ignored `.env` or the hosting secret manager
 
 - Pre-commit: secret/output scan and environment doctor.
 - Pre-push: strict types, unit tests, content/release contracts, backend boundary, bug-bounty baseline, and Git security scan.
-- Pull request: strict TypeScript, deterministic unit tests, production build, performance budget, save recovery, Xbox, and phone control tests.
+- Pull request: regenerate versioned storybook proofs from a clean checkout, then run strict TypeScript, deterministic unit tests, production build, performance budget, save recovery, Xbox, and phone control tests.
 - Main release: full E2E, dependency audit, backend boundary, Cloudflare artifact, deployment verification, and rollback readiness.
 
 ## Generated source rule
