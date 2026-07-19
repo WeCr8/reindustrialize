@@ -1,0 +1,41 @@
+name: Game quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: game-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  playable-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.24.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pnpm install --frozen-lockfile
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: pnpm game:doctor
+      - run: pnpm cloudflare:build
+      - run: python tests/e2e_startup_performance.py
+      - run: python tests/e2e_save_pause_settings.py
+      - run: python tests/e2e_gamepad.py
+      - run: python tests/e2e_phone_controller.py

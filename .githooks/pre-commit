@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+pnpm security:git
+pnpm game:doctor
