@@ -1,6 +1,6 @@
 # Growth Roadmap and Release Status
 
-Last verified: **2026-07-18**  
+Last verified: **2026-07-18**
 Canonical machine-readable status: `data/release-roadmap.json`
 
 ## Executive status

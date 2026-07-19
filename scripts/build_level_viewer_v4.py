@@ -789,12 +789,12 @@ function buildPath(J){
     return pts;
   }
   // dome: side-view arc passes
-  const pts=[{x:80,y:60,rapid:true}]; 
+  const pts=[{x:80,y:60,rapid:true}];
   for(let p=0;p<3;p++){
     const dir=p%2===0;
     for(let i=0;i<=20;i++){
       const xx=dir? 100+i*14 : 380-i*14;
-      const yy=190-Math.sqrt(Math.max(0,1-Math.pow((xx-240)/140,2)))*70 - p*0; 
+      const yy=190-Math.sqrt(Math.max(0,1-Math.pow((xx-240)/140,2)))*70 - p*0;
       pts.push({x:xx,y:yy-6+p*3});
     }
   }
