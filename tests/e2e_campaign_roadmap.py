@@ -18,7 +18,9 @@ with sync_playwright() as p:
     for index in range(2,6):assert "LOCKED" in cards.nth(index).inner_text()
     assert "2,400 SQ FT" in cards.nth(0).inner_text()
     assert "1,000,000 SQ FT" in cards.nth(5).inner_text()
-    assert page.evaluate("CHAPTER_PROGRESSION.campaignTime.mainStoryHours.join('-')") == "10-12"
+    assert page.evaluate("CHAPTER_PROGRESSION.campaignTime.mainStoryPlayerHours.join('-')") == "25-35"
+    assert page.evaluate("CHAPTER_PROGRESSION.campaignTime.completionistPlayerHours.join('-')") == "40-55"
+    assert "family-friendly" in page.evaluate("CHAPTER_PROGRESSION.audienceDifficultyRule.chapters1To2")
     assert page.evaluate("CHAPTER_PROGRESSION.easterEggs.total") == 24
     assert not errors,errors;browser.close()
 print("PASS: campaign screen -> 6 chapters -> honest playable/development/locked states -> final scale")

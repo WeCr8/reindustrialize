@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "purpose": "Preserve believable human manufacturing operations while compressing calendar time into a 25–35 hour main campaign and 40–55 hour completionist campaign.",
+  "currencyRule": "Coins are a balanced game abstraction, not US dollars. Financial lessons use ratios, reserves, timing, margin, and cash conversion rather than claiming coin amounts are real prices.",
+  "timeModel": {
+    "standardShiftHours": 8,
+    "normalScheduledHoursPerPersonPerWeek": 40,
+    "overtimeWarningHoursPerWeek": 48,
+    "hardPlanningLimitHoursPerWeek": 60,
+    "rule": "Player-hours represent decision time. Production runs, supplier lead time, hiring, training, customer approval, payment, construction, and commissioning advance through explicit simulated calendar shifts, days, weeks, months, or years."
+  },
+  "operationTimeRanges": {
+    "quoteAndRouteHours": [0.5, 8],
+    "standardMaterialLeadBusinessDays": [1, 5],
+    "specialMaterialLeadBusinessDays": [5, 30],
+    "bandsawSetupMinutes": [10, 30],
+    "cncRepeatSetupMinutes": [30, 120],
+    "cncNewJobSetupHours": [2, 8],
+    "typicalPartCycleMinutes": [2, 60],
+    "firstArticleInspectionMinutes": [15, 120],
+    "lotFinalInspectionMinutes": [10, 90],
+    "dailyOperatorCareMinutesPerMachine": [10, 30],
+    "plannedMaintenanceHoursPerMachinePerMonth": [2, 12],
+    "customerApprovalBusinessDays": [1, 10],
+    "customerPaymentTermsDays": [15, 60]
+  },
+  "peopleModel": {
+    "frontlineLeaderSpan": [5, 10],
+    "managerDirectReportSpan": [4, 8],
+    "founderDirectReportMaximumAfterChapter3": 8,
+    "hiringLeadBusinessDays": [5, 30],
+    "orientationShifts": [1, 3],
+    "supervisedRepeatWorkShifts": [5, 20],
+    "independentRepeatWorkShifts": [10, 40],
+    "setupProgrammingQualificationShifts": [40, 120],
+    "rule": "Hiring creates an employee, not instant mastery. Qualification is station- and process-specific, requires supervised repetitions and verification, and can be revoked after unsafe or uncontrolled work."
+  },
+  "capacityModel": {
+    "healthyScheduledUtilizationRange": [0.65, 0.85],
+    "rule": "One hundred percent scheduled utilization is not a healthy target; capacity must retain room for setup, inspection, maintenance, variation, and recovery.",
+    "oeeByMaturity": {
+      "garage_bay": [0.35, 0.6],
+      "job_shop": [0.45, 0.68],
+      "connected_plant": [0.55, 0.75],
+      "smart_factory": [0.62, 0.82],
+      "lights_out_complex": [0.68, 0.86],
+      "american_titan_campus": [0.72, 0.9]
+    }
+  },
+  "cashModel": {
+    "minimumFixedCostReserveWeeks": 6,
+    "preferredFixedCostReserveWeeks": 12,
+    "customerReceivableDays": [15, 60],
+    "supplierTerms": ["prepaid", "net 15", "net 30"],
+    "payrollCadence": ["weekly", "biweekly"],
+    "capitalDecisionRequires": ["profitable demand", "qualified staffing plan", "floor and utility readiness", "tooling and inspection budget", "working-capital reserve", "commissioning plan"],
+    "deathSpiralProtection": "A missed payment or bad job creates a mentored recovery plan, renegotiation, staged investment, or lower-risk work. It never silently compounds into an unrecoverable save."
+  },
+  "facilityCommissioning": {
+    "equipmentRelocationDays": [2, 10],
+    "smallFacilityMoveWeeks": [4, 12],
+    "plantExpansionMonths": [3, 12],
+    "largeCampusProgramYears": [2, 7],
+    "requiredChecks": ["layout and egress", "electrical, air, coolant, ventilation and network utilities", "foundation and service clearances", "receiving and forklift flow", "machine installation and leveling", "safety validation", "calibration and first article", "people training", "production ramp plan"]
+  },
+  "pacingSafety": {
+    "teachingRule": "Zach introduces and demonstrates a system before its first scored consequence.",
+    "pressureRule": "Introduce one new operating pressure at a time, then combine only after the player proves it independently.",
+    "graceRule": "Every newly unlocked recurring cost or performance metric has a visible tutorial and at least the declared grace period before penalties.",
+    "chapter1ForbiddenGates": ["OEE", "scheduled utilization", "payroll coverage", "accounts receivable", "manager span", "preventive-maintenance compliance", "facility commissioning score"],
+    "recoveryRule": "Failure teaches, creates bounded rework or a recovery job, and preserves a viable route forward. No single mistake may create a campaign death spiral."
+  },
+  "chapters": [
+    {
+      "chapter": 1, "facility": "garage_bay", "playerHours": [1, 1.5], "simulatedElapsed": {"min": 4, "max": 8, "unit": "weeks"}, "scheduledShifts": 1,
+      "productionMachines": 2, "maximumSimultaneouslyRunningMachines":1, "keyRosterHeadcountGate": 1, "simulatedSiteHeadcountPerShift": [1, 2], "frontlineLeaders":0, "operationsManagers":0, "maximumMachinesPerProductionOperator": 1,
+      "realismUnlocks": ["safe sequence", "material identity", "setup time", "first article", "job margin preview"], "graceShifts": 999, "scoredPressures": ["safe completion", "quality", "process breadth"],
+      "space": {"floorAreaSqFt":2400,"productionAndMachineClearance":700,"aislesAndForkliftFlow":350,"rawWipFinishedInventory":300,"receivingAndShipping":180,"inspectionAndMetrology":140,"maintenanceAndToolroom":120,"utilitiesAndPlantSupport":120,"officesTrainingAmenities":250,"expansionReserve":240,"parkingStallsExterior":3}
+    },
+    {
+      "chapter": 2, "facility": "job_shop", "playerHours": [3, 4], "simulatedElapsed": {"min": 6, "max": 18, "unit": "months"}, "scheduledShifts": 2,
+      "productionMachines": 6, "maximumSimultaneouslyRunningMachines":4, "keyRosterHeadcountGate": 3, "simulatedSiteHeadcountPerShift": [6, 10], "frontlineLeaders":1, "operationsManagers":1, "maximumMachinesPerProductionOperator": 2,
+      "realismUnlocks": ["capacity calendar", "due dates", "supervised qualification", "payroll", "receivables", "inspection records"], "graceShifts": 3, "scoredPressures": ["on-time delivery", "labor coverage", "positive cash shifts"],
+      "space": {"floorAreaSqFt":12000,"productionAndMachineClearance":3600,"aislesAndForkliftFlow":1800,"rawWipFinishedInventory":1200,"receivingAndShipping":900,"inspectionAndMetrology":600,"maintenanceAndToolroom":700,"utilitiesAndPlantSupport":500,"officesTrainingAmenities":1200,"expansionReserve":1500,"parkingStallsExterior":20}
+    },
+    {
+      "chapter": 3, "facility": "connected_plant", "playerHours": [4, 5.5], "simulatedElapsed": {"min": 1.5, "max": 3, "unit": "years"}, "scheduledShifts": 2,
+      "productionMachines": 12, "maximumSimultaneouslyRunningMachines":9, "keyRosterHeadcountGate": 8, "simulatedSiteHeadcountPerShift": [18, 30], "frontlineLeaders":4, "operationsManagers":1, "maximumMachinesPerProductionOperator": 3,
+      "realismUnlocks": ["OEE", "downtime reasons", "preventive maintenance", "multi-shift handoff", "frontline leader span"], "graceShifts": 5, "scoredPressures": ["bottleneck recovery", "maintenance compliance", "credible OEE"],
+      "space": {"floorAreaSqFt":45000,"productionAndMachineClearance":15000,"aislesAndForkliftFlow":6000,"rawWipFinishedInventory":4500,"receivingAndShipping":3500,"inspectionAndMetrology":2200,"maintenanceAndToolroom":2500,"utilitiesAndPlantSupport":1800,"officesTrainingAmenities":4000,"expansionReserve":5500,"parkingStallsExterior":70}
+    },
+    {
+      "chapter": 4, "facility": "smart_factory", "playerHours": [5, 6.5], "simulatedElapsed": {"min": 3, "max": 6, "unit": "years"}, "scheduledShifts": 3,
+      "productionMachines": 24, "maximumSimultaneouslyRunningMachines":20, "keyRosterHeadcountGate": 12, "simulatedSiteHeadcountPerShift": [45, 75], "frontlineLeaders":10, "operationsManagers":2, "maximumMachinesPerProductionOperator": 4,
+      "realismUnlocks": ["automation commissioning", "change control", "capability studies", "tool life", "manager span"], "graceShifts": 6, "scoredPressures": ["validated cells", "clean handoffs", "controlled process improvement"],
+      "space": {"floorAreaSqFt":120000,"productionAndMachineClearance":42000,"aislesAndForkliftFlow":16000,"rawWipFinishedInventory":12000,"receivingAndShipping":8000,"inspectionAndMetrology":5500,"maintenanceAndToolroom":6500,"utilitiesAndPlantSupport":5000,"officesTrainingAmenities":10000,"expansionReserve":15000,"parkingStallsExterior":180}
+    },
+    {
+      "chapter": 5, "facility": "lights_out_complex", "playerHours": [5.5, 7.5], "simulatedElapsed": {"min": 5, "max": 10, "unit": "years"}, "scheduledShifts": 3,
+      "productionMachines": 48, "maximumSimultaneouslyRunningMachines":42, "keyRosterHeadcountGate": 20, "simulatedSiteHeadcountPerShift": [90, 140], "frontlineLeaders":18, "operationsManagers":4, "maximumMachinesPerProductionOperator": 6,
+      "realismUnlocks": ["unattended readiness", "tool-life risk", "robot and AMR flow", "remote escalation", "recovery drills"], "graceShifts": 8, "scoredPressures": ["reliable nights", "scrap containment", "fault recovery"],
+      "space": {"floorAreaSqFt":350000,"productionAndMachineClearance":125000,"aislesAndForkliftFlow":48000,"rawWipFinishedInventory":38000,"receivingAndShipping":22000,"inspectionAndMetrology":14000,"maintenanceAndToolroom":18000,"utilitiesAndPlantSupport":15000,"officesTrainingAmenities":28000,"expansionReserve":42000,"parkingStallsExterior":400}
+    },
+    {
+      "chapter": 6, "facility": "american_titan_campus", "playerHours": [6.5, 10], "simulatedElapsed": {"min": 10, "max": 20, "unit": "years"}, "scheduledShifts": 3,
+      "productionMachines": 96, "maximumSimultaneouslyRunningMachines":84, "keyRosterHeadcountGate": 40, "simulatedSiteHeadcountPerShift": [180, 300], "frontlineLeaders":40, "operationsManagers":8, "maximumMachinesPerProductionOperator": 8,
+      "realismUnlocks": ["program finance", "multi-building capacity", "executive spans", "certified traceability", "academy pipeline"], "graceShifts": 10, "scoredPressures": ["portfolio delivery", "leader bench", "profitable weeks", "knowledge transfer"],
+      "space": {"floorAreaSqFt":1000000,"productionAndMachineClearance":350000,"aislesAndForkliftFlow":140000,"rawWipFinishedInventory":100000,"receivingAndShipping":65000,"inspectionAndMetrology":40000,"maintenanceAndToolroom":55000,"utilitiesAndPlantSupport":50000,"officesTrainingAmenities":90000,"expansionReserve":110000,"parkingStallsExterior":900}
+    }
+  ]
+}

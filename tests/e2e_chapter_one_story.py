@@ -14,7 +14,7 @@ with sync_playwright() as p:
     page.wait_for_function("loaded === total")
     page.evaluate("""() => {
       gameStarted=true;
-      voiceEnabled=false;
+      voiceEnabled=true;
       document.querySelector('#preFounder').classList.add('closed');
       document.querySelector('#titleScreen').classList.add('closed');
       document.querySelector('#intro').classList.add('closed');
@@ -22,10 +22,16 @@ with sync_playwright() as p:
 
     def verify(sequence: str):
         assert page.evaluate("id => showStorySequence(id)", sequence)
-        expected = page.evaluate("id => STORY_PRODUCTION.sequences[id].map(x => x.text)", sequence)
-        for index, caption in enumerate(expected):
-            assert page.locator("#introText").inner_text() == caption
+        expected = page.evaluate("id => STORY_PRODUCTION.sequences[id].map(x => ({text:x.text, voice:x.voice||null}))", sequence)
+        for index, beat in enumerate(expected):
+            assert page.locator("#introText").inner_text() == beat["text"]
             assert page.locator("#intro").get_attribute("data-story-beat")
+            if beat["voice"]:
+                assert page.evaluate(
+                    "voice => zachAudio && zachAudio.src === assetUrl(ZACH_VOICE[voice], 'audio/mpeg')",
+                    beat["voice"],
+                )
+                assert "MISSING" not in page.locator("#audioState").inner_text()
             page.locator("#introNext").click()
             if index < len(expected) - 1:
                 page.wait_for_function("i => introStep === i", arg=index + 1)
@@ -35,11 +41,27 @@ with sync_playwright() as p:
     for milestone in ["first_customer", "nox_delivery", "first_verified_article", "first_hire"]:
         verify(milestone)
 
+    # Story completion is part of the versioned company save and must survive a
+    # browser restart without replaying already-viewed milestones.
+    assert page.evaluate("saveGame('STORY TEST')")
+    page.reload()
+    page.wait_for_function("loaded === total")
+    assert page.evaluate("restoreGame()")
+    for milestone in ["first_customer", "nox_delivery", "first_verified_article", "first_hire"]:
+        assert page.evaluate("id => storySeen(id)", milestone)
+        assert not page.evaluate("id => showStorySequence(id)", milestone)
+
     page.evaluate("showExpansion()")
     graduation_pages = page.evaluate("introPages.length")
     assert graduation_pages == 5
     assert page.locator("#intro").get_attribute("data-story-beat") == "garage_graduation_proof"
-    for _ in range(graduation_pages):
+    for index in range(graduation_pages):
+        voice = page.evaluate("i => introPages[i][2] || null", index)
+        if voice:
+            assert page.evaluate(
+                "voice => zachAudio && zachAudio.src === assetUrl(ZACH_VOICE[voice], 'audio/mpeg')",
+                voice,
+            )
         page.locator("#introNext").click()
     page.wait_for_function("map && map.id === 'bay_02'")
     seen = page.evaluate("state.storySequences")

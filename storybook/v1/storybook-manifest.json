@@ -1,7 +1,7 @@
 {
   "storybookVersion": 1,
   "gameBuild": "0.7.0-alpha",
-  "slideCount": 91,
+  "slideCount": 212,
   "founderCount": 10,
   "policy": {
     "oneSlidePerBeat": true,
@@ -499,6 +499,1266 @@
     },
     {
       "number": 44,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder A",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 45,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder B",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 46,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder C",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 47,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder D",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 48,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder E",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 49,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder F",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 50,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder G",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 51,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder H",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 52,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder I",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 53,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder J",
+      "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_first_job",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_call",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 54,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder A",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 55,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder B",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 56,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder C",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 57,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder D",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 58,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder E",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 59,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder F",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 60,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder G",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 61,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder H",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 62,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder I",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 63,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder J",
+      "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_first_customer_owner",
+      "storySequence": "first_customer",
+      "storyBeat": "first_customer_owner",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 64,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder A",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 65,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder B",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 66,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder C",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 67,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder D",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 68,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder E",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 69,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder F",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 70,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder G",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 71,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder H",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 72,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder I",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 73,
+      "section": "Chapter 1 Milestones",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder J",
+      "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_nox_delivery",
+      "storySequence": "nox_delivery",
+      "storyBeat": "nox_delivery_arrives",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 74,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder A",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 75,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder B",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 76,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder C",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 77,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder D",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 78,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder E",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 79,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder F",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 80,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder G",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 81,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder H",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 82,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder I",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 83,
+      "section": "Chapter 1 Milestones",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder J",
+      "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_first_article",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_evidence",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 84,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder A",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 85,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder B",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 86,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder C",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 87,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder D",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 88,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder E",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 89,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder F",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 90,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder G",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 91,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder H",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 92,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder I",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 93,
+      "section": "Chapter 1 Milestones",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder J",
+      "text": "Good part. Record what worked so the next operator can repeat it.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_quality_pass",
+      "storySequence": "first_verified_article",
+      "storyBeat": "first_article_record",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 94,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder A",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 95,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder B",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 96,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder C",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 97,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder D",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 98,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder E",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 99,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder F",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 100,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder G",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 101,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder H",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 102,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder I",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 103,
+      "section": "Chapter 1 Milestones",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder J",
+      "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_hiring",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_team",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 104,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder A",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 105,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder B",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 106,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder C",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 107,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder D",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 108,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder E",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 109,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder F",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 110,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder G",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 111,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder H",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 112,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder I",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 113,
+      "section": "Chapter 1 Milestones",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder J",
+      "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
+      "image": "../../packages/assets/story-opening-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_first_hire_owner",
+      "storySequence": "first_hire",
+      "storyBeat": "first_hire_owner",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 114,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder A",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 115,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder B",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 116,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder C",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 117,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder D",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 118,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder E",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 119,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder F",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 120,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder G",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 121,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder H",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 122,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder I",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 123,
+      "section": "Chapter 1 Milestones",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder J",
+      "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_garage_graduation",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_proof",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 124,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder A",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_01",
+      "sprite": "../../packages/assets/sprites/av_m_01.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 125,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder B",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 126,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder C",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 127,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder D",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_founder_02_hd",
+      "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 128,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder E",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 129,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder F",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_blonde_hd",
+      "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 130,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder G",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 131,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder H",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_middle_eastern_hd",
+      "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 132,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder I",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_m_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 133,
+      "section": "Chapter 1 Milestones",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder J",
+      "text": "You have outgrown the garage. Now build systems, not just parts.",
+      "image": "../../packages/assets/story-expansion-female-founder-v1.png",
+      "status": "implemented",
+      "founder": "av_f_indian_hd",
+      "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
+      "voice": "zach_expansion",
+      "storySequence": "garage_graduation",
+      "storyBeat": "garage_graduation_expansion",
+      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision."
+    },
+    {
+      "number": 134,
       "section": "Shop Tour",
       "title": "01 \u00b7 GARAGE BAY \u00b7 MATERIAL TO SHIPMENT",
       "text": "Before we take the first order, learn the floor. Material enters at receiving, moves through preparation and machining, then leaves only after inspection and a clean handoff.",
@@ -511,7 +1771,7 @@
       "voice": "zach_tour_overview"
     },
     {
-      "number": 45,
+      "number": 135,
       "section": "Shop Tour",
       "title": "02 \u00b7 PLANNING DESK \u00b7 ACCEPT AND ROUTE WORK",
       "text": "This is the planning desk. Open it to accept customer work, read the print, confirm the material, and understand the route before anyone touches the stock.",
@@ -524,7 +1784,7 @@
       "voice": "zach_tour_planning"
     },
     {
-      "number": 46,
+      "number": 136,
       "section": "Shop Tour",
       "title": "03 \u00b7 NOX TERMINAL \u00b7 ORDER CERTIFIED STOCK",
       "text": "The NOX terminal is where you order certified raw material. Match the alloy and size to the job, check the cost, then confirm delivery to receiving.",
@@ -537,7 +1797,7 @@
       "voice": "zach_tour_material"
     },
     {
-      "number": 47,
+      "number": 137,
       "section": "Shop Tour",
       "title": "04 \u00b7 BANDSAW \u00b7 PREPARE THE RAW BLANK",
       "text": "The bandsaw turns delivered stock into a controlled blank. Open the station, enter the required cut length, and leave enough material for clean finishing operations.",
@@ -550,7 +1810,7 @@
       "voice": "zach_tour_saw"
     },
     {
-      "number": 48,
+      "number": 138,
       "section": "Shop Tour",
       "title": "05 \u00b7 TOOL CART \u00b7 BUILD THE CNC TOOL KIT",
       "text": "The tool cart is your setup station. Choose the correct cutter, control stickout, gauge the probe and chamfer tool, and install the complete kit before machining.",
@@ -563,7 +1823,7 @@
       "voice": "zach_tour_tooling"
     },
     {
-      "number": 49,
+      "number": 139,
       "section": "Shop Tour",
       "title": "06 \u00b7 VMC \u00b7 PROVE THE PROGRAM AND MAKE THE PART",
       "text": "The vertical machining center makes the part. Load only prepared stock and a complete tool kit, verify every G code answer, then run and inspect the result.",
@@ -576,7 +1836,7 @@
       "voice": "zach_tour_vmc"
     },
     {
-      "number": 50,
+      "number": 140,
       "section": "Shop Tour",
       "title": "07 \u00b7 SHOP CLASS \u00b7 LEARN THE WHY",
       "text": "Shop Class is where we stop and learn the reason behind the process. Use it to review speeds, feeds, material behavior, quality, and the math that protects the machine.",
@@ -589,7 +1849,7 @@
       "voice": "zach_tour_shop_class"
     },
     {
-      "number": 51,
+      "number": 141,
       "section": "Shop Tour",
       "title": "08 \u00b7 MANUAL MILL \u00b7 DIRECT MACHINE CONTROL",
       "text": "The manual mill teaches direct control of workholding, spindle speed, feed, and depth. Its production lesson is orientation only until the manual machining task is enabled.",
@@ -602,7 +1862,7 @@
       "voice": "zach_tour_manual_mill"
     },
     {
-      "number": 52,
+      "number": 142,
       "section": "Shop Tour",
       "title": "09 \u00b7 DEBURR BENCH \u00b7 SAFE FINISHED EDGES",
       "text": "The deburr bench removes sharp edges and prepares the part for inspection. The future task will require the correct edge break without damaging a finished feature.",
@@ -615,7 +1875,7 @@
       "voice": "zach_tour_deburr"
     },
     {
-      "number": 53,
+      "number": 143,
       "section": "Shop Tour",
       "title": "10 \u00b7 CNC LATHE \u00b7 TURNING WORK",
       "text": "The CNC lathe rotates the stock against the tool. Inspect chuck pressure, stock stickout, turret clearance, and the program before any production cycle.",
@@ -628,7 +1888,7 @@
       "voice": "zach_tour_lathe"
     },
     {
-      "number": 54,
+      "number": 144,
       "section": "Shop Tour",
       "title": "11 \u00b7 MTCONNECT \u00b7 MACHINE VISIBILITY",
       "text": "The MTConnect node exposes machine status and production signals. It becomes useful when the shop grows from watching one machine to managing an entire connected system.",
@@ -641,7 +1901,7 @@
       "voice": "zach_tour_mtconnect"
     },
     {
-      "number": 55,
+      "number": 145,
       "section": "Shop Tour",
       "title": "12 \u00b7 JOBLINE \u00b7 SHIFT HANDOFF",
       "text": "The JobLine handoff terminal records what ran, what comes next, and what looks unusual. A clean handoff prevents the next shift from starting with missing context.",
@@ -654,7 +1914,7 @@
       "voice": "zach_tour_handoff"
     },
     {
-      "number": 56,
+      "number": 146,
       "section": "Shop Tour",
       "title": "13 \u00b7 RECEIVING \u00b7 VERIFY INCOMING STOCK",
       "text": "Receiving is where certified stock enters the shop. Verify the alloy, dimensions, quantity, and certification before material moves into the production route.",
@@ -667,7 +1927,7 @@
       "voice": "zach_tour_receiving"
     },
     {
-      "number": 57,
+      "number": 147,
       "section": "Shop Tour",
       "title": "14 \u00b7 MISSION BOARD \u00b7 KNOW THE NEXT STEP",
       "text": "The mission board shows the current objective and chapter gate. When you are unsure, follow the pulsing target or use Go To and Open to reach the correct station.",
@@ -680,7 +1940,7 @@
       "voice": "zach_tour_missions"
     },
     {
-      "number": 58,
+      "number": 148,
       "section": "Production Tutorials",
       "title": "ORDER MATERIAL",
       "text": "Start with certified stock. Match the alloy, thickness, and quantity to the print before you spend a dollar.",
@@ -697,7 +1957,7 @@
       "success": "Material order exists, coins are deducted, and next-day delivery is recorded"
     },
     {
-      "number": 59,
+      "number": 149,
       "section": "Production Tutorials",
       "title": "ACCEPT JOB",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
@@ -714,7 +1974,7 @@
       "success": "Active job and traveler are loaded"
     },
     {
-      "number": 60,
+      "number": 150,
       "section": "Production Tutorials",
       "title": "CUT RAW STOCK",
       "text": "Cut the raw stock to length before it goes near the CNC. Leave enough material to face both ends cleanly.",
@@ -731,7 +1991,7 @@
       "success": "Raw stock ready is true"
     },
     {
-      "number": 61,
+      "number": 151,
       "section": "Production Tutorials",
       "title": "SELECT PRIMARY TOOL",
       "text": "Set the right tools, confirm each offset, and keep the stickout as short as the job allows.",
@@ -747,7 +2007,7 @@
       "success": "Correct primary cutter selected"
     },
     {
-      "number": 62,
+      "number": 152,
       "section": "Production Tutorials",
       "title": "SET STICKOUT",
       "text": "Set the right tools, confirm each offset, and keep the stickout as short as the job allows.",
@@ -764,7 +2024,7 @@
       "success": "Stickout is within the job tolerance"
     },
     {
-      "number": 63,
+      "number": 153,
       "section": "Production Tutorials",
       "title": "COMPLETE TOOL KIT",
       "text": "Set the right tools, confirm each offset, and keep the stickout as short as the job allows.",
@@ -781,7 +2041,7 @@
       "success": "Tool ready is true and three tools are installed"
     },
     {
-      "number": 64,
+      "number": 154,
       "section": "Production Tutorials",
       "title": "PROVE GCODE",
       "text": "Read the program one block at a time. Know where the tool will go before you press cycle start.",
@@ -798,7 +2058,7 @@
       "success": "All proofing fields pass validation"
     },
     {
-      "number": 65,
+      "number": 155,
       "section": "Production Tutorials",
       "title": "RUN CNC CYCLE",
       "text": "If the setup does not look right, stop. A safe pause costs less than a crash.",
@@ -815,7 +2075,7 @@
       "success": "Machining animation completes without an invalid setup"
     },
     {
-      "number": 66,
+      "number": 156,
       "section": "Production Tutorials",
       "title": "REVIEW QUALITY RESULT",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
@@ -832,7 +2092,7 @@
       "success": "Job shipped, quality grade stored, and next job unlocked"
     },
     {
-      "number": 67,
+      "number": 157,
       "section": "Factory Workforce",
       "title": "CNC Programmer \u00b7 Maya Chen",
       "text": "First-part prove-outs and toolpath optimization. Growth: cell lead. Watch: Can over-engineer simple repeat work",
@@ -850,7 +2110,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 68,
+      "number": 158,
       "section": "Workforce Conversations",
       "title": "TALK WITH Maya Chen",
       "text": "I want the print, the workholding plan, and the risky moves before I touch the program.",
@@ -869,7 +2129,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 69,
+      "number": 159,
       "section": "Factory Workforce",
       "title": "CNC Operator \u00b7 Luis Ortega",
       "text": "Repeatable production and clean handoffs. Growth: setup technician. Watch: Needs a clear written traveler",
@@ -887,7 +2147,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 70,
+      "number": 160,
       "section": "Workforce Conversations",
       "title": "TALK WITH Luis Ortega",
       "text": "Give me a clear traveler and I will keep the spindle making good parts.",
@@ -906,7 +2166,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 71,
+      "number": 161,
       "section": "Factory Workforce",
       "title": "Setup Technician \u00b7 Devon Brooks",
       "text": "Workholding, offsets, tooling and fast changeovers. Growth: manufacturing engineer. Watch: Documentation trails hands-on work",
@@ -924,7 +2184,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 72,
+      "number": 162,
       "section": "Workforce Conversations",
       "title": "TALK WITH Devon Brooks",
       "text": "A fast setup starts with clean tools, known offsets, and workholding that repeats.",
@@ -943,7 +2203,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 73,
+      "number": 163,
       "section": "Factory Workforce",
       "title": "Quality Inspector \u00b7 Priya Shah",
       "text": "First articles, measurement plans and root-cause evidence. Growth: quality manager. Watch: Will stop flow when requirements are ambiguous",
@@ -961,7 +2221,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 74,
+      "number": 164,
       "section": "Workforce Conversations",
       "title": "TALK WITH Priya Shah",
       "text": "A measurement is evidence only when the method and requirement are both clear.",
@@ -980,7 +2240,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 75,
+      "number": 165,
       "section": "Factory Workforce",
       "title": "Maintenance Technician \u00b7 Marcus Reed",
       "text": "Preventive maintenance and fast fault isolation. Growth: reliability lead. Watch: Prefers permanent repairs over quick patches",
@@ -998,7 +2258,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 76,
+      "number": 166,
       "section": "Workforce Conversations",
       "title": "TALK WITH Marcus Reed",
       "text": "Machines usually warn us before they fail. The trick is listening early.",
@@ -1017,7 +2277,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 77,
+      "number": 167,
       "section": "Factory Workforce",
       "title": "Production Planner \u00b7 Elena Foster",
       "text": "Scheduling, capacity planning and customer priorities. Growth: operations manager. Watch: Forecast quality depends on timely floor updates",
@@ -1035,7 +2295,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 78,
+      "number": 168,
       "section": "Workforce Conversations",
       "title": "TALK WITH Elena Foster",
       "text": "Capacity is a promise. I will not schedule work the floor cannot actually finish.",
@@ -1054,7 +2314,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 79,
+      "number": 169,
       "section": "Factory Workforce",
       "title": "Material Handler \u00b7 Andre Wilson",
       "text": "Receiving, identification and safe material movement. Growth: supply chain coordinator. Watch: Needs labeled storage locations to prevent search time",
@@ -1072,7 +2332,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 80,
+      "number": 170,
       "section": "Workforce Conversations",
       "title": "TALK WITH Andre Wilson",
       "text": "Correct material, clearly identified, at the right station. That is how flow begins.",
@@ -1091,7 +2351,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 81,
+      "number": 171,
       "section": "Factory Workforce",
       "title": "Manufacturing Engineer \u00b7 Noah Kim",
       "text": "Process design, capability and cost reduction. Growth: engineering manager. Watch: Improvement projects compete with daily output",
@@ -1109,7 +2369,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 82,
+      "number": 172,
       "section": "Workforce Conversations",
       "title": "TALK WITH Noah Kim",
       "text": "A stable process should make the correct result easier than the wrong one.",
@@ -1128,7 +2388,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 83,
+      "number": 173,
       "section": "Factory Workforce",
       "title": "Automation Technician \u00b7 Tessa Morgan",
       "text": "Robot integration, controls and safe recovery. Growth: controls engineer. Watch: Requires disciplined change control",
@@ -1146,7 +2406,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 84,
+      "number": 174,
       "section": "Workforce Conversations",
       "title": "TALK WITH Tessa Morgan",
       "text": "Automation magnifies the process we give it, good or bad.",
@@ -1165,7 +2425,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 85,
+      "number": 175,
       "section": "Factory Workforce",
       "title": "Shipping & Receiving Coordinator \u00b7 Owen Price",
       "text": "Certifications, traceability, packing and customer handoff. Growth: logistics manager. Watch: Cannot compensate for incomplete production records",
@@ -1183,7 +2443,7 @@
       "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
     },
     {
-      "number": 86,
+      "number": 176,
       "section": "Workforce Conversations",
       "title": "TALK WITH Owen Price",
       "text": "The shipment is the last operation, not an afterthought.",
@@ -1202,7 +2462,549 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 87,
+      "number": 177,
+      "section": "Campaign Chapter 2",
+      "title": "ENTRY \u00b7 The Team Is the Machine",
+      "text": "The founder enters the Job Shop and learns that more capacity creates scheduling, tooling, inspection, and handoff risk.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "implemented",
+      "location": "From Craftsperson to Team \u00b7 Job Shop",
+      "instructions": [],
+      "success": "DIFFICULTY: Guided growth \u00b7 approachable teamwork, quality, and scheduling with forgiving recovery \u00b7 TARGET: 3\u20134 HOURS",
+      "chapter": 2,
+      "chapterStatus": "partial",
+      "campaignPhase": "entry",
+      "note": "Existing Chapter 2 entry is playable; later beats remain explicitly planned."
+    },
+    {
+      "number": 178,
+      "section": "Campaign Chapter 2",
+      "title": "LEARN \u00b7 Quote, Route, and Staff",
+      "text": "Quote repeat work, plan its route, hire an operator and programmer, and assign only qualified people.",
+      "image": null,
+      "status": "planned",
+      "location": "From Craftsperson to Team \u00b7 Job Shop",
+      "instructions": [
+        "MECHANICS: costed quoting, route planning, role training",
+        "AUDIO: New approved Zach lesson on delegation and payroll."
+      ],
+      "success": "DIFFICULTY: Guided growth \u00b7 approachable teamwork, quality, and scheduling with forgiving recovery \u00b7 TARGET: 3\u20134 HOURS",
+      "chapter": 2,
+      "chapterStatus": "partial",
+      "campaignPhase": "learn",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 179,
+      "section": "Campaign Chapter 2",
+      "title": "PROVE \u00b7 Two Machines, One Promise",
+      "text": "Run VMC and lathe work concurrently without allowing either traveler, tool list, or due date to disappear.",
+      "image": null,
+      "status": "planned",
+      "location": "From Craftsperson to Team \u00b7 Job Shop",
+      "instructions": [
+        "MECHANICS: playable lathe, concurrent scheduler, due dates",
+        "AUDIO: New approved Zach concurrency and bottleneck guidance."
+      ],
+      "success": "DIFFICULTY: Guided growth \u00b7 approachable teamwork, quality, and scheduling with forgiving recovery \u00b7 TARGET: 3\u20134 HOURS",
+      "chapter": 2,
+      "chapterStatus": "partial",
+      "campaignPhase": "prove",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 180,
+      "section": "Campaign Chapter 2",
+      "title": "OPERATE \u00b7 Inspection Is Production",
+      "text": "Document eight inspections, ship on time, cover payroll, and sustain positive cash while quality rises to a 4.0 average.",
+      "image": null,
+      "status": "planned",
+      "location": "From Craftsperson to Team \u00b7 Job Shop",
+      "instructions": [
+        "MECHANICS: inspection records, shipping, payroll and cash shifts",
+        "AUDIO: New approved Zach quality-system and cash-flow guidance."
+      ],
+      "success": "DIFFICULTY: Guided growth \u00b7 approachable teamwork, quality, and scheduling with forgiving recovery \u00b7 TARGET: 3\u20134 HOURS",
+      "chapter": 2,
+      "chapterStatus": "partial",
+      "campaignPhase": "operate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 181,
+      "section": "Campaign Chapter 2",
+      "title": "RECOVER \u00b7 The Missed Handoff",
+      "text": "Recover a late, at-risk job by correcting the handoff and schedule instead of hiding the defect or rushing unsafe work.",
+      "image": null,
+      "status": "planned",
+      "location": "From Craftsperson to Team \u00b7 Job Shop",
+      "instructions": [
+        "MECHANICS: late-job incident, root-cause choice, recovery outcome",
+        "AUDIO: New approved Zach recovery scene."
+      ],
+      "success": "DIFFICULTY: Guided growth \u00b7 approachable teamwork, quality, and scheduling with forgiving recovery \u00b7 TARGET: 3\u20134 HOURS",
+      "chapter": 2,
+      "chapterStatus": "partial",
+      "campaignPhase": "recover",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 182,
+      "section": "Campaign Chapter 2",
+      "title": "GRADUATE \u00b7 Job-Shop Owner",
+      "text": "Ship eight chapter jobs at 4.0 quality, 85 percent on time, with three people, five concurrent completions, eight inspections, and three positive-cash shifts; then move to the Connected Plant.",
+      "image": null,
+      "status": "planned",
+      "location": "From Craftsperson to Team \u00b7 Job Shop",
+      "instructions": [
+        "MECHANICS: complete chapter gate, Connected Plant unlock",
+        "VISUAL: Connected Plant arrival and graduation art.",
+        "AUDIO: New approved Zach graduation narration."
+      ],
+      "success": "DIFFICULTY: Guided growth \u00b7 approachable teamwork, quality, and scheduling with forgiving recovery \u00b7 TARGET: 3\u20134 HOURS",
+      "chapter": 2,
+      "chapterStatus": "partial",
+      "campaignPhase": "graduate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 183,
+      "section": "Campaign Chapter 3",
+      "title": "ENTRY \u00b7 Signals and Blind Spots",
+      "text": "The founder enters a 45,000-square-foot plant where no one person can watch every machine or handoff.",
+      "image": null,
+      "status": "planned",
+      "location": "Manage What You Cannot See \u00b7 Connected Plant",
+      "instructions": [
+        "MECHANICS: Connected Plant map, department ownership",
+        "AUDIO: New approved Zach visibility lesson."
+      ],
+      "success": "DIFFICULTY: Intermediate \u00b7 Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership \u00b7 TARGET: 4\u20135.5 HOURS",
+      "chapter": 3,
+      "chapterStatus": "planned",
+      "campaignPhase": "entry",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 184,
+      "section": "Campaign Chapter 3",
+      "title": "LEARN \u00b7 Connect the Truth",
+      "text": "Connect eight machines, distinguish running from producing, and learn OEE, downtime, and trustworthy production signals.",
+      "image": null,
+      "status": "planned",
+      "location": "Manage What You Cannot See \u00b7 Connected Plant",
+      "instructions": [
+        "MECHANICS: MTConnect objectives, OEE dashboard, downtime states",
+        "AUDIO: New approved Zach OEE and data-context tutorial."
+      ],
+      "success": "DIFFICULTY: Intermediate \u00b7 Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership \u00b7 TARGET: 4\u20135.5 HOURS",
+      "chapter": 3,
+      "chapterStatus": "planned",
+      "campaignPhase": "learn",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 185,
+      "section": "Campaign Chapter 3",
+      "title": "PROVE \u00b7 Find the Constraint",
+      "text": "Schedule machining cells, toolroom, maintenance, quality, and shipping to expose and recover the actual bottleneck.",
+      "image": null,
+      "status": "planned",
+      "location": "Manage What You Cannot See \u00b7 Connected Plant",
+      "instructions": [
+        "MECHANICS: cell scheduler, maintenance/toolroom ownership, bottleneck simulation",
+        "AUDIO: New approved Zach constraint guidance."
+      ],
+      "success": "DIFFICULTY: Intermediate \u00b7 Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership \u00b7 TARGET: 4\u20135.5 HOURS",
+      "chapter": 3,
+      "chapterStatus": "planned",
+      "campaignPhase": "prove",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 186,
+      "section": "Campaign Chapter 3",
+      "title": "OPERATE \u00b7 Lead the Other Shift",
+      "text": "Build clean handoffs and lead eight people across shifts while preserving quality and delivery.",
+      "image": null,
+      "status": "planned",
+      "location": "Manage What You Cannot See \u00b7 Connected Plant",
+      "instructions": [
+        "MECHANICS: shift system, handoff quality, department assignments",
+        "AUDIO: New approved Zach multi-shift leadership guidance."
+      ],
+      "success": "DIFFICULTY: Intermediate \u00b7 Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership \u00b7 TARGET: 4\u20135.5 HOURS",
+      "chapter": 3,
+      "chapterStatus": "planned",
+      "campaignPhase": "operate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 187,
+      "section": "Campaign Chapter 3",
+      "title": "RECOVER \u00b7 The Dashboard Was Green",
+      "text": "Recover a customer-risk event where a healthy-looking metric concealed starvation, blockage, or bad context.",
+      "image": null,
+      "status": "planned",
+      "location": "Manage What You Cannot See \u00b7 Connected Plant",
+      "instructions": [
+        "MECHANICS: misleading-metric incident, three root-cause recoveries",
+        "AUDIO: New approved Zach data-without-context scene."
+      ],
+      "success": "DIFFICULTY: Intermediate \u00b7 Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership \u00b7 TARGET: 4\u20135.5 HOURS",
+      "chapter": 3,
+      "chapterStatus": "planned",
+      "campaignPhase": "recover",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 188,
+      "section": "Campaign Chapter 3",
+      "title": "GRADUATE \u00b7 Connected-Plant Leader",
+      "text": "Ship ten chapter jobs at 4.0 quality and 88 percent on time after ten OEE reviews and three root-cause recoveries; then fund the Smart Factory.",
+      "image": null,
+      "status": "planned",
+      "location": "Manage What You Cannot See \u00b7 Connected Plant",
+      "instructions": [
+        "MECHANICS: complete chapter gate, Smart Factory unlock",
+        "VISUAL: Smart Factory arrival and graduation art.",
+        "AUDIO: New approved Zach graduation narration."
+      ],
+      "success": "DIFFICULTY: Intermediate \u00b7 Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership \u00b7 TARGET: 4\u20135.5 HOURS",
+      "chapter": 3,
+      "chapterStatus": "planned",
+      "campaignPhase": "graduate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 189,
+      "section": "Campaign Chapter 4",
+      "title": "ENTRY \u00b7 Automate the Standard",
+      "text": "The founder enters a 120,000-square-foot factory where automation will multiply every good process and every bad one.",
+      "image": null,
+      "status": "planned",
+      "location": "Standardize and Automate \u00b7 Smart Factory",
+      "instructions": [
+        "MECHANICS: Smart Factory map, automation planning",
+        "AUDIO: New approved Zach automation principle scene."
+      ],
+      "success": "DIFFICULTY: Advanced \u00b7 controlled tooling, digital standards, fixtures, cobots, and capability \u00b7 TARGET: 5\u20136.5 HOURS",
+      "chapter": 4,
+      "chapterStatus": "planned",
+      "campaignPhase": "entry",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 190,
+      "section": "Campaign Chapter 4",
+      "title": "LEARN \u00b7 Control the Tool",
+      "text": "Preset and control one hundred tools, prove offsets, and eliminate undocumented substitutions.",
+      "image": null,
+      "status": "planned",
+      "location": "Standardize and Automate \u00b7 Smart Factory",
+      "instructions": [
+        "MECHANICS: tool lifecycle, preset records, RFID crib",
+        "AUDIO: New approved Zach tool-control tutorial."
+      ],
+      "success": "DIFFICULTY: Advanced \u00b7 controlled tooling, digital standards, fixtures, cobots, and capability \u00b7 TARGET: 5\u20136.5 HOURS",
+      "chapter": 4,
+      "chapterStatus": "planned",
+      "campaignPhase": "learn",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 191,
+      "section": "Campaign Chapter 4",
+      "title": "PROVE \u00b7 Design the Cell",
+      "text": "Design fixtures and handoffs, install a safe cobot, and validate capability before increasing rate.",
+      "image": null,
+      "status": "planned",
+      "location": "Standardize and Automate \u00b7 Smart Factory",
+      "instructions": [
+        "MECHANICS: fixture design, cobot safety, capability study",
+        "AUDIO: New approved Zach cell-design and safety guidance."
+      ],
+      "success": "DIFFICULTY: Advanced \u00b7 controlled tooling, digital standards, fixtures, cobots, and capability \u00b7 TARGET: 5\u20136.5 HOURS",
+      "chapter": 4,
+      "chapterStatus": "planned",
+      "campaignPhase": "prove",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 192,
+      "section": "Campaign Chapter 4",
+      "title": "OPERATE \u00b7 Fourteen Clean Handoffs",
+      "text": "Sustain controlled digital handoffs and improve flow without hiding defects or bypassing inspection.",
+      "image": null,
+      "status": "planned",
+      "location": "Standardize and Automate \u00b7 Smart Factory",
+      "instructions": [
+        "MECHANICS: digital traveler, handoff streak, improvement system",
+        "AUDIO: New approved Zach standard-work guidance."
+      ],
+      "success": "DIFFICULTY: Advanced \u00b7 controlled tooling, digital standards, fixtures, cobots, and capability \u00b7 TARGET: 5\u20136.5 HOURS",
+      "chapter": 4,
+      "chapterStatus": "planned",
+      "campaignPhase": "operate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 193,
+      "section": "Campaign Chapter 4",
+      "title": "RECOVER \u00b7 Fast Scrap",
+      "text": "Stop an automated cell that is multiplying a weak process, find the cause, and revalidate it safely.",
+      "image": null,
+      "status": "planned",
+      "location": "Standardize and Automate \u00b7 Smart Factory",
+      "instructions": [
+        "MECHANICS: automation fault incident, safe stop, revalidation",
+        "AUDIO: New approved Zach stop-and-correct scene."
+      ],
+      "success": "DIFFICULTY: Advanced \u00b7 controlled tooling, digital standards, fixtures, cobots, and capability \u00b7 TARGET: 5\u20136.5 HOURS",
+      "chapter": 4,
+      "chapterStatus": "planned",
+      "campaignPhase": "recover",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 194,
+      "section": "Campaign Chapter 4",
+      "title": "GRADUATE \u00b7 Smart-Factory Architect",
+      "text": "Ship twelve jobs at 4.2 quality and 90 percent on time with three validated automated cells and five measured improvements; then open the Lights-Out Complex.",
+      "image": null,
+      "status": "planned",
+      "location": "Standardize and Automate \u00b7 Smart Factory",
+      "instructions": [
+        "MECHANICS: complete chapter gate, Lights-Out unlock",
+        "VISUAL: Lights-Out arrival and graduation art.",
+        "AUDIO: New approved Zach graduation narration."
+      ],
+      "success": "DIFFICULTY: Advanced \u00b7 controlled tooling, digital standards, fixtures, cobots, and capability \u00b7 TARGET: 5\u20136.5 HOURS",
+      "chapter": 4,
+      "chapterStatus": "planned",
+      "campaignPhase": "graduate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 195,
+      "section": "Campaign Chapter 5",
+      "title": "ENTRY \u00b7 Trust the Night",
+      "text": "The founder enters a 350,000-square-foot complex where unattended production is earned through preparation, not hope.",
+      "image": null,
+      "status": "planned",
+      "location": "Reliability at Industrial Scale \u00b7 Lights Out Complex",
+      "instructions": [
+        "MECHANICS: Lights-Out map, night-shift simulation",
+        "AUDIO: New approved Zach unattended-production scene."
+      ],
+      "success": "DIFFICULTY: Expert \u00b7 unattended production, robotics, material flow, maintenance, and recovery \u00b7 TARGET: 5.5\u20137.5 HOURS",
+      "chapter": 5,
+      "chapterStatus": "planned",
+      "campaignPhase": "entry",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 196,
+      "section": "Campaign Chapter 5",
+      "title": "LEARN \u00b7 Make It Unattended-Ready",
+      "text": "Prove tool life, chip control, gauging, material supply, and safe fault behavior before the team leaves.",
+      "image": null,
+      "status": "planned",
+      "location": "Reliability at Industrial Scale \u00b7 Lights Out Complex",
+      "instructions": [
+        "MECHANICS: unattended checklist, tool life, in-process gauging",
+        "AUDIO: New approved Zach readiness tutorial."
+      ],
+      "success": "DIFFICULTY: Expert \u00b7 unattended production, robotics, material flow, maintenance, and recovery \u00b7 TARGET: 5.5\u20137.5 HOURS",
+      "chapter": 5,
+      "chapterStatus": "planned",
+      "campaignPhase": "learn",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 197,
+      "section": "Campaign Chapter 5",
+      "title": "PROVE \u00b7 Coordinate the Fleet",
+      "text": "Coordinate robots and AMRs through five hundred cycles without starving machines, blocking aisles, or losing material identity.",
+      "image": null,
+      "status": "planned",
+      "location": "Reliability at Industrial Scale \u00b7 Lights Out Complex",
+      "instructions": [
+        "MECHANICS: robot and AMR routing, material identity, traffic safety",
+        "AUDIO: New approved Zach automation-fleet guidance."
+      ],
+      "success": "DIFFICULTY: Expert \u00b7 unattended production, robotics, material flow, maintenance, and recovery \u00b7 TARGET: 5.5\u20137.5 HOURS",
+      "chapter": 5,
+      "chapterStatus": "planned",
+      "campaignPhase": "prove",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 198,
+      "section": "Campaign Chapter 5",
+      "title": "OPERATE \u00b7 Ten Reliable Nights",
+      "text": "Sustain preventive maintenance, less than three percent scrap, and ten successful unattended nights.",
+      "image": null,
+      "status": "planned",
+      "location": "Reliability at Industrial Scale \u00b7 Lights Out Complex",
+      "instructions": [
+        "MECHANICS: preventive maintenance, night scorecard, scrap accounting",
+        "AUDIO: New approved Zach reliability guidance."
+      ],
+      "success": "DIFFICULTY: Expert \u00b7 unattended production, robotics, material flow, maintenance, and recovery \u00b7 TARGET: 5.5\u20137.5 HOURS",
+      "chapter": 5,
+      "chapterStatus": "planned",
+      "campaignPhase": "operate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 199,
+      "section": "Campaign Chapter 5",
+      "title": "RECOVER \u00b7 The 2 A.M. Call",
+      "text": "Execute five recovery drills and respond to a night fault without creating a safety, quality, or traceability escape.",
+      "image": null,
+      "status": "planned",
+      "location": "Reliability at Industrial Scale \u00b7 Lights Out Complex",
+      "instructions": [
+        "MECHANICS: fault scenarios, remote escalation, recovery drills",
+        "AUDIO: New approved Zach fault-recovery scene."
+      ],
+      "success": "DIFFICULTY: Expert \u00b7 unattended production, robotics, material flow, maintenance, and recovery \u00b7 TARGET: 5.5\u20137.5 HOURS",
+      "chapter": 5,
+      "chapterStatus": "planned",
+      "campaignPhase": "recover",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 200,
+      "section": "Campaign Chapter 5",
+      "title": "GRADUATE \u00b7 Lights-Out Operations Leader",
+      "text": "Ship fourteen jobs at 4.3 quality and 92 percent on time after ten reliable nights and five recovery drills; then build the American Titan Campus.",
+      "image": null,
+      "status": "planned",
+      "location": "Reliability at Industrial Scale \u00b7 Lights Out Complex",
+      "instructions": [
+        "MECHANICS: complete chapter gate, Titan Campus unlock",
+        "VISUAL: Titan Campus arrival and graduation art.",
+        "AUDIO: New approved Zach graduation narration."
+      ],
+      "success": "DIFFICULTY: Expert \u00b7 unattended production, robotics, material flow, maintenance, and recovery \u00b7 TARGET: 5.5\u20137.5 HOURS",
+      "chapter": 5,
+      "chapterStatus": "planned",
+      "campaignPhase": "graduate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 201,
+      "section": "Campaign Chapter 6",
+      "title": "ENTRY \u00b7 Build Beyond Yourself",
+      "text": "The founder opens a million-square-foot manufacturing campus serving aerospace, energy, robotics, and American industry.",
+      "image": null,
+      "status": "planned",
+      "location": "Build the Institution \u00b7 American Titan Campus",
+      "instructions": [
+        "MECHANICS: campus map, multi-building management",
+        "AUDIO: New approved Zach institution-building scene."
+      ],
+      "success": "DIFFICULTY: Titan \u00b7 multi-building strategy, certified programs, leaders, apprentices, and legacy \u00b7 TARGET: 6.5\u201310 HOURS",
+      "chapter": 6,
+      "chapterStatus": "planned",
+      "campaignPhase": "entry",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 202,
+      "section": "Campaign Chapter 6",
+      "title": "LEARN \u00b7 Win the Program",
+      "text": "Price, negotiate, and execute strategic programs while protecting aerospace traceability and customer trust.",
+      "image": null,
+      "status": "planned",
+      "location": "Build the Institution \u00b7 American Titan Campus",
+      "instructions": [
+        "MECHANICS: long-term agreements, program economics, certified traceability",
+        "AUDIO: New approved Zach strategic-program guidance."
+      ],
+      "success": "DIFFICULTY: Titan \u00b7 multi-building strategy, certified programs, leaders, apprentices, and legacy \u00b7 TARGET: 6.5\u201310 HOURS",
+      "chapter": 6,
+      "chapterStatus": "planned",
+      "campaignPhase": "learn",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 203,
+      "section": "Campaign Chapter 6",
+      "title": "PROVE \u00b7 Leaders, Not Helpers",
+      "text": "Develop six department leaders who can make good decisions without waiting for the founder at every station.",
+      "image": null,
+      "status": "planned",
+      "location": "Build the Institution \u00b7 American Titan Campus",
+      "instructions": [
+        "MECHANICS: leadership progression, delegation authority, department scorecards",
+        "AUDIO: New approved Zach leadership-development scene."
+      ],
+      "success": "DIFFICULTY: Titan \u00b7 multi-building strategy, certified programs, leaders, apprentices, and legacy \u00b7 TARGET: 6.5\u201310 HOURS",
+      "chapter": 6,
+      "chapterStatus": "planned",
+      "campaignPhase": "prove",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 204,
+      "section": "Campaign Chapter 6",
+      "title": "OPERATE \u00b7 The Apprentice Academy",
+      "text": "Launch an academy, transfer standards and judgment, and graduate three apprentices into meaningful factory roles.",
+      "image": null,
+      "status": "planned",
+      "location": "Build the Institution \u00b7 American Titan Campus",
+      "instructions": [
+        "MECHANICS: academy management, training paths, apprentice graduation",
+        "AUDIO: New approved Zach teaching and legacy guidance."
+      ],
+      "success": "DIFFICULTY: Titan \u00b7 multi-building strategy, certified programs, leaders, apprentices, and legacy \u00b7 TARGET: 6.5\u201310 HOURS",
+      "chapter": 6,
+      "chapterStatus": "planned",
+      "campaignPhase": "operate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 205,
+      "section": "Campaign Chapter 6",
+      "title": "RECOVER \u00b7 The Promise at Scale",
+      "text": "Resolve a campus-wide program crisis without sacrificing people, traceability, quality, or the institution's future.",
+      "image": null,
+      "status": "planned",
+      "location": "Build the Institution \u00b7 American Titan Campus",
+      "instructions": [
+        "MECHANICS: multi-building crisis, executive tradeoffs, customer recovery",
+        "AUDIO: New approved Zach final crisis scene."
+      ],
+      "success": "DIFFICULTY: Titan \u00b7 multi-building strategy, certified programs, leaders, apprentices, and legacy \u00b7 TARGET: 6.5\u201310 HOURS",
+      "chapter": 6,
+      "chapterStatus": "planned",
+      "campaignPhase": "recover",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 206,
+      "section": "Campaign Chapter 6",
+      "title": "GRADUATE \u00b7 American Manufacturing Titan",
+      "text": "Complete ten certified program jobs, three long-term agreements, six department leaders, three apprentice graduations, and eight profitable weeks at 4.5 quality and 95 percent on time.",
+      "image": null,
+      "status": "planned",
+      "location": "Build the Institution \u00b7 American Titan Campus",
+      "instructions": [
+        "MECHANICS: complete final gate, persistent campus end state",
+        "VISUAL: Final campus panorama, department leaders, apprentices, and mentor-legacy art.",
+        "AUDIO: New approved Zach finale and player legacy narration."
+      ],
+      "success": "DIFFICULTY: Titan \u00b7 multi-building strategy, certified programs, leaders, apprentices, and legacy \u00b7 TARGET: 6.5\u201310 HOURS",
+      "chapter": 6,
+      "chapterStatus": "planned",
+      "campaignPhase": "graduate",
+      "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
+    },
+    {
+      "number": 207,
       "section": "Planned Story Gaps",
       "title": "NOX SUPPLIER ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -1214,7 +3016,7 @@
       ]
     },
     {
-      "number": 88,
+      "number": 208,
       "section": "Planned Story Gaps",
       "title": "SHOP CLASS OPEN",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -1227,7 +3029,7 @@
       ]
     },
     {
-      "number": 89,
+      "number": 209,
       "section": "Planned Story Gaps",
       "title": "FIRST ARTICLE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -1239,7 +3041,7 @@
       ]
     },
     {
-      "number": 90,
+      "number": 210,
       "section": "Planned Story Gaps",
       "title": "FIRST HIRE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -1250,18 +3052,32 @@
       ]
     },
     {
-      "number": 91,
+      "number": 211,
+      "section": "Planned Story Gaps",
+      "title": "CHAPTER 2 COMPLETION",
+      "text": "Not yet implemented. Required before this story beat may be presented as complete.",
+      "image": null,
+      "status": "planned",
+      "instructions": [
+        "concurrent production mechanics",
+        "inspection and shipping workflow",
+        "payroll/cash-flow gate",
+        "Connected Plant facility art",
+        "approved Zach scripts and audio"
+      ]
+    },
+    {
+      "number": 212,
       "section": "Planned Story Gaps",
       "title": "CHAPTERS 3 TO 6",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
       "image": null,
       "status": "planned",
       "instructions": [
-        "chapter entry and graduation sequences",
+        "runtime mechanics and gates listed in campaignPlan",
         "facility art",
-        "voice scripts",
-        "music and SFX",
-        "runtime gates"
+        "approved Zach scripts and audio",
+        "music and SFX"
       ]
     }
   ]

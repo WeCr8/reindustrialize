@@ -44,9 +44,21 @@ try:
         page.keyboard.press("F3")
         page.wait_for_timeout(1100)
         assert "REIND DEV HUD" in page.locator("#debugHud").inner_text()
+
+        # A malformed local save must never partially start the game or trap Continue.
+        page.reload()
+        page.wait_for_function("loaded===total")
+        page.evaluate("preFounder.classList.add('closed')")
+        page.evaluate("localStorage.setItem('reindustrialize.save.v1', JSON.stringify({v:1,companyName:'BROKEN'}))")
+        page.once("dialog", lambda dialog: dialog.accept())
+        page.locator("#continueGame").click()
+        assert page.evaluate("gameStarted") is False
+        assert page.locator("#continueGame").is_disabled()
+        assert page.evaluate("localStorage.getItem('reindustrialize.save.v1')") is None
+        assert page.evaluate("localStorage.getItem('reindustrialize.save.recovery')") is not None
         browser.close()
 finally:
     server.terminate()
     server.wait(timeout=5)
 
-print("PASS: save/continue, autosave foundation, pause, settings persistence, and F3 diagnostics")
+print("PASS: save/continue, corrupt-save quarantine, autosave foundation, pause, settings persistence, and F3 diagnostics")

@@ -16,8 +16,8 @@
     "chapters": 6,
     "levels": 30,
     "facilities": 6,
-    "mainStoryHours": [10, 12],
-    "completionistHours": [16, 20],
+    "mainStoryHours": [25, 35],
+    "completionistHours": [40, 55],
     "easterEggs": 24
   },
   "milestones": [

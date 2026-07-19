@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "coverageVersion": "0.7.0-alpha-visual-v1",
+  "truthPolicy": "Only existing, runtime-wired assets may be implemented. Reused map sprites do not count as dedicated equipment-open or tutorial illustrations.",
+  "styleContract": {
+    "direction": "detailed 32-bit-inspired pixel art",
+    "requirements": ["pixel-readable silhouettes", "industrial teal, charcoal, steel, amber and safety-color palette", "nearest-neighbor display for sprites", "consistent three-quarter or top-down shop perspective", "no ethnicity labels in founder selection", "Zach retains black cap and charcoal shacket"]
+  },
+  "globalImplemented": [
+    "packages/assets/sprites/founder-profile-atlas-v1.png",
+    "packages/assets/sprites/workforce-atlas-v1.png",
+    "packages/assets/sprites/workforce-profile-atlas-v1.png",
+    "packages/assets/customers/customer-profiles-v1.png",
+    "packages/assets/customers/customer-companies-v1.png",
+    "packages/assets/customers/customer-sprites-v1.png",
+    "packages/assets/tools/core-cutters-atlas-v1.png",
+    "packages/assets/tools/setup-tools-atlas-v1.png",
+    "storybook/v1/index.html",
+    "videos/promo-catalog.json"
+  ],
+  "chapters": [
+    {
+      "chapter": 1,
+      "releaseStatus": "playable",
+      "implemented": [
+        "data/maps/bay_01.json",
+        "packages/assets/sprites/bay_01_hd_bg.png",
+        "packages/assets/equipment/tool-cart-open-v1.png",
+        "packages/assets/equipment/vmc-open-v1.png",
+        "packages/assets/equipment/lathe-open-v1.png",
+        "packages/assets/story-opening-male-founder-v1.png",
+        "packages/assets/story-opening-female-founder-v1.png",
+        "packages/assets/story-pre-founder-welcome-v1.png",
+        "packages/assets/story-pre-founder-path-v1.png",
+        "packages/assets/story-pre-founder-choice-v1.png"
+      ],
+      "implementedCounts": {"selectableFounderSprites": 10, "founderProfiles": 10, "hireSprites": 10, "hireProfiles": 10, "customerSprites": 4, "customerProfiles": 4, "customerCompanies": 4, "dedicatedEquipmentOpenViews": 3, "toolAtlases": 2, "activeTaskGuides": 9, "tourStops": 14},
+      "missing": [
+        "dedicated-planning-desk-tutorial-v1",
+        "saw_t1-open-view-and-cut-tutorial-v1",
+        "dedicated-nox-order-terminal-tutorial-v1",
+        "dedicated-first-article-inspection-view-v1",
+        "mill_manual_t1-open-view-v1",
+        "bench_deburr_t1-open-view-v1",
+        "receiving-inspection-closeup-v1",
+        "shop-class-lesson-illustrations-v1",
+        "zach-and-founder-station-dialogue-variants-v1",
+        "garage-exterior-arrival-and-expansion-comparison-v1"
+      ]
+    },
+    {
+      "chapter": 2,
+      "releaseStatus": "development",
+      "implemented": ["data/maps/bay_02.json", "packages/assets/story-expansion-male-founder-v1.png", "packages/assets/story-expansion-female-founder-v1.png"],
+      "reusedNotDedicated": ["Chapter 1 machine sprites", "Chapter 1 VMC and lathe open views", "global workforce atlases"],
+      "missing": [
+        "job-shop-hd-background-v1", "job-shop-exterior-v1", "job-shop-department-signage-v1", "quality-lab-map-sprite-and-open-view-v1", "shipping-station-sprite-and-open-view-v1", "presetter_t4-open-view-v1", "toolcrib_rfid_t4-open-view-v1", "cobot_t5-open-view-v1", "amr_t5-open-view-v1", "second-vmc-distinct-visual-state-v1", "concurrent-job-wip-and-queue-states-v1", "operator-programmer-assignment-work-animations-v1", "payroll-capacity-and-inspection-ui-art-v1", "chapter-2-zach-founder-and-team-scenes-v1", "chapter-2-station-tutorial-set-v1", "job-shop-graduation-and-connected-plant-reveal-v1"
+      ]
+    },
+    {
+      "chapter": 3,
+      "releaseStatus": "locked",
+      "implemented": [],
+      "missing": ["connected-plant-map-and-hd-background-v1", "connected-plant-exterior-v1", "machining-cell-sprite-set-v1", "mtconnect-node-open-view-v1", "oee-dashboard-and-downtime-visuals-v1", "maintenance-and-toolroom-equipment-set-v1", "multi-shift-workforce-sprites-and-profiles-v1", "bottleneck-material-flow-states-v1", "chapter-3-story-scene-variants-v1", "chapter-3-station-tutorial-set-v1", "smart-factory-reveal-v1"]
+    },
+    {
+      "chapter": 4,
+      "releaseStatus": "locked",
+      "implemented": [],
+      "missing": ["smart-factory-map-and-hd-background-v1", "smart-factory-exterior-v1", "cobot-cell-sprite-open-and-guarding-views-v1", "amr-sprite-direction-and-load-states-v1", "automated-fixture-and-pallet-system-set-v1", "digital-handoff-and-tool-control-ui-v1", "engineering-change-and-cell-validation-visuals-v1", "automation-team-sprites-and-profiles-v1", "chapter-4-story-scene-variants-v1", "chapter-4-station-tutorial-set-v1", "lights-out-complex-reveal-v1"]
+    },
+    {
+      "chapter": 5,
+      "releaseStatus": "locked",
+      "implemented": [],
+      "missing": ["lights-out-complex-day-and-night-maps-v1", "lights-out-exterior-v1", "robot-and-amr-fleet-state-set-v1", "pallet-pool-and-material-flow-set-v1", "preventive-maintenance-and-fault-state-set-v1", "remote-monitoring-and-escalation-ui-v1", "unattended-run-success-and-recovery-scenes-v1", "night-shift-team-sprites-and-profiles-v1", "chapter-5-story-scene-variants-v1", "chapter-5-station-tutorial-set-v1", "titan-campus-reveal-v1"]
+    },
+    {
+      "chapter": 6,
+      "releaseStatus": "locked",
+      "implemented": [],
+      "missing": ["titan-campus-multi-building-map-v1", "campus-exterior-and-aerial-v1", "aerospace-energy-robotics-production-halls-v1", "executive-planning-and-capital-allocation-ui-v1", "traceability-quality-and-program-management-views-v1", "department-leader-and-apprentice-rosters-v1", "academy-classroom-and-training-equipment-v1", "mentor-legacy-zach-and-founder-scene-variants-v1", "ending-variant-and-postgame-scene-set-v1", "chapter-6-station-tutorial-set-v1", "credits-and-campaign-completion-art-v1"]
+    }
+  ]
+}

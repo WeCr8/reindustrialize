@@ -49,6 +49,67 @@
     {"id":"shop_class_open","status":"planned","needs":["chalkboard scene art","chalk and tool-tap SFX","first-entry trigger"]},
     {"id":"first_article_art_upgrade","status":"planned","needs":["dedicated inspection scene art","branch-specific failed-article scene"],"fallback":"Passing first-article milestone is implemented with exact narration; machine result supplies the grade."},
     {"id":"first_hire_art_upgrade","status":"planned","needs":["candidate-specific founder-and-team story scenes"],"fallback":"First-hire milestone is implemented using the selected founder overlay; candidate portraits remain in the hiring UI."},
-    {"id":"chapters_3_to_6","status":"planned","needs":["chapter entry and graduation sequences","facility art","voice scripts","music and SFX","runtime gates"]}
-  ]
+    {"id":"chapter_2_completion","status":"planned","needs":["concurrent production mechanics","inspection and shipping workflow","payroll/cash-flow gate","Connected Plant facility art","approved Zach scripts and audio"]},
+    {"id":"chapters_3_to_6","status":"planned","needs":["runtime mechanics and gates listed in campaignPlan","facility art","approved Zach scripts and audio","music and SFX"]}
+  ],
+  "campaignPlan": {
+    "truthRule":"A planned beat is storybook-visible for production planning but must never be presented as playable, voiced, or visually complete.",
+    "chapters":[
+      {
+        "chapter":2,"status":"partial","title":"From Craftsperson to Team","facility":"job_shop","difficulty":"Guided growth · approachable teamwork, quality, and scheduling with forgiving recovery","targetHours":[3,4],
+        "beats":[
+          {"phase":"entry","title":"The Team Is the Machine","status":"implemented","text":"The founder enters the Job Shop and learns that more capacity creates scheduling, tooling, inspection, and handoff risk.","runtimeSequence":"job_shop_expansion"},
+          {"phase":"learn","title":"Quote, Route, and Staff","status":"planned","text":"Quote repeat work, plan its route, hire an operator and programmer, and assign only qualified people.","mechanicNeeds":["costed quoting","route planning","role training"],"audioNeeds":"New approved Zach lesson on delegation and payroll."},
+          {"phase":"prove","title":"Two Machines, One Promise","status":"planned","text":"Run VMC and lathe work concurrently without allowing either traveler, tool list, or due date to disappear.","mechanicNeeds":["playable lathe","concurrent scheduler","due dates"],"audioNeeds":"New approved Zach concurrency and bottleneck guidance."},
+          {"phase":"operate","title":"Inspection Is Production","status":"planned","text":"Document eight inspections, ship on time, cover payroll, and sustain positive cash while quality rises to a 4.0 average.","mechanicNeeds":["inspection records","shipping","payroll and cash shifts"],"audioNeeds":"New approved Zach quality-system and cash-flow guidance."},
+          {"phase":"recover","title":"The Missed Handoff","status":"planned","text":"Recover a late, at-risk job by correcting the handoff and schedule instead of hiding the defect or rushing unsafe work.","mechanicNeeds":["late-job incident","root-cause choice","recovery outcome"],"audioNeeds":"New approved Zach recovery scene."},
+          {"phase":"graduate","title":"Job-Shop Owner","status":"planned","text":"Ship eight chapter jobs at 4.0 quality, 85 percent on time, with three people, five concurrent completions, eight inspections, and three positive-cash shifts; then move to the Connected Plant.","mechanicNeeds":["complete chapter gate","Connected Plant unlock"],"visualNeeds":"Connected Plant arrival and graduation art.","audioNeeds":"New approved Zach graduation narration."}
+        ]
+      },
+      {
+        "chapter":3,"status":"planned","title":"Manage What You Cannot See","facility":"connected_plant","difficulty":"Intermediate · Zach-guided telemetry, bottlenecks, maintenance, and multi-shift leadership","targetHours":[4,5.5],
+        "beats":[
+          {"phase":"entry","title":"Signals and Blind Spots","status":"planned","text":"The founder enters a 45,000-square-foot plant where no one person can watch every machine or handoff.","mechanicNeeds":["Connected Plant map","department ownership"],"audioNeeds":"New approved Zach visibility lesson."},
+          {"phase":"learn","title":"Connect the Truth","status":"planned","text":"Connect eight machines, distinguish running from producing, and learn OEE, downtime, and trustworthy production signals.","mechanicNeeds":["MTConnect objectives","OEE dashboard","downtime states"],"audioNeeds":"New approved Zach OEE and data-context tutorial."},
+          {"phase":"prove","title":"Find the Constraint","status":"planned","text":"Schedule machining cells, toolroom, maintenance, quality, and shipping to expose and recover the actual bottleneck.","mechanicNeeds":["cell scheduler","maintenance/toolroom ownership","bottleneck simulation"],"audioNeeds":"New approved Zach constraint guidance."},
+          {"phase":"operate","title":"Lead the Other Shift","status":"planned","text":"Build clean handoffs and lead eight people across shifts while preserving quality and delivery.","mechanicNeeds":["shift system","handoff quality","department assignments"],"audioNeeds":"New approved Zach multi-shift leadership guidance."},
+          {"phase":"recover","title":"The Dashboard Was Green","status":"planned","text":"Recover a customer-risk event where a healthy-looking metric concealed starvation, blockage, or bad context.","mechanicNeeds":["misleading-metric incident","three root-cause recoveries"],"audioNeeds":"New approved Zach data-without-context scene."},
+          {"phase":"graduate","title":"Connected-Plant Leader","status":"planned","text":"Ship ten chapter jobs at 4.0 quality and 88 percent on time after ten OEE reviews and three root-cause recoveries; then fund the Smart Factory.","mechanicNeeds":["complete chapter gate","Smart Factory unlock"],"visualNeeds":"Smart Factory arrival and graduation art.","audioNeeds":"New approved Zach graduation narration."}
+        ]
+      },
+      {
+        "chapter":4,"status":"planned","title":"Standardize and Automate","facility":"smart_factory","difficulty":"Advanced · controlled tooling, digital standards, fixtures, cobots, and capability","targetHours":[5,6.5],
+        "beats":[
+          {"phase":"entry","title":"Automate the Standard","status":"planned","text":"The founder enters a 120,000-square-foot factory where automation will multiply every good process and every bad one.","mechanicNeeds":["Smart Factory map","automation planning"],"audioNeeds":"New approved Zach automation principle scene."},
+          {"phase":"learn","title":"Control the Tool","status":"planned","text":"Preset and control one hundred tools, prove offsets, and eliminate undocumented substitutions.","mechanicNeeds":["tool lifecycle","preset records","RFID crib"],"audioNeeds":"New approved Zach tool-control tutorial."},
+          {"phase":"prove","title":"Design the Cell","status":"planned","text":"Design fixtures and handoffs, install a safe cobot, and validate capability before increasing rate.","mechanicNeeds":["fixture design","cobot safety","capability study"],"audioNeeds":"New approved Zach cell-design and safety guidance."},
+          {"phase":"operate","title":"Fourteen Clean Handoffs","status":"planned","text":"Sustain controlled digital handoffs and improve flow without hiding defects or bypassing inspection.","mechanicNeeds":["digital traveler","handoff streak","improvement system"],"audioNeeds":"New approved Zach standard-work guidance."},
+          {"phase":"recover","title":"Fast Scrap","status":"planned","text":"Stop an automated cell that is multiplying a weak process, find the cause, and revalidate it safely.","mechanicNeeds":["automation fault incident","safe stop","revalidation"],"audioNeeds":"New approved Zach stop-and-correct scene."},
+          {"phase":"graduate","title":"Smart-Factory Architect","status":"planned","text":"Ship twelve jobs at 4.2 quality and 90 percent on time with three validated automated cells and five measured improvements; then open the Lights-Out Complex.","mechanicNeeds":["complete chapter gate","Lights-Out unlock"],"visualNeeds":"Lights-Out arrival and graduation art.","audioNeeds":"New approved Zach graduation narration."}
+        ]
+      },
+      {
+        "chapter":5,"status":"planned","title":"Reliability at Industrial Scale","facility":"lights_out_complex","difficulty":"Expert · unattended production, robotics, material flow, maintenance, and recovery","targetHours":[5.5,7.5],
+        "beats":[
+          {"phase":"entry","title":"Trust the Night","status":"planned","text":"The founder enters a 350,000-square-foot complex where unattended production is earned through preparation, not hope.","mechanicNeeds":["Lights-Out map","night-shift simulation"],"audioNeeds":"New approved Zach unattended-production scene."},
+          {"phase":"learn","title":"Make It Unattended-Ready","status":"planned","text":"Prove tool life, chip control, gauging, material supply, and safe fault behavior before the team leaves.","mechanicNeeds":["unattended checklist","tool life","in-process gauging"],"audioNeeds":"New approved Zach readiness tutorial."},
+          {"phase":"prove","title":"Coordinate the Fleet","status":"planned","text":"Coordinate robots and AMRs through five hundred cycles without starving machines, blocking aisles, or losing material identity.","mechanicNeeds":["robot and AMR routing","material identity","traffic safety"],"audioNeeds":"New approved Zach automation-fleet guidance."},
+          {"phase":"operate","title":"Ten Reliable Nights","status":"planned","text":"Sustain preventive maintenance, less than three percent scrap, and ten successful unattended nights.","mechanicNeeds":["preventive maintenance","night scorecard","scrap accounting"],"audioNeeds":"New approved Zach reliability guidance."},
+          {"phase":"recover","title":"The 2 A.M. Call","status":"planned","text":"Execute five recovery drills and respond to a night fault without creating a safety, quality, or traceability escape.","mechanicNeeds":["fault scenarios","remote escalation","recovery drills"],"audioNeeds":"New approved Zach fault-recovery scene."},
+          {"phase":"graduate","title":"Lights-Out Operations Leader","status":"planned","text":"Ship fourteen jobs at 4.3 quality and 92 percent on time after ten reliable nights and five recovery drills; then build the American Titan Campus.","mechanicNeeds":["complete chapter gate","Titan Campus unlock"],"visualNeeds":"Titan Campus arrival and graduation art.","audioNeeds":"New approved Zach graduation narration."}
+        ]
+      },
+      {
+        "chapter":6,"status":"planned","title":"Build the Institution","facility":"american_titan_campus","difficulty":"Titan · multi-building strategy, certified programs, leaders, apprentices, and legacy","targetHours":[6.5,10],
+        "beats":[
+          {"phase":"entry","title":"Build Beyond Yourself","status":"planned","text":"The founder opens a million-square-foot manufacturing campus serving aerospace, energy, robotics, and American industry.","mechanicNeeds":["campus map","multi-building management"],"audioNeeds":"New approved Zach institution-building scene."},
+          {"phase":"learn","title":"Win the Program","status":"planned","text":"Price, negotiate, and execute strategic programs while protecting aerospace traceability and customer trust.","mechanicNeeds":["long-term agreements","program economics","certified traceability"],"audioNeeds":"New approved Zach strategic-program guidance."},
+          {"phase":"prove","title":"Leaders, Not Helpers","status":"planned","text":"Develop six department leaders who can make good decisions without waiting for the founder at every station.","mechanicNeeds":["leadership progression","delegation authority","department scorecards"],"audioNeeds":"New approved Zach leadership-development scene."},
+          {"phase":"operate","title":"The Apprentice Academy","status":"planned","text":"Launch an academy, transfer standards and judgment, and graduate three apprentices into meaningful factory roles.","mechanicNeeds":["academy management","training paths","apprentice graduation"],"audioNeeds":"New approved Zach teaching and legacy guidance."},
+          {"phase":"recover","title":"The Promise at Scale","status":"planned","text":"Resolve a campus-wide program crisis without sacrificing people, traceability, quality, or the institution's future.","mechanicNeeds":["multi-building crisis","executive tradeoffs","customer recovery"],"audioNeeds":"New approved Zach final crisis scene."},
+          {"phase":"graduate","title":"American Manufacturing Titan","status":"planned","text":"Complete ten certified program jobs, three long-term agreements, six department leaders, three apprentice graduations, and eight profitable weeks at 4.5 quality and 95 percent on time.","mechanicNeeds":["complete final gate","persistent campus end state"],"visualNeeds":"Final campus panorama, department leaders, apprentices, and mentor-legacy art.","audioNeeds":"New approved Zach finale and player legacy narration."}
+        ]
+      }
+    ]
+  }
 }

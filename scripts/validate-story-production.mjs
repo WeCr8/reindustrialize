@@ -4,6 +4,7 @@ const story=JSON.parse(await readFile('data/story-production.json','utf8'));
 const audio=JSON.parse(await readFile('data/audio-generation.json','utf8'));
 const scenes=JSON.parse(await readFile('data/player-scene-manifest.json','utf8'));
 const runtime=await readFile('scripts/build_level_viewer_v4.py','utf8');
+const progression=JSON.parse(await readFile('data/chapter-progression.json','utf8'));
 const voiceText=new Map(audio.voice.clips.map(x=>[x.id,x.text]));
 const ids=new Set();let beats=0,voiced=0;
 for(const [sequence,items] of Object.entries(story.sequences)){
@@ -24,4 +25,11 @@ for(const sequence of ['first_customer','nox_delivery','first_verified_article',
   if(!runtime.includes(`storySeen("${sequence}")`))throw new Error(`Missing one-time runtime hook for ${sequence}`);
 }
 for(const token of ['acceptCustomerContract(c)','placeNoxOrder(item)','hireCandidate(h)','showExpansion()','state.storySequences'])if(!runtime.includes(token))throw new Error(`Missing Chapter 1 story state hook: ${token}`);
+const plans=new Map(story.campaignPlan.chapters.map(x=>[x.chapter,x]));
+for(const chapter of progression.chapters.filter(x=>x.chapter>=2)){
+  const plan=plans.get(chapter.chapter);if(!plan)throw new Error(`Missing campaign story plan for Chapter ${chapter.chapter}`);
+  for(const phase of ['entry','learn','prove','operate','recover','graduate'])if(!plan.beats.some(x=>x.phase===phase))throw new Error(`Chapter ${chapter.chapter} lacks ${phase} story coverage`);
+  for(const beat of plan.beats.filter(x=>x.status!=='implemented'))if(beat.voice)throw new Error(`Planned beat may not claim generated voice: Chapter ${chapter.chapter}/${beat.title}`);
+  if(plan.title!==chapter.title||plan.facility!==chapter.facility)throw new Error(`Chapter ${chapter.chapter} plan drifted from progression data`);
+}
 console.log(`PASS: ${beats} implemented story beats, ${voiced} exact voice-caption pairs, required art and MP3 files present`);

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "version": "2026.07-alpha-audio-1",
+  "truthPolicy": "Generated files are not implemented audio until they are copied into the shipped asset set, wired to a real runtime event, browser-played, and mix-reviewed.",
+  "categories": ["storyVoice", "stationTutorials", "equipmentSequences", "uiFeedback", "ambience", "music", "mixAndAccessibility"],
+  "chapters": [
+    {
+      "chapter": 1,
+      "facility": "Garage Bay",
+      "status": "implemented-needs-final-mix",
+      "coverage": {
+        "storyVoice": {"status": "implemented", "need": "Opening, founder prelude, Chapter 1 milestone callbacks, Zach responses, and graduation; captions must exactly match voice manifest text."},
+        "stationTutorials": {"status": "implemented", "need": "Two-phase shop tour and every playable production-task tutorial must trigger its declared Zach clip."},
+        "equipmentSequences": {"status": "implemented", "need": "Bandsaw and VMC power, clamp/door, spindle, coolant, G0 rapid, G1 cutter-specific engagement, tool change, stop, inspection, and result cues in physical order. The legacy generic cnc_cycle prompt is intentionally unused; cutter-specific recordings are authoritative."},
+        "uiFeedback": {"status": "implemented", "need": "Terminal, customer phone, planning, mission, quality, reward, and facility-unlock feedback with no duplicate or misleading confirmation."},
+        "ambience": {"status": "implemented", "need": "Small-shop loop at 0.16 default, independent opt-out, narration duck to 38 percent of ambience level, and guaranteed unduck on end, error, mute, skip, or replacement."},
+        "music": {"status": "generated-unwired", "need": "Founding Dawn, Garage Shift, Precision Run, Inspection Focus, Planning Office, and Factory Expansion require a music bus, transitions, independent volume/opt-out, ducking policy, and browser E2E before use."},
+        "mixAndAccessibility": {"status": "partial", "need": "Master/voice/SFX/ambience controls and visible narration exist; final loudness normalization, captions mode, audio descriptions where needed, device review, and fatigue listening remain."}
+      }
+    },
+    {
+      "chapter": 2,
+      "facility": "Job Shop",
+      "status": "arrival-audio-only",
+      "coverage": {
+        "storyVoice": {"status": "partial", "need": "Arrival line exists; entry, staffing, quoting, capacity conflict, customer consequence, recovery, and graduation scripts require approval and generation."},
+        "stationTutorials": {"status": "planned", "need": "Tutorial narration for every newly playable Job Shop station and management surface."},
+        "equipmentSequences": {"status": "planned", "need": "Lathe, inspection, deburr, manual machining, material handling, maintenance, and multi-machine concurrency sequences tied to actual mechanics."},
+        "uiFeedback": {"status": "planned", "need": "Quoting, scheduling, payroll, hiring, assignment, due-date, customer, and cash-risk cues."},
+        "ambience": {"status": "implemented-arrival", "need": "Job-shop ambience switches on facility arrival; zone mix and simultaneous machine load behavior remain."},
+        "music": {"status": "generated-unwired", "need": "Planning and expansion cues need runtime music system and chapter-specific transitions."},
+        "mixAndAccessibility": {"status": "planned", "need": "Full chapter audible E2E, captions, mix, device, fatigue, and failure-path review."}
+      }
+    },
+    {
+      "chapter": 3,
+      "facility": "Connected Plant",
+      "status": "planned",
+      "coverage": {
+        "storyVoice": {"status": "planned", "need": "Approved entry, systems-thinking, bottleneck, traceability, failure, recovery, team/customer callback, and graduation dialogue."},
+        "stationTutorials": {"status": "planned", "need": "Connectivity, dashboards, maintenance, traceability, WIP, and multi-customer priority tutorials."},
+        "equipmentSequences": {"status": "planned", "need": "Connected machine states, downtime causes, maintenance and material-flow sequences."},
+        "uiFeedback": {"status": "planned", "need": "Alerts prioritized by severity without alarm fatigue; traceability and diagnosis confirmations."},
+        "ambience": {"status": "planned", "need": "Zoned plant ambience with machine-load crossfades and quiet office space."},
+        "music": {"status": "planned", "need": "Analytical chapter identity and escalation/recovery cues."},
+        "mixAndAccessibility": {"status": "planned", "need": "Alert distinction must not depend on sound alone; full certification required."}
+      }
+    },
+    {
+      "chapter": 4,
+      "facility": "Smart Factory",
+      "status": "planned",
+      "coverage": {
+        "storyVoice": {"status": "planned", "need": "Approved automation, workforce, change-control, commissioning, consequence, recovery, and graduation dialogue."},
+        "stationTutorials": {"status": "planned", "need": "Robot safety, cell validation, standard work, engineering change, and automation economics tutorials."},
+        "equipmentSequences": {"status": "planned", "need": "Robot/cobot/AMR, interlock, cell cycle, tool management, fault, and safe recovery sequences."},
+        "uiFeedback": {"status": "planned", "need": "Commissioning, interlock, quality drift, engineering approval, and capital feedback."},
+        "ambience": {"status": "planned", "need": "Automated-cell and human-work-zone ambience with safe spatial separation."},
+        "music": {"status": "planned", "need": "Automation chapter identity with controlled commissioning tension."},
+        "mixAndAccessibility": {"status": "planned", "need": "Safety and fault meaning must be visual/textual as well as audible."}
+      }
+    },
+    {
+      "chapter": 5,
+      "facility": "Lights-Out Complex",
+      "status": "planned",
+      "coverage": {
+        "storyVoice": {"status": "planned", "need": "Approved trust, unattended operation, cyber/maintenance exception, escalation, recovery, and graduation dialogue."},
+        "stationTutorials": {"status": "planned", "need": "Remote monitoring, preventive maintenance, escalation, cybersecurity, and unattended certification tutorials."},
+        "equipmentSequences": {"status": "planned", "need": "Unattended cells, remote intervention, predictive failure, controlled stop, and restart sequences."},
+        "uiFeedback": {"status": "planned", "need": "Remote alerts, acknowledgement, escalation, cyber events, and exception resolution cues."},
+        "ambience": {"status": "planned", "need": "Quiet night automation ambience derived from the generated prototype only after mechanics and zone mix exist."},
+        "music": {"status": "planned", "need": "Sparse night-operation identity, exception tension, and recovery cues."},
+        "mixAndAccessibility": {"status": "planned", "need": "Low-fatigue long-session monitoring mix and non-audio alert parity."}
+      }
+    },
+    {
+      "chapter": 6,
+      "facility": "American Titan Campus",
+      "status": "planned",
+      "coverage": {
+        "storyVoice": {"status": "planned", "need": "Approved leadership, succession, community, customer/workforce callbacks, ending variants, postgame, and credits dialogue."},
+        "stationTutorials": {"status": "planned", "need": "Campus leadership, capital allocation, leader development, supply network, and succession tutorials."},
+        "equipmentSequences": {"status": "planned", "need": "Campus-wide production state, logistics, energy, maintenance, and cross-facility exception sequences."},
+        "uiFeedback": {"status": "planned", "need": "Capital, leadership, trust, supply-chain, community, ending, achievement, and postgame cues."},
+        "ambience": {"status": "planned", "need": "Campus zones and accumulated facility identity with scalable mix."},
+        "music": {"status": "generated-unwired", "need": "Industrial Titan is a generated prototype; finale variants, credits, loop points, transitions, rights and final mix remain."},
+        "mixAndAccessibility": {"status": "planned", "need": "Full-campaign continuity, captions, descriptions, loudness, device matrix, fatigue and credits review."}
+      }
+    }
+  ]
+}

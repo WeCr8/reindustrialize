@@ -1,7 +1,7 @@
 {
  "id": "bay_02",
  "name": "Job Shop Expansion",
- "unlocksAtTier": 3,
+ "unlocksAtTier": 2,
  "size": [
   28,
   14

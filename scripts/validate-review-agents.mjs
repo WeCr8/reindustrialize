@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
 const manifest=JSON.parse(fs.readFileSync('data/review-agents.json','utf8')),fail=[];
-const required=['senior_game_developer','narrative_designer','manufacturing_business_owner'];
+const required=['senior_game_developer','narrative_designer','manufacturing_business_owner','audio_production_qa','visual_production_qa'];
 if(manifest.version!==1)fail.push('review-agent manifest version must be 1');
 if(!manifest.truthPolicy?.includes('Never describe'))fail.push('truth policy must forbid planned/stub completion claims');
 const agents=Array.isArray(manifest.agents)?manifest.agents:[];

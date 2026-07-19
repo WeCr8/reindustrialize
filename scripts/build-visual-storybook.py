@@ -40,6 +40,17 @@ for scene_id,scene_label,sequence_id in scene_sequences:
         family=scenes['founders'][founder['id']]['family'];image=scenes['scenes'][scene_id]['assets'][family]
         add('Founder Scene Variants',f"{scene_label} · {founder['name']}",summary,asset(image),founder=founder['id'],sprite=asset('sprites/'+founder['spriteSpec']['sheet']+'.png'),note=f'Exact {founder["name"]} identity overlay; shared {family} cinematic background.')
 
+# Every playable milestone gets an exact slide for every selectable founder. This
+# is intentionally more explicit than the scene summaries above: the storybook is
+# the versioned proof that runtime beat order, caption, voice, and player identity
+# have not drifted apart.
+milestone_sequences=['first_customer','nox_delivery','first_verified_article','first_hire','garage_graduation']
+for sequence_id in milestone_sequences:
+    for beat in story['sequences'][sequence_id]:
+        for founder in founders:
+            family=scenes['founders'][founder['id']]['family'];image=scenes['scenes'][beat['visual']]['assets'][family]
+            add('Chapter 1 Milestones',f"{beat['kicker']} · {founder['name']}",beat['text'],asset(image),founder=founder['id'],sprite=asset('sprites/'+founder['spriteSpec']['sheet']+'.png'),voice=beat.get('voice'),storySequence=sequence_id,storyBeat=beat['id'],note=f'Exact runtime caption and {founder["name"]} identity proof; Zach is mentor and the founder owns the company decision.')
+
 for stop in tour['stops']:
     add('Shop Tour',f"{stop['order']:02d} · {stop['title']}",stop['text'],station_image(stop),status=stop.get('status','playable'),location=stop['location'],instructions=[stop['operation']],voice=stop.get('voice'))
 for task in tasks['tasks']:
@@ -49,6 +60,14 @@ for hire in hiring['candidates']:
     add('Factory Workforce',f"{hire['title']} · {hire['name']}",detail,asset('story-expansion-male-founder-v1.png'),status='playable',location='Assignable to: '+', '.join(hire['qualifications']),instructions=['Hire through Build Your Team','Assign only to a qualified station','Worker travels, works, and meanders while idle'],success='Visible worker entity is active on the factory floor',portraitAtlas=asset('sprites/'+hiring['profileAtlas']+'.png'),portraitCell=hire['atlasCell'],note='Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite.')
     dialogue=conversations['employees'][hire['id']]
     add('Workforce Conversations',f"TALK WITH {hire['name']}",dialogue['greeting'],asset('story-expansion-male-founder-v1.png'),status='playable',location=hire['title'],instructions=[dialogue['idle'],dialogue['assigned'],f"PLAYER: {dialogue['question']}",f"{hire['name'].upper()}: {dialogue['answer']}"],success='Conversation text advances through greeting, status, question, and role guidance',portraitAtlas=asset('sprites/'+hiring['profileAtlas']+'.png'),portraitCell=hire['atlasCell'],note='Conversation portrait and factory-floor sprite share the same employee identity and roster cell.')
+for chapter in story['campaignPlan']['chapters']:
+    for beat in chapter['beats']:
+        implemented=beat['status']=='implemented';image=asset('story-expansion-male-founder-v1.png') if implemented else None
+        needs=[]
+        if beat.get('mechanicNeeds'): needs.append('MECHANICS: '+', '.join(beat['mechanicNeeds']))
+        if beat.get('visualNeeds'): needs.append('VISUAL: '+beat['visualNeeds'])
+        if beat.get('audioNeeds'): needs.append('AUDIO: '+beat['audioNeeds'])
+        add(f"Campaign Chapter {chapter['chapter']}",f"{beat['phase'].upper()} · {beat['title']}",beat['text'],image,status=beat['status'],location=f"{chapter['title']} · {chapter['facility'].replace('_',' ').title()}",instructions=needs,success=f"DIFFICULTY: {chapter['difficulty']} · TARGET: {chapter['targetHours'][0]}–{chapter['targetHours'][1]} HOURS",chapter=chapter['chapter'],chapterStatus=chapter['status'],campaignPhase=beat['phase'],note='Production blueprint only; planned beats are not playable and have no generated voice or finished art.' if not implemented else 'Existing Chapter 2 entry is playable; later beats remain explicitly planned.')
 for planned in story['plannedSequences']:
     add('Planned Story Gaps',planned['id'].replace('_',' ').upper(),'Not yet implemented. Required before this story beat may be presented as complete.',None,status='planned',instructions=planned['needs'])
 

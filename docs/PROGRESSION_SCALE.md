@@ -31,14 +31,18 @@ Recommended XP curve: `round(750 × level^1.35)` for the next level. Filling the
 
 | Chapter | Levels | Target time | Facility | Required production | Core graduation standard |
 |---|---:|---:|---|---:|---|
-| 1. Founder and Apprentice | 1–5 | 0.5–0.75 h | Garage Bay | 5 jobs | C average, three job families, certified material, one lesson |
-| 2. From Craftsperson to Team | 6–10 | 1.5–2 h | Job Shop | 8 chapter jobs | B average, 85% on time, three staff, concurrency and inspection |
-| 3. Manage What You Cannot See | 11–15 | 1.5–2 h | Connected Plant | 10 chapter jobs | B average, 88% on time, connected machines, OEE and recovery |
-| 4. Standardize and Automate | 16–20 | 2–2.25 h | Smart Factory | 12 chapter jobs | B+ average, 90% on time, controlled tools, handoffs and cells |
-| 5. Reliability at Industrial Scale | 21–25 | 2–2.5 h | Lights-Out Complex | 14 chapter jobs | B+ average, 92% on time, under 3% scrap and reliable nights |
-| 6. Build the Institution | 26–30 | 2.5–3 h | Titan Campus | 16 chapter jobs | A- average, 95% on time, strategic programs and developed leaders |
+| 1. Founder and Apprentice | 1–5 | 1–1.5 h | Garage Bay | 5 jobs / 20 operations | C average, three job families, certified material, one lesson |
+| 2. From Craftsperson to Team | 6–10 | 3–4 h | Job Shop | 12 jobs / 48 operations | B average, 85% on time, ≤12% scrap, three staff, two concurrent jobs |
+| 3. Manage What You Cannot See | 11–15 | 4–5.5 h | Connected Plant | 20 jobs / 80 operations | 4.1 quality, 88% on time, ≤8% scrap, eight staff, connected machines |
+| 4. Standardize and Automate | 16–20 | 5–6.5 h | Smart Factory | 30 jobs / 120 operations | 4.2 quality, 90% on time, ≤6% scrap, 12 staff, three automated cells |
+| 5. Reliability at Industrial Scale | 21–25 | 5.5–7.5 h | Lights-Out Complex | 40 jobs / 160 operations | 4.3 quality, 92% on time, ≤3% scrap, 20 staff, six automated cells |
+| 6. Build the Institution | 26–30 | 6.5–10 h | Titan Campus | 50 jobs / 200 operations | 4.5 quality, 95% on time, ≤2% scrap, 40 staff, 12 automated cells |
 
-The intended main campaign is a focused console-adventure length of approximately **10–12 hours**. Optional contracts, mastery grades, hidden interactions, team stories, and Easter eggs extend a thorough playthrough to approximately **16–20 hours** without making repetition a graduation requirement.
+The production burden grows from 5 to 50 chapter jobs and from 20 to 200 required operations. Simultaneous work rises from one to eight jobs, while facilities expand from 2,400 to 1,000,000 square feet. These are competency gates, not filler targets: the anti-grind family rule still prevents repeated copies from substituting for process breadth.
+
+Release truth is separate from design completion. Chapter 1 is the playable alpha chapter, Chapter 2 is in development, and Chapters 3–6 are locked. The validator rejects any data change that silently presents future design targets as shipped gameplay.
+
+The intended main campaign is a full-length progression of approximately **25–35 hours**. Optional contracts, mastery grades, hidden interactions, team stories, and Easter eggs extend a thorough playthrough to approximately **40–55 hours** without making repetition a graduation requirement. Chapters 1–2 remain family-friendly and highly guided; deeper management constraints phase in only after the player has learned the underlying shop actions through play.
 
 ## Easter egg scale
 

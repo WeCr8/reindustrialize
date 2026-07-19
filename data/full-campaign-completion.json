@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "productVersion": "first-playable-alpha",
+  "fullCampaignClaimAllowed": false,
+  "truthPolicy": "A chapter is complete only when every required proof category is complete and its named automated proof passes from a clean production build.",
+  "requiredCategories": ["gameplay", "automation", "story", "audio", "visuals", "facility", "difficulty"],
+  "chapters": [
+    {
+      "id": 1,
+      "name": "First Promise",
+      "releaseStatus": "playable-alpha",
+      "requirements": {
+        "gameplay": "Create founder and company; tour the Garage Bay; source stock; cut, tool, program, machine, inspect, and ship multiple jobs; qualify for expansion.",
+        "automation": "A visible-input bot completes the chapter without teleporting or direct state mutation; targeted station and save/control E2E suites pass.",
+        "story": "Zach welcomes, teaches, challenges, and graduates the founder; customer, supplier, and first-hire beats have consequential callbacks.",
+        "audio": "Opening, tour, station tutorials, task validation, equipment sequences, ambience, and graduation are audible, synchronized, ducked, and optional.",
+        "visuals": "Founder variants, Zach, Garage Bay, customers, hires, equipment, tools, task views, and story scenes match the approved 32-bit direction.",
+        "facility": "Garage stations are spatially playable and expansion arrives at the Job Shop without presenting later facilities as complete.",
+        "difficulty": "Five-job mastery curve includes recoverable setup errors, true G/M code, quality grading, and a documented graduation threshold."
+      },
+      "proof": {
+        "gameplay": {"status": "complete", "evidence": "tests/e2e_topdown_task_loop.py"},
+        "automation": {"status": "complete", "evidence": "scripts/human-gameplay-bot.py + tmp/bot-runs/human-bot-run-20260718.json"},
+        "story": {"status": "partial", "evidence": "tests/e2e_chapter_one_story.py; new callbacks remain under integration"},
+        "audio": {"status": "partial", "evidence": "audio gates cover declared assets; final chapter-wide audible review remains required"},
+        "visuals": {"status": "partial", "evidence": "storybook and player-scene validators; final consistency review remains required"},
+        "facility": {"status": "complete", "evidence": "scripts/human-gameplay-bot.py + Garage-to-Job-Shop bot completion"},
+        "difficulty": {"status": "partial", "evidence": "five jobs and grading work; final balance certification remains required"}
+      }
+    },
+    {
+      "id": 2,
+      "name": "The Team Is the Machine",
+      "releaseStatus": "arrival-only",
+      "requirements": {
+        "gameplay": "Operate a larger multi-station Job Shop; quote work; schedule capacity; hire, qualify, and assign a production team; manage payroll and delivery.",
+        "automation": "A deterministic visible-input bot completes every Chapter 2 objective and regression tests cover staffing, capacity, saves, failure, and recovery.",
+        "story": "Zach shifts from shop teacher to leadership mentor; employee and customer choices create later callbacks.",
+        "audio": "New facility, staff, communications, production stations, successes, failures, and chapter transition have mixed dialogue, SFX, and ambience.",
+        "visuals": "Job Shop map, station states, staff work/meander animations, profiles, customers, scenes, and expansion views are final-quality and variant-safe.",
+        "facility": "The Job Shop is fully operable and meaningfully larger than the Garage; Connected Plant unlock conditions are implemented.",
+        "difficulty": "Introduces simultaneous work, labor/capacity tradeoffs, due dates, and cash-flow pressure without grind-only gates."
+      },
+      "proof": {}
+    },
+    {
+      "id": 3,
+      "name": "Signals and Blind Spots",
+      "releaseStatus": "planned",
+      "requirements": {
+        "gameplay": "Connect machines and quality data; diagnose bottlenecks; control WIP, maintenance, traceability, and multi-customer priorities.",
+        "automation": "Full chapter bot plus deterministic bottleneck, traceability, maintenance, save, and failure-path E2E proof.",
+        "story": "Growth exposes communication and measurement failures; Zach teaches systems thinking while team/customer arcs continue.",
+        "audio": "Connected-plant equipment, alerts, communications, mentor scenes, ambience zones, and transition cues are complete and mixed.",
+        "visuals": "Connected Plant, dashboards, material flow, expanded workforce, machine states, failures, repairs, and scenes are production-ready.",
+        "facility": "Connected Plant is fully traversable and operable with visible material and information flow.",
+        "difficulty": "Requires diagnosis and prioritization rather than faster repetition; consequences remain recoverable and legible."
+      },
+      "proof": {}
+    },
+    {
+      "id": 4,
+      "name": "Automate the Standard",
+      "releaseStatus": "planned",
+      "requirements": {
+        "gameplay": "Standardize processes, deploy automation, validate cells, manage engineering changes, and protect quality during scale-up.",
+        "automation": "Full chapter bot plus automation commissioning, change-control, quality, save, and alternate-strategy E2E proof.",
+        "story": "Automation choices affect people, customers, and operating culture; Zach challenges the founder to automate responsibly.",
+        "audio": "Robotics, automated cells, alarms, engineering reviews, mentor scenes, ambience, and transitions are complete and accessible.",
+        "visuals": "Smart Factory, robotics, guarded cells, engineering areas, team roles, automation states, and story scenes are final-quality.",
+        "facility": "Smart Factory is fully operable with safe, readable automated material flow and expansion logic.",
+        "difficulty": "Balances capital, reliability, people, and throughput; optimization has multiple viable strategies."
+      },
+      "proof": {}
+    },
+    {
+      "id": 5,
+      "name": "Trust the Night",
+      "releaseStatus": "planned",
+      "requirements": {
+        "gameplay": "Build resilient unattended production; manage monitoring, preventive maintenance, exceptions, cybersecurity, and escalation.",
+        "automation": "Full chapter bot plus unattended-run, fault, cyber, recovery, save, and no-intervention certification E2E proof.",
+        "story": "The founder learns when systems and people can be trusted; earlier staffing and process decisions pay off or create risk.",
+        "audio": "Night factory, remote alerts, faults, recovery, mentor scenes, music, and quiet-zone ambience are mixed without fatigue.",
+        "visuals": "Lights-Out Complex, night states, monitoring, automated logistics, faults, remote views, and scenes are production-ready.",
+        "facility": "The complex supports real unattended operation and meaningful remote intervention, not a cosmetic reskin.",
+        "difficulty": "Tests resilience and exception handling with fair warning, diagnosable causes, and bounded recovery."
+      },
+      "proof": {}
+    },
+    {
+      "id": 6,
+      "name": "Build Beyond Yourself",
+      "releaseStatus": "planned",
+      "requirements": {
+        "gameplay": "Lead a manufacturing campus; allocate capital; develop leaders; balance customers, workforce, supply chain, community, and succession.",
+        "automation": "Full campaign bot from new game through ending plus chapter, alternate-ending, migration, performance, accessibility, and clean-install certification.",
+        "story": "All major founder, Zach, employee, supplier, and customer arcs resolve; choices create earned ending variants and a postgame path.",
+        "audio": "Campus, executive and floor scenes, finale, ending variants, credits, music, ambience, SFX, captions, and mix certification are complete.",
+        "visuals": "Titan Campus, full workforce, leadership, customer and community scenes, ending variants, credits, and postgame visuals are final-quality.",
+        "facility": "The campus is fully playable and expresses the accumulated systems and choices from all prior facilities.",
+        "difficulty": "Final decisions synthesize technical and business mastery; ending gates reward judgment, not repetitive volume."
+      },
+      "proof": {}
+    }
+  ]
+}

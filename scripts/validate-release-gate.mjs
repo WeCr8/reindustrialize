@@ -6,6 +6,10 @@ const checks = [
   ['Garage tour coverage and narration', 'node', ['scripts/validate-shop-tour.mjs']],
   ['Playable task tutorials and validation states', 'node', ['scripts/validate-production-task-tutorials.mjs']],
   ['Founder variants and scene overlays', 'python', ['scripts/validate-player-scenes.py']],
+  ['Visual runtime wiring and Chapter 1-6 coverage truth', 'node', ['scripts/validate-visual-coverage.mjs']],
+  ['Audio production, playback, mix, and Chapter 1-6 coverage truth', 'node', ['scripts/validate-audio-production.mjs']],
+  ['Human operations, difficulty pacing, and facility-space realism', 'node', ['scripts/validate-manufacturing-realism.mjs']],
+  ['Full-campaign completion claims and evidence truth', 'node', ['scripts/validate-full-campaign.mjs']],
   ['Game data, progression, maps, and references', 'python', ['scripts/selfcheck.py', '--dry']],
   ['Current-to-1.0 growth roadmap consistency', 'node', ['scripts/validate-release-roadmap.mjs']],
 ];

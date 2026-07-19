@@ -6,7 +6,7 @@ import random
 import shutil
 import time
 from pathlib import Path
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import TimeoutError as PlaywrightTimeoutError, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 URL = os.environ.get(
@@ -44,6 +44,11 @@ def human_click(page, selector, label=None):
 def human_fill(page, selector, value, label=None):
     loc = page.locator(selector);loc.click();loc.press("Control+A")
     loc.press_sequentially(str(value), delay=35 if args.pace == "record" else 1)
+    # Reactive fields can rerender while keystrokes arrive. Do not let a recording
+    # continue with a silently corrupted founder or company identity.
+    if loc.input_value() != str(value):
+        loc.fill(str(value))
+    assert loc.input_value() == str(value), f"Could not set {selector} to {value!r}"
     actions.append(label or f"fill {selector}")
 
 def human_set_range(page, selector, value, label=None):
@@ -56,6 +61,28 @@ def human_set_range(page, selector, value, label=None):
     assert abs(float(loc.input_value())-target)<=step/2+.0001
     actions.append(label or f"adjust {selector}")
     think(page,280,520)
+
+def read_story(page, label, expected_first_beat=None, required=True):
+    if expected_first_beat:
+        try:
+            page.wait_for_function(
+                "beat => document.querySelector('#intro').dataset.storyBeat === beat",
+                arg=expected_first_beat,
+                timeout=10000 if required else 3000,
+            )
+        except PlaywrightTimeoutError:
+            if required:
+                raise
+            return False
+    elif required:
+        page.locator("#intro").wait_for(state="visible", timeout=10000)
+    for step in range(10):
+        if not page.locator("#intro").is_visible():
+            return True
+        beat = page.locator("#intro").get_attribute("data-story-beat") or str(step + 1)
+        think(page,700,1100)
+        human_click(page, "#introNext", f"{label}: {beat}")
+    raise AssertionError(f"Story sequence {label} did not close after 10 visible steps")
 
 started = time.monotonic()
 source_name = "reindustrialize-human-bot-full-gameplay-v5.webm"
@@ -87,6 +114,7 @@ with sync_playwright() as p:
     human_click(page,"#objectiveAction","route to NOX")
     page.locator(".noxOrder").first.wait_for(timeout=15000);think(page,700,1200)
     human_click(page,".noxOrder:first-child","order certified stock");think(page,700,1100);human_click(page,"#tclose","close NOX")
+    read_story(page,"NOX delivery", "nox_delivery_arrives", required=False)
 
     tool_index={"twist":0,"end":1,"ball":2}
     for job_number in range(1,6):
@@ -128,9 +156,11 @@ with sync_playwright() as p:
             human_click(page,"#cycst","restart proofed CNC")
         page.locator("#tdone").wait_for(timeout=45000)
         think(page,900,1400);human_click(page,"#tdone",f"accept job {job_number} result");think(page,650,1000)
+        if job_number == 1:
+            read_story(page,"first verified article", "first_article_evidence", required=False)
 
     # Read expansion and arrive at the Job Shop through normal story controls.
-    for step in range(3):think(page,900,1400);human_click(page,"#introNext",f"expansion beat {step+1}")
+    read_story(page,"Garage graduation")
     page.wait_for_function("map.id==='bay_02'");think(page,1800,2600)
     assert page.evaluate("state.jobsShipped") == 5
     assert page.evaluate("gradeAverage()") >= 3
