@@ -21,7 +21,7 @@ const chapterOneMissing=new Set(matrix.chapters[0].missing);
 for(const id of equipment.requiredFutureViews)if(![...chapterOneMissing,...matrix.chapters[1].missing].some(item=>item.includes(id.replaceAll('_','-'))||item.includes(id)))fail.push(`future equipment view not represented in visual backlog: ${id}`);
 for(const [id,entry] of Object.entries(atlas))if(!exists(`packages/assets/sprites/${entry.file}`))fail.push(`sprite atlas entry missing file: ${id}`);
 if(Object.keys(scene.founders).length!==10||founders.profiles.length!==10)fail.push('founder sprite/profile coverage is not 10');
-if(hires.candidates.length!==10||customers.customers.length!==4)fail.push('workforce or customer profile coverage changed without matrix update');
+if(!matrix.runtimeCounts||hires.candidates.length!==matrix.runtimeCounts.hires||customers.customers.length!==matrix.runtimeCounts.customers)fail.push('workforce or customer profile coverage changed without matrix update');
 if(tasks.tasks.length!==9||tour.stops.length!==14)fail.push('task guide or tour coverage changed without matrix update');
 for(const item of [...tasks.tasks,...tour.stops]){
   if(item.imageType==='equipment'&&!Object.hasOwn(equipment.views,item.station??item.sprite)&&!Object.values(equipment.views).some(view=>path.basename(view.asset,'.png')===item.image))fail.push(`unwired equipment illustration: ${item.id}`);

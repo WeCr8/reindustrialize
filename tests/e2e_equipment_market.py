@@ -32,17 +32,29 @@ with sync_playwright() as p:
     page.locator("#campaignClose").click()
     page.evaluate("openEquipmentMarket()")
     cards = page.locator("[data-equipment]")
-    assert cards.count() == 13
-    for equipment in ["vmc", "cnc_lathe", "five_axis_vmc", "tig_manual", "robotic_tig", "surface_grinder", "polymer_print_farm", "metal_additive", "cmm", "xray"]:
+    assert cards.count() == 17
+    for equipment in ["vmc", "cnc_lathe", "five_axis_vmc", "tig_manual", "robotic_tig", "surface_grinder", "polymer_print_farm", "metal_additive", "cmm", "xray", "starter_tugger_agv", "amr_wip_fleet", "heavy_mobile_robot_platform", "humanoid_factory_assistant"]:
         assert page.locator(f'[data-equipment="{equipment}"]').count() == 1
-    assert page.locator(".equipmentProductArt").count() == 10
+    assert page.locator(".equipmentProductArt").count() == 17
     assert "ORIENTATION · WORKFLOW ARRIVES WITH CHAPTER" in page.locator('[data-equipment="xray"]').inner_text()
     assert "SHIP 35 JOBS" in page.locator('[data-equipment="xray"]').inner_text()
+    assert "MAINTENANCE TECHNICIAN REQUIRED" in page.locator('[data-equipment="xray"]').inner_text()
 
-    page.evaluate("state.jobsShipped=5;coins=100000;openEquipmentMarket()")
+    page.evaluate("gameStarted=true;setMap('bay_02');state.jobsShipped=5;coins=100000;openEquipmentMarket()")
+    assert page.locator('[data-equipment="tig_manual"] [data-buy-equipment]').is_disabled()
+    assert "HIRE 3 MORE EMPLOYEES" in page.locator('[data-equipment="tig_manual"]').inner_text()
+    assert page.evaluate("coins") == 100000
+    page.evaluate("workers.push(...HIRE_ROSTER.candidates.slice(0,3).map((candidate,index)=>({id:candidate.id,candidate,x:index,y:0,assignment:null,status:'MEANDERING'})));openEquipmentMarket()")
+    assert page.locator('[data-equipment="tig_manual"] [data-buy-equipment]').inner_text() == "BUY FOR 6500 COINS"
     page.locator('[data-equipment="tig_manual"] [data-buy-equipment]').click()
     assert page.evaluate("state.equipment.tig_manual") == 1
+    assert page.evaluate("coins") == 93500
     assert "OWNED 1" in page.locator('[data-equipment="tig_manual"]').inner_text()
+    assert page.locator('[data-equipment="tig_manual"] [data-buy-equipment]').inner_text() == "BUY FOR 13000 COINS"
+    page.locator('[data-equipment="tig_manual"] [data-buy-equipment]').click()
+    assert page.evaluate("state.equipment.tig_manual") == 2
+    assert page.evaluate("coins") == 80500
+    assert page.evaluate("JSON.parse(localStorage.getItem('reindustrialize.save.v1')).state.equipment.tig_manual") == 2
     page.set_viewport_size({"width": 390, "height": 844})
     page.evaluate("openEquipmentMarket()")
     assert page.locator("#storeCoach").is_visible()
@@ -51,4 +63,4 @@ with sync_playwright() as p:
     assert not errors, errors
     browser.close()
 
-print("PASS: portrait-scale founder selection -> 13-item aerospace equipment ladder -> gated purchase")
+print("PASS: portraits -> 17-item store -> staffing locks -> exact escalating spend -> saved ownership")

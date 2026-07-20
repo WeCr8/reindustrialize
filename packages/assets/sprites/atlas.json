@@ -283,5 +283,14 @@
   "fw": 64,
   "fh": 64,
   "sha256": "46f212b36038"
+ },
+ "restroom_station": {
+  "file": "restroom_station.png",
+  "w": 128,
+  "h": 128,
+  "frames": 1,
+  "fw": 128,
+  "fh": 128,
+  "sha256": "restroom-station-v1"
  }
 }

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "designRules": {
+    "unlock": "Facility amenity incidents begin after the player graduates from the Garage chapter.",
+    "tone": "Keep incidents age-appropriate, non-graphic, calm, and focused on protecting people and restoring service.",
+    "fairness": "Teach the response before scoring it; never trigger during onboarding, a story scene, or an active machine safety sequence.",
+    "qualification": "Only a worker whose role and station qualifications match the event may perform corrective work."
+  },
+  "stations": [
+    {
+      "id": "restroom_station",
+      "name": "Employee Restroom",
+      "category": "facility_amenity",
+      "firstFacility": "job_shop",
+      "map": "bay_02",
+      "orientationOnly": false,
+      "normalStatus": "available",
+      "requiredInspectionRole": "maintenance_technician"
+    }
+  ],
+  "events": [
+    {
+      "id": "clogged_restroom",
+      "title": "Restroom Service Interruption",
+      "station": "restroom_station",
+      "minimumChapter": 2,
+      "eligibleFacilities": ["job_shop", "connected_plant", "smart_factory", "lights_out_complex", "american_titan_campus"],
+      "rarity": {"class": "rare", "chancePerEligibleShift": 0.015, "minimumShiftsBetweenOccurrences": 20},
+      "triggerGuards": ["garage_chapter_complete", "no_story_scene_open", "no_machine_safety_sequence_active", "station_status_available"],
+      "requiredWorker": {"rolesAnyOf": ["maintenance_technician", "facilities_technician"], "qualification": "restroom_station"},
+      "responseSequence": [
+        {"order": 1, "action": "isolate", "instruction": "Close the affected restroom and prevent use."},
+        {"order": 2, "action": "post_sign", "instruction": "Post a clear OUT OF SERVICE sign and direct the team to another available restroom."},
+        {"order": 3, "action": "clear", "instruction": "Have a qualified maintenance or facilities worker clear the blockage using appropriate PPE and procedure."},
+        {"order": 4, "action": "sanitize", "instruction": "Clean and sanitize the affected area before inspection."},
+        {"order": 5, "action": "reopen", "instruction": "Inspect, document, and reopen only after normal operation is verified."}
+      ],
+      "consequences": {
+        "onTrigger": {"stationAvailability": "unavailable", "morale": -2},
+        "resolvedCorrectly": {"cashCost": 450, "morale": 1, "stationAvailability": "available"},
+        "resolvedWithoutQualifiedWorker": {"allowed": false},
+        "ignoredForOneShift": {"cashCost": 900, "morale": -6, "stationAvailability": "unavailable"}
+      },
+      "completionEvidence": ["isolation_logged", "sign_posted", "qualified_worker_assigned", "sanitation_logged", "reopen_inspection_passed"],
+      "zachTeachingIntent": "A good manufacturer maintains the whole workplace. Protect people first, assign qualified help, verify the result, and then restore availability."
+    }
+  ]
+}

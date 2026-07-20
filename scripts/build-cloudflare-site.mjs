@@ -55,17 +55,18 @@ html = html.replace(/"([A-Za-z0-9+/]{1024,}={0,2})"/g, (quoted, encoded) => {
   return mime ? JSON.stringify(emitAsset(bytes, mime)) : quoted;
 });
 html = html.replace('im.src=stop.imageType==="equipment"?"data:image/png;base64,"+EQUIPMENT_VIEWS[stop.image]:stop.imageType==="nox"?"data:image/png;base64,"+NOX_MATERIALS_ART:"data:image/png;base64,"+SPRITES[stop.image]', 'im.src=stop.imageType==="equipment"?assetUrl(EQUIPMENT_VIEWS[stop.image]):stop.imageType==="nox"?assetUrl(NOX_MATERIALS_ART):assetUrl(SPRITES[stop.image])');
-html = html.replace('</head>', '<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://playreind.com/game/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"></head>');
+const analyticsTag = `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"></script><script>gtag('js',new Date());gtag('config','G-KRCJP5MHXH',{anonymize_ip:true,allow_google_signals:false,allow_ad_personalization_signals:false});</script>`;
+const privacyScript = scope => `${analyticsTag}<script defer src="/privacy-consent.js" data-scope="${scope}"></script>`;
+html = html.replace('</head>', `<meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://playreind.com/game/"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest">${privacyScript('game')}</head>`);
 
 if (Buffer.byteLength(html) > maxAssetBytes) throw new Error(`Generated index.html remains larger than Cloudflare's 25 MiB limit.`);
 fs.writeFileSync(path.join(out, 'game', 'index.html'), html);
 let landingHtml = fs.readFileSync(landingSource, 'utf8');
-const analyticsTag = `<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-KRCJP5MHXH');</script>`;
-landingHtml = landingHtml.replace('</head>', `${analyticsTag}</head>`);
+landingHtml = landingHtml.replace('</head>', `${privacyScript('landing')}</head>`);
 const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
 if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
-fs.writeFileSync(path.join(out, 'videos', 'index.html'), fs.readFileSync(videoLibrarySource, 'utf8').replace('</head>', `${analyticsTag}</head>`));
+fs.writeFileSync(path.join(out, 'videos', 'index.html'), fs.readFileSync(videoLibrarySource, 'utf8').replace('</head>', `${privacyScript('videos')}</head>`));
 const publicSource = path.join(root, 'apps', 'playreind-landing', 'public');
 if (!fs.existsSync(publicSource)) throw new Error(`Missing landing discovery files: ${publicSource}`);
 fs.cpSync(publicSource, out, {recursive: true});

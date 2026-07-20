@@ -30,9 +30,11 @@
     "cloudflare:dev": "pnpm cloudflare:build && wrangler dev",
     "cloudflare:deploy": "pnpm cloudflare:build && wrangler deploy",
     "build": "pnpm typecheck && pnpm release:gate && pnpm cloudflare:build",
-    "release:gate": "node scripts/validate-release-gate.mjs && node scripts/validate-equipment-sfx.mjs && node scripts/validate-customer-contracts.mjs && node scripts/validate-visual-storybook.mjs && node scripts/validate-storybook-versioning.mjs && node scripts/validate-workforce-and-founders.mjs",
+    "release:gate": "node scripts/validate-release-gate.mjs && node scripts/validate-equipment-sfx.mjs && node scripts/validate-customer-contracts.mjs && node scripts/validate-visual-storybook.mjs && node scripts/validate-storybook-versioning.mjs && node scripts/validate-workforce-and-founders.mjs && node scripts/validate-privacy-analytics.mjs",
     "workforce:check": "node scripts/validate-workforce-and-founders.mjs",
     "bot:test:workforce": "python tests/e2e_workforce_conversations.py",
+    "facilities:check": "python tests/e2e_facility_amenities.py",
+    "privacy:check": "node scripts/validate-privacy-analytics.mjs",
     "test:e2e:mobile": "python tests/e2e_mobile_game.py",
     "roadmap:check": "node scripts/validate-release-roadmap.mjs",
     "bundle:game": "python scripts/build_level_viewer_v4.py && pnpm release:gate && pnpm test:e2e:run && powershell.exe -ExecutionPolicy Bypass -File scripts/build-game-bundle.ps1",
@@ -105,7 +107,7 @@
     "storybook:check:version": "node scripts/validate-storybook-versioning.mjs",
     "storybook:release": "pnpm storybook:build && pnpm storybook:export && pnpm storybook:check",
     "test:e2e": "pnpm release:gate && pnpm test:e2e:run",
-    "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_chapter_one_story.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_title_control_selection.py && python tests/e2e_young_learner.py && python tests/e2e_young_learner_first_job.py && python tests/e2e_equipment_market.py && python tests/e2e_mobile_game.py && python tests/e2e_startup_performance.py && python tests/e2e_save_pause_settings.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
+    "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_chapter_one_story.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_title_control_selection.py && python tests/e2e_young_learner.py && python tests/e2e_young_learner_first_job.py && python tests/e2e_equipment_market.py && python tests/e2e_equipment_operating_profiles.py && python tests/e2e_robotics_progression.py && python tests/e2e_maintenance_constraints.py && python tests/e2e_equipment_damage_states.py && python tests/e2e_facility_amenities.py && python tests/e2e_mobile_game.py && python tests/e2e_startup_performance.py && python tests/e2e_save_pause_settings.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
   },
   "devDependencies": {
     "@remotion/cli": "^4.0.491",
