@@ -5,7 +5,12 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pages = ['index.html', 'game/index.html', 'videos/index.html'];
 const failures = [];
-for (const page of pages) {
+const requireBuildOutput = process.argv.includes('--build-output');
+const builder = fs.readFileSync(path.join(root, 'scripts/build-cloudflare-site.mjs'), 'utf8');
+for (const marker of ['G-KRCJP5MHXH', 'googletagmanager.com/gtag/js', "gtag('consent','default'", '/privacy-consent.js']) {
+  if (!builder.includes(marker)) failures.push(`builder: required analytics marker missing: ${marker}`);
+}
+for (const page of requireBuildOutput ? pages : []) {
   const file = path.join(root, 'cloudflare-dist', page);
   if (!fs.existsSync(file)) { failures.push(`${page}: missing build output`); continue; }
   const html = fs.readFileSync(file, 'utf8');
@@ -23,4 +28,4 @@ for (const event of ['game_start','game_resume','founder_select','control_mode',
 }
 if (!controller.includes('FORBIDDEN')) failures.push('controller: sensitive parameter guard missing');
 if (failures.length) { console.error(failures.map(v => `FAIL: ${v}`).join('\n')); process.exit(1); }
-console.log('PASS: consent defaults, shared controller, and anonymous gameplay event allowlist validated.');
+console.log(`PASS: consent defaults, Google tag G-KRCJP5MHXH, shared controller, anonymous event allowlist${requireBuildOutput ? ', and built landing/game/video pages' : ''} validated.`);

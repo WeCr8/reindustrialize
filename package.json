@@ -26,7 +26,7 @@
     "cloudflare:dns:audit": "node scripts/configure-cloudflare-domain.mjs",
     "cloudflare:dns:apply": "node scripts/configure-cloudflare-domain.mjs --apply",
     "bug-bounty:baseline": "node scripts/bug-bounty-baseline.mjs",
-    "cloudflare:build": "python scripts/build_level_viewer_v4.py && pnpm release:gate && pnpm seo:check && node scripts/build-cloudflare-site.mjs",
+    "cloudflare:build": "python scripts/build_level_viewer_v4.py && pnpm release:gate && pnpm seo:check && node scripts/build-cloudflare-site.mjs && node scripts/validate-privacy-analytics.mjs --build-output",
     "cloudflare:dev": "pnpm cloudflare:build && wrangler dev",
     "cloudflare:deploy": "pnpm cloudflare:build && wrangler deploy",
     "build": "pnpm typecheck && pnpm release:gate && pnpm cloudflare:build",
