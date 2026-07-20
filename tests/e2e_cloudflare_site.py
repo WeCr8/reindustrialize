@@ -23,6 +23,8 @@ try:
         assert desktop.locator('script[src="https://www.googletagmanager.com/gtag/js?id=G-KRCJP5MHXH"]').count() == 1
         desktop.wait_for_function("typeof gtag === 'function' && Array.isArray(dataLayer)", timeout=30000)
         assert desktop.evaluate("typeof gtag === 'function' && Array.isArray(dataLayer)")
+        if desktop.locator("#privacyConsent").is_visible():
+            desktop.locator("[data-consent='declined']").click()
         headline = desktop.locator("h1").inner_text().lower()
         assert "factory doesn't" in headline and "build itself" in headline
         assert desktop.locator("video, .videoFallback").first.is_visible()
@@ -46,6 +48,17 @@ try:
         assert desktop.locator(".proof span").count() == 3
         assert "first playable alpha" in desktop.locator("body").inner_text().lower()
         assert desktop.locator(".step").count() == 4
+        assert desktop.locator(".characterCard").count() == 6
+        assert desktop.locator("[data-role-filter]").count() == 4
+        assert desktop.locator(".gameShot img").count() == 4
+        desktop.wait_for_function("[...document.querySelectorAll('.gameShot img')].every(image => image.complete && image.naturalWidth > 0)")
+        desktop.locator('[data-role-filter="maintenance"]').click()
+        assert desktop.locator('.characterCard:not([hidden])').count() == 2
+        assert all(desktop.locator('.characterCard:not([hidden])').nth(index).get_attribute('data-role') == 'maintenance' for index in range(2))
+        desktop.locator('[data-role-filter="all"]').click()
+        desktop.locator(".gameProof").scroll_into_view_if_needed()
+        desktop.locator(".gameShot").last.scroll_into_view_if_needed()
+        desktop.wait_for_function("Promise.all([...document.querySelectorAll('.gameShot img')].map(image => image.decode()))")
         desktop.screenshot(path=ROOT / "tmp" / "playreind-landing-desktop.png", full_page=True)
         desktop.locator("a[href='/game/']").first.click()
         desktop.wait_for_url("**/game/")
@@ -56,11 +69,18 @@ try:
 
         mobile = browser.new_page(viewport={"width": 390, "height": 844}, device_scale_factor=1)
         mobile.goto(URL, wait_until="domcontentloaded", timeout=90000)
+        if mobile.locator("#privacyConsent").is_visible():
+            mobile.locator("[data-consent='declined']").click()
         assert mobile.locator("h1").is_visible()
         assert mobile.locator("a[href='/game/']").first.is_visible()
         assert mobile.locator(".hero").is_visible()
         assert mobile.locator("#soundBeacon").is_visible()
         assert mobile.locator("body").evaluate("el => el.scrollWidth <= innerWidth")
+        mobile.locator("#people").scroll_into_view_if_needed()
+        assert mobile.locator(".characterCard").first.is_visible()
+        assert mobile.locator(".gameShot img").first.is_visible()
+        mobile.locator(".gameShot").last.scroll_into_view_if_needed()
+        mobile.wait_for_function("Promise.all([...document.querySelectorAll('.gameShot img')].map(image => image.decode()))")
         mobile.locator("#soundBeacon").click()
         mobile.locator("#portraitMode").click()
         assert mobile.locator("#hero").evaluate("el => el.classList.contains('filmMode') && el.classList.contains('portrait')")

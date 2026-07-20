@@ -26,6 +26,7 @@ fs.mkdirSync(assetDir, { recursive: true });
 fs.mkdirSync(landingAssetDir, { recursive: true });
 fs.mkdirSync(path.join(out, 'game'), { recursive: true });
 fs.mkdirSync(path.join(out, 'media'), { recursive: true });
+fs.mkdirSync(path.join(out, 'media', 'screenshots'), { recursive: true });
 fs.mkdirSync(path.join(out, 'videos'), { recursive: true });
 
 let html = fs.readFileSync(source, 'utf8');
@@ -114,6 +115,31 @@ const releaseRecord = {
 };
 fs.writeFileSync(path.join(out, 'release.json'), JSON.stringify(releaseRecord, null, 2));
 fs.copyFileSync(path.join(root, 'packages', 'assets', 'title-screen-zach-v2.png'), path.join(landingAssetDir, 'title-screen.png'));
+const characterAssets = [
+  ['packages/assets/sprites/founder-profile-atlas-v1.png', 'founder-profiles.png'],
+  ['packages/assets/sprites/av_m_founder_02_hd.png', 'founder-b-sprite.png'],
+  ['packages/assets/sprites/av_f_founder_hd.png', 'founder-c-sprite.png'],
+  ['packages/assets/sprites/workforce-profile-atlas-v1.png', 'workforce-profiles.png'],
+  ['packages/assets/sprites/workforce-atlas-v1.png', 'workforce-sprites.png'],
+  ['packages/assets/sprites/maintenance-team-profile-atlas-v1.png', 'maintenance-profiles.png'],
+  ['packages/assets/sprites/maintenance-team-sprite-atlas-v2.png', 'maintenance-sprites.png']
+];
+for (const [sourceName, publicName] of characterAssets) {
+  const sourcePath = path.join(root, sourceName);
+  if (!fs.existsSync(sourcePath)) throw new Error(`Missing marketing character asset: ${sourceName}`);
+  fs.copyFileSync(sourcePath, path.join(landingAssetDir, publicName));
+}
+const gameplayScreenshots = [
+  ['demo/remotion/public/screens/02-ten-founder-selection.png', 'founder-selection.png'],
+  ['demo/remotion/public/screens/04-playable-shop-objectives.png', 'shop-objectives.png'],
+  ['demo/remotion/public/screens/05-nox-material-ordering.png', 'material-ordering.png'],
+  ['demo/remotion/public/screens/07-hire-your-team.png', 'hire-team.png']
+];
+for (const [sourceName, publicName] of gameplayScreenshots) {
+  const sourcePath = path.join(root, sourceName);
+  if (!fs.existsSync(sourcePath)) throw new Error(`Missing marketing gameplay screenshot: ${sourceName}`);
+  fs.copyFileSync(sourcePath, path.join(out, 'media', 'screenshots', publicName));
+}
 fs.writeFileSync(path.join(out, '_headers'), `/*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
