@@ -9,7 +9,7 @@
       "manifest": "v1/storybook-manifest.json",
       "viewer": "v1/index.html",
       "slides": "v1/slides",
-      "slideCount": 212,
+      "slideCount": 220,
       "founderCount": 10,
       "publishingStatus": "source-ready-not-publication-ready"
     }

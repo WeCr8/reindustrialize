@@ -1,7 +1,7 @@
 {
   "storybookVersion": 1,
   "gameBuild": "0.7.0-alpha",
-  "slideCount": 212,
+  "slideCount": 220,
   "founderCount": 10,
   "policy": {
     "oneSlidePerBeat": true,
@@ -2246,7 +2246,7 @@
       "text": "Preventive maintenance and fast fault isolation. Growth: reliability lead. Watch: Prefers permanent repairs over quick patches",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "playable",
-      "location": "Assignable to: vmc_t2, lathe_cnc_t2, saw_t1, mill_manual_t1, network_node_t3",
+      "location": "Assignable to: vmc_t2, lathe_cnc_t2, saw_t1, mill_manual_t1, network_node_t3, restroom_station",
       "instructions": [
         "Hire through Build Your Team",
         "Assign only to a qualified station",
@@ -2463,6 +2463,154 @@
     },
     {
       "number": 177,
+      "section": "Factory Workforce",
+      "title": "Mechanical Maintenance Technician \u00b7 Riley Brooks",
+      "text": "Bearings, spindles, lubrication and mechanical alignment. Growth: reliability lead. Watch: Needs controls support for complex electrical faults",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Assignable to: vmc_t2, lathe_cnc_t2, saw_t1, mill_manual_t1, restroom_station",
+      "instructions": [
+        "Hire through Build Your Team",
+        "Assign only to a qualified station",
+        "Worker travels, works, and meanders while idle"
+      ],
+      "success": "Visible worker entity is active on the factory floor",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 0,
+      "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
+    },
+    {
+      "number": 178,
+      "section": "Workforce Conversations",
+      "title": "TALK WITH Riley Brooks",
+      "text": "A bearing, spindle, or slide tells a story through heat, sound, and wear.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Mechanical Maintenance Technician",
+      "instructions": [
+        "I can inspect wear items and stage the next preventive-maintenance kit.",
+        "I am checking mechanical condition, lubrication, alignment, guards, and the safe release test.",
+        "PLAYER: Patch it or rebuild it?",
+        "RILEY BROOKS: Protect people and the machine first. Restore the root cause when a patch would only move the failure to tomorrow."
+      ],
+      "success": "Conversation text advances through greeting, status, question, and role guidance",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 0,
+      "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
+    },
+    {
+      "number": 179,
+      "section": "Factory Workforce",
+      "title": "Electrical Maintenance Technician \u00b7 Jordan Lee",
+      "text": "Electrical faults, drives, sensors, controls and safe diagnostics. Growth: controls engineer. Watch: Mechanical rebuilds require a partner",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Assignable to: vmc_t2, lathe_cnc_t2, network_node_t3, cobot_t5, amr_t5",
+      "instructions": [
+        "Hire through Build Your Team",
+        "Assign only to a qualified station",
+        "Worker travels, works, and meanders while idle"
+      ],
+      "success": "Visible worker entity is active on the factory floor",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 1,
+      "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
+    },
+    {
+      "number": 180,
+      "section": "Workforce Conversations",
+      "title": "TALK WITH Jordan Lee",
+      "text": "De-energize, verify, then diagnose. Electricity does not reward shortcuts.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Electrical Maintenance Technician",
+      "instructions": [
+        "I can review alarms, backups, and electrical-panel inspection items.",
+        "I am tracing power, sensors, drives, and controls under the approved lockout procedure.",
+        "PLAYER: Why verify zero energy?",
+        "JORDAN LEE: A switch position is not proof. We test before touching so stored or unexpected energy cannot hurt anyone."
+      ],
+      "success": "Conversation text advances through greeting, status, question, and role guidance",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 1,
+      "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
+    },
+    {
+      "number": 181,
+      "section": "Factory Workforce",
+      "title": "Facilities Maintenance Technician \u00b7 Taylor Morgan",
+      "text": "Plumbing, HVAC, utilities, inspections and safe facility recovery. Growth: facilities manager. Watch: Not qualified for CNC spindle or servo repair",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Assignable to: restroom_station, nox_pallet, handoff_terminal_t4, network_node_t3",
+      "instructions": [
+        "Hire through Build Your Team",
+        "Assign only to a qualified station",
+        "Worker travels, works, and meanders while idle"
+      ],
+      "success": "Visible worker entity is active on the factory floor",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 2,
+      "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
+    },
+    {
+      "number": 182,
+      "section": "Workforce Conversations",
+      "title": "TALK WITH Taylor Morgan",
+      "text": "A safe factory depends on utilities and shared spaces working as reliably as the machines.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Facilities Maintenance Technician",
+      "instructions": [
+        "I can inspect plumbing, HVAC, lighting, exits, and facility supplies before they interrupt the team.",
+        "I am isolating the affected area, repairing the facility system, cleaning it, and documenting reopening.",
+        "PLAYER: Why close an amenity for a small fault?",
+        "TAYLOR MORGAN: The sign and alternate route protect everyone while a qualified person makes a clean, lasting repair."
+      ],
+      "success": "Conversation text advances through greeting, status, question, and role guidance",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 2,
+      "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
+    },
+    {
+      "number": 183,
+      "section": "Factory Workforce",
+      "title": "Reliability Lead \u00b7 Sam Rivera",
+      "text": "Condition monitoring, preventive strategy and coordinated recovery. Growth: maintenance manager. Watch: Higher wage is justified only when the factory has enough assets to manage",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Assignable to: vmc_t2, lathe_cnc_t2, saw_t1, mill_manual_t1, network_node_t3, cobot_t5, amr_t5, restroom_station",
+      "instructions": [
+        "Hire through Build Your Team",
+        "Assign only to a qualified station",
+        "Worker travels, works, and meanders while idle"
+      ],
+      "success": "Visible worker entity is active on the factory floor",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 3,
+      "note": "Dedicated employee profile portrait matching the same identity used by the in-shop floor sprite."
+    },
+    {
+      "number": 184,
+      "section": "Workforce Conversations",
+      "title": "TALK WITH Sam Rivera",
+      "text": "Reliability is planned production time, not heroic repair work after midnight.",
+      "image": "../../packages/assets/story-expansion-male-founder-v1.png",
+      "status": "playable",
+      "location": "Reliability Lead",
+      "instructions": [
+        "I can rank preventive work by safety, quality, downtime risk, and available parts.",
+        "I am reading condition data, coordinating the right craft, and verifying the return-to-service test.",
+        "PLAYER: What should maintenance measure?",
+        "SAM RIVERA: Failure patterns, condition, planned work, response, repeat faults, spares, and whether each repair truly restored capability."
+      ],
+      "success": "Conversation text advances through greeting, status, question, and role guidance",
+      "portraitAtlas": "../../packages/assets/sprites/workforce-profile-atlas-v1.png",
+      "portraitCell": 3,
+      "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
+    },
+    {
+      "number": 185,
       "section": "Campaign Chapter 2",
       "title": "ENTRY \u00b7 The Team Is the Machine",
       "text": "The founder enters the Job Shop and learns that more capacity creates scheduling, tooling, inspection, and handoff risk.",
@@ -2477,7 +2625,7 @@
       "note": "Existing Chapter 2 entry is playable; later beats remain explicitly planned."
     },
     {
-      "number": 178,
+      "number": 186,
       "section": "Campaign Chapter 2",
       "title": "LEARN \u00b7 Quote, Route, and Staff",
       "text": "Quote repeat work, plan its route, hire an operator and programmer, and assign only qualified people.",
@@ -2495,7 +2643,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 179,
+      "number": 187,
       "section": "Campaign Chapter 2",
       "title": "PROVE \u00b7 Two Machines, One Promise",
       "text": "Run VMC and lathe work concurrently without allowing either traveler, tool list, or due date to disappear.",
@@ -2513,7 +2661,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 180,
+      "number": 188,
       "section": "Campaign Chapter 2",
       "title": "OPERATE \u00b7 Inspection Is Production",
       "text": "Document eight inspections, ship on time, cover payroll, and sustain positive cash while quality rises to a 4.0 average.",
@@ -2531,7 +2679,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 181,
+      "number": 189,
       "section": "Campaign Chapter 2",
       "title": "RECOVER \u00b7 The Missed Handoff",
       "text": "Recover a late, at-risk job by correcting the handoff and schedule instead of hiding the defect or rushing unsafe work.",
@@ -2549,7 +2697,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 182,
+      "number": 190,
       "section": "Campaign Chapter 2",
       "title": "GRADUATE \u00b7 Job-Shop Owner",
       "text": "Ship eight chapter jobs at 4.0 quality, 85 percent on time, with three people, five concurrent completions, eight inspections, and three positive-cash shifts; then move to the Connected Plant.",
@@ -2568,7 +2716,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 183,
+      "number": 191,
       "section": "Campaign Chapter 3",
       "title": "ENTRY \u00b7 Signals and Blind Spots",
       "text": "The founder enters a 45,000-square-foot plant where no one person can watch every machine or handoff.",
@@ -2586,7 +2734,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 184,
+      "number": 192,
       "section": "Campaign Chapter 3",
       "title": "LEARN \u00b7 Connect the Truth",
       "text": "Connect eight machines, distinguish running from producing, and learn OEE, downtime, and trustworthy production signals.",
@@ -2604,7 +2752,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 185,
+      "number": 193,
       "section": "Campaign Chapter 3",
       "title": "PROVE \u00b7 Find the Constraint",
       "text": "Schedule machining cells, toolroom, maintenance, quality, and shipping to expose and recover the actual bottleneck.",
@@ -2622,7 +2770,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 186,
+      "number": 194,
       "section": "Campaign Chapter 3",
       "title": "OPERATE \u00b7 Lead the Other Shift",
       "text": "Build clean handoffs and lead eight people across shifts while preserving quality and delivery.",
@@ -2640,7 +2788,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 187,
+      "number": 195,
       "section": "Campaign Chapter 3",
       "title": "RECOVER \u00b7 The Dashboard Was Green",
       "text": "Recover a customer-risk event where a healthy-looking metric concealed starvation, blockage, or bad context.",
@@ -2658,7 +2806,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 188,
+      "number": 196,
       "section": "Campaign Chapter 3",
       "title": "GRADUATE \u00b7 Connected-Plant Leader",
       "text": "Ship ten chapter jobs at 4.0 quality and 88 percent on time after ten OEE reviews and three root-cause recoveries; then fund the Smart Factory.",
@@ -2677,7 +2825,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 189,
+      "number": 197,
       "section": "Campaign Chapter 4",
       "title": "ENTRY \u00b7 Automate the Standard",
       "text": "The founder enters a 120,000-square-foot factory where automation will multiply every good process and every bad one.",
@@ -2695,7 +2843,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 190,
+      "number": 198,
       "section": "Campaign Chapter 4",
       "title": "LEARN \u00b7 Control the Tool",
       "text": "Preset and control one hundred tools, prove offsets, and eliminate undocumented substitutions.",
@@ -2713,7 +2861,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 191,
+      "number": 199,
       "section": "Campaign Chapter 4",
       "title": "PROVE \u00b7 Design the Cell",
       "text": "Design fixtures and handoffs, install a safe cobot, and validate capability before increasing rate.",
@@ -2731,7 +2879,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 192,
+      "number": 200,
       "section": "Campaign Chapter 4",
       "title": "OPERATE \u00b7 Fourteen Clean Handoffs",
       "text": "Sustain controlled digital handoffs and improve flow without hiding defects or bypassing inspection.",
@@ -2749,7 +2897,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 193,
+      "number": 201,
       "section": "Campaign Chapter 4",
       "title": "RECOVER \u00b7 Fast Scrap",
       "text": "Stop an automated cell that is multiplying a weak process, find the cause, and revalidate it safely.",
@@ -2767,7 +2915,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 194,
+      "number": 202,
       "section": "Campaign Chapter 4",
       "title": "GRADUATE \u00b7 Smart-Factory Architect",
       "text": "Ship twelve jobs at 4.2 quality and 90 percent on time with three validated automated cells and five measured improvements; then open the Lights-Out Complex.",
@@ -2786,7 +2934,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 195,
+      "number": 203,
       "section": "Campaign Chapter 5",
       "title": "ENTRY \u00b7 Trust the Night",
       "text": "The founder enters a 350,000-square-foot complex where unattended production is earned through preparation, not hope.",
@@ -2804,7 +2952,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 196,
+      "number": 204,
       "section": "Campaign Chapter 5",
       "title": "LEARN \u00b7 Make It Unattended-Ready",
       "text": "Prove tool life, chip control, gauging, material supply, and safe fault behavior before the team leaves.",
@@ -2822,7 +2970,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 197,
+      "number": 205,
       "section": "Campaign Chapter 5",
       "title": "PROVE \u00b7 Coordinate the Fleet",
       "text": "Coordinate robots and AMRs through five hundred cycles without starving machines, blocking aisles, or losing material identity.",
@@ -2840,7 +2988,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 198,
+      "number": 206,
       "section": "Campaign Chapter 5",
       "title": "OPERATE \u00b7 Ten Reliable Nights",
       "text": "Sustain preventive maintenance, less than three percent scrap, and ten successful unattended nights.",
@@ -2858,7 +3006,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 199,
+      "number": 207,
       "section": "Campaign Chapter 5",
       "title": "RECOVER \u00b7 The 2 A.M. Call",
       "text": "Execute five recovery drills and respond to a night fault without creating a safety, quality, or traceability escape.",
@@ -2876,7 +3024,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 200,
+      "number": 208,
       "section": "Campaign Chapter 5",
       "title": "GRADUATE \u00b7 Lights-Out Operations Leader",
       "text": "Ship fourteen jobs at 4.3 quality and 92 percent on time after ten reliable nights and five recovery drills; then build the American Titan Campus.",
@@ -2895,7 +3043,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 201,
+      "number": 209,
       "section": "Campaign Chapter 6",
       "title": "ENTRY \u00b7 Build Beyond Yourself",
       "text": "The founder opens a million-square-foot manufacturing campus serving aerospace, energy, robotics, and American industry.",
@@ -2913,7 +3061,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 202,
+      "number": 210,
       "section": "Campaign Chapter 6",
       "title": "LEARN \u00b7 Win the Program",
       "text": "Price, negotiate, and execute strategic programs while protecting aerospace traceability and customer trust.",
@@ -2931,7 +3079,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 203,
+      "number": 211,
       "section": "Campaign Chapter 6",
       "title": "PROVE \u00b7 Leaders, Not Helpers",
       "text": "Develop six department leaders who can make good decisions without waiting for the founder at every station.",
@@ -2949,7 +3097,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 204,
+      "number": 212,
       "section": "Campaign Chapter 6",
       "title": "OPERATE \u00b7 The Apprentice Academy",
       "text": "Launch an academy, transfer standards and judgment, and graduate three apprentices into meaningful factory roles.",
@@ -2967,7 +3115,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 205,
+      "number": 213,
       "section": "Campaign Chapter 6",
       "title": "RECOVER \u00b7 The Promise at Scale",
       "text": "Resolve a campus-wide program crisis without sacrificing people, traceability, quality, or the institution's future.",
@@ -2985,7 +3133,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 206,
+      "number": 214,
       "section": "Campaign Chapter 6",
       "title": "GRADUATE \u00b7 American Manufacturing Titan",
       "text": "Complete ten certified program jobs, three long-term agreements, six department leaders, three apprentice graduations, and eight profitable weeks at 4.5 quality and 95 percent on time.",
@@ -3004,7 +3152,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 207,
+      "number": 215,
       "section": "Planned Story Gaps",
       "title": "NOX SUPPLIER ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -3016,7 +3164,7 @@
       ]
     },
     {
-      "number": 208,
+      "number": 216,
       "section": "Planned Story Gaps",
       "title": "SHOP CLASS OPEN",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -3029,7 +3177,7 @@
       ]
     },
     {
-      "number": 209,
+      "number": 217,
       "section": "Planned Story Gaps",
       "title": "FIRST ARTICLE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -3041,7 +3189,7 @@
       ]
     },
     {
-      "number": 210,
+      "number": 218,
       "section": "Planned Story Gaps",
       "title": "FIRST HIRE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -3052,7 +3200,7 @@
       ]
     },
     {
-      "number": 211,
+      "number": 219,
       "section": "Planned Story Gaps",
       "title": "CHAPTER 2 COMPLETION",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -3067,7 +3215,7 @@
       ]
     },
     {
-      "number": 212,
+      "number": 220,
       "section": "Planned Story Gaps",
       "title": "CHAPTERS 3 TO 6",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
