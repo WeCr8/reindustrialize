@@ -1,4 +1,5 @@
 from pathlib import Path
+import os
 import subprocess
 import time
 
@@ -6,7 +7,7 @@ from playwright.sync_api import sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
-URL = "http://127.0.0.1:8793"
+URL = os.environ.get("PLAYREIND_TEST_URL", "http://127.0.0.1:8793").rstrip("/")
 CONSENT_KEY = "reindustrialize.analyticsConsent.v1"
 
 
@@ -19,13 +20,15 @@ def event_names(page):
     )
 
 
-server = subprocess.Popen(
-    ["python", "-m", "http.server", "8793", "--bind", "127.0.0.1"],
-    cwd=ROOT / "cloudflare-dist",
-    stdout=subprocess.DEVNULL,
-    stderr=subprocess.DEVNULL,
-)
-time.sleep(0.6)
+server = None
+if not os.environ.get("PLAYREIND_TEST_URL"):
+    server = subprocess.Popen(
+        ["python", "-m", "http.server", "8793", "--bind", "127.0.0.1"],
+        cwd=ROOT / "cloudflare-dist",
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+    )
+    time.sleep(0.6)
 try:
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
@@ -93,7 +96,8 @@ try:
         context.close()
         browser.close()
 finally:
-    server.terminate()
-    server.wait(timeout=5)
+    if server:
+        server.terminate()
+        server.wait(timeout=5)
 
 print("PASS: consent-only page views, human video engagement, dedupe, and success-only gameplay analytics")
