@@ -4,7 +4,7 @@ from playwright.sync_api import sync_playwright
 URL=(Path(__file__).resolve().parents[1]/"apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri()
 with sync_playwright() as p:
     browser=p.chromium.launch();page=browser.new_page(viewport={"width":1440,"height":1000});errors=[]
-    page.on("pageerror",lambda e:errors.append(str(e)));page.goto(URL);page.wait_for_function("loaded===total")
+    page.on("pageerror",lambda e:errors.append(str(e)));page.add_init_script("localStorage.setItem('reindustrialize.learnerMode','off')");page.goto(URL);page.wait_for_function("loaded===total")
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
     for _ in range(5): page.locator("#introNext").click()
@@ -26,7 +26,15 @@ with sync_playwright() as p:
         assert page.locator("#tview").get_attribute("src").startswith("data:image/png;base64,")
         assert page.evaluate("zachAudio && zachAudio.src.startsWith('data:audio/mpeg;base64,')")
         page.locator("#tourNext").click()
+        page.wait_for_function("document.querySelector('#task').dataset.tourPhase === 'practice'",timeout=10000)
+        assert page.locator(".practiceChoice").count() >= 3
+        for _ in range(2):
+            correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
+            page.locator(".practiceChoice").nth(correct).click()
+            page.wait_for_timeout(650)
+        assert page.locator("#task").get_attribute("data-completed-tour-stops") is not None
     assert not page.locator("#task").is_visible()
     page.locator("#btour").click();assert page.locator("#task").get_attribute("data-tour-stop")=="tour_overview"
+    assert page.locator("#tourSkip").is_visible()
     assert not errors,errors;browser.close()
-print("PASS: 14-station, 28-panel tour -> exact images/audio/text -> finish -> replay")
+print("PASS: 14-station hands-on onboarding -> 28 validated actions -> exact images/audio/text -> replay")

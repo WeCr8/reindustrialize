@@ -7,11 +7,18 @@ URL=(ROOT/"apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri()
 with sync_playwright() as p:
     browser=p.chromium.launch();page=browser.new_page(viewport={"width":1440,"height":1000})
     errors=[];page.on("pageerror",lambda e:errors.append(str(e)))
+    page.add_init_script("localStorage.setItem('reindustrialize.learnerMode','on')")
     page.goto(URL);page.wait_for_function("loaded === total")
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
-    for _ in range(5): page.locator("#introNext").click()
-    page.locator("#tourSkip").wait_for(timeout=10000);page.locator("#tourSkip").click()
+    for _ in range(3): page.locator("#introNext").click()
+    page.locator("#tourNext").wait_for(timeout=10000)
+    for _ in range(3):
+        page.locator("#tourNext").click();page.locator("#tourNext").click()
+        page.wait_for_function("document.querySelector('#task').dataset.tourPhase==='practice'")
+        for _ in range(2):
+            correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
+            page.locator(".practiceChoice").nth(correct).click();page.wait_for_timeout(650)
     page.locator("#askMentor").click()
     assert page.locator("#mentor").is_visible()
     assert page.locator(".mentorTab").count()==5

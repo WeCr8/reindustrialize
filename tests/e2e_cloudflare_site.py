@@ -28,11 +28,19 @@ try:
         assert desktop.locator("video, .videoFallback").first.is_visible()
         if desktop.locator("video").count():
             assert desktop.locator("video track[kind='captions'][default]").count() == 1
-            assert "gameplay-hero-v7.mp4" in desktop.locator("video").evaluate("el => el.currentSrc")
+            assert "gameplay-hero-v8.mp4" in desktop.locator("video").evaluate("el => el.currentSrc")
             assert desktop.locator("#soundBeacon").is_visible()
             desktop.locator("#soundBeacon").click()
             desktop.wait_for_timeout(1200)
             assert desktop.locator("video").evaluate("el => !el.muted && !el.paused && el.readyState >= 3")
+            assert desktop.locator("#hero").evaluate("el => el.classList.contains('filmMode')")
+            assert desktop.locator(".heroContent").evaluate("el => getComputedStyle(el).visibility === 'hidden'")
+            desktop.locator("#portraitMode").click()
+            assert desktop.locator("#hero").evaluate("el => el.classList.contains('portrait')")
+            desktop.locator("#landscapeMode").click()
+            assert not desktop.locator("#hero").evaluate("el => el.classList.contains('portrait')")
+            desktop.locator("#filmExit").click()
+            assert not desktop.locator("#hero").evaluate("el => el.classList.contains('filmMode')")
         assert desktop.locator("a[href='/game/']").count() >= 3
         assert desktop.locator(".hero").bounding_box()["y"] < 80
         assert desktop.locator(".proof span").count() == 3
@@ -53,6 +61,11 @@ try:
         assert mobile.locator(".hero").is_visible()
         assert mobile.locator("#soundBeacon").is_visible()
         assert mobile.locator("body").evaluate("el => el.scrollWidth <= innerWidth")
+        mobile.locator("#soundBeacon").click()
+        mobile.locator("#portraitMode").click()
+        assert mobile.locator("#hero").evaluate("el => el.classList.contains('filmMode') && el.classList.contains('portrait')")
+        assert mobile.locator("#fullScreen").is_visible()
+        mobile.locator("#filmExit").click()
         mobile.screenshot(path=ROOT / "tmp" / "playreind-landing-mobile.png", full_page=True)
         browser.close()
 finally:

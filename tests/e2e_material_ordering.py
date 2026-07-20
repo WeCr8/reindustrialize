@@ -11,9 +11,9 @@ with sync_playwright() as p:
     page.wait_for_function("loaded===total")
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
-    for _ in range(5):
+    for _ in range(3):
         page.locator("#introNext").click()
-    page.locator("#tourSkip").wait_for(timeout=10000);page.locator("#tourSkip").click()
+    page.locator("#tourNext").wait_for(timeout=10000);page.evaluate("tourMandatory=false;finishTour()")
     page.evaluate("openNoxOrder()")
 
     assert page.locator("#ttitle").inner_text() == "NOX METALS — MATERIAL ORDERING"

@@ -45,10 +45,15 @@ def close_opening(page):
     page.locator("#companyName").fill("POCKET WORKS")
     page.locator('[data-control="auto"]').tap()
     page.locator("#newGame").tap()
-    for _ in range(5):
+    for _ in range(3):
         page.locator("#introNext").tap()
-    page.locator("#tourSkip").wait_for(timeout=10_000)
-    page.locator("#tourSkip").tap()
+    page.locator("#tourNext").wait_for(timeout=10_000)
+    for _ in range(3):
+        page.locator("#tourNext").tap();page.locator("#tourNext").tap()
+        page.wait_for_function("document.querySelector('#task').dataset.tourPhase==='practice'")
+        for _ in range(2):
+            correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
+            page.locator(".practiceChoice").nth(correct).tap();page.wait_for_timeout(650)
 
 
 env = dict(os.environ, PORT="8811")
@@ -67,6 +72,7 @@ try:
             )
             errors = []
             page.on("pageerror", lambda error: errors.append(str(error)))
+            page.add_init_script("localStorage.setItem('reindustrialize.learnerMode','on')")
             page.goto("http://127.0.0.1:8811/game", wait_until="domcontentloaded")
             page.wait_for_function("typeof loaded !== 'undefined' && loaded === total")
             assert_no_horizontal_overflow(page, f"{name}/prefounder")
@@ -74,10 +80,11 @@ try:
             assert_no_horizontal_overflow(page, f"{name}/shop")
             assert page.locator("#pad").is_visible(), f"{name}: touch pad hidden"
 
-            x0 = page.evaluate("P.x")
-            page.locator('#pad [data-d="right"]').dispatch_event("touchstart")
-            page.locator('#pad [data-d="right"]').dispatch_event("touchend")
-            page.wait_for_function(f"P.x !== {x0}")
+            before = page.evaluate("P.x+','+P.y")
+            direction = page.evaluate("Object.entries(DIRS).find(([k,d])=>!blocked(P.x+d[0],P.y+d[1]))[0]")
+            page.locator(f'#pad [data-d="{direction}"]').dispatch_event("touchstart")
+            page.locator(f'#pad [data-d="{direction}"]').dispatch_event("touchend")
+            page.wait_for_function(f"P.x+','+P.y !== '{before}'")
 
             page.locator("#objectiveAction").tap()
             page.locator(".noxOrder").first.wait_for(timeout=10_000)

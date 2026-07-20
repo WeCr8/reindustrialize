@@ -7,8 +7,9 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'apps', 'wecr8-info', 'prototypes', 'shop-floor-viewer.html');
 const landingSource = path.join(root, 'apps', 'playreind-landing', 'index.html');
+const videoLibrarySource = path.join(root, 'apps', 'playreind-landing', 'videos.html');
 const releaseManifestSource = path.join(root, 'data', 'release-manifest.json');
-const marketingVideo = path.join(root, 'apps', 'playreind-landing', 'public', 'media', 'gameplay-hero-v7.mp4');
+const marketingVideo = path.join(root, 'apps', 'playreind-landing', 'public', 'media', 'gameplay-hero-v8.mp4');
 const out = path.join(root, 'cloudflare-dist');
 const assetDir = path.join(out, 'assets', 'runtime');
 const landingAssetDir = path.join(out, 'assets', 'landing');
@@ -25,6 +26,7 @@ fs.mkdirSync(assetDir, { recursive: true });
 fs.mkdirSync(landingAssetDir, { recursive: true });
 fs.mkdirSync(path.join(out, 'game'), { recursive: true });
 fs.mkdirSync(path.join(out, 'media'), { recursive: true });
+fs.mkdirSync(path.join(out, 'videos'), { recursive: true });
 
 let html = fs.readFileSync(source, 'utf8');
 let extracted = 0;
@@ -63,9 +65,27 @@ landingHtml = landingHtml.replace('</head>', `${analyticsTag}</head>`);
 const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYREIND_SKIP_MARKETING_VIDEO !== '1';
 if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
+fs.writeFileSync(path.join(out, 'videos', 'index.html'), fs.readFileSync(videoLibrarySource, 'utf8').replace('</head>', `${analyticsTag}</head>`));
 const publicSource = path.join(root, 'apps', 'playreind-landing', 'public');
 if (!fs.existsSync(publicSource)) throw new Error(`Missing landing discovery files: ${publicSource}`);
 fs.cpSync(publicSource, out, {recursive: true});
+const videoCatalog = [
+  ['videos/gameplay-longform/reindustrialize-human-bot-feature-45s-v5.mp4', 'human-bot-feature-v5.mp4'],
+  ['videos/horizontal-demos/reindustrialize-human-bot-demo-60s-v5.mp4', 'human-bot-demo-v5.mp4'],
+  ['videos/vertical-shorts/reindustrialize-founder-selection-20s-v2.mp4', 'founder-selection-v2.mp4'],
+  ['videos/vertical-shorts/reindustrialize-zach-mentor-30s-v2.mp4', 'zach-mentor-v2.mp4'],
+  ['videos/vertical-shorts/reindustrialize-player-review-gameplay-30s-v2.mp4', 'player-review-v2.mp4'],
+  ['videos/vertical-shorts/reindustrialize-human-bot-short-30s-v5.mp4', 'human-bot-short-v5.mp4'],
+  ['videos/square-social/reindustrialize-human-bot-square-30s-v5.mp4', 'human-bot-square-v5.mp4'],
+  ['videos/square-social/reindustrialize-business-growth-30s-v2.mp4', 'business-growth-v2.mp4']
+];
+for (const [sourceName, publicName] of videoCatalog) {
+  const sourcePath = path.join(root, sourceName);
+  if (!fs.existsSync(sourcePath)) throw new Error(`Missing published video: ${sourceName}`);
+  const bytes = fs.statSync(sourcePath).size;
+  if (bytes > maxAssetBytes) throw new Error(`${sourceName} exceeds Cloudflare's 25 MiB asset limit.`);
+  fs.copyFileSync(sourcePath, path.join(out, 'videos', publicName));
+}
 const releaseManifest = JSON.parse(fs.readFileSync(releaseManifestSource, 'utf8'));
 let sourceRevision = process.env.CF_PAGES_COMMIT_SHA || process.env.GITHUB_SHA || 'unknown';
 if (sourceRevision === 'unknown') {

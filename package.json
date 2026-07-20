@@ -1,9 +1,12 @@
 {
   "name": "reindustrialize",
- "version": "0.7.0-alpha",
- "private": true,
- "packageManager": "pnpm@10.24.0",
- "engines": {"node": ">=22 <23", "pnpm": ">=10.24 <11"},
+  "version": "0.7.0-alpha",
+  "private": true,
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=22 <23",
+    "pnpm": ">=10.24 <11"
+  },
   "scripts": {
     "security:git": "node scripts/validate-git-release.mjs",
     "game:doctor": "node scripts/game-dev-doctor.mjs",
@@ -16,14 +19,14 @@
     "realism:check": "node scripts/validate-manufacturing-realism.mjs",
     "campaign:check": "node scripts/validate-full-campaign.mjs",
     "campaign:check:1.0": "node scripts/validate-full-campaign.mjs --assert-1.0",
-  "typecheck": "tsc -p tsconfig.json --noEmit",
-  "test:unit": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:unit": "tsx --test tests/*.test.ts",
     "game:verify": "pnpm game:doctor && pnpm typecheck && pnpm test:unit && pnpm validate:content && pnpm agents:review:check && pnpm release:gate && pnpm backend:check && pnpm bug-bounty:baseline && pnpm security:git",
-  "game:verify:full": "pnpm game:verify && pnpm test:e2e && pnpm cloudflare:build && pnpm audit --prod --audit-level high",
+    "game:verify:full": "pnpm game:verify && pnpm test:e2e && pnpm cloudflare:build && pnpm audit --prod --audit-level high",
     "cloudflare:dns:audit": "node scripts/configure-cloudflare-domain.mjs",
     "cloudflare:dns:apply": "node scripts/configure-cloudflare-domain.mjs --apply",
     "bug-bounty:baseline": "node scripts/bug-bounty-baseline.mjs",
-    "cloudflare:build": "python scripts/build_level_viewer_v4.py && pnpm release:gate && node scripts/build-cloudflare-site.mjs",
+    "cloudflare:build": "python scripts/build_level_viewer_v4.py && pnpm release:gate && pnpm seo:check && node scripts/build-cloudflare-site.mjs",
     "cloudflare:dev": "pnpm cloudflare:build && wrangler dev",
     "cloudflare:deploy": "pnpm cloudflare:build && wrangler deploy",
     "build": "pnpm typecheck && pnpm release:gate && pnpm cloudflare:build",
@@ -49,6 +52,9 @@
     "promo:check:current-media": "python scripts/validate-v2-video-media.py",
     "promo:check:real-gameplay": "node scripts/validate-real-gameplay-demos.mjs",
     "hero:check:v7": "node scripts/validate-hero-campaign-v7.mjs",
+    "hero:check:v8": "node scripts/validate-hero-campaign-v8.mjs",
+    "seo:check": "node scripts/validate-public-seo.mjs",
+    "videos:test:web": "python tests/e2e_video_library.py",
     "audio:plan": "node scripts/generate-elevenlabs-audio.mjs --dry-run",
     "audio:generate": "node scripts/generate-elevenlabs-audio.mjs",
     "demo:studio": "remotion studio demo/remotion/src/index.ts --public-dir=demo/remotion/public",
@@ -87,6 +93,7 @@
     "bot:render:full:v5": "remotion render demo/remotion/src/index.ts HumanBotFullGameplayV5 videos/gameplay-longform/reindustrialize-human-bot-full-gameplay-v5.mp4 --codec=h264 --public-dir=demo/remotion/public",
     "bot:render:demo:v5": "remotion render demo/remotion/src/index.ts HumanBotDemoHorizontalV5 videos/horizontal-demos/reindustrialize-human-bot-demo-60s-v5.mp4 --codec=h264 --public-dir=demo/remotion/public",
     "hero:render:v7": "remotion render demo/remotion/src/index.ts HeroCampaignV7 apps/playreind-landing/public/media/gameplay-hero-v7.mp4 --codec=h264 --public-dir=demo/remotion/public",
+    "hero:render:v8": "remotion render demo/remotion/src/index.ts HeroCampaignV8 apps/playreind-landing/public/media/gameplay-hero-v8.mp4 --codec=h264 --public-dir=demo/remotion/public",
     "bot:render:feature:v5": "remotion render demo/remotion/src/index.ts HumanBotFeature45V5 videos/gameplay-longform/reindustrialize-human-bot-feature-45s-v5.mp4 --codec=h264 --public-dir=demo/remotion/public",
     "bot:render:vertical:v5": "remotion render demo/remotion/src/index.ts HumanBotVerticalShortV5 videos/vertical-shorts/reindustrialize-human-bot-short-30s-v5.mp4 --codec=h264 --public-dir=demo/remotion/public",
     "bot:render:square:v5": "remotion render demo/remotion/src/index.ts HumanBotSquareV5 videos/square-social/reindustrialize-human-bot-square-30s-v5.mp4 --codec=h264 --public-dir=demo/remotion/public",
@@ -98,7 +105,7 @@
     "storybook:check:version": "node scripts/validate-storybook-versioning.mjs",
     "storybook:release": "pnpm storybook:build && pnpm storybook:export && pnpm storybook:check",
     "test:e2e": "pnpm release:gate && pnpm test:e2e:run",
-    "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_chapter_one_story.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_title_control_selection.py && python tests/e2e_mobile_game.py && python tests/e2e_startup_performance.py && python tests/e2e_save_pause_settings.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
+    "test:e2e:run": "python tests/e2e_character_story_variants.py && python tests/e2e_zach_mentor.py && python tests/e2e_chapter_one_story.py && python tests/e2e_shop_tour.py && python tests/e2e_task_tutorials.py && python tests/e2e_opening.py && python tests/e2e_hiring.py && python tests/e2e_material_ordering.py && python tests/e2e_movement_usability.py && python tests/e2e_topdown_task_loop.py && python tests/e2e_campaign_roadmap.py && python tests/e2e_gamepad.py && python tests/e2e_phone_controller.py && python tests/e2e_title_control_selection.py && python tests/e2e_young_learner.py && python tests/e2e_young_learner_first_job.py && python tests/e2e_equipment_market.py && python tests/e2e_mobile_game.py && python tests/e2e_startup_performance.py && python tests/e2e_save_pause_settings.py && python tests/e2e_equipment_audio_sequence.py && python tests/e2e_customer_contracts.py && python tests/e2e_ambient_audio.py"
   },
   "devDependencies": {
     "@remotion/cli": "^4.0.491",
@@ -111,5 +118,8 @@
     "tsx": "^4.23.1",
     "typescript": "^5.9.3",
     "wrangler": "^4.34.0"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
   }
 }

@@ -1,6 +1,6 @@
 # Final Gameplay and E2E Status
 
-Last verified: **2026-07-18**
+Last verified: **2026-07-19**
 
 > The first playable milestone passes end to end. The complete six-chapter game is **not yet complete**; unfinished systems are listed below.
 
@@ -47,7 +47,7 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [x] VMC interaction and opened machine view
 - [x] G-code loading, cycle start, part grading, and quest completion
 - [x] Chapter 2 story transition and move from Garage Bay to Job Shop/Bay 2
-- [ ] Persisted Continue flow backed by save data
+- [x] Persisted Continue flow with validated current, temporary, and backup local recovery checkpoints
 
 ## Chapters and progression
 
@@ -78,6 +78,10 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 6. American Titan Campus — 1,000,000 sq ft
 
 ## Tasks and equipment
+
+- [x] Staged 13-item factory market covers 3-axis and 5-axis CNC, CNC turning, manual and robotic TIG welding, surface grinding, polymer and metal additive, CMM, industrial X-ray, and automation
+- [x] Store cards show detailed 32-bit equipment imagery plus chapter, facility, utility/space, price, unlock, ownership, and honest playable/orientation status
+- [x] Founder selection uses large profile portraits at a portrait-safe aspect ratio and keeps movement sprites off the profile cards
 
 - [x] Job planning and guided task sequence
 - [x] Layered/opened equipment views

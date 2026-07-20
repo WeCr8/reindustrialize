@@ -8,8 +8,8 @@ with sync_playwright() as p:
     page.on("pageerror",lambda e:errors.append(str(e)));page.goto(URL);page.wait_for_function("loaded===total")
     for _ in range(4):page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
-    for _ in range(5):page.locator("#introNext").click()
-    page.locator("#tourSkip").wait_for(timeout=10000);page.locator("#tourSkip").click()
+    for _ in range(3):page.locator("#introNext").click()
+    page.locator("#tourNext").wait_for(timeout=10000);page.evaluate("tourMandatory=false;finishTour()")
     page.locator("#bcampaign").click()
     cards=page.locator(".chapterCard")
     assert cards.count()==6

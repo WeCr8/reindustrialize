@@ -19,6 +19,7 @@ with sync_playwright() as p:
     page = browser.new_page(viewport={"width": 1440, "height": 1000})
     errors = []
     page.on("pageerror", lambda error: errors.append(str(error)))
+    page.add_init_script("localStorage.setItem('reindustrialize.learnerMode','off')")
     page.goto(URL)
     page.wait_for_function("loaded === total")
 
@@ -35,13 +36,19 @@ with sync_playwright() as p:
 
     assert page.locator("#titleScreen").is_visible()
     assert page.locator(".avatarChoice").count() == 10
-    assert page.locator(".avatarChoice span").all_inner_texts() == [f"FOUNDER {letter}" for letter in "ABCDEFGHIJ"]
+    assert page.locator(".avatarChoice span").all_inner_texts() == [f"Founder {letter}" for letter in "ABCDEFGHIJ"]
+    assert page.locator(".founderCardPortrait").count() == 10
     assert page.locator("#founderProfile").is_visible()
     assert "FIRST PART FOCUS" in page.locator("#founderProfile").inner_text().upper()
     for avatar in ["av_m_01", "av_m_founder_02_hd", "av_f_founder_hd", "av_f_founder_02_hd", "av_m_blonde_hd", "av_f_blonde_hd", "av_m_middle_eastern_hd", "av_f_middle_eastern_hd", "av_m_indian_hd", "av_f_indian_hd"]:
         page.locator(f'[data-avatar="{avatar}"]').click()
         assert page.evaluate("selectedAvatar") == avatar
         assert page.locator("#founderProfile .atlasPortrait").is_visible()
+        assert page.locator(f'[data-avatar="{avatar}"] .founderCardPortrait').is_visible()
+        assert "SIGNATURE SKILL" in page.locator("#founderProfile").inner_text()
+        assert "PLAY STYLE:" in page.locator("#founderProfile").inner_text()
+        assert "GROWTH AREA:" in page.locator("#founderProfile").inner_text()
+        assert page.locator("#founderProfile .founderStat").count() == 5
         assert "UPGRADES:" in page.locator("#founderProfile").inner_text()
         assert page.locator(f'[data-avatar="{avatar}"]').get_attribute("class").endswith("selected")
         assert page.locator("#sceneFounderBadge").get_attribute("data-founder-avatar") == avatar
@@ -72,8 +79,17 @@ with sync_playwright() as p:
     assert page.locator("#pp .nm").inner_text() == "JORDAN RIVERA"
     page.locator("#introNext").click()
     assert not page.locator("#intro").is_visible()
-    page.locator("#tourSkip").wait_for(timeout=10000)
-    page.locator("#tourSkip").click()
+    page.locator("#tourNext").wait_for(timeout=10000)
+    assert page.locator("#tourSkip").count() == 0
+    for _ in range(page.evaluate("SHOP_TOUR.stops.length")):
+        page.locator("#tourNext").click()
+        page.locator("#tourNext").click()
+        page.wait_for_function("document.querySelector('#task').dataset.tourPhase === 'practice'",timeout=10000)
+        for _ in range(2):
+            correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
+            page.locator(".practiceChoice").nth(correct).click()
+            page.wait_for_timeout(650)
+    assert page.locator("#task").get_attribute("data-completed-tour-stops").count(",") == 13
     assert "done" in page.locator('[data-m="meet_zach"]').get_attribute("class")
     assert "Order certified stock" in page.locator("#objectiveStep").inner_text()
     # The objective CTA must be usable from anywhere: route to the target and open it.
@@ -121,9 +137,14 @@ with sync_playwright() as p:
         page.wait_for_function("!document.querySelector('#task').classList.contains('open')")
 
         stand_by(page, "vmc_t2")
+        page.evaluate("state.equipmentCooldownUntil=0")
         page.locator("#objectiveAction").click()
         for key, value in {"o": "54", "s": "03", "c": "08"}.items():
-            page.locator(f'input[data-b="{key}"]').fill(value)
+            field = page.locator(f'[data-b="{key}"]')
+            if field.evaluate("el => el.tagName === 'SELECT'"):
+                field.select_option(value)
+            else:
+                field.fill(value)
         page.locator("#cycst").click()
         if job_number > 1:
             page.evaluate("finishRun(state.job)")

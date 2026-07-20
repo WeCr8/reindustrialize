@@ -17,7 +17,9 @@ try:
         page.wait_for_function("loaded===total")
         page.evaluate("preFounder.classList.add('closed')")
         page.locator("#newGame").click()
-        page.evaluate("intro.classList.add('closed'); state.jobsShipped=2; coins=7123; P.x=7; P.y=8")
+        page.evaluate("""intro.classList.add('closed'); state.jobsShipped=2; coins=7123; P.x=7; P.y=8;
+            tourActive=true; tourMandatory=true; tourIndex=3; tourPhase=2; tourPracticeStep=1;
+            completedTourStops.clear(); SHOP_TOUR.stops.slice(0,3).forEach(stop=>completedTourStops.add(stop.id));""")
 
         page.locator("#bpause").click()
         assert page.locator("#pauseMenu").get_attribute("class") == "open"
@@ -38,6 +40,9 @@ try:
         assert page.evaluate("state.jobsShipped") == 2
         assert page.evaluate("coins") == 7123
         assert page.evaluate("[P.x,P.y]") == [7, 8]
+        page.wait_for_function("document.querySelector('#task').dataset.tourPhase === 'practice'")
+        assert page.evaluate("[tourIndex,tourPracticeStep,tourMandatory]") == [3, 1, True]
+        assert page.evaluate("completedTourStops.size") == 3
         assert page.locator("#qpct").inner_text() == "0%"
         assert page.evaluate("masterVolume") == 0.55
         assert page.locator("body").evaluate("el=>el.classList.contains('reducedMotion')")
@@ -45,20 +50,19 @@ try:
         page.wait_for_timeout(1100)
         assert "REIND DEV HUD" in page.locator("#debugHud").inner_text()
 
-        # A malformed local save must never partially start the game or trap Continue.
+        # A malformed newest save automatically falls back to the previous atomic checkpoint.
         page.reload()
         page.wait_for_function("loaded===total")
         page.evaluate("preFounder.classList.add('closed')")
         page.evaluate("localStorage.setItem('reindustrialize.save.v1', JSON.stringify({v:1,companyName:'BROKEN'}))")
-        page.once("dialog", lambda dialog: dialog.accept())
         page.locator("#continueGame").click()
-        assert page.evaluate("gameStarted") is False
-        assert page.locator("#continueGame").is_disabled()
-        assert page.evaluate("localStorage.getItem('reindustrialize.save.v1')") is None
-        assert page.evaluate("localStorage.getItem('reindustrialize.save.recovery')") is not None
+        assert page.evaluate("gameStarted") is True
+        assert page.evaluate("state.jobsShipped") == 2
+        assert page.locator("#continueGame").is_enabled()
+        assert page.evaluate("JSON.parse(localStorage.getItem('reindustrialize.save.v1')).companyName") == "AMERICAN FORGE WORKS"
         browser.close()
 finally:
     server.terminate()
     server.wait(timeout=5)
 
-print("PASS: save/continue, corrupt-save quarantine, autosave foundation, pause, settings persistence, and F3 diagnostics")
+print("PASS: crash recovery, onboarding resume, atomic backup fallback, pause, settings persistence, and F3 diagnostics")

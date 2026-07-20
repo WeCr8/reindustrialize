@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill,Audio,OffthreadVideo,Sequence,interpolate,staticFile,useCurrentFrame,useVideoConfig} from 'remotion';
+import {AbsoluteFill,Audio,Img,OffthreadVideo,Sequence,interpolate,staticFile,useCurrentFrame,useVideoConfig} from 'remotion';
 import bot from '../../../data/human-bot-gameplay-video.json';
 import timing from '../../../data/promo-voiceover-timing.json';
 
@@ -45,8 +45,8 @@ export const HeroGameplayDemoV6:React.FC=()=>{const {durationInFrames}=useVideoC
  {heroV6Segments.map((segment,index)=>{const start=cursor;cursor+=segment.duration;return <Sequence key={`${segment.from}-${index}`} from={start} durationInFrames={segment.duration}><AbsoluteFill><OffthreadVideo muted playbackRate={segment.playbackRate} startFrom={segment.from} src={staticFile(bot.source)} style={{width:'100%',height:'100%',objectFit:'cover'}}/><HeroLabel label={segment.label}/></AbsoluteFill></Sequence>})}
  </AbsoluteFill>};
 
-const campaignV7Segments=[
- {from:0,duration:240,label:'FOUND YOUR COMPANY'},
+const campaignV8Segments=[
+ {from:0,duration:240,label:'CHOOSE YOUR FOUNDER',image:'screens/founder-selection-v8.png'},
  {from:450,duration:240,label:'MOVE WITH PURPOSE'},
  {from:2100,duration:240,label:'WIN THE WORK · SOURCE THE STOCK'},
  {from:2700,duration:240,label:'CUT · TOOL · PROVE THE CODE'},
@@ -65,10 +65,11 @@ const campaignV7Captions=[
  {from:1360,to:1440,text:'Your first shift starts now.'},
 ];
 const CampaignCaption:React.FC=()=>{const frame=useCurrentFrame();const cue=campaignV7Captions.find(x=>frame>=x.from&&frame<x.to);if(!cue)return null;return <div style={{position:'absolute',left:'7%',right:'7%',bottom:'8%',display:'flex',justifyContent:'center'}}><div style={{maxWidth:1420,padding:'14px 22px',background:'rgba(3,8,12,.88)',borderLeft:'6px solid #f4bf35',color:'#fff',font:'800 34px/1.22 Arial',textAlign:'center',textShadow:'2px 2px #000',boxShadow:'0 12px 45px #000b'}}>{cue.text}</div></div>};
-export const HeroCampaignV7:React.FC=()=>{const {durationInFrames}=useVideoConfig();const frame=useCurrentFrame();let cursor=0;return <AbsoluteFill style={{background:'#02070b',overflow:'hidden'}}>
+export const HeroCampaignV8:React.FC=()=>{const {durationInFrames}=useVideoConfig();const frame=useCurrentFrame();let cursor=0;return <AbsoluteFill style={{background:'#02070b',overflow:'hidden'}}>
  <Audio loop src={staticFile('audio/garage_shift.mp3')} volume={(f)=>interpolate(f,[0,30,durationInFrames-30,durationInFrames-1],[0,.055,.055,0],{extrapolateLeft:'clamp',extrapolateRight:'clamp'})}/>
  <Sequence from={30} durationInFrames={1310}><Audio src={staticFile('audio/hero_campaign_v7.mp3')} volume={1}/></Sequence>
- {campaignV7Segments.map((segment,index)=>{const start=cursor;cursor+=segment.duration;return <Sequence key={segment.from} from={start} durationInFrames={segment.duration}><AbsoluteFill><OffthreadVideo muted startFrom={segment.from} src={staticFile(bot.source)} style={{width:'100%',height:'100%',objectFit:'cover',transform:'scale(1.035)',filter:'contrast(1.08) saturate(.92) brightness(.82)'}}/><div style={{position:'absolute',inset:0,background:'linear-gradient(90deg,rgba(2,7,11,.72),transparent 46%,rgba(2,7,11,.24)),radial-gradient(circle at 50% 44%,transparent 45%,rgba(0,0,0,.55) 100%)'}}/><div style={{position:'absolute',top:36,left:48,color:'#f4bf35',font:'900 21px Arial Black',letterSpacing:5}}>REINDUSTRIALIZE</div><div style={{position:'absolute',top:38,right:48,color:'#e9f0f4',font:'800 15px monospace',letterSpacing:2}}>REAL GAMEPLAY · BUILD 0.7</div><div style={{position:'absolute',left:48,top:'20%',maxWidth:690,color:'#fff'}}><div style={{color:'#40df91',font:'900 18px monospace',letterSpacing:3}}>0{index+1} / 06</div><div style={{marginTop:12,font:'900 54px/.98 Arial Black',textTransform:'uppercase',textShadow:'4px 4px #000'}}>{segment.label}</div></div></AbsoluteFill></Sequence>})}
+ {campaignV8Segments.map((segment,index)=>{const start=cursor;cursor+=segment.duration;return <Sequence key={`${segment.from}-${index}`} from={start} durationInFrames={segment.duration}><AbsoluteFill>{segment.image?<Img src={staticFile(segment.image)} style={{width:'100%',height:'100%',objectFit:'cover',filter:'contrast(1.06) saturate(.96) brightness(.9)'}}/>:<OffthreadVideo muted startFrom={segment.from} src={staticFile(bot.source)} style={{width:'100%',height:'100%',objectFit:'cover',transform:'scale(1.035)',filter:'contrast(1.08) saturate(.92) brightness(.82)'}}/>}<div style={{position:'absolute',inset:0,background:'linear-gradient(90deg,rgba(2,7,11,.65),transparent 46%,rgba(2,7,11,.18)),radial-gradient(circle at 50% 44%,transparent 48%,rgba(0,0,0,.48) 100%)'}}/><div style={{position:'absolute',top:36,left:48,color:'#f4bf35',font:'900 21px Arial Black',letterSpacing:5}}>REINDUSTRIALIZE</div><div style={{position:'absolute',top:38,right:48,color:'#e9f0f4',font:'800 15px monospace',letterSpacing:2}}>REAL GAMEPLAY · HERO V8</div><div style={{position:'absolute',left:48,top:'20%',maxWidth:690,color:'#fff'}}><div style={{color:'#40df91',font:'900 18px monospace',letterSpacing:3}}>0{index+1} / 06</div><div style={{marginTop:12,font:'900 54px/.98 Arial Black',textTransform:'uppercase',textShadow:'4px 4px #000'}}>{segment.label}</div></div></AbsoluteFill></Sequence>})}
  <CampaignCaption/>
  <div style={{position:'absolute',left:0,bottom:0,height:6,width:`${(frame/(durationInFrames-1))*100}%`,background:'#f4bf35',boxShadow:'0 0 18px #f4bf35'}}/>
  </AbsoluteFill>};
+export const HeroCampaignV7=HeroCampaignV8;

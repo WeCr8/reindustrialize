@@ -9,14 +9,17 @@ with sync_playwright() as p:
  b=p.chromium.launch();page=b.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)));page.goto(URL);page.wait_for_function('loaded===total')
  for _ in range(4):click(page,'#preFounderNext','advance prologue')
  click(page,'#newGame','launch company')
- for _ in range(5):click(page,'#introNext','advance opening')
- page.locator('#tourSkip').wait_for();click(page,'#tourSkip','skip reviewed tour');click(page,'#bteam','open team browser')
+ for _ in range(3):click(page,'#introNext','advance opening')
+ page.locator('#tourNext').wait_for();page.evaluate('tourMandatory=false;finishTour()');actions.append('enter factory after reviewed tour');click(page,'#bteam','open team browser')
  tested=[]
  def hire_at(index,assignment):
   current=page.evaluate('hireIndex');steps=(index-current)%10
   for _ in range(steps):click(page,'#hireNext','browse candidate')
   person=page.evaluate('HIRE_ROSTER.candidates[hireIndex]')
-  click(page,'#hireNow',f"hire {person['name']}");page.locator('#quickAssign').select_option(assignment);actions.append(f"assign {person['name']} to {assignment}")
+  click(page,'#hireNow',f"hire {person['name']}")
+  if not tested: page.wait_for_function("document.querySelector('#intro').dataset.storyBeat==='first_hire_team'")
+  while page.locator('#intro').is_visible(): click(page,'#introNext','advance hire story')
+  page.locator('#quickAssign').select_option(assignment);actions.append(f"assign {person['name']} to {assignment}")
   dialogue=[]
   for _ in range(4):click(page,'#talkHire',f"talk with {person['name']}");dialogue.append(page.locator('#npcConversation').inner_text())
   assert len(set(dialogue))==4;assert page.locator('#cv').get_attribute('data-last-npc-conversation')==person['id'];tested.append({'id':person['id'],'role':person['role'],'assignment':assignment,'dialogueStates':dialogue})
