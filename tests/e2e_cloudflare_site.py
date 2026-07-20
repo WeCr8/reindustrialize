@@ -44,6 +44,7 @@ try:
             desktop.locator("#filmExit").click()
             assert not desktop.locator("#hero").evaluate("el => el.classList.contains('filmMode')")
         assert desktop.locator("a[href='/game/']").count() >= 3
+        assert desktop.locator("a[href='/storybook/']").count() >= 2
         assert desktop.locator(".hero").bounding_box()["y"] < 80
         assert desktop.locator(".proof span").count() == 3
         assert "first playable alpha" in desktop.locator("body").inner_text().lower()

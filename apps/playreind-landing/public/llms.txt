@@ -4,6 +4,7 @@
 
 Canonical site: https://playreind.com/
 Playable alpha: https://playreind.com/game/
+Visual storybook and complete asset coverage library: https://playreind.com/storybook/
 
 The playable release covers founder and company creation, Zach's Garage Bay instruction, material ordering, production planning, raw-stock cutting, CNC tooling, G/M-code proofing, machining, quality grades, customers, hiring, and arrival at the Job Shop.
 

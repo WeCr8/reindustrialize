@@ -8,6 +8,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const source = path.join(root, 'apps', 'wecr8-info', 'prototypes', 'shop-floor-viewer.html');
 const landingSource = path.join(root, 'apps', 'playreind-landing', 'index.html');
 const videoLibrarySource = path.join(root, 'apps', 'playreind-landing', 'videos.html');
+const storybookSource = path.join(root, 'storybook', 'v1', 'index.html');
+const storybookManifestSource = path.join(root, 'storybook', 'v1', 'storybook-manifest.json');
 const releaseManifestSource = path.join(root, 'data', 'release-manifest.json');
 const marketingVideo = path.join(root, 'apps', 'playreind-landing', 'public', 'media', 'gameplay-hero-v8.mp4');
 const out = path.join(root, 'cloudflare-dist');
@@ -28,6 +30,7 @@ fs.mkdirSync(path.join(out, 'game'), { recursive: true });
 fs.mkdirSync(path.join(out, 'media'), { recursive: true });
 fs.mkdirSync(path.join(out, 'media', 'screenshots'), { recursive: true });
 fs.mkdirSync(path.join(out, 'videos'), { recursive: true });
+fs.mkdirSync(path.join(out, 'storybook'), { recursive: true });
 
 let html = fs.readFileSync(source, 'utf8');
 let extracted = 0;
@@ -68,6 +71,19 @@ const includeMarketingVideo = fs.existsSync(marketingVideo) && process.env.PLAYR
 if (!includeMarketingVideo) landingHtml = landingHtml.replace(/<video[\s\S]*?<\/video>/, '<a class="videoFallback" href="/game/" aria-label="Gameplay video unavailable; play the live alpha">▶ PLAY THE LIVE ALPHA</a>');
 fs.writeFileSync(path.join(out, 'index.html'), landingHtml);
 fs.writeFileSync(path.join(out, 'videos', 'index.html'), fs.readFileSync(videoLibrarySource, 'utf8').replace('</head>', `${privacyScript('videos')}</head>`));
+if (!fs.existsSync(storybookSource) || !fs.existsSync(storybookManifestSource)) throw new Error('Missing generated visual storybook');
+const publishStorybookAssets = content => content.replace(/\.\.\/\.\.\/packages\/assets\/[A-Za-z0-9_./&-]+/g, sourceUrl => {
+  const sourcePath = path.resolve(path.dirname(storybookSource), sourceUrl);
+  if (!fs.existsSync(sourcePath)) throw new Error(`Storybook references missing asset: ${sourceUrl}`);
+  const ext = path.extname(sourcePath).toLowerCase();
+  const mime = ext === '.png' ? 'image/png' : ext === '.mp3' ? 'audio/mpeg' : null;
+  if (!mime) throw new Error(`Unsupported storybook asset type: ${sourceUrl}`);
+  return emitAsset(fs.readFileSync(sourcePath), mime);
+});
+let storybookHtml = publishStorybookAssets(fs.readFileSync(storybookSource, 'utf8'));
+storybookHtml = storybookHtml.replace('</head>', `<link rel="canonical" href="https://playreind.com/storybook/"><link rel="icon" href="/favicon.svg" type="image/svg+xml">${privacyScript('storybook')}</head>`);
+fs.writeFileSync(path.join(out, 'storybook', 'index.html'), storybookHtml);
+fs.writeFileSync(path.join(out, 'storybook', 'storybook-manifest.json'), publishStorybookAssets(fs.readFileSync(storybookManifestSource, 'utf8')));
 const publicSource = path.join(root, 'apps', 'playreind-landing', 'public');
 if (!fs.existsSync(publicSource)) throw new Error(`Missing landing discovery files: ${publicSource}`);
 fs.cpSync(publicSource, out, {recursive: true});
@@ -111,7 +127,8 @@ const releaseRecord = {
   gameplayEvidenceVersion: releaseManifest.gameplayEvidenceVersion,
   storybookEdition: releaseManifest.storybookEdition,
   liveUrl: 'https://playreind.com/',
-  gameUrl: 'https://playreind.com/game/'
+  gameUrl: 'https://playreind.com/game/',
+  storybookUrl: 'https://playreind.com/storybook/'
 };
 fs.writeFileSync(path.join(out, 'release.json'), JSON.stringify(releaseRecord, null, 2));
 fs.copyFileSync(path.join(root, 'packages', 'assets', 'title-screen-zach-v2.png'), path.join(landingAssetDir, 'title-screen.png'));
@@ -158,11 +175,15 @@ fs.writeFileSync(path.join(out, '_headers'), `/*
 /game/index.html
   Cache-Control: public, max-age=0, must-revalidate
 
+/storybook/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+
 /release.json
   Cache-Control: public, max-age=0, must-revalidate
 `);
 fs.writeFileSync(path.join(out, '_redirects'), `/game /game/ 301
 /play /game/ 301
+/storybook /storybook/ 301
 `);
 fs.writeFileSync(path.join(out, '.assetsignore'), `.assetsignore
 `);

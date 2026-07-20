@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const pages = ['index.html', 'game/index.html', 'videos/index.html'];
+const pages = ['index.html', 'game/index.html', 'videos/index.html', 'storybook/index.html'];
 const failures = [];
 const requireBuildOutput = process.argv.includes('--build-output');
 const builder = fs.readFileSync(path.join(root, 'scripts/build-cloudflare-site.mjs'), 'utf8');
@@ -34,4 +34,4 @@ for (const event of ['game_start','game_resume','founder_select','control_mode',
 }
 if (!controller.includes('FORBIDDEN')) failures.push('controller: sensitive parameter guard missing');
 if (failures.length) { console.error(failures.map(v => `FAIL: ${v}`).join('\n')); process.exit(1); }
-console.log(`PASS: consent defaults, Google tag G-KRCJP5MHXH, shared controller, anonymous event allowlist${requireBuildOutput ? ', and built landing/game/video pages' : ''} validated.`);
+console.log(`PASS: consent defaults, Google tag G-KRCJP5MHXH, shared controller, anonymous event allowlist${requireBuildOutput ? ', and built landing/game/video/storybook pages' : ''} validated.`);

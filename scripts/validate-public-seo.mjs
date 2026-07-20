@@ -14,12 +14,12 @@ requireText(html, '<link rel="canonical" href="https://playreind.com/">', 'Canon
 requireText(html, 'name="robots" content="index,follow,max-image-preview:large,max-video-preview:-1"', 'Search preview directives are missing.');
 for (const type of ['WebSite', 'Organization', 'VideoGame', 'VideoObject']) requireText(html, `"@type":"${type}"`, `${type} structured data is missing.`);
 for (const field of ['thumbnailUrl', 'uploadDate', 'duration', 'contentUrl']) requireText(html, `"${field}"`, `VideoObject.${field} is missing.`);
-for (const marker of ['og:image:width', 'og:image:height', 'twitter:image:alt', 'aria-controls="heroVideo"', 'Campaign film transcript', 'id="people"', 'data-role-filter="founder"', 'Screenshots from']) requireText(html, marker, `Homepage marker ${marker} is missing.`);
+for (const marker of ['og:image:width', 'og:image:height', 'twitter:image:alt', 'aria-controls="heroVideo"', 'Campaign film transcript', 'id="people"', 'data-role-filter="founder"', 'Screenshots from', 'href="/storybook/"']) requireText(html, marker, `Homepage marker ${marker} is missing.`);
 for (const file of ['robots.txt', 'sitemap.xml', 'llms.txt', 'favicon.ico', 'favicon.svg', 'site.webmanifest', 'media/hero-poster-v7.webp', 'media/gameplay-hero-v8.mp4', 'media/gameplay-hero-v8.vtt', 'og/playreind-social-v7.jpg']) {
   if (!fs.existsSync(path.join(publicDir, file))) failures.push(`Public discovery asset is missing: ${file}`);
 }
 requireText(sitemap, 'xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"', 'Video sitemap namespace is missing.');
-for (const marker of ['<loc>https://playreind.com/</loc>', '<video:content_loc>https://playreind.com/media/gameplay-hero-v8.mp4</video:content_loc>', '<lastmod>2026-07-19</lastmod>']) requireText(sitemap, marker, `Sitemap marker is missing: ${marker}`);
+for (const marker of ['<loc>https://playreind.com/</loc>', '<loc>https://playreind.com/storybook/</loc>', '<video:content_loc>https://playreind.com/media/gameplay-hero-v8.mp4</video:content_loc>', '<lastmod>2026-07-19</lastmod>']) requireText(sitemap, marker, `Sitemap marker is missing: ${marker}`);
 
 const jsonLd = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
 if (!jsonLd.length) failures.push('No JSON-LD block found.');
