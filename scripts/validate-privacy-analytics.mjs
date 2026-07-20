@@ -10,6 +10,7 @@ const builder = fs.readFileSync(path.join(root, 'scripts/build-cloudflare-site.m
 for (const marker of ['G-KRCJP5MHXH', 'googletagmanager.com/gtag/js', "gtag('consent','default'", '/privacy-consent.js']) {
   if (!builder.includes(marker)) failures.push(`builder: required analytics marker missing: ${marker}`);
 }
+if (!builder.includes('send_page_view:false')) failures.push('builder: automatic page views must stay disabled; the consent controller sends one verified page view');
 for (const page of requireBuildOutput ? pages : []) {
   const file = path.join(root, 'cloudflare-dist', page);
   if (!fs.existsSync(file)) { failures.push(`${page}: missing build output`); continue; }
@@ -23,6 +24,11 @@ for (const page of requireBuildOutput ? pages : []) {
   if (!html.includes('/privacy-consent.js')) failures.push(`${page}: shared consent controller missing`);
 }
 const controller = fs.readFileSync(path.join(root, 'apps/playreind-landing/public/privacy-consent.js'), 'utf8');
+for (const marker of ['__reindAnalyticsInstalled', 'ONCE_PER_SESSION', 'PERSISTENT', "window.addEventListener('reind:analytics'", 'hero_video_play']) {
+  if (!controller.includes(marker)) failures.push(`controller: analytics truth safeguard missing: ${marker}`);
+}
+if (controller.includes("if (el.id === 'b1')") || controller.includes("if (el.id === 'b2')")) failures.push('controller: facility milestones must not be inferred from navigation clicks');
+if (controller.includes("}, true);")) failures.push('controller: gameplay success must not be inferred during click capture');
 for (const event of ['game_start','game_resume','founder_select','control_mode','station_start','task_complete','hire_role','worker_assignment','equipment_purchase','maintenance_repair','chapter_milestone','facility_milestone']) {
   if (!controller.includes(`${event}:`)) failures.push(`controller: event ${event} missing from allowlist`);
 }
