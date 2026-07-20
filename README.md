@@ -26,6 +26,8 @@
 
 > **Station asset and audio plan:** See [docs/STATION_ASSET_AUDIO_MASTER_PLAN.md](docs/STATION_ASSET_AUDIO_MASTER_PLAN.md) for the complete station-by-station visual, animation, SFX, narration, interaction, failure-state, and E2E requirements from the Garage Bay through the American Titan Campus.
 
+> **Maintenance visuals:** See [docs/EQUIPMENT_MAINTENANCE_VISUALS.md](docs/EQUIPMENT_MAINTENANCE_VISUALS.md) for the four-state floor-sprite contract, truthful playable/orientation status, machine-to-atlas rows, and the blocking `pnpm maintenance:visuals:check` validator.
+
 > **Accounts and cloud saves:** See [docs/BACKEND_OPTIONS_AND_RELEASE.md](docs/BACKEND_OPTIONS_AND_RELEASE.md) for disabled, local Supabase, direct Supabase, and Lovable-compatible deployment choices. Cloud features remain disabled by default.
 
 > **Future free-form Zach Q&A:** See [docs/LLM_MENTOR_READINESS.md](docs/LLM_MENTOR_READINESS.md) for the disabled, provider-neutral OpenRouter/Groq/Hugging Face adapter. The reviewed scripted mentor remains the default.

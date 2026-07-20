@@ -24,6 +24,7 @@ facilities = json.load(open(os.path.join(ROOT, "data", "facilities.json")))
 equipment_market = json.load(open(os.path.join(ROOT, "data", "equipment-market.json")))
 facility_amenity_events = json.load(open(os.path.join(ROOT, "data", "facility-amenity-events.json")))
 equipment_damage_states = json.load(open(os.path.join(ROOT, "data", "equipment-damage-states.json")))
+equipment_maintenance_visuals = json.load(open(os.path.join(ROOT, "data", "equipment-maintenance-visuals.json")))
 robotics_sprite_profiles = json.load(open(os.path.join(ROOT, "data", "robotics-sprite-profiles.json")))
 equipment_operating_profiles = json.load(open(os.path.join(ROOT, "data", "equipment-operating-profiles.json")))
 scene_files = sorted({n for s in scene_manifest["scenes"].values() if s.get("active") for n in s["assets"].values()})
@@ -109,12 +110,13 @@ kbd{background:#23262d;border:1px solid #4a4f58;padding:0 5px;border-radius:3px;
 #mini{display:none;width:100%;max-width:96vw;justify-content:space-between;align-items:center;
 gap:8px;padding:5px 10px;font-size:19px;}
 #mini .nm{color:#fff;} #mini .q{color:var(--green);}
-#pad{display:none;position:fixed;left:12px;bottom:12px;z-index:30;
-grid-template-columns:repeat(3,54px);grid-template-rows:repeat(3,54px);gap:4px;opacity:.93;}
-#pad b{background:var(--panel);border:3px solid var(--gold);outline:2px solid #000;
-display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--gold);
-user-select:none;-webkit-user-select:none;touch-action:manipulation;}
-#pad b:active{background:var(--gold);color:#000;} #pad b.x{visibility:hidden;}
+#pad{display:none;position:fixed;left:0;right:0;bottom:0;height:148px;z-index:30;opacity:.94;pointer-events:none;}
+#pad b{background:rgba(17,19,24,.94);border:3px solid var(--gold);outline:2px solid #000;
+display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--gold);border-radius:14px;
+user-select:none;-webkit-user-select:none;touch-action:none;pointer-events:auto;box-shadow:3px 4px 0 rgba(0,0,0,.55);}
+#pad b:active,#pad b.pressed{background:var(--gold);color:#000;transform:translateY(2px);box-shadow:1px 2px 0 #000}
+.movePad{position:absolute;left:max(8px,env(safe-area-inset-left));bottom:max(8px,env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(3,44px);gap:3px}.movePad b{border-radius:12px}.movePad .padCenter{border-radius:50%;border-color:#56616b;color:#7c8791;background:#0a0d12}.movePad .x{visibility:hidden}
+.actionPad{position:absolute;right:max(10px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom));display:flex;align-items:flex-end;gap:12px}.actionPad b{border-radius:50%;text-align:center;line-height:.9}.actionPad [data-d=act]{width:72px;height:72px;background:rgba(13,48,35,.95);border-color:var(--green);color:#fff;font-size:20px}.actionPad [data-d=run]{width:54px;height:54px;font-size:15px}.actionPad [data-d=run].on{background:var(--gold);color:#000}
 /* ---------- TASK OVERLAY ---------- */
 #task{position:fixed;inset:0;background:rgba(5,6,9,.92);z-index:170;display:none;
 flex-direction:column;align-items:center;justify-content:flex-start;gap:8px;padding:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left));overflow:auto;}
@@ -160,8 +162,15 @@ transform:rotate(-4deg);animation:stampin .25s ease-out;}
   #dlg{width:100%;padding:6px 8px;} #dport{width:56px;height:56px;} #dtext{font-size:19px;}
   .hint{display:none;} #bar button{font-size:15px;padding:2px 8px;}#bvoice,#testVoice,#audioState{position:static}#testVoice,#audioState{display:none}
 }
-@media (pointer:coarse){#pad{display:grid;left:max(12px,env(safe-area-inset-left));bottom:max(12px,env(safe-area-inset-bottom));grid-template-columns:repeat(3,44px);grid-template-rows:repeat(3,44px);gap:3px}#pad b{font-size:20px}body{padding-bottom:max(154px,calc(142px + env(safe-area-inset-bottom)))}#dlg{margin-left:150px;width:calc(100% - 156px)}}
-@media (pointer:coarse) and (max-height:480px){#dlg{font-size:16px}#dport{width:44px;height:44px}#dtext{font-size:17px}}
+@media (pointer:coarse){#pad{display:block}#pad b{font-size:20px}body{padding-bottom:max(154px,calc(142px + env(safe-area-inset-bottom)))}#dlg{margin-left:150px;width:calc(100% - 156px)}}
+@media (pointer:coarse) and (max-height:480px){
+  #dlg{font-size:16px}#dport{width:44px;height:44px}#dtext{font-size:17px}
+  #task{padding:4px;display:none}#task.open{display:flex}#tpanel{width:99vw;max-height:calc(100dvh - 8px);display:grid;grid-template-columns:minmax(220px,42%) minmax(0,1fr);grid-template-rows:auto auto minmax(0,1fr) auto;gap:4px 8px;padding:5px 8px;overflow:auto}
+  #thead,#tjob{grid-column:1/-1}#thead{font-size:16px}#thead button{font-size:14px;padding:2px 5px}#ttitle{font-size:19px}#tjob{font-size:16px;margin:0;padding:2px 6px}
+  #tsceneWrap{grid-column:1;grid-row:3/5;margin:0;min-height:0}#tview{height:100%;max-height:240px;object-fit:cover}#tscene{max-width:100%;height:auto}
+  #tcontrols{grid-column:2;grid-row:3;margin:0;min-width:0;font-size:16px;line-height:1.05;align-self:start}#tcontrols button{font-size:15px;min-height:34px;margin:2px 1px;padding:3px 7px}.practiceChoice{display:block;width:100%;text-align:left}
+  #tzach{grid-column:2;grid-row:4;gap:6px;min-width:0}#tzport{width:40px;height:40px}#tztext{font-size:16px;line-height:1.05;min-height:34px}
+}
 #intro{position:fixed;inset:0;z-index:100;background:#050609;display:flex;align-items:center;justify-content:center;padding:16px;}
 #preFounder{position:fixed;inset:0;z-index:145;background:#050609;display:grid;place-items:center;padding:16px}#preFounder.closed{display:none}#preFounderCard{position:relative;width:min(1280px,96vw);height:min(760px,92vh);overflow:hidden;border:4px solid var(--gold);outline:3px solid #000;background:#080b10}#preFounderArt{width:100%;height:100%;object-fit:cover;image-rendering:auto}#preFounderCopy{position:absolute;left:3%;right:3%;bottom:3%;background:rgba(5,8,12,.96);border:3px solid var(--gold);outline:2px solid #000;padding:14px 18px;box-shadow:7px 7px 0 #000}#preFounderKicker{color:var(--gold);font-size:25px}#preFounderText{color:#fff;font-size:27px;line-height:1.15;margin:7px 0}#preFounderNext{font-size:24px;padding:6px 18px}
 #titleScreen{position:fixed;inset:0;z-index:120;background:#050609 center/cover no-repeat;display:grid;place-items:center;text-align:center}#titleScreen.closed{display:none}
@@ -184,6 +193,39 @@ transform:rotate(-4deg);animation:stampin .25s ease-out;}
 @media(max-width:700px){#titleScreen:not(.closed)~#bvoice,#titleScreen:not(.closed)~#testVoice,#titleScreen:not(.closed)~#audioState{display:none}}
 #titleScreen .titleMenu{position:sticky;z-index:12;bottom:0;width:min(760px,96vw);grid-template-columns:2fr 1fr 1.5fr 1fr;gap:6px;padding:8px;background:rgba(5,9,13,.97);border:2px solid var(--gold);box-shadow:0 -8px 25px #000}#titleScreen .titleMenu button{font-size:19px;padding:7px 5px}@media(max-width:700px){#titleUi{max-height:100dvh;padding-bottom:0}#titleScreen .titleMenu{grid-template-columns:2fr 1fr;bottom:0}#titleScreen .titleMenu button{font-size:16px;min-height:46px}#titleSettings,#credits{font-size:13px!important}.build{display:none}}
 #titleScreen .titleMenu{position:fixed;left:50%;transform:translateX(-50%)}#titleUi{padding-bottom:88px}@media(max-width:700px){#titleUi{padding-bottom:118px}}
+/* Mobile gameplay shell: keep the shop larger than the text chrome and pin guidance into compact trays. */
+@media(max-width:900px){
+  html,body{width:100%;height:100%;height:100dvh;overflow:hidden}
+  body{min-height:100dvh;max-height:100dvh;padding:max(4px,env(safe-area-inset-top)) max(4px,env(safe-area-inset-right)) max(4px,env(safe-area-inset-bottom)) max(4px,env(safe-area-inset-left));gap:4px}
+  body>h1{display:none}
+  #bar{width:100%;min-height:38px;max-height:38px;flex:0 0 38px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+  #bar button{flex:0 0 auto;min-height:34px;white-space:nowrap;padding:2px 8px}
+  #mini{height:36px;min-height:36px;flex:0 0 36px;padding:3px 7px;font-size:16px;gap:5px}
+  #mini .coin{font-size:17px}
+  #layout{display:block;position:relative;width:100%;min-height:0;flex:1 1 auto;overflow:hidden}
+  #cwrap{margin:0 auto}
+  #stationPrompt.open{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px;width:calc(100% - 16px);max-width:620px;padding:5px 7px;white-space:normal}
+  #stationPromptText{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #stationPrompt button{display:block;min-height:38px;margin:0;padding:3px 8px;white-space:nowrap}
+  #sideR{position:fixed;z-index:28;left:max(5px,env(safe-area-inset-left));right:max(5px,env(safe-area-inset-right));top:calc(max(4px,env(safe-area-inset-top)) + 82px);width:auto;pointer-events:none}
+  #sideR>.panel:nth-child(2){padding:3px 5px;background:rgba(8,13,19,.92);box-shadow:2px 2px 0 #000}
+  #objectiveGuide{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px;align-items:center;padding:4px 5px;pointer-events:auto}
+  #objectiveGuide>.ttl{display:none}
+  #objectiveStep{font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #objectiveHow{display:none}
+  #objectiveAction{width:auto;min-height:38px;padding:3px 7px;font-size:15px;white-space:nowrap}
+  #dlg{position:fixed;z-index:29;left:max(5px,env(safe-area-inset-left));right:max(5px,env(safe-area-inset-right));bottom:calc(154px + env(safe-area-inset-bottom));width:auto;margin:0;min-height:72px;max-height:92px;padding:4px 6px;gap:6px;overflow:hidden;background:rgba(8,11,16,.94)}
+  #dport{width:42px;height:42px}#dname{font-size:14px;line-height:1}#dtext{font-size:16px;line-height:1;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}#askMentor{font-size:14px;padding:1px 6px}
+  #pad{left:0;right:0;bottom:0}
+  #preFounder{padding:6px}#preFounderCard{width:100%;height:100%;height:100dvh;border-width:2px}#preFounderCopy{left:2%;right:2%;bottom:2%;max-height:48dvh;overflow:auto;padding:8px 10px}#preFounderKicker{font-size:18px}#preFounderText{font-size:19px;line-height:1.08}#preFounderNext{font-size:18px;min-height:42px}
+}
+@media(max-width:900px) and (orientation:landscape), (pointer:coarse) and (max-height:480px){
+  #mini{display:none}
+  #sideR{top:calc(max(4px,env(safe-area-inset-top)) + 42px);left:155px}
+  #dlg{left:155px;right:150px;bottom:max(6px,env(safe-area-inset-bottom));min-height:66px;max-height:82px}
+  .movePad{grid-template-columns:repeat(3,38px);grid-template-rows:repeat(3,38px);gap:2px}.movePad b{font-size:17px;border-width:2px}
+  .actionPad [data-d=act]{width:64px;height:64px}.actionPad [data-d=run]{width:48px;height:48px}
+}
 </style></head><body>
 <div id="preFounder"><div id="preFounderCard"><img id="preFounderArt" alt="Zach introduces the manufacturing journey before founder selection"><div id="preFounderCopy"><div id="preFounderKicker"></div><div id="preFounderText"></div><button id="preFounderNext" class="grn">CONTINUE ▸</button></div></div></div>
 <div id="titleScreen"><div id="titleShade"></div><div id="titleUi"><div id="gameLogo">REINDUSTRIALIZE</div><div id="tagline">CREATE YOUR FOUNDER. BUILD AN INDUSTRIAL POWERHOUSE.</div><div class="founderSetup"><div class="hint">CHOOSE YOUR FOUNDER</div><div class="avatarChoices"><button class="avatarChoice selected" data-avatar="av_m_01"><canvas width="64" height="96"></canvas><span>FOUNDER A</span></button><button class="avatarChoice" data-avatar="av_m_founder_02_hd"><canvas width="64" height="96"></canvas><span>FOUNDER B</span></button><button class="avatarChoice" data-avatar="av_f_founder_hd"><canvas width="64" height="96"></canvas><span>FOUNDER C</span></button><button class="avatarChoice" data-avatar="av_f_founder_02_hd"><canvas width="64" height="96"></canvas><span>FOUNDER D</span></button><button class="avatarChoice" data-avatar="av_m_blonde_hd"><canvas width="64" height="96"></canvas><span>FOUNDER E</span></button><button class="avatarChoice" data-avatar="av_f_blonde_hd"><canvas width="64" height="96"></canvas><span>FOUNDER F</span></button><button class="avatarChoice" data-avatar="av_m_middle_eastern_hd"><canvas width="64" height="96"></canvas><span>FOUNDER G</span></button><button class="avatarChoice" data-avatar="av_f_middle_eastern_hd"><canvas width="64" height="96"></canvas><span>FOUNDER H</span></button><button class="avatarChoice" data-avatar="av_m_indian_hd"><canvas width="64" height="96"></canvas><span>FOUNDER I</span></button><button class="avatarChoice" data-avatar="av_f_indian_hd"><canvas width="64" height="96"></canvas><span>FOUNDER J</span></button></div><input id="founderName" maxlength="24" value="ALEX MORGAN" aria-label="Name your founder"><div class="hint">FOUNDER NAME</div></div><input id="companyName" maxlength="32" value="AMERICAN FORGE WORKS" aria-label="Name your manufacturing company"><div class="hint">MANUFACTURING COMPANY NAME</div><div class="controlSelect"><div class="hint">CHOOSE HOW YOU WILL PLAY</div><div class="controlChoices"><button class="controlChoice selected" data-control="auto"><b>✦ AUTO</b><span>Use any connected control</span></button><button class="controlChoice" data-control="keyboard"><b>⌨ KEYBOARD</b><span>WASD / arrows · Shift · E</span></button><button class="controlChoice" data-control="gamepad"><b>🎮 XBOX</b><span>Stick / D-pad · RT · A</span></button><button class="controlChoice" data-control="phone"><b>▦ PHONE QR</b><span>Scan to pair your phone</span></button></div><div id="selectedControlStatus" aria-live="polite">ALL INPUTS ACTIVE</div></div><div class="titleMenu"><button id="newGame" class="grn">▶ LAUNCH COMPANY</button><button id="continueGame" disabled>CONTINUE</button><button id="titleSettings">ADVANCED CONTROLS & PHONE QR</button><button id="credits">CREDITS</button></div><div class="build">FIRST PLAYABLE · BUILD 0.7</div></div></div>
@@ -262,10 +304,9 @@ transform:rotate(-4deg);animation:stampin .25s ease-out;}
   <div id="dport"><img id="dportimg" alt="Zach"></div>
   <div><div id="dname">ZACH — LVL 34 CNC SPECIALIST</div><div id="dtext"></div><div class="hint" id="dhint"></div><button id="askMentor" class="gld">? TALK WITH ZACH</button></div>
 </div>
-<div id="pad">
-  <b data-d="run">RUN</b><b data-d="up">▲</b><b class="x"></b>
-  <b data-d="left">◀</b><b data-d="act">●</b><b data-d="right">▶</b>
-  <b class="x"></b><b data-d="down">▼</b><b class="x"></b>
+<div id="pad" aria-label="Touch game controls">
+  <div class="movePad" aria-label="Movement pad"><b class="x"></b><b data-d="up" aria-label="Move up">▲</b><b class="x"></b><b data-d="left" aria-label="Move left">◀</b><b class="padCenter" aria-hidden="true">+</b><b data-d="right" aria-label="Move right">▶</b><b class="x"></b><b data-d="down" aria-label="Move down">▼</b><b class="x"></b></div>
+  <div class="actionPad" aria-label="Action controls"><b data-d="run" role="button" aria-pressed="false">RUN</b><b data-d="act" role="button" aria-label="Use or open nearby station">A<br>USE</b></div>
 </div>
 
 <!-- ============ TASK OVERLAY ============ -->
@@ -301,6 +342,7 @@ const EQUIPMENT_VIEWS=__EQUIPMENT_VIEWS__;
 const EQUIPMENT_MARKET=__EQUIPMENT_MARKET__;
 const FACILITY_AMENITIES=__FACILITY_AMENITIES__;
 const EQUIPMENT_DAMAGE_STATES=__EQUIPMENT_DAMAGE_STATES__;
+const EQUIPMENT_MAINTENANCE_VISUALS=__EQUIPMENT_MAINTENANCE_VISUALS__;
 const ROBOTICS_PROFILES=__ROBOTICS_PROFILES__;
 const EQUIPMENT_OPERATING_PROFILES=__EQUIPMENT_OPERATING_PROFILES__;
 const TOOL_ART=__TOOL_ART__;
@@ -398,8 +440,9 @@ document.getElementById("openFounderProgress").onclick=openFounderProgress;
 function equipmentState(){return state.equipment||(state.equipment={vmc:1,saw:1,inspection:1});}
 function maintenanceState(){const all=state.maintenance||(state.maintenance={});return all.vmc||(all.vmc={condition:100,status:'READY'});}
 function maintenanceWorker(station){return workers.filter(worker=>worker.candidate?.maintenanceQualified&&(!station||worker.candidate.qualifications.includes(station))).sort((a,b)=>(b.candidate.skills.problem_solving||0)-(a.candidate.skills.problem_solving||0))[0];}
-function serviceVmc(){const machine=maintenanceState(),cost=350;if(!maintenanceWorker('vmc_t2')||coins<cost)return false;coins-=cost;machine.condition=100;machine.status='READY';addCoins(0);playSfx('toolholder_load');saveGame('VMC MAINTENANCE');return true;}
-function applyVmcWear(){if(state.jobsShipped<5)return;const machine=maintenanceState(),baseWear=8+(state.jobsShipped%3)*2,reliability=Math.max(-.5,assignedTeamEffect('downtime','vmc_t2')),wear=Math.max(3,Math.round(baseWear*(1+reliability)));machine.condition=Math.max(0,machine.condition-wear);machine.status=machine.condition<=20?'DOWN FOR MAINTENANCE':machine.condition<=50?'SERVICE SOON':'READY';}
+function maintenanceVisualRecord(machineId){return [...EQUIPMENT_MAINTENANCE_VISUALS.equipment,...EQUIPMENT_MAINTENANCE_VISUALS.facilityAssets].find(record=>record.machineId===machineId);}
+function serviceVmc(){const machine=maintenanceState(),cost=350;if(!maintenanceWorker('vmc_t2')||coins<cost)return false;coins-=cost;machine.condition=100;machine.status='READY';machine.visualState='restored';const visual=maintenanceVisualRecord('vmc_t2');if(visual)loadSprite(visual.atlas);addCoins(0);playSfx('toolholder_load');saveGame('VMC MAINTENANCE');return true;}
+function applyVmcWear(){if(state.jobsShipped<5)return;const machine=maintenanceState(),baseWear=8+(state.jobsShipped%3)*2,reliability=Math.max(-.5,assignedTeamEffect('downtime','vmc_t2')),wear=Math.max(3,Math.round(baseWear*(1+reliability)));machine.condition=Math.max(0,machine.condition-wear);machine.status=machine.condition<=20?'DOWN FOR MAINTENANCE':machine.condition<=50?'SERVICE SOON':'READY';machine.visualState=machine.condition<=20?'locked_out':'available';if(machine.condition<=20){const visual=maintenanceVisualRecord('vmc_t2');if(visual)loadSprite(visual.atlas);}}
 function marketAtlasStyle(item,damaged=false){if(item.atlasCell===undefined)return '';const columns=item.atlasColumns||3,rows=item.atlasRows||3,x=item.atlasCell%columns,y=Math.floor(item.atlasCell/columns),damageAtlas=item.atlas==='factory-robotics-market-atlas-v1'?EQUIPMENT_MARKET.roboticsDamagedAtlas:EQUIPMENT_MARKET.damagedAtlas,atlasName=damaged?(item.damagedAtlas||damageAtlas):(item.atlas||EQUIPMENT_MARKET.atlas),px=columns===1?0:x*100/(columns-1),py=rows===1?0:y*100/(rows-1);return 'background-image:url('+assetUrl(EQUIPMENT_VIEWS[atlasName])+');background-size:'+(columns*100)+'% '+(rows*100)+'%;background-position:'+px+'% '+py+'%;';}
 let storeLesson=0;
 function renderStoreCoach(){const lesson=EQUIPMENT_MARKET.walkthrough[storeLesson],average=gradeAverage(),next=map?.id==='bay_02'?FACILITIES[2]:FACILITIES[1],garageReady=state.jobsShipped>=5&&average>=3,pressure=state.jobsShipped<2?'KEEP LEARNING · CURRENT EQUIPMENT IS ENOUGH':state.jobsShipped<5?'WATCH QUEUES · BUY ONLY WHEN A WAIT BLOCKS GOOD WORK':'REVIEW THE NEXT FACILITY · GARAGE PRODUCTION IS PROVEN';document.getElementById('storeCoach').innerHTML='<div class="ttl">ZACH\'S STORE WALKTHROUGH · '+lesson.title+'</div><p>'+lesson.text+'</p><div class="panel"><b>GROWTH CHECK:</b> '+pressure+'<br><span class="hint">JOBS '+state.jobsShipped+'/5 · QUALITY '+(average||0).toFixed(1)+'/3.0 · TEAM '+workers.length+' · CASH '+coins+' · NEXT '+next.name.toUpperCase()+' '+next.floorAreaSqFt.toLocaleString()+' SQ FT</span><br><span class="equipmentStatus">'+(garageReady?'CHAPTER PRODUCTION GATE READY':'KEEP BUILDING CAPABILITY')+'</span></div><button id="storeLessonPrev" '+(storeLesson===0?'disabled':'')+'>◀ PREVIOUS</button><button id="storeLessonNext" class="grn">'+(storeLesson===EQUIPMENT_MARKET.walkthrough.length-1?'RESTART WALKTHROUGH':'NEXT LESSON ▶')+'</button><button id="storeFacilityRoadmap">VIEW FACILITY ROADMAP</button>';document.getElementById('storeLessonPrev').onclick=()=>{storeLesson=Math.max(0,storeLesson-1);renderStoreCoach()};document.getElementById('storeLessonNext').onclick=()=>{storeLesson=(storeLesson+1)%EQUIPMENT_MARKET.walkthrough.length;renderStoreCoach();playZach('zach_response_next_step')};document.getElementById('storeFacilityRoadmap').onclick=()=>{document.getElementById('equipmentMarket').style.display='none';renderCampaign();document.getElementById('campaign').classList.add('open')};}
@@ -565,10 +608,11 @@ function fit(){
   const mobile=availW<900;
   if(map){
     VW=mobile?Math.min(map.size[0], Math.max(9, Math.floor(availW/(availW<420?34:36)))):map.size[0];
-    VH=mobile?Math.min(map.size[1], 11):map.size[1];
+    VH=mobile?Math.min(map.size[1], innerHeight<=480?7:11):map.size[1];
   }
   cv.width=VW*T; cv.height=VH*T;
   let s=availW/(VW*T); if(s>=2)s=2; else if(s>=1.5&&!mobile)s=1.5;
+  if(mobile){const reserved=innerHeight<=480?76:164,maxCanvasHeight=Math.max(220,innerHeight-reserved);s=Math.min(s,maxCanvasHeight/(VH*T));}
   cv.style.width=Math.floor(VW*T*s)+"px"; cv.style.height=Math.floor(VH*T*s)+"px";
   clampCam(); if(loaded===total&&map)draw();
 }
@@ -611,8 +655,10 @@ function draw(){
     const a=ATLAS[p.sprite],spriteImage=IMG[p.sprite]; if(!a||!spriteImage?.complete)continue;
     if(!pd&&P.y+1<=p.tile[1]+p.footprint[1]){drawP();pd=true;}
     let fi=0; if(running&&a.frames>1)fi=frame%2;
-    const dw=p.footprint[0]*T,dh=Math.min(p.footprint[1]*T,a.fh*(dw/a.fw));
-    cx.drawImage(spriteImage,fi*a.fw,0,a.fw,a.fh,p.tile[0]*T,p.tile[1]*T+(p.footprint[1]*T-dh),dw,dh);
+    const dw=p.footprint[0]*T;let sourceImage=spriteImage,sourceX=fi*a.fw,sourceY=0,sourceW=a.fw,sourceH=a.fh,maintenanceColumn=-1;
+    if(p.sprite==='vmc_t2'){const machine=maintenanceState(),visual=maintenanceVisualRecord(p.sprite),visualState=machine.status==='DOWN FOR MAINTENANCE'?'locked_out':machine.visualState;maintenanceColumn=EQUIPMENT_MAINTENANCE_VISUALS.stateOrder.indexOf(visualState);if(visual&&maintenanceColumn>=0&&!IMG[visual.atlas])loadSprite(visual.atlas);if(visual&&maintenanceColumn>=0&&IMG[visual.atlas]?.complete){const va=ATLAS[visual.atlas];sourceImage=IMG[visual.atlas];sourceW=va.fw;sourceH=va.fh;sourceX=maintenanceColumn*va.fw;sourceY=visual.row*va.fh;cv.dataset.maintenanceVisual=EQUIPMENT_MAINTENANCE_VISUALS.stateOrder[maintenanceColumn];}}
+    const dh=Math.min(p.footprint[1]*T,sourceH*(dw/sourceW));
+    cx.drawImage(sourceImage,sourceX,sourceY,sourceW,sourceH,p.tile[0]*T,p.tile[1]*T+(p.footprint[1]*T-dh),dw,dh);
     if(overlays&&p.label){cx.font="13px VT323, monospace";
       cx.strokeStyle="#000";cx.lineWidth=3;cx.strokeText(p.label,p.tile[0]*T+1,p.tile[1]*T-3);
       cx.fillStyle="#e8b93b";cx.fillText(p.label,p.tile[0]*T+1,p.tile[1]*T-3);}
@@ -1097,9 +1143,9 @@ let holdT=null,touchRun=false;
 document.querySelectorAll("#pad b[data-d]").forEach(el=>{
   const d=el.dataset.d;
   const fire=()=>{ if(!accepts("touch")||task.classList.contains("open"))return;
-    if(d==="act"){interact();}else if(d==="run"){touchRun=!touchRun;el.classList.toggle("on",touchRun);el.textContent=touchRun?"RUN!":"RUN";}else {const[dx,dy]=DIRS[d];move(dx,dy,false,touchRun);} };
-  const start_=(e)=>{e.preventDefault();fire();clearInterval(holdT);if(d!=="act"&&d!=="run")holdT=setInterval(fire,touchRun?95:170);};
-  const stop_=()=>clearInterval(holdT);
+    if(d==="act"){interact();}else if(d==="run"){touchRun=!touchRun;el.classList.toggle("on",touchRun);el.setAttribute("aria-pressed",String(touchRun));el.textContent=touchRun?"RUN!":"RUN";}else {const[dx,dy]=DIRS[d];move(dx,dy,false,touchRun);} };
+  const start_=(e)=>{e.preventDefault();el.classList.add("pressed");if(navigator.vibrate)navigator.vibrate(d==="act"?22:8);fire();clearInterval(holdT);if(d!=="act"&&d!=="run")holdT=setInterval(fire,touchRun?95:170);};
+  const stop_=()=>{el.classList.remove("pressed");clearInterval(holdT);};
   el.addEventListener("touchstart",start_,{passive:false});
   el.addEventListener("touchend",stop_); el.addEventListener("touchcancel",stop_);
   el.addEventListener("mousedown",start_); el.addEventListener("mouseup",stop_); el.addEventListener("mouseleave",stop_);
@@ -1169,6 +1215,7 @@ html = (html.replace("__SPRITES__", json.dumps(sprites))
             .replace("__EQUIPMENT_MARKET__", json.dumps(equipment_market))
             .replace("__FACILITY_AMENITIES__", json.dumps(facility_amenity_events))
             .replace("__EQUIPMENT_DAMAGE_STATES__", json.dumps(equipment_damage_states))
+            .replace("__EQUIPMENT_MAINTENANCE_VISUALS__", json.dumps(equipment_maintenance_visuals))
             .replace("__ROBOTICS_PROFILES__", json.dumps(robotics_sprite_profiles))
             .replace("__EQUIPMENT_OPERATING_PROFILES__", json.dumps(equipment_operating_profiles))
             .replace("__TOOL_ART__", json.dumps(tool_art))

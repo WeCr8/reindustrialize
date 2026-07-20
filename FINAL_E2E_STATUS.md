@@ -99,7 +99,8 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [ ] Bandsaw, manual mill, deburr, inspection, and shipping interactions
 - [ ] Lathe production workflow
 - [ ] Equipment purchasing and placement
-- [ ] Breakdowns, maintenance, and repair
+- [x] VMC breakdown, lockout, qualified repair, test, and release
+- [ ] Breakdown and repair mechanics for the remaining visual-ready machines
 - [ ] MTConnect, tool presetter, and digital-handoff gameplay
 - [ ] Robot/cobot and lights-out equipment loops
 
@@ -119,6 +120,7 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [x] Automatic input detection
 - [x] Keyboard movement and actions
 - [x] Mouse/touch UI and on-screen mobile directions
+- [x] Phone/tablet thumb controls, held movement, sprint toggle, haptics, compact guidance trays, and portrait/landscape no-text-takeover checks
 - [x] Xbox/gamepad movement and start action
 - [x] Visible active-control status and explicit Keyboard, Xbox, and Phone choices
 - [x] QR session generation, phone pairing, haptics, held-button repeat, and remote input
@@ -138,6 +140,7 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [ ] Final high-detail Job Shop/Bay 2 environment
 - [ ] High-detail maps for Chapters 3–6
 - [x] Repairable damage-state art mapped for every current equipment-store type
+- [x] Four-state transparent maintenance floor sprites mapped for every placed machine
 - [ ] Final Zach floor sprite matching the selected portrait
 - [x] Hired-worker floor sprites, including the expanded maintenance team
 - [ ] Apprentice floor sprites for the later academy chapter

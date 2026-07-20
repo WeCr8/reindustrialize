@@ -16,6 +16,10 @@ with sync_playwright() as p:
     page.evaluate("openVmcTask()")
     assert "DOWN FOR MAINTENANCE" in page.locator("#ttitle").inner_text()
     assert "HIRE A MAINTENANCE TECHNICIAN" in page.locator("#tztext").inner_text().upper()
+    page.evaluate("draw()")
+    page.wait_for_function("IMG['garage-machine-maintenance-sprite-atlas-v1']?.complete")
+    page.evaluate("draw()")
+    assert page.locator("#cv").get_attribute("data-maintenance-visual") == "locked_out"
     page.locator("#hireMaintenance").click()
     assert page.locator("#hire").is_visible()
     assert "Maintenance Technician" in page.locator("#hireCard").inner_text()
@@ -32,6 +36,9 @@ with sync_playwright() as p:
     page.locator("#repairVmc").click()
     assert page.evaluate("maintenanceState().condition") == 100
     assert page.evaluate("maintenanceState().status") == "READY"
+    assert page.evaluate("maintenanceState().visualState") == "restored"
+    page.evaluate("document.getElementById('task').classList.remove('open');draw()")
+    assert page.locator("#cv").get_attribute("data-maintenance-visual") == "restored"
     assert page.evaluate("coins") == coins_before - 350
     assert page.evaluate("JSON.parse(localStorage.getItem('reindustrialize.save.v1')).state.maintenance.vmc.condition") == 100
     page.evaluate("state.jobsShipped=5;state.maintenance.vmc.condition=100;applyVmcWear()")
