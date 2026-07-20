@@ -81,11 +81,19 @@ const videoCatalog = [
 ];
 for (const [sourceName, publicName] of videoCatalog) {
   const sourcePath = path.join(root, sourceName);
-  if (!fs.existsSync(sourcePath)) throw new Error(`Missing published video: ${sourceName}`);
+  if (!fs.existsSync(sourcePath)) {
+    console.warn(`Optional campaign video unavailable in this checkout: ${sourceName}`);
+    continue;
+  }
   const bytes = fs.statSync(sourcePath).size;
   if (bytes > maxAssetBytes) throw new Error(`${sourceName} exceeds Cloudflare's 25 MiB asset limit.`);
   fs.copyFileSync(sourcePath, path.join(out, 'videos', publicName));
 }
+const libraryPath = path.join(out, 'videos', 'index.html');
+let libraryHtml = fs.readFileSync(libraryPath, 'utf8');
+libraryHtml = libraryHtml.replace(/<button class="card[^>]*data-src="([^"]+)"[\s\S]*?<\/button>/g, (card, sourceUrl) =>
+  fs.existsSync(path.join(out, sourceUrl.replace(/^\//, ''))) ? card : '');
+fs.writeFileSync(libraryPath, libraryHtml);
 const releaseManifest = JSON.parse(fs.readFileSync(releaseManifestSource, 'utf8'));
 let sourceRevision = process.env.CF_PAGES_COMMIT_SHA || process.env.GITHUB_SHA || 'unknown';
 if (sourceRevision === 'unknown') {

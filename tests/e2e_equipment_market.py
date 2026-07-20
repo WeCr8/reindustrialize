@@ -20,6 +20,17 @@ with sync_playwright() as p:
     assert profile_box["height"] >= 1.3 * profile_box["width"]
 
     page.evaluate("openEquipmentMarket()")
+    assert "ZACH'S STORE WALKTHROUGH" in page.locator("#storeCoach").inner_text()
+    assert "FIND THE BOTTLENECK" in page.locator("#storeCoach").inner_text()
+    for lesson in ["CHECK THE WHOLE COST", "PROVE THE PROCESS", "MOVE AT THE RIGHT TIME"]:
+        page.locator("#storeLessonNext").click()
+        assert lesson in page.locator("#storeCoach").inner_text()
+    assert "NEXT THE JOB SHOP 12,000 SQ FT" in page.locator("#storeCoach").inner_text()
+    page.locator("#storeFacilityRoadmap").click()
+    assert page.locator("#campaign").is_visible()
+    assert page.locator(".chapterCard").count() == 6
+    page.locator("#campaignClose").click()
+    page.evaluate("openEquipmentMarket()")
     cards = page.locator("[data-equipment]")
     assert cards.count() == 13
     for equipment in ["vmc", "cnc_lathe", "five_axis_vmc", "tig_manual", "robotic_tig", "surface_grinder", "polymer_print_farm", "metal_additive", "cmm", "xray"]:
@@ -32,6 +43,11 @@ with sync_playwright() as p:
     page.locator('[data-equipment="tig_manual"] [data-buy-equipment]').click()
     assert page.evaluate("state.equipment.tig_manual") == 1
     assert "OWNED 1" in page.locator('[data-equipment="tig_manual"]').inner_text()
+    page.set_viewport_size({"width": 390, "height": 844})
+    page.evaluate("openEquipmentMarket()")
+    assert page.locator("#storeCoach").is_visible()
+    assert page.locator("#storeLessonNext").is_visible()
+    assert page.locator("#equipmentMarket").evaluate("e=>e.scrollWidth<=innerWidth")
     assert not errors, errors
     browser.close()
 

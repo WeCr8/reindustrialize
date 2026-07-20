@@ -2,6 +2,12 @@
   "version": 1,
   "atlas": "aerospace-equipment-market-atlas-v1",
   "progressionRule": "Advanced equipment appears only after the founder proves earlier processes; buying a machine never skips its required training or facility gate.",
+  "walkthrough": [
+    {"title":"1 · FIND THE BOTTLENECK","text":"Use the store when a real queue, cooldown, quality delay, or missing process prevents you from completing good customer work. Do not buy a machine only because it is unlocked."},
+    {"title":"2 · CHECK THE WHOLE COST","text":"Compare price, floor space, electrical service, ventilation or controlled-room needs, training, tooling, inspection, and staffing before you buy."},
+    {"title":"3 · PROVE THE PROCESS","text":"Playable capacity upgrades help immediately. Orientation equipment can be researched and planned, but its production workflow must be taught and qualified in the listed chapter."},
+    {"title":"4 · MOVE AT THE RIGHT TIME","text":"Upgrade the facility when quality and chapter work are proven and the current floor cannot safely hold the people, material, utilities, and equipment required for the next contracts."}
+  ],
   "items": [
     {"id":"saw","name":"SECOND BANDSAW","category":"Stock Prep","unlockJobs":2,"chapter":1,"facility":"Garage Bay","cost":1800,"effect":"Prepare stock while another job is machining.","status":"playable","spec":"Manual horizontal saw · 40 sq ft · 240 V"},
     {"id":"vmc","name":"ADDITIONAL 3-AXIS VMC","category":"CNC Machining","unlockJobs":3,"chapter":1,"facility":"Garage Bay","cost":4200,"effect":"Adds machining capacity and shortens queued cycle time.","status":"playable","spec":"3-axis vertical mill · 120 sq ft · 208 V 3-phase"},

@@ -81,6 +81,7 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 
 - [x] Staged 13-item factory market covers 3-axis and 5-axis CNC, CNC turning, manual and robotic TIG welding, surface grinding, polymer and metal additive, CMM, industrial X-ray, and automation
 - [x] Store cards show detailed 32-bit equipment imagery plus chapter, facility, utility/space, price, unlock, ownership, and honest playable/orientation status
+- [x] Zach's store walkthrough and live growth check teach when to buy, what full installation needs to include, and when to review the next facility
 - [x] Founder selection uses large profile portraits at a portrait-safe aspect ratio and keeps movement sprites off the profile cards
 
 - [x] Job planning and guided task sequence
