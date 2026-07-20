@@ -12,6 +12,7 @@ videos/
 *.mp4
 !apps/playreind-landing/public/media/gameplay-demo-v6.mp4
 !apps/playreind-landing/public/media/gameplay-hero-v7.mp4
+!apps/playreind-landing/public/media/gameplay-hero-v8.mp4
 *.webm
 *.zip
 apps/wecr8-info/prototypes/shop-floor-viewer.html
