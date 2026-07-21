@@ -1,0 +1,26 @@
+{
+  "status": "draft-not-submitted",
+  "language": "en-US",
+  "title": "Reindustrialize",
+  "shortDescription": "Launch a machine shop, master real manufacturing skills, and grow from a garage into an industrial powerhouse.",
+  "longDescription": "Build a manufacturing company of your own in Reindustrialize, a story-driven factory RPG. Choose and name your founder, name the company, and learn the shop beside Zach, your teacher and business mentor. Accept customer work, order certified material, cut stock, set tools, read real G and M code, run CNC equipment, inspect first articles, hire a team, and reinvest the results. The current alpha contains the playable Garage chapter and its transition into the Job Shop. Later facilities and campaign chapters remain in development and are not included as finished gameplay in this release.",
+  "featureBullets": [
+    "Create and develop your own founder and manufacturing company",
+    "Learn authentic material, tooling, CNC, G-code, inspection, and business decisions",
+    "Play with keyboard, compatible gamepad, touchscreen, or paired phone controls",
+    "Build a team and grow from the Garage toward larger manufacturing facilities",
+    "Use visible objectives, tutorials, captions, and Zach's narrated mentorship"
+  ],
+  "keywords": ["manufacturing", "factory", "CNC", "business", "simulation", "RPG", "strategy"],
+  "pricing": "authorized-owner-decision-required",
+  "territories": "authorized-owner-and-compliance-decision-required",
+  "contentRating": "rating-questionnaire-not-completed",
+  "targetAudience": "authorized-owner-declaration-required",
+  "privacyLabel": "questionnaire-not-completed",
+  "privacyPolicyUrl": "not-yet-approved",
+  "supportEmail": "not-yet-approved",
+  "supportUrl": "not-yet-approved",
+  "intellectualPropertyReview": "required-before-submission",
+  "releaseNotes": "First playable alpha: founder creation, Garage story, shop tour, customer contract, certified material order, bandsaw preparation, tool setup, true G/M-code CNC challenge, quality grading, hiring, saves, accessibility settings, keyboard/gamepad/touch/phone input, and Job Shop arrival. Chapters 2–6 are not content-complete.",
+  "plainTextOnly": true
+}

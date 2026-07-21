@@ -1,0 +1,12 @@
+{
+  "status": "candidate-not-built",
+  "release": "0.7.0-alpha",
+  "sourceRevision": null,
+  "builtAtUtc": null,
+  "platformRoute": null,
+  "artifactFile": null,
+  "artifactSha256": null,
+  "storybookEdition": "v1",
+  "gameplayEvidenceVersion": 7,
+  "rule": "Populate from an immutable clean build only after Amazon or GOG provides the authorized platform format. Never hand-enter a checksum or reuse a web deployment hash as a platform artifact hash."
+}

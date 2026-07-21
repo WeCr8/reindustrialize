@@ -283,5 +283,47 @@
   "fw": 64,
   "fh": 64,
   "sha256": "46f212b36038"
+ },
+ "restroom_station": {
+  "file": "restroom_station.png",
+  "w": 128,
+  "h": 128,
+  "frames": 1,
+  "fw": 128,
+  "fh": 128,
+  "sha256": "restroom-station-v1"
+ },
+ "garage-machine-maintenance-sprite-atlas-v1": {
+  "file": "garage-machine-maintenance-sprite-atlas-v1.png",
+  "w": 768,
+  "h": 512,
+  "frames": 16,
+  "fw": 192,
+  "fh": 128,
+  "columns": 4,
+  "rows": 4,
+  "sha256": "c1e1e0b23183"
+ },
+ "toolroom-machine-maintenance-sprite-atlas-v1": {
+  "file": "toolroom-machine-maintenance-sprite-atlas-v1.png",
+  "w": 700,
+  "h": 560,
+  "frames": 16,
+  "fw": 175,
+  "fh": 140,
+  "columns": 4,
+  "rows": 4,
+  "sha256": "dec3491052f3"
+ },
+ "automation-facility-maintenance-sprite-atlas-v1": {
+  "file": "automation-facility-maintenance-sprite-atlas-v1.png",
+  "w": 628,
+  "h": 628,
+  "frames": 16,
+  "fw": 157,
+  "fh": 157,
+  "columns": 4,
+  "rows": 4,
+  "sha256": "4d56461bc7d6"
  }
 }

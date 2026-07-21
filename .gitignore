@@ -1,4 +1,5 @@
 node_modules/
+**/__pycache__/
 dist/
 cloudflare-dist/
 .wrangler/
@@ -9,6 +10,9 @@ packages/assets/audio/generated/
 tmp/
 videos/
 *.mp4
+!apps/playreind-landing/public/media/gameplay-demo-v6.mp4
+!apps/playreind-landing/public/media/gameplay-hero-v7.mp4
+!apps/playreind-landing/public/media/gameplay-hero-v8.mp4
 *.webm
 *.zip
 apps/wecr8-info/prototypes/shop-floor-viewer.html
@@ -17,4 +21,5 @@ storybook/v1/slides/
 desktop-*.png
 mobile-*.png
 BUG_BOUNTY_AUDIT_*.md
+debug.log
 docs/ZACH_VOICE_CONSENT.md

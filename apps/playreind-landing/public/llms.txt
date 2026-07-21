@@ -1,0 +1,11 @@
+# REINDUSTRIALIZE
+
+> A manufacturing business role-playing game by WeCr8 Solutions. The current public product is a first playable alpha.
+
+Canonical site: https://playreind.com/
+Playable alpha: https://playreind.com/game/
+Visual storybook and complete asset coverage library: https://playreind.com/storybook/
+
+The playable release covers founder and company creation, Zach's Garage Bay instruction, material ordering, production planning, raw-stock cutting, CNC tooling, G/M-code proofing, machining, quality grades, customers, hiring, and arrival at the Job Shop.
+
+Chapter 1 is playable. Chapter 2 is in development. Chapters 3 through 6 are planned and locked; they must not be described as shipped gameplay.

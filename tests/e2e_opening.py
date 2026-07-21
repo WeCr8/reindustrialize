@@ -19,6 +19,7 @@ with sync_playwright() as p:
     page = browser.new_page(viewport={"width": 1440, "height": 1000})
     errors = []
     page.on("pageerror", lambda error: errors.append(str(error)))
+    page.add_init_script("localStorage.setItem('reindustrialize.learnerMode','off')")
     page.goto(URL)
     page.wait_for_function("loaded === total")
 
@@ -35,13 +36,19 @@ with sync_playwright() as p:
 
     assert page.locator("#titleScreen").is_visible()
     assert page.locator(".avatarChoice").count() == 10
-    assert page.locator(".avatarChoice span").all_inner_texts() == [f"FOUNDER {letter}" for letter in "ABCDEFGHIJ"]
+    assert page.locator(".avatarChoice span").all_inner_texts() == [f"Founder {letter}" for letter in "ABCDEFGHIJ"]
+    assert page.locator(".founderCardPortrait").count() == 10
     assert page.locator("#founderProfile").is_visible()
     assert "FIRST PART FOCUS" in page.locator("#founderProfile").inner_text().upper()
     for avatar in ["av_m_01", "av_m_founder_02_hd", "av_f_founder_hd", "av_f_founder_02_hd", "av_m_blonde_hd", "av_f_blonde_hd", "av_m_middle_eastern_hd", "av_f_middle_eastern_hd", "av_m_indian_hd", "av_f_indian_hd"]:
         page.locator(f'[data-avatar="{avatar}"]').click()
         assert page.evaluate("selectedAvatar") == avatar
         assert page.locator("#founderProfile .atlasPortrait").is_visible()
+        assert page.locator(f'[data-avatar="{avatar}"] .founderCardPortrait').is_visible()
+        assert "SIGNATURE SKILL" in page.locator("#founderProfile").inner_text()
+        assert "PLAY STYLE:" in page.locator("#founderProfile").inner_text()
+        assert "GROWTH AREA:" in page.locator("#founderProfile").inner_text()
+        assert page.locator("#founderProfile .founderStat").count() == 5
         assert "UPGRADES:" in page.locator("#founderProfile").inner_text()
         assert page.locator(f'[data-avatar="{avatar}"]').get_attribute("class").endswith("selected")
         assert page.locator("#sceneFounderBadge").get_attribute("data-founder-avatar") == avatar
@@ -72,11 +79,18 @@ with sync_playwright() as p:
     assert page.locator("#pp .nm").inner_text() == "JORDAN RIVERA"
     page.locator("#introNext").click()
     assert not page.locator("#intro").is_visible()
-    page.locator("#tourSkip").wait_for(timeout=10000)
-    page.locator("#tourSkip").click()
+    assert not page.locator("#task").is_visible()
+    assert page.locator("#btour").is_visible()
     assert "done" in page.locator('[data-m="meet_zach"]').get_attribute("class")
-    assert "Order certified stock" in page.locator("#objectiveStep").inner_text()
-    # The objective CTA must be usable from anywhere: route to the target and open it.
+    assert page.evaluate("currentObjective().action") == "customers"
+    page.locator("#objectiveAction").click()
+    page.locator("#customers").wait_for(state="visible")
+    page.locator("#acceptContract").click()
+    page.wait_for_function("document.querySelector('#intro').dataset.storyBeat === 'first_customer_call'")
+    page.locator("#introNext").click()
+    page.locator("#introNext").click()
+    page.wait_for_function("currentObjective().sprite === 'nox_terminal'")
+    # The objective CTA routes to the required material station and opens it.
     page.locator("#objectiveAction").click()
     page.locator(".noxOrder").first.wait_for(timeout=10000)
     assert page.locator("#ttitle").inner_text() == "NOX METALS — MATERIAL ORDERING"
@@ -102,6 +116,9 @@ with sync_playwright() as p:
             "(e, value) => { e.value=String(value); e.dispatchEvent(new Event('input')); }", cut_length
         )
         page.locator("#cutStock").click()
+        page.evaluate("stationRuns().saw_t1.endAt=Date.now()-1;renderProductionHud()")
+        page.locator("#sawFlag").click()
+        page.locator("#collectSawBlank").click()
         page.wait_for_function("state.rawStockReady && !document.querySelector('#task').classList.contains('open')")
 
         tool = page.evaluate("state.job.tool")
@@ -121,12 +138,15 @@ with sync_playwright() as p:
         page.wait_for_function("!document.querySelector('#task').classList.contains('open')")
 
         stand_by(page, "vmc_t2")
+        page.evaluate("state.equipmentCooldownUntil=0")
         page.locator("#objectiveAction").click()
-        for key, value in {"o": "54", "s": "03", "c": "08"}.items():
-            page.locator(f'input[data-b="{key}"]').fill(value)
-        page.locator("#cycst").click()
-        if job_number > 1:
-            page.evaluate("finishRun(state.job)")
+        page.locator('[data-setup-check]').nth(0).click()
+        page.locator('[data-setup-check]').nth(1).click()
+        page.locator("#startProduction").click()
+        page.evaluate("state.machineRun.endAt=Date.now()-1;renderProductionHud()")
+        page.locator("#machineFlag").click()
+        page.locator("#inspectPart").click()
+        page.locator("#inspectPart").click()
         page.locator("#tdone").wait_for(timeout=20000)
         page.locator("#tdone").click()
         assert page.evaluate("state.jobsShipped") == job_number
