@@ -26,8 +26,11 @@ try:
         errors = []
         page.on("pageerror", lambda error: errors.append(str(error)))
         page.goto(URL, wait_until="domcontentloaded", timeout=90000)
-        page.wait_for_function("BOOK.slides.length === 220")
+        page.wait_for_function("BOOK.slides.length === 238")
         assert page.locator('[data-view="slides"]').evaluate("el => el.classList.contains('active')")
+        assert page.evaluate("BOOK.slides.filter(s => s.section === 'Station Missions & Timers').length") == 18
+        assert "5 minutes" in page.evaluate("BOOK.slides.find(s => s.location === 'saw_t1').instructions.join(' ')")
+        assert "10 minutes" in page.evaluate("BOOK.slides.find(s => s.location === 'vmc_t2').instructions.join(' ')")
         employee_slide = page.evaluate("BOOK.slides.find(s => s.section === 'Factory Workforce').number")
         page.goto(URL + f"?view=slides&slide={employee_slide}", wait_until="domcontentloaded")
         assert page.locator(".profileCrop").count() == 1

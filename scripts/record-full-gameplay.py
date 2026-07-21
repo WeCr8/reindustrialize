@@ -80,6 +80,8 @@ with sync_playwright() as p:
         page.locator("#objectiveAction").click(); pause(page, 850)
         page.locator("#cutLength").evaluate("(e,v)=>{e.value=String(v);e.dispatchEvent(new Event('input'))}", cut_length)
         pause(page, 600); page.locator("#cutStock").click()
+        page.evaluate("stationRuns().saw_t1.endAt=Date.now()-1;renderProductionHud()")
+        page.locator("#sawFlag").click(); page.locator("#collectSawBlank").click()
         page.wait_for_function("state.rawStockReady && !document.querySelector('#task').classList.contains('open')")
 
         tool = page.evaluate("state.job.tool")
@@ -97,10 +99,11 @@ with sync_playwright() as p:
         stand_by(page, "vmc_t2")
         page.locator("#objectiveAction").click(); pause(page, 950)
         for key, value in {"o": "54", "s": "03", "c": "08"}.items():
-            page.locator(f'input[data-b="{key}"]').fill(value); pause(page, 300)
+            page.locator(f'[data-code-key="{key}"][data-code-value="{value}"]').click(); pause(page, 300)
         page.locator("#cycst").click(); pause(page, 1300)
-        if job_number > 1:
-            page.evaluate("finishRun(state.job)")
+        page.evaluate("startAutonomousRun(state.job)")
+        page.evaluate("state.machineRun.endAt=Date.now()-1;renderProductionHud()")
+        page.locator("#machineFlag").click(); page.locator("#inspectPart").click(); page.locator("#inspectPart").click()
         page.locator("#tdone").wait_for(timeout=25000)
         pause(page, 1200); page.locator("#tdone").click(); pause(page, 1200)
 

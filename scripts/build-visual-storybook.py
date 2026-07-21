@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'storybook'/'v1'
 OUT.mkdir(parents=True,exist_ok=True)
 data=lambda name:json.loads((ROOT/'data'/name).read_text(encoding='utf-8'))
-story=data('story-production.json');avatars=data('avatars.json');scenes=data('player-scene-manifest.json');tour=data('shop-tour.json');tasks=data('production-task-tutorials.json');release=data('release-manifest.json');founder_profiles=data('founder-profiles.json');hiring=data('hiring-roster.json');conversations=data('workforce-conversations.json')
+story=data('story-production.json');avatars=data('avatars.json');scenes=data('player-scene-manifest.json');tour=data('shop-tour.json');tasks=data('production-task-tutorials.json');station_operations=data('station-operations.json');release=data('release-manifest.json');founder_profiles=data('founder-profiles.json');hiring=data('hiring-roster.json');conversations=data('workforce-conversations.json')
 visual_coverage=data('visual-coverage-v1.json');audio_coverage=data('audio-coverage-matrix.json')
 
 def uri(path): return '../../'+Path(path).as_posix()
@@ -54,6 +54,16 @@ for sequence_id in milestone_sequences:
 
 for stop in tour['stops']:
     add('Shop Tour',f"{stop['order']:02d} · {stop['title']}",stop['text'],station_image(stop),status=stop.get('status','playable'),location=stop['location'],instructions=[stop['operation']],voice=stop.get('voice'))
+tour_by_sprite={stop['sprite']:stop for stop in tour['stops']}
+equipment_views={'tool_cart':'tool-cart-open-v1','vmc_t2':'vmc-open-v1','lathe_cnc_t2':'lathe-open-v1'}
+for sprite,operation in station_operations['stations'].items():
+    stop=tour_by_sprite.get(sprite)
+    if sprite=='nox_terminal': image=asset('materials/nox-metals-exterior-v1.png')
+    elif sprite in equipment_views: image=asset('equipment/'+equipment_views[sprite]+'.png')
+    else: image=station_image({'image':sprite})
+    timing=f"Standard station time: {operation['cycleMinutes']} minutes." if operation['cycleMinutes'] else 'No active production countdown at this station.'
+    mode='playable' if operation['mode'] in {'playable','management','facility'} else 'orientation'
+    add('Station Missions & Timers',operation['name'],operation['details'],image,status=mode,location=sprite,instructions=[operation['mission'],timing,'Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.'],voice=stop.get('voice') if stop else None,success='Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.',note='Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.')
 for task in tasks['tasks']:
     add('Production Tutorials',task['id'].replace('_',' ').upper(),task['text'],station_image(task),status=task['status'],location=task['location'],instructions=task['instructions'],voice=task.get('voice'),success=task['success'])
 for hire in hiring['candidates']:

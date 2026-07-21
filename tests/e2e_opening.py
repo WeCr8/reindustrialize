@@ -91,8 +91,15 @@ with sync_playwright() as p:
             page.wait_for_timeout(650)
     assert page.locator("#task").get_attribute("data-completed-tour-stops").count(",") == 13
     assert "done" in page.locator('[data-m="meet_zach"]').get_attribute("class")
-    assert "Order certified stock" in page.locator("#objectiveStep").inner_text()
-    # The objective CTA must be usable from anywhere: route to the target and open it.
+    assert page.evaluate("currentObjective().action") == "customers"
+    page.locator("#objectiveAction").click()
+    page.locator("#customers").wait_for(state="visible")
+    page.locator("#acceptContract").click()
+    page.wait_for_function("document.querySelector('#intro').dataset.storyBeat === 'first_customer_call'")
+    page.locator("#introNext").click()
+    page.locator("#introNext").click()
+    page.wait_for_function("currentObjective().sprite === 'nox_terminal'")
+    # The objective CTA routes to the required material station and opens it.
     page.locator("#objectiveAction").click()
     page.locator(".noxOrder").first.wait_for(timeout=10000)
     assert page.locator("#ttitle").inner_text() == "NOX METALS — MATERIAL ORDERING"
@@ -118,6 +125,9 @@ with sync_playwright() as p:
             "(e, value) => { e.value=String(value); e.dispatchEvent(new Event('input')); }", cut_length
         )
         page.locator("#cutStock").click()
+        page.evaluate("stationRuns().saw_t1.endAt=Date.now()-1;renderProductionHud()")
+        page.locator("#sawFlag").click()
+        page.locator("#collectSawBlank").click()
         page.wait_for_function("state.rawStockReady && !document.querySelector('#task').classList.contains('open')")
 
         tool = page.evaluate("state.job.tool")
@@ -143,11 +153,16 @@ with sync_playwright() as p:
             field = page.locator(f'[data-b="{key}"]')
             if field.evaluate("el => el.tagName === 'SELECT'"):
                 field.select_option(value)
+            elif field.get_attribute("type") == "hidden":
+                page.locator(f'[data-code-key="{key}"][data-code-value="{value}"]').click()
             else:
                 field.fill(value)
         page.locator("#cycst").click()
-        if job_number > 1:
-            page.evaluate("finishRun(state.job)")
+        page.evaluate("startAutonomousRun(state.job)")
+        page.evaluate("state.machineRun.endAt=Date.now()-1;renderProductionHud()")
+        page.locator("#machineFlag").click()
+        page.locator("#inspectPart").click()
+        page.locator("#inspectPart").click()
         page.locator("#tdone").wait_for(timeout=20000)
         page.locator("#tdone").click()
         assert page.evaluate("state.jobsShipped") == job_number

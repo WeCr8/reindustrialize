@@ -1,7 +1,7 @@
 {
   "storybookVersion": 1,
   "gameBuild": "0.7.0-alpha",
-  "slideCount": 220,
+  "slideCount": 238,
   "founderCount": 10,
   "employeeCount": 14,
   "policy": {
@@ -727,7 +727,7 @@
       "path": "packages/assets/audio/generated/voice/zach_first_customer_owner.mp3",
       "src": "../../packages/assets/audio/generated/voice/zach_first_customer_owner.mp3",
       "lifecycle": "generated-candidate",
-      "referenceCount": 3,
+      "referenceCount": 5,
       "bytes": 118326
     },
     {
@@ -1927,7 +1927,7 @@
       "path": "packages/assets/audio/zach/zach_first_customer_owner.mp3",
       "src": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3",
       "lifecycle": "implemented-reference",
-      "referenceCount": 3,
+      "referenceCount": 5,
       "bytes": 118326
     },
     {
@@ -2719,7 +2719,7 @@
       "path": "packages/assets/equipment/tool-cart-open-v1.png",
       "src": "../../packages/assets/equipment/tool-cart-open-v1.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 10,
+      "referenceCount": 11,
       "bytes": 2468079,
       "dimensions": [
         1672,
@@ -2733,7 +2733,7 @@
       "path": "packages/assets/equipment/vmc-open-v1.png",
       "src": "../../packages/assets/equipment/vmc-open-v1.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 14,
+      "referenceCount": 16,
       "bytes": 2142738,
       "dimensions": [
         1672,
@@ -2859,7 +2859,7 @@
       "path": "packages/assets/sprites/amr_t5.png",
       "src": "../../packages/assets/sprites/amr_t5.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 20,
+      "referenceCount": 21,
       "bytes": 284,
       "dimensions": [
         32,
@@ -3125,7 +3125,7 @@
       "path": "packages/assets/sprites/bench_deburr_t1.png",
       "src": "../../packages/assets/sprites/bench_deburr_t1.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 25,
+      "referenceCount": 26,
       "bytes": 7370,
       "dimensions": [
         128,
@@ -3153,7 +3153,7 @@
       "path": "packages/assets/sprites/chalkboard.png",
       "src": "../../packages/assets/sprites/chalkboard.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 25,
+      "referenceCount": 29,
       "bytes": 1517,
       "dimensions": [
         64,
@@ -3167,7 +3167,7 @@
       "path": "packages/assets/sprites/cobot_t5.png",
       "src": "../../packages/assets/sprites/cobot_t5.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 21,
+      "referenceCount": 22,
       "bytes": 537,
       "dimensions": [
         96,
@@ -3251,7 +3251,7 @@
       "path": "packages/assets/sprites/handoff_terminal_t4.png",
       "src": "../../packages/assets/sprites/handoff_terminal_t4.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 24,
+      "referenceCount": 26,
       "bytes": 328,
       "dimensions": [
         32,
@@ -3293,7 +3293,7 @@
       "path": "packages/assets/sprites/lathe_cnc_t2.png",
       "src": "../../packages/assets/sprites/lathe_cnc_t2.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 30,
+      "referenceCount": 32,
       "bytes": 35479,
       "dimensions": [
         192,
@@ -3377,7 +3377,7 @@
       "path": "packages/assets/sprites/mill_manual_t1.png",
       "src": "../../packages/assets/sprites/mill_manual_t1.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 23,
+      "referenceCount": 24,
       "bytes": 22176,
       "dimensions": [
         128,
@@ -3405,7 +3405,7 @@
       "path": "packages/assets/sprites/network_node_t3.png",
       "src": "../../packages/assets/sprites/network_node_t3.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 24,
+      "referenceCount": 25,
       "bytes": 329,
       "dimensions": [
         32,
@@ -3433,7 +3433,7 @@
       "path": "packages/assets/sprites/nox_pallet.png",
       "src": "../../packages/assets/sprites/nox_pallet.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 19,
+      "referenceCount": 20,
       "bytes": 6603,
       "dimensions": [
         64,
@@ -3475,7 +3475,7 @@
       "path": "packages/assets/sprites/nox_terminal.png",
       "src": "../../packages/assets/sprites/nox_terminal.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 21,
+      "referenceCount": 24,
       "bytes": 328,
       "dimensions": [
         32,
@@ -3531,7 +3531,7 @@
       "path": "packages/assets/sprites/planning_desk.png",
       "src": "../../packages/assets/sprites/planning_desk.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 24,
+      "referenceCount": 29,
       "bytes": 9684,
       "dimensions": [
         128,
@@ -3559,7 +3559,7 @@
       "path": "packages/assets/sprites/presetter_t4.png",
       "src": "../../packages/assets/sprites/presetter_t4.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 19,
+      "referenceCount": 21,
       "bytes": 812,
       "dimensions": [
         64,
@@ -3573,7 +3573,7 @@
       "path": "packages/assets/sprites/restroom_station.png",
       "src": "../../packages/assets/sprites/restroom_station.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 21,
+      "referenceCount": 22,
       "bytes": 18981,
       "dimensions": [
         128,
@@ -3601,7 +3601,7 @@
       "path": "packages/assets/sprites/saw_t1.png",
       "src": "../../packages/assets/sprites/saw_t1.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 31,
+      "referenceCount": 43,
       "bytes": 27833,
       "dimensions": [
         128,
@@ -3657,7 +3657,7 @@
       "path": "packages/assets/sprites/tool_cart.png",
       "src": "../../packages/assets/sprites/tool_cart.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 22,
+      "referenceCount": 26,
       "bytes": 25292,
       "dimensions": [
         128,
@@ -3685,7 +3685,7 @@
       "path": "packages/assets/sprites/toolcrib_rfid_t4.png",
       "src": "../../packages/assets/sprites/toolcrib_rfid_t4.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 17,
+      "referenceCount": 19,
       "bytes": 495,
       "dimensions": [
         64,
@@ -3727,7 +3727,7 @@
       "path": "packages/assets/sprites/vmc_t2.png",
       "src": "../../packages/assets/sprites/vmc_t2.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 48,
+      "referenceCount": 60,
       "bytes": 61510,
       "dimensions": [
         192,
@@ -3755,7 +3755,7 @@
       "path": "packages/assets/sprites/whiteboard.png",
       "src": "../../packages/assets/sprites/whiteboard.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 17,
+      "referenceCount": 19,
       "bytes": 1022,
       "dimensions": [
         64,
@@ -6848,6 +6848,325 @@
     },
     {
       "number": 148,
+      "section": "Station Missions & Timers",
+      "title": "Planning Desk",
+      "text": "Customer demand, routing, due dates, capacity, and job status begin here.",
+      "image": "../../packages/assets/sprites/planning_desk_hd.png",
+      "status": "playable",
+      "location": "planning_desk",
+      "instructions": [
+        "Release a customer traveler and choose the next achievable operation.",
+        "Standard station time: 1 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_planning",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_planning.mp3"
+    },
+    {
+      "number": 149,
+      "section": "Station Missions & Timers",
+      "title": "NOX Material Terminal",
+      "text": "Compare alloy, condition, stock form, certification, quantity, and landed cost.",
+      "image": "../../packages/assets/materials/nox-metals-exterior-v1.png",
+      "status": "playable",
+      "location": "nox_terminal",
+      "instructions": [
+        "Order certified material that matches the active job.",
+        "Standard station time: 2 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_material",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_material.mp3"
+    },
+    {
+      "number": 150,
+      "section": "Station Missions & Timers",
+      "title": "Receiving",
+      "text": "Match the purchase record, alloy, dimensions, quantity, condition, and certification.",
+      "image": "../../packages/assets/sprites/nox_pallet_hd.png",
+      "status": "orientation",
+      "location": "nox_pallet",
+      "instructions": [
+        "Verify delivered stock before it enters production.",
+        "Standard station time: 2 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_receiving",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_receiving.mp3"
+    },
+    {
+      "number": 151,
+      "section": "Station Missions & Timers",
+      "title": "Bandsaw",
+      "text": "The bandsaw converts delivered raw stock into a controlled CNC blank with finish allowance.",
+      "image": "../../packages/assets/sprites/saw_t1_hd.png",
+      "status": "playable",
+      "location": "saw_t1",
+      "instructions": [
+        "Set the traveler cut length, start the saw, then collect and label the finished blank.",
+        "Standard station time: 5 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_saw",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_saw.mp3"
+    },
+    {
+      "number": 152,
+      "section": "Station Missions & Timers",
+      "title": "Tool Cart",
+      "text": "Tool choice, stickout, probe length, and chamfer-tool length determine whether the setup is safe.",
+      "image": "../../packages/assets/equipment/tool-cart-open-v1.png",
+      "status": "playable",
+      "location": "tool_cart",
+      "instructions": [
+        "Select, gauge, and install the complete three-tool CNC kit.",
+        "Standard station time: 3 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_tooling",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_tooling.mp3"
+    },
+    {
+      "number": 153,
+      "section": "Station Missions & Timers",
+      "title": "Tool Presetter",
+      "text": "Presetting keeps offsets traceable and reduces spindle time spent measuring tools.",
+      "image": "../../packages/assets/sprites/presetter_t4.png",
+      "status": "orientation",
+      "location": "presetter_t4",
+      "instructions": [
+        "Measure tool length and diameter before controlled release.",
+        "Standard station time: 2 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": null,
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+    },
+    {
+      "number": 154,
+      "section": "Station Missions & Timers",
+      "title": "RFID Tool Crib",
+      "text": "The crib tracks tool location, life, calibration, and approved substitutions.",
+      "image": "../../packages/assets/sprites/toolcrib_rfid_t4.png",
+      "status": "orientation",
+      "location": "toolcrib_rfid_t4",
+      "instructions": [
+        "Issue the correct controlled tool and preserve its identity.",
+        "Standard station time: 1 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": null,
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+    },
+    {
+      "number": 155,
+      "section": "Station Missions & Timers",
+      "title": "Vertical Machining Center",
+      "text": "Workholding, offsets, tools, spindle direction, coolant, rapid motion, and cutting feeds must agree.",
+      "image": "../../packages/assets/equipment/vmc-open-v1.png",
+      "status": "playable",
+      "location": "vmc_t2",
+      "instructions": [
+        "Prove true G/M code, run the cycle, then inspect the completed part.",
+        "Standard station time: 10 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_vmc",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_vmc.mp3"
+    },
+    {
+      "number": 156,
+      "section": "Station Missions & Timers",
+      "title": "CNC Lathe",
+      "text": "The lathe rotates stock against controlled tools for turned diameters, faces, grooves, and threads.",
+      "image": "../../packages/assets/equipment/lathe-open-v1.png",
+      "status": "orientation",
+      "location": "lathe_cnc_t2",
+      "instructions": [
+        "Inspect chuck pressure, stock stickout, turret clearance, and the program.",
+        "Standard station time: 12 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_lathe",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_lathe.mp3"
+    },
+    {
+      "number": 157,
+      "section": "Station Missions & Timers",
+      "title": "Manual Mill",
+      "text": "Manual machining develops judgment about forces, references, feeds, depths, and direct control.",
+      "image": "../../packages/assets/sprites/mill_manual_t1_hd.png",
+      "status": "orientation",
+      "location": "mill_manual_t1",
+      "instructions": [
+        "Verify workholding, position, clearance, spindle selection, and safe stopping.",
+        "Standard station time: 8 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_manual_mill",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_manual_mill.mp3"
+    },
+    {
+      "number": 158,
+      "section": "Station Missions & Timers",
+      "title": "Deburr Bench",
+      "text": "Deburring makes a part safe to handle and prepares it for reliable inspection and assembly.",
+      "image": "../../packages/assets/sprites/bench_deburr_t1_hd.png",
+      "status": "orientation",
+      "location": "bench_deburr_t1",
+      "instructions": [
+        "Break required edges without damaging controlled features.",
+        "Standard station time: 3 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_deburr",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_deburr.mp3"
+    },
+    {
+      "number": 159,
+      "section": "Station Missions & Timers",
+      "title": "MTConnect Node",
+      "text": "Connected machine states support honest uptime, cycle, downtime, and bottleneck analysis.",
+      "image": "../../packages/assets/sprites/network_node_t3.png",
+      "status": "orientation",
+      "location": "network_node_t3",
+      "instructions": [
+        "Confirm running, idle, stopped, and faulted signals match physical reality.",
+        "Standard station time: 2 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_mtconnect",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_mtconnect.mp3"
+    },
+    {
+      "number": 160,
+      "section": "Station Missions & Timers",
+      "title": "JobLine Handoff Terminal",
+      "text": "A clean handoff gives the next employee enough context to continue safely without guessing.",
+      "image": "../../packages/assets/sprites/handoff_terminal_t4.png",
+      "status": "orientation",
+      "location": "handoff_terminal_t4",
+      "instructions": [
+        "Record completed work, quality concerns, and the exact next action.",
+        "Standard station time: 1 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_handoff",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_handoff.mp3"
+    },
+    {
+      "number": 161,
+      "section": "Station Missions & Timers",
+      "title": "Mission Board",
+      "text": "The mission board is the source of truth when the player is unsure where to go next.",
+      "image": "../../packages/assets/sprites/whiteboard.png",
+      "status": "playable",
+      "location": "whiteboard",
+      "instructions": [
+        "Review the chapter goal, completed tasks, quality gate, and next achievable step.",
+        "No active production countdown at this station.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_missions",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_missions.mp3"
+    },
+    {
+      "number": 162,
+      "section": "Station Missions & Timers",
+      "title": "Shop Class",
+      "text": "Shop Class explains why a process works and provides recovery teaching after mistakes.",
+      "image": "../../packages/assets/sprites/chalkboard.png",
+      "status": "playable",
+      "location": "chalkboard",
+      "instructions": [
+        "Review the manufacturing principle behind the current task.",
+        "No active production countdown at this station.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": "zach_tour_shop_class",
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_tour_shop_class.mp3"
+    },
+    {
+      "number": 163,
+      "section": "Station Missions & Timers",
+      "title": "Collaborative Robot",
+      "text": "Cobots automate proven standard work; they do not correct an unstable process.",
+      "image": "../../packages/assets/sprites/cobot_t5.png",
+      "status": "orientation",
+      "location": "cobot_t5",
+      "instructions": [
+        "Review guarding, payload, reach, end effector, and validated handoff behavior.",
+        "Standard station time: 6 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": null,
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+    },
+    {
+      "number": 164,
+      "section": "Station Missions & Timers",
+      "title": "Autonomous Mobile Robot",
+      "text": "AMRs move identified material between departments without blocking people or emergency access.",
+      "image": "../../packages/assets/sprites/amr_t5.png",
+      "status": "orientation",
+      "location": "amr_t5",
+      "instructions": [
+        "Review route clearance, traffic rules, payload identity, and safe stops.",
+        "Standard station time: 4 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": null,
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+    },
+    {
+      "number": 165,
+      "section": "Station Missions & Timers",
+      "title": "Employee Restroom",
+      "text": "Reliable factories maintain utilities and people spaces as carefully as production equipment.",
+      "image": "../../packages/assets/sprites/restroom_station.png",
+      "status": "playable",
+      "location": "restroom_station",
+      "instructions": [
+        "Inspect shared facilities and restore service safely when maintenance is required.",
+        "Standard station time: 5 minutes.",
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+      ],
+      "voice": null,
+      "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+    },
+    {
+      "number": 166,
       "section": "Production Tutorials",
       "title": "ORDER MATERIAL",
       "text": "Start with certified stock. Match the alloy, thickness, and quantity to the print before you spend a dollar.",
@@ -6865,7 +7184,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_order_stock.mp3"
     },
     {
-      "number": 149,
+      "number": 167,
       "section": "Production Tutorials",
       "title": "ACCEPT JOB",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
@@ -6883,7 +7202,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
-      "number": 150,
+      "number": 168,
       "section": "Production Tutorials",
       "title": "CUT RAW STOCK",
       "text": "Cut the raw stock to length before it goes near the CNC. Leave enough material to face both ends cleanly.",
@@ -6901,7 +7220,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_cut_stock.mp3"
     },
     {
-      "number": 151,
+      "number": 169,
       "section": "Production Tutorials",
       "title": "SELECT PRIMARY TOOL",
       "text": "Set the right tools, confirm each offset, and keep the stickout as short as the job allows.",
@@ -6918,7 +7237,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_tool_setup.mp3"
     },
     {
-      "number": 152,
+      "number": 170,
       "section": "Production Tutorials",
       "title": "SET STICKOUT",
       "text": "Set the right tools, confirm each offset, and keep the stickout as short as the job allows.",
@@ -6936,7 +7255,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_tool_setup.mp3"
     },
     {
-      "number": 153,
+      "number": 171,
       "section": "Production Tutorials",
       "title": "COMPLETE TOOL KIT",
       "text": "Set the right tools, confirm each offset, and keep the stickout as short as the job allows.",
@@ -6954,7 +7273,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_tool_setup.mp3"
     },
     {
-      "number": 154,
+      "number": 172,
       "section": "Production Tutorials",
       "title": "PROVE GCODE",
       "text": "Read the program one block at a time. Know where the tool will go before you press cycle start.",
@@ -6972,7 +7291,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_gcode_intro.mp3"
     },
     {
-      "number": 155,
+      "number": 173,
       "section": "Production Tutorials",
       "title": "RUN CNC CYCLE",
       "text": "If the setup does not look right, stop. A safe pause costs less than a crash.",
@@ -6990,7 +7309,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_response_safe_stop.mp3"
     },
     {
-      "number": 156,
+      "number": 174,
       "section": "Production Tutorials",
       "title": "REVIEW QUALITY RESULT",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
@@ -7008,7 +7327,7 @@
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
-      "number": 157,
+      "number": 175,
       "section": "Factory Workforce",
       "title": "CNC Programmer \u00b7 Maya Chen",
       "text": "First-part prove-outs and toolpath optimization. Growth: cell lead. Watch: Can over-engineer simple repeat work",
@@ -7033,7 +7352,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 158,
+      "number": 176,
       "section": "Workforce Conversations",
       "title": "TALK WITH Maya Chen",
       "text": "I want the print, the workholding plan, and the risky moves before I touch the program.",
@@ -7059,7 +7378,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 159,
+      "number": 177,
       "section": "Factory Workforce",
       "title": "CNC Operator \u00b7 Luis Ortega",
       "text": "Repeatable production and clean handoffs. Growth: setup technician. Watch: Needs a clear written traveler",
@@ -7084,7 +7403,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 160,
+      "number": 178,
       "section": "Workforce Conversations",
       "title": "TALK WITH Luis Ortega",
       "text": "Give me a clear traveler and I will keep the spindle making good parts.",
@@ -7110,7 +7429,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 161,
+      "number": 179,
       "section": "Factory Workforce",
       "title": "Setup Technician \u00b7 Devon Brooks",
       "text": "Workholding, offsets, tooling and fast changeovers. Growth: manufacturing engineer. Watch: Documentation trails hands-on work",
@@ -7135,7 +7454,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 162,
+      "number": 180,
       "section": "Workforce Conversations",
       "title": "TALK WITH Devon Brooks",
       "text": "A fast setup starts with clean tools, known offsets, and workholding that repeats.",
@@ -7161,7 +7480,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 163,
+      "number": 181,
       "section": "Factory Workforce",
       "title": "Quality Inspector \u00b7 Priya Shah",
       "text": "First articles, measurement plans and root-cause evidence. Growth: quality manager. Watch: Will stop flow when requirements are ambiguous",
@@ -7186,7 +7505,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 164,
+      "number": 182,
       "section": "Workforce Conversations",
       "title": "TALK WITH Priya Shah",
       "text": "A measurement is evidence only when the method and requirement are both clear.",
@@ -7212,7 +7531,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 165,
+      "number": 183,
       "section": "Factory Workforce",
       "title": "Maintenance Technician \u00b7 Marcus Reed",
       "text": "Preventive maintenance and fast fault isolation. Growth: reliability lead. Watch: Prefers permanent repairs over quick patches",
@@ -7237,7 +7556,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 166,
+      "number": 184,
       "section": "Workforce Conversations",
       "title": "TALK WITH Marcus Reed",
       "text": "Machines usually warn us before they fail. The trick is listening early.",
@@ -7263,7 +7582,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 167,
+      "number": 185,
       "section": "Factory Workforce",
       "title": "Production Planner \u00b7 Elena Foster",
       "text": "Scheduling, capacity planning and customer priorities. Growth: operations manager. Watch: Forecast quality depends on timely floor updates",
@@ -7288,7 +7607,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 168,
+      "number": 186,
       "section": "Workforce Conversations",
       "title": "TALK WITH Elena Foster",
       "text": "Capacity is a promise. I will not schedule work the floor cannot actually finish.",
@@ -7314,7 +7633,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 169,
+      "number": 187,
       "section": "Factory Workforce",
       "title": "Material Handler \u00b7 Andre Wilson",
       "text": "Receiving, identification and safe material movement. Growth: supply chain coordinator. Watch: Needs labeled storage locations to prevent search time",
@@ -7339,7 +7658,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 170,
+      "number": 188,
       "section": "Workforce Conversations",
       "title": "TALK WITH Andre Wilson",
       "text": "Correct material, clearly identified, at the right station. That is how flow begins.",
@@ -7365,7 +7684,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 171,
+      "number": 189,
       "section": "Factory Workforce",
       "title": "Manufacturing Engineer \u00b7 Noah Kim",
       "text": "Process design, capability and cost reduction. Growth: engineering manager. Watch: Improvement projects compete with daily output",
@@ -7390,7 +7709,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 172,
+      "number": 190,
       "section": "Workforce Conversations",
       "title": "TALK WITH Noah Kim",
       "text": "A stable process should make the correct result easier than the wrong one.",
@@ -7416,7 +7735,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 173,
+      "number": 191,
       "section": "Factory Workforce",
       "title": "Automation Technician \u00b7 Tessa Morgan",
       "text": "Robot integration, controls and safe recovery. Growth: controls engineer. Watch: Requires disciplined change control",
@@ -7441,7 +7760,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 174,
+      "number": 192,
       "section": "Workforce Conversations",
       "title": "TALK WITH Tessa Morgan",
       "text": "Automation magnifies the process we give it, good or bad.",
@@ -7467,7 +7786,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 175,
+      "number": 193,
       "section": "Factory Workforce",
       "title": "Shipping & Receiving Coordinator \u00b7 Owen Price",
       "text": "Certifications, traceability, packing and customer handoff. Growth: logistics manager. Watch: Cannot compensate for incomplete production records",
@@ -7492,7 +7811,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 176,
+      "number": 194,
       "section": "Workforce Conversations",
       "title": "TALK WITH Owen Price",
       "text": "The shipment is the last operation, not an afterthought.",
@@ -7518,7 +7837,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 177,
+      "number": 195,
       "section": "Factory Workforce",
       "title": "Mechanical Maintenance Technician \u00b7 Riley Brooks",
       "text": "Bearings, spindles, lubrication and mechanical alignment. Growth: reliability lead. Watch: Needs controls support for complex electrical faults",
@@ -7543,7 +7862,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 178,
+      "number": 196,
       "section": "Workforce Conversations",
       "title": "TALK WITH Riley Brooks",
       "text": "A bearing, spindle, or slide tells a story through heat, sound, and wear.",
@@ -7569,7 +7888,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 179,
+      "number": 197,
       "section": "Factory Workforce",
       "title": "Electrical Maintenance Technician \u00b7 Jordan Lee",
       "text": "Electrical faults, drives, sensors, controls and safe diagnostics. Growth: controls engineer. Watch: Mechanical rebuilds require a partner",
@@ -7594,7 +7913,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 180,
+      "number": 198,
       "section": "Workforce Conversations",
       "title": "TALK WITH Jordan Lee",
       "text": "De-energize, verify, then diagnose. Electricity does not reward shortcuts.",
@@ -7620,7 +7939,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 181,
+      "number": 199,
       "section": "Factory Workforce",
       "title": "Facilities Maintenance Technician \u00b7 Taylor Morgan",
       "text": "Plumbing, HVAC, utilities, inspections and safe facility recovery. Growth: facilities manager. Watch: Not qualified for CNC spindle or servo repair",
@@ -7645,7 +7964,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 182,
+      "number": 200,
       "section": "Workforce Conversations",
       "title": "TALK WITH Taylor Morgan",
       "text": "A safe factory depends on utilities and shared spaces working as reliably as the machines.",
@@ -7671,7 +7990,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 183,
+      "number": 201,
       "section": "Factory Workforce",
       "title": "Reliability Lead \u00b7 Sam Rivera",
       "text": "Condition monitoring, preventive strategy and coordinated recovery. Growth: maintenance manager. Watch: Higher wage is justified only when the factory has enough assets to manage",
@@ -7696,7 +8015,7 @@
       "note": "Dedicated employee profile portrait and exact in-shop floor sprite use the same roster identity and atlas cell."
     },
     {
-      "number": 184,
+      "number": 202,
       "section": "Workforce Conversations",
       "title": "TALK WITH Sam Rivera",
       "text": "Reliability is planned production time, not heroic repair work after midnight.",
@@ -7722,7 +8041,7 @@
       "note": "Conversation portrait and factory-floor sprite share the same employee identity and roster cell."
     },
     {
-      "number": 185,
+      "number": 203,
       "section": "Campaign Chapter 2",
       "title": "ENTRY \u00b7 The Team Is the Machine",
       "text": "The founder enters the Job Shop and learns that more capacity creates scheduling, tooling, inspection, and handoff risk.",
@@ -7737,7 +8056,7 @@
       "note": "Existing Chapter 2 entry is playable; later beats remain explicitly planned."
     },
     {
-      "number": 186,
+      "number": 204,
       "section": "Campaign Chapter 2",
       "title": "LEARN \u00b7 Quote, Route, and Staff",
       "text": "Quote repeat work, plan its route, hire an operator and programmer, and assign only qualified people.",
@@ -7755,7 +8074,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 187,
+      "number": 205,
       "section": "Campaign Chapter 2",
       "title": "PROVE \u00b7 Two Machines, One Promise",
       "text": "Run VMC and lathe work concurrently without allowing either traveler, tool list, or due date to disappear.",
@@ -7773,7 +8092,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 188,
+      "number": 206,
       "section": "Campaign Chapter 2",
       "title": "OPERATE \u00b7 Inspection Is Production",
       "text": "Document eight inspections, ship on time, cover payroll, and sustain positive cash while quality rises to a 4.0 average.",
@@ -7791,7 +8110,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 189,
+      "number": 207,
       "section": "Campaign Chapter 2",
       "title": "RECOVER \u00b7 The Missed Handoff",
       "text": "Recover a late, at-risk job by correcting the handoff and schedule instead of hiding the defect or rushing unsafe work.",
@@ -7809,7 +8128,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 190,
+      "number": 208,
       "section": "Campaign Chapter 2",
       "title": "GRADUATE \u00b7 Job-Shop Owner",
       "text": "Ship eight chapter jobs at 4.0 quality, 85 percent on time, with three people, five concurrent completions, eight inspections, and three positive-cash shifts; then move to the Connected Plant.",
@@ -7828,7 +8147,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 191,
+      "number": 209,
       "section": "Campaign Chapter 3",
       "title": "ENTRY \u00b7 Signals and Blind Spots",
       "text": "The founder enters a 45,000-square-foot plant where no one person can watch every machine or handoff.",
@@ -7846,7 +8165,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 192,
+      "number": 210,
       "section": "Campaign Chapter 3",
       "title": "LEARN \u00b7 Connect the Truth",
       "text": "Connect eight machines, distinguish running from producing, and learn OEE, downtime, and trustworthy production signals.",
@@ -7864,7 +8183,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 193,
+      "number": 211,
       "section": "Campaign Chapter 3",
       "title": "PROVE \u00b7 Find the Constraint",
       "text": "Schedule machining cells, toolroom, maintenance, quality, and shipping to expose and recover the actual bottleneck.",
@@ -7882,7 +8201,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 194,
+      "number": 212,
       "section": "Campaign Chapter 3",
       "title": "OPERATE \u00b7 Lead the Other Shift",
       "text": "Build clean handoffs and lead eight people across shifts while preserving quality and delivery.",
@@ -7900,7 +8219,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 195,
+      "number": 213,
       "section": "Campaign Chapter 3",
       "title": "RECOVER \u00b7 The Dashboard Was Green",
       "text": "Recover a customer-risk event where a healthy-looking metric concealed starvation, blockage, or bad context.",
@@ -7918,7 +8237,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 196,
+      "number": 214,
       "section": "Campaign Chapter 3",
       "title": "GRADUATE \u00b7 Connected-Plant Leader",
       "text": "Ship ten chapter jobs at 4.0 quality and 88 percent on time after ten OEE reviews and three root-cause recoveries; then fund the Smart Factory.",
@@ -7937,7 +8256,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 197,
+      "number": 215,
       "section": "Campaign Chapter 4",
       "title": "ENTRY \u00b7 Automate the Standard",
       "text": "The founder enters a 120,000-square-foot factory where automation will multiply every good process and every bad one.",
@@ -7955,7 +8274,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 198,
+      "number": 216,
       "section": "Campaign Chapter 4",
       "title": "LEARN \u00b7 Control the Tool",
       "text": "Preset and control one hundred tools, prove offsets, and eliminate undocumented substitutions.",
@@ -7973,7 +8292,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 199,
+      "number": 217,
       "section": "Campaign Chapter 4",
       "title": "PROVE \u00b7 Design the Cell",
       "text": "Design fixtures and handoffs, install a safe cobot, and validate capability before increasing rate.",
@@ -7991,7 +8310,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 200,
+      "number": 218,
       "section": "Campaign Chapter 4",
       "title": "OPERATE \u00b7 Fourteen Clean Handoffs",
       "text": "Sustain controlled digital handoffs and improve flow without hiding defects or bypassing inspection.",
@@ -8009,7 +8328,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 201,
+      "number": 219,
       "section": "Campaign Chapter 4",
       "title": "RECOVER \u00b7 Fast Scrap",
       "text": "Stop an automated cell that is multiplying a weak process, find the cause, and revalidate it safely.",
@@ -8027,7 +8346,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 202,
+      "number": 220,
       "section": "Campaign Chapter 4",
       "title": "GRADUATE \u00b7 Smart-Factory Architect",
       "text": "Ship twelve jobs at 4.2 quality and 90 percent on time with three validated automated cells and five measured improvements; then open the Lights-Out Complex.",
@@ -8046,7 +8365,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 203,
+      "number": 221,
       "section": "Campaign Chapter 5",
       "title": "ENTRY \u00b7 Trust the Night",
       "text": "The founder enters a 350,000-square-foot complex where unattended production is earned through preparation, not hope.",
@@ -8064,7 +8383,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 204,
+      "number": 222,
       "section": "Campaign Chapter 5",
       "title": "LEARN \u00b7 Make It Unattended-Ready",
       "text": "Prove tool life, chip control, gauging, material supply, and safe fault behavior before the team leaves.",
@@ -8082,7 +8401,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 205,
+      "number": 223,
       "section": "Campaign Chapter 5",
       "title": "PROVE \u00b7 Coordinate the Fleet",
       "text": "Coordinate robots and AMRs through five hundred cycles without starving machines, blocking aisles, or losing material identity.",
@@ -8100,7 +8419,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 206,
+      "number": 224,
       "section": "Campaign Chapter 5",
       "title": "OPERATE \u00b7 Ten Reliable Nights",
       "text": "Sustain preventive maintenance, less than three percent scrap, and ten successful unattended nights.",
@@ -8118,7 +8437,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 207,
+      "number": 225,
       "section": "Campaign Chapter 5",
       "title": "RECOVER \u00b7 The 2 A.M. Call",
       "text": "Execute five recovery drills and respond to a night fault without creating a safety, quality, or traceability escape.",
@@ -8136,7 +8455,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 208,
+      "number": 226,
       "section": "Campaign Chapter 5",
       "title": "GRADUATE \u00b7 Lights-Out Operations Leader",
       "text": "Ship fourteen jobs at 4.3 quality and 92 percent on time after ten reliable nights and five recovery drills; then build the American Titan Campus.",
@@ -8155,7 +8474,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 209,
+      "number": 227,
       "section": "Campaign Chapter 6",
       "title": "ENTRY \u00b7 Build Beyond Yourself",
       "text": "The founder opens a million-square-foot manufacturing campus serving aerospace, energy, robotics, and American industry.",
@@ -8173,7 +8492,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 210,
+      "number": 228,
       "section": "Campaign Chapter 6",
       "title": "LEARN \u00b7 Win the Program",
       "text": "Price, negotiate, and execute strategic programs while protecting aerospace traceability and customer trust.",
@@ -8191,7 +8510,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 211,
+      "number": 229,
       "section": "Campaign Chapter 6",
       "title": "PROVE \u00b7 Leaders, Not Helpers",
       "text": "Develop six department leaders who can make good decisions without waiting for the founder at every station.",
@@ -8209,7 +8528,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 212,
+      "number": 230,
       "section": "Campaign Chapter 6",
       "title": "OPERATE \u00b7 The Apprentice Academy",
       "text": "Launch an academy, transfer standards and judgment, and graduate three apprentices into meaningful factory roles.",
@@ -8227,7 +8546,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 213,
+      "number": 231,
       "section": "Campaign Chapter 6",
       "title": "RECOVER \u00b7 The Promise at Scale",
       "text": "Resolve a campus-wide program crisis without sacrificing people, traceability, quality, or the institution's future.",
@@ -8245,7 +8564,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 214,
+      "number": 232,
       "section": "Campaign Chapter 6",
       "title": "GRADUATE \u00b7 American Manufacturing Titan",
       "text": "Complete ten certified program jobs, three long-term agreements, six department leaders, three apprentice graduations, and eight profitable weeks at 4.5 quality and 95 percent on time.",
@@ -8264,7 +8583,7 @@
       "note": "Production blueprint only; planned beats are not playable and have no generated voice or finished art."
     },
     {
-      "number": 215,
+      "number": 233,
       "section": "Planned Story Gaps",
       "title": "NOX SUPPLIER ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -8276,7 +8595,7 @@
       ]
     },
     {
-      "number": 216,
+      "number": 234,
       "section": "Planned Story Gaps",
       "title": "SHOP CLASS OPEN",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -8289,7 +8608,7 @@
       ]
     },
     {
-      "number": 217,
+      "number": 235,
       "section": "Planned Story Gaps",
       "title": "FIRST ARTICLE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -8301,7 +8620,7 @@
       ]
     },
     {
-      "number": 218,
+      "number": 236,
       "section": "Planned Story Gaps",
       "title": "FIRST HIRE ART UPGRADE",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -8312,7 +8631,7 @@
       ]
     },
     {
-      "number": 219,
+      "number": 237,
       "section": "Planned Story Gaps",
       "title": "CHAPTER 2 COMPLETION",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",
@@ -8327,7 +8646,7 @@
       ]
     },
     {
-      "number": 220,
+      "number": 238,
       "section": "Planned Story Gaps",
       "title": "CHAPTERS 3 TO 6",
       "text": "Not yet implemented. Required before this story beat may be presented as complete.",

@@ -21,4 +21,5 @@ storybook/v1/slides/
 desktop-*.png
 mobile-*.png
 BUG_BOUNTY_AUDIT_*.md
+debug.log
 docs/ZACH_VOICE_CONSENT.md

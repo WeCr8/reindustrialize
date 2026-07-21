@@ -141,6 +141,15 @@ try:
             page.wait_for_function(f"P.x+','+P.y !== '{before}'")
 
             page.locator("#objectiveAction").tap()
+            page.locator("#customers").wait_for(timeout=10_000)
+            assert_no_horizontal_overflow(page, f"{name}/customer-intake")
+            page.locator("#acceptContract").tap()
+            page.locator("#introNext").wait_for(timeout=10_000)
+            page.locator("#introNext").tap()
+            page.locator("#introNext").tap()
+            page.wait_for_function("document.querySelector('#intro').classList.contains('closed')")
+
+            page.locator("#objectiveAction").tap()
             page.locator(".noxOrder").first.wait_for(timeout=10_000)
             assert_no_horizontal_overflow(page, f"{name}/material-order")
             page.locator(".noxOrder").first.tap()

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "timeModel": {
+    "unit": "real-time minutes",
+    "continuesWhileAway": true,
+    "continuesWhileClosed": true,
+    "completionRequiresCollection": true,
+    "designIntent": "Farm-style readable waits create time for parallel planning, purchasing, hiring, and other station work."
+  },
+  "stations": {
+    "planning_desk": {"name":"Planning Desk","mode":"management","cycleMinutes":1,"mission":"Release a customer traveler and choose the next achievable operation.","details":"Customer demand, routing, due dates, capacity, and job status begin here."},
+    "nox_terminal": {"name":"NOX Material Terminal","mode":"management","cycleMinutes":2,"mission":"Order certified material that matches the active job.","details":"Compare alloy, condition, stock form, certification, quantity, and landed cost."},
+    "nox_pallet": {"name":"Receiving","mode":"orientation","cycleMinutes":2,"mission":"Verify delivered stock before it enters production.","details":"Match the purchase record, alloy, dimensions, quantity, condition, and certification."},
+    "saw_t1": {"name":"Bandsaw","mode":"playable","cycleMinutes":5,"mission":"Set the traveler cut length, start the saw, then collect and label the finished blank.","details":"The bandsaw converts delivered raw stock into a controlled CNC blank with finish allowance."},
+    "tool_cart": {"name":"Tool Cart","mode":"playable","cycleMinutes":3,"mission":"Select, gauge, and install the complete three-tool CNC kit.","details":"Tool choice, stickout, probe length, and chamfer-tool length determine whether the setup is safe."},
+    "presetter_t4": {"name":"Tool Presetter","mode":"orientation","cycleMinutes":2,"mission":"Measure tool length and diameter before controlled release.","details":"Presetting keeps offsets traceable and reduces spindle time spent measuring tools."},
+    "toolcrib_rfid_t4": {"name":"RFID Tool Crib","mode":"orientation","cycleMinutes":1,"mission":"Issue the correct controlled tool and preserve its identity.","details":"The crib tracks tool location, life, calibration, and approved substitutions."},
+    "vmc_t2": {"name":"Vertical Machining Center","mode":"playable","cycleMinutes":10,"mission":"Prove true G/M code, run the cycle, then inspect the completed part.","details":"Workholding, offsets, tools, spindle direction, coolant, rapid motion, and cutting feeds must agree."},
+    "lathe_cnc_t2": {"name":"CNC Lathe","mode":"orientation","cycleMinutes":12,"mission":"Inspect chuck pressure, stock stickout, turret clearance, and the program.","details":"The lathe rotates stock against controlled tools for turned diameters, faces, grooves, and threads."},
+    "mill_manual_t1": {"name":"Manual Mill","mode":"orientation","cycleMinutes":8,"mission":"Verify workholding, position, clearance, spindle selection, and safe stopping.","details":"Manual machining develops judgment about forces, references, feeds, depths, and direct control."},
+    "bench_deburr_t1": {"name":"Deburr Bench","mode":"orientation","cycleMinutes":3,"mission":"Break required edges without damaging controlled features.","details":"Deburring makes a part safe to handle and prepares it for reliable inspection and assembly."},
+    "network_node_t3": {"name":"MTConnect Node","mode":"orientation","cycleMinutes":2,"mission":"Confirm running, idle, stopped, and faulted signals match physical reality.","details":"Connected machine states support honest uptime, cycle, downtime, and bottleneck analysis."},
+    "handoff_terminal_t4": {"name":"JobLine Handoff Terminal","mode":"orientation","cycleMinutes":1,"mission":"Record completed work, quality concerns, and the exact next action.","details":"A clean handoff gives the next employee enough context to continue safely without guessing."},
+    "whiteboard": {"name":"Mission Board","mode":"management","cycleMinutes":0,"mission":"Review the chapter goal, completed tasks, quality gate, and next achievable step.","details":"The mission board is the source of truth when the player is unsure where to go next."},
+    "chalkboard": {"name":"Shop Class","mode":"management","cycleMinutes":0,"mission":"Review the manufacturing principle behind the current task.","details":"Shop Class explains why a process works and provides recovery teaching after mistakes."},
+    "cobot_t5": {"name":"Collaborative Robot","mode":"orientation","cycleMinutes":6,"mission":"Review guarding, payload, reach, end effector, and validated handoff behavior.","details":"Cobots automate proven standard work; they do not correct an unstable process."},
+    "amr_t5": {"name":"Autonomous Mobile Robot","mode":"orientation","cycleMinutes":4,"mission":"Review route clearance, traffic rules, payload identity, and safe stops.","details":"AMRs move identified material between departments without blocking people or emergency access."},
+    "restroom_station": {"name":"Employee Restroom","mode":"facility","cycleMinutes":5,"mission":"Inspect shared facilities and restore service safely when maintenance is required.","details":"Reliable factories maintain utilities and people spaces as carefully as production equipment."}
+  }
+}

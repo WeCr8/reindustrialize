@@ -23,7 +23,7 @@ with sync_playwright() as p:
     assert page.locator("#mentor").is_visible()
     assert page.locator(".mentorTab").count()==5
     assert page.locator("#mentorPortrait").get_attribute("src").startswith("data:image/png;base64,")
-    assert "Order certified stock" in page.locator("#mentorAnswer").inner_text()
+    assert page.evaluate("currentObjective().step") in page.locator("#mentorAnswer").inner_text()
     page.locator('[data-c="machining"]').click()
     assert page.locator(".mentorQuestion").count()==3
     page.get_by_role("button",name="What should I check before cycle start?").click()
