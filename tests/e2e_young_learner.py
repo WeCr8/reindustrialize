@@ -12,9 +12,10 @@ with sync_playwright() as p:
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
     for _ in range(3): page.locator("#introNext").click()
+    page.locator("#btour").click()
     page.locator("#tourNext").wait_for(timeout=10000)
-    assert page.evaluate("tourIndex") == 2
-    expected=["tour_material","tour_saw","tour_vmc"]
+    assert page.evaluate("tourIndex") == 0
+    expected=page.evaluate("SHOP_TOUR.stops.slice(0,3).map(stop=>stop.id)")
     for stop_id in expected:
         assert page.locator("#task").get_attribute("data-tour-stop")==stop_id
         page.locator("#tourNext").click();page.locator("#tourNext").click()
@@ -25,6 +26,7 @@ with sync_playwright() as p:
         for _ in range(2):
             correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
             page.locator(".practiceChoice").nth(correct).click();page.wait_for_timeout(650)
+    page.evaluate("finishTour()")
     assert page.locator("#task").get_attribute("data-tour-phase")=="complete"
     page.locator("#openEquipmentMarket").click(force=True)
     assert "SHIP 2 JOBS TO REVEAL" in page.locator("#equipmentMarketBody").inner_text()

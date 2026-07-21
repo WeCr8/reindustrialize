@@ -102,15 +102,12 @@ with sync_playwright() as p:
     think(page,900,1400);human_click(page,"#newGame","launch company")
     for step in range(5):think(page,850,1350);human_click(page,"#introNext",f"opening beat {step+1}")
 
-    # Complete all 14 two-panel tour stops.
-    page.locator("#tourNext").wait_for(timeout=10000)
-    for stop in range(14):
-        think(page,300,550);human_click(page,"#tourNext",f"tour {stop+1} walkthrough")
-        think(page,350,650);human_click(page,"#tourNext",f"tour {stop+1} next")
-    assert not page.locator("#task").is_visible()
-
-    # Ask Zach, then order material by routing to the visible objective.
+    # Contextual onboarding begins with a real customer call; the full tour is optional.
     human_click(page,"#askMentor","ask Zach");think(page,900,1400);human_click(page,"#mentorClose","close Zach")
+    human_click(page,"#objectiveAction","answer first customer")
+    page.locator("#acceptContract").wait_for(timeout=15000);human_click(page,"#acceptContract","accept first contract")
+    human_click(page,"#introNext","customer story");human_click(page,"#introNext","enter shop")
+    page.wait_for_function("currentObjective().sprite==='nox_terminal'")
     human_click(page,"#objectiveAction","route to NOX")
     page.locator(".noxOrder").first.wait_for(timeout=15000);think(page,700,1200)
     human_click(page,".noxOrder:first-child","order certified stock");think(page,700,1100);human_click(page,"#tclose","close NOX")
@@ -148,16 +145,10 @@ with sync_playwright() as p:
         page.wait_for_function("!document.querySelector('#task').classList.contains('open')",timeout=10000)
 
         human_click(page,"#objectiveAction",f"job {job_number} VMC route")
-        page.locator('[data-code-key="o"]').first.wait_for(timeout=15000)
-        human_click(page,f'[data-code-key="o"][data-code-value="{"53" if job_number==1 else "54"}"]',"choose work offset")
-        human_click(page,'[data-code-key="s"][data-code-value="03"]',"choose clockwise spindle")
-        human_click(page,'[data-code-key="c"][data-code-value="08"]',"choose flood coolant")
-        human_click(page,"#cycst","prove and start CNC")
-        if job_number==1:
-            think(page,650,950)
-            human_click(page,'[data-code-key="o"][data-code-value="54"]',"correct work offset")
-            human_click(page,"#cycst","restart proofed CNC")
-        page.evaluate("startAutonomousRun(state.job)")
+        page.locator('[data-setup-check]').first.wait_for(timeout=15000)
+        human_click(page,'[data-setup-check="workholding"]',"secure stock")
+        human_click(page,'[data-setup-check="tool"]',"confirm loaded tool")
+        human_click(page,"#startProduction","start timed CNC simulation")
         page.evaluate("state.machineRun.endAt=Date.now()-1;renderProductionHud()")
         human_click(page,"#machineFlag",f"open completed CNC job {job_number}")
         human_click(page,"#inspectPart",f"inspect CNC job {job_number}")

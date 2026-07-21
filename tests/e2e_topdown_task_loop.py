@@ -14,8 +14,6 @@ with sync_playwright() as p:
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
     for _ in range(3): page.locator("#introNext").click()
-    page.locator("#tourNext").wait_for(timeout=10000)
-    page.evaluate("tourMandatory=false;finishTour()")
 
     page.keyboard.press("Space")
     assert page.locator("#cv").get_attribute("data-interaction") == "too-far"

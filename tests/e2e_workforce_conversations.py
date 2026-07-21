@@ -10,7 +10,7 @@ with sync_playwright() as p:
  for _ in range(4):click(page,'#preFounderNext','advance prologue')
  click(page,'#newGame','launch company')
  for _ in range(3):click(page,'#introNext','advance opening')
- page.locator('#tourNext').wait_for();page.evaluate('tourMandatory=false;finishTour()');actions.append('enter factory after reviewed tour');click(page,'#bteam','open team browser')
+ actions.append('enter factory with contextual training ready');click(page,'#bteam','open team browser')
  tested=[]
  def hire_at(index,assignment):
   current=page.evaluate('hireIndex');steps=(index-current)%10

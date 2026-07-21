@@ -12,6 +12,7 @@ with sync_playwright() as p:
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
     for _ in range(3): page.locator("#introNext").click()
+    page.locator("#btour").click()
     page.locator("#tourNext").wait_for(timeout=10000)
     for _ in range(3):
         page.locator("#tourNext").click();page.locator("#tourNext").click()
@@ -19,6 +20,7 @@ with sync_playwright() as p:
         for _ in range(2):
             correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
             page.locator(".practiceChoice").nth(correct).click();page.wait_for_timeout(650)
+    page.evaluate("finishTour()")
     page.locator("#askMentor").click()
     assert page.locator("#mentor").is_visible()
     assert page.locator(".mentorTab").count()==5

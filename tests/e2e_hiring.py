@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 URL=(Path(__file__).resolve().parents[1]/"apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri()
 with sync_playwright() as p:
  b=p.chromium.launch();page=b.new_page(viewport={"width":1440,"height":1000});errors=[];page.on("pageerror",lambda e:errors.append(str(e)))
- page.goto(URL);page.wait_for_function("loaded===total");[page.locator("#preFounderNext").click() for _ in range(4)];page.locator("#newGame").click();[page.locator("#introNext").click() for _ in range(3)];page.locator("#tourNext").wait_for(timeout=10000);page.evaluate("tourMandatory=false;finishTour()");page.locator("#bteam").click()
+ page.goto(URL);page.wait_for_function("loaded===total");[page.locator("#preFounderNext").click() for _ in range(4)];page.locator("#newGame").click();[page.locator("#introNext").click() for _ in range(3)];page.locator("#bteam").click()
  assert page.evaluate("HIRE_ROSTER.profileAtlas")=="workforce-profile-atlas-v1"
  assert page.evaluate("getComputedStyle(document.querySelector('#hireCard .atlasPortrait')).backgroundImage.includes(IMG[HIRE_ROSTER.profileAtlas].src)")
  assert page.locator("#hireCount").inner_text().startswith("1 / 14")

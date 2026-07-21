@@ -92,6 +92,7 @@ def close_opening(page, name):
     for _ in range(3):
         assert_action_in_viewport(page, "#introNext", f"{name}/intro-action")
         page.locator("#introNext").tap()
+    page.locator("#btour").tap()
     page.locator("#tourNext").wait_for(timeout=10_000)
     for stop_number in range(3):
         assert_action_in_viewport(page, "#tourNext", f"{name}/tour-overview-action")
@@ -107,6 +108,7 @@ def close_opening(page, name):
             if stop_number == 0 and page.evaluate("tourPracticeStep") == 0:
                 page.screenshot(path=OUT / f"{name}-tour-practice.png")
             page.locator(".practiceChoice").nth(correct).tap();page.wait_for_timeout(650)
+    page.evaluate("finishTour()")
 
 
 env = dict(os.environ, PORT="8811")

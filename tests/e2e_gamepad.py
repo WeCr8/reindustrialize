@@ -18,7 +18,6 @@ with sync_playwright() as p:
         page.evaluate("padButton(0,true)"); page.wait_for_timeout(50); page.evaluate("padButton(0,false)"); page.wait_for_timeout(50)
     page.wait_for_function("document.querySelector('#titleScreen').classList.contains('closed')")
     for _ in range(3): page.locator("#introNext").click()
-    page.locator("#tourNext").wait_for(timeout=10000);page.evaluate("tourMandatory=false;finishTour()")
     page.evaluate("inputMode='gamepad';document.querySelector('#inputMode').value='gamepad'")
     x0 = page.evaluate("P.x")
     page.evaluate("padAxis(0,1)")

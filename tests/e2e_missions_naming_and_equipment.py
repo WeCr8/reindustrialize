@@ -65,13 +65,16 @@ with sync_playwright() as playwright:
 
     page.locator('[data-m="task_vmc"]').click()
     page.wait_for_function("cv.dataset.interaction === 'vmc_t2'")
-    assert page.locator("#cycst").count() == 1
+    assert page.locator("#startProduction").count() == 1
     assert page.locator(".partPreview[data-part-shape='drill']").count() == 1
-    assert page.locator(".codeTab").count() == 12
-    assert page.locator("#guidedCodeFill").count() == 1
-    page.locator("#guidedCodeFill").click()
-    assert page.evaluate("task.dataset.programReady") == "true"
-    assert page.locator(".codeTab.selected").count() == 3
+    assert page.locator(".codeTab").count() == 0
+    assert page.locator("[data-setup-check]").count() == 2
+    assert page.locator("#startProduction").is_disabled()
+    page.locator("[data-setup-check]").nth(0).click()
+    page.locator("[data-setup-check]").nth(1).click()
+    assert page.evaluate("task.dataset.setupReady") == "true"
+    assert page.locator("#startProduction").is_enabled()
+    assert "OPTIONAL SHOP CLASS" in page.locator("#tcontrols details summary").inner_text()
     assert page.locator('[data-m="task_vmc"]').get_attribute("class") is not None
 
     assert not errors, errors

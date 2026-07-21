@@ -767,7 +767,7 @@
       "path": "packages/assets/audio/generated/voice/zach_gcode_intro.mp3",
       "src": "../../packages/assets/audio/generated/voice/zach_gcode_intro.mp3",
       "lifecycle": "generated-candidate",
-      "referenceCount": 5,
+      "referenceCount": 3,
       "bytes": 77784
     },
     {
@@ -947,7 +947,7 @@
       "path": "packages/assets/audio/generated/voice/zach_response_next_step.mp3",
       "src": "../../packages/assets/audio/generated/voice/zach_response_next_step.mp3",
       "lifecycle": "generated-candidate",
-      "referenceCount": 7,
+      "referenceCount": 8,
       "bytes": 75276
     },
     {
@@ -967,7 +967,7 @@
       "path": "packages/assets/audio/generated/voice/zach_response_safe_stop.mp3",
       "src": "../../packages/assets/audio/generated/voice/zach_response_safe_stop.mp3",
       "lifecycle": "generated-candidate",
-      "referenceCount": 4,
+      "referenceCount": 6,
       "bytes": 69425
     },
     {
@@ -1178,7 +1178,7 @@
       "src": "../../packages/assets/audio/generated/voice/zach_tour_vmc.mp3",
       "lifecycle": "generated-candidate",
       "referenceCount": 3,
-      "bytes": 127521
+      "bytes": 128775
     },
     {
       "id": "zach_walkthrough_deburr",
@@ -1318,7 +1318,7 @@
       "src": "../../packages/assets/audio/generated/voice/zach_walkthrough_vmc.mp3",
       "lifecycle": "generated-candidate",
       "referenceCount": 3,
-      "bytes": 166809
+      "bytes": 170571
     },
     {
       "id": "zach_welcome",
@@ -1967,7 +1967,7 @@
       "path": "packages/assets/audio/zach/zach_gcode_intro.mp3",
       "src": "../../packages/assets/audio/zach/zach_gcode_intro.mp3",
       "lifecycle": "implemented-reference",
-      "referenceCount": 5,
+      "referenceCount": 3,
       "bytes": 77784
     },
     {
@@ -2147,7 +2147,7 @@
       "path": "packages/assets/audio/zach/zach_response_next_step.mp3",
       "src": "../../packages/assets/audio/zach/zach_response_next_step.mp3",
       "lifecycle": "implemented-reference",
-      "referenceCount": 7,
+      "referenceCount": 8,
       "bytes": 75276
     },
     {
@@ -2167,7 +2167,7 @@
       "path": "packages/assets/audio/zach/zach_response_safe_stop.mp3",
       "src": "../../packages/assets/audio/zach/zach_response_safe_stop.mp3",
       "lifecycle": "implemented-reference",
-      "referenceCount": 4,
+      "referenceCount": 6,
       "bytes": 69425
     },
     {
@@ -2378,7 +2378,7 @@
       "src": "../../packages/assets/audio/zach/zach_tour_vmc.mp3",
       "lifecycle": "implemented-reference",
       "referenceCount": 3,
-      "bytes": 127521
+      "bytes": 128775
     },
     {
       "id": "zach_walkthrough_deburr",
@@ -2518,7 +2518,7 @@
       "src": "../../packages/assets/audio/zach/zach_walkthrough_vmc.mp3",
       "lifecycle": "implemented-reference",
       "referenceCount": 3,
-      "bytes": 166809
+      "bytes": 170571
     },
     {
       "id": "zach_welcome",
@@ -3601,7 +3601,7 @@
       "path": "packages/assets/sprites/saw_t1.png",
       "src": "../../packages/assets/sprites/saw_t1.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 43,
+      "referenceCount": 52,
       "bytes": 27833,
       "dimensions": [
         128,
@@ -3727,7 +3727,7 @@
       "path": "packages/assets/sprites/vmc_t2.png",
       "src": "../../packages/assets/sprites/vmc_t2.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 60,
+      "referenceCount": 70,
       "bytes": 61510,
       "dimensions": [
         192,
@@ -6723,13 +6723,13 @@
     {
       "number": 139,
       "section": "Shop Tour",
-      "title": "06 \u00b7 VMC \u00b7 PROVE THE PROGRAM AND MAKE THE PART",
-      "text": "The vertical machining center makes the part. Load only prepared stock and a complete tool kit, verify every G code answer, then run and inspect the result.",
+      "title": "06 \u00b7 VMC \u00b7 RUN AND WATCH THE PART TAKE SHAPE",
+      "text": "The vertical machining center makes the part while its timer runs. Confirm the blank and tool, then return to the floor or reopen the station to watch the cut.",
       "image": "../../packages/assets/equipment/vmc-open-v1.png",
       "status": "playable",
       "location": "Center machine island \u00b7 right of the tool cart",
       "instructions": [
-        "Prepare stock and tools first, open the VMC, complete the G-code checks, and start the cycle."
+        "Prepare stock and tools, confirm the physical setup, start the timer, and inspect the finished shape."
       ],
       "voice": "zach_tour_vmc",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_vmc.mp3"
@@ -6857,11 +6857,12 @@
       "instructions": [
         "Release a customer traveler and choose the next achievable operation.",
         "Standard station time: 1 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_planning",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_planning.mp3"
     },
     {
@@ -6875,11 +6876,12 @@
       "instructions": [
         "Order certified material that matches the active job.",
         "Standard station time: 2 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_material",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_material.mp3"
     },
     {
@@ -6893,11 +6895,12 @@
       "instructions": [
         "Verify delivered stock before it enters production.",
         "Standard station time: 2 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_receiving",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_receiving.mp3"
     },
     {
@@ -6911,11 +6914,12 @@
       "instructions": [
         "Set the traveler cut length, start the saw, then collect and label the finished blank.",
         "Standard station time: 5 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "Qualified workers may queue customer-linked batches here; each installed machine adds one fixed-time parallel lane."
       ],
       "voice": "zach_tour_saw",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_saw.mp3"
     },
     {
@@ -6929,11 +6933,12 @@
       "instructions": [
         "Select, gauge, and install the complete three-tool CNC kit.",
         "Standard station time: 3 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_tooling",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_tooling.mp3"
     },
     {
@@ -6947,11 +6952,12 @@
       "instructions": [
         "Measure tool length and diameter before controlled release.",
         "Standard station time: 2 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": null,
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material."
     },
     {
       "number": 154,
@@ -6964,28 +6970,30 @@
       "instructions": [
         "Issue the correct controlled tool and preserve its identity.",
         "Standard station time: 1 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": null,
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material."
     },
     {
       "number": 155,
       "section": "Station Missions & Timers",
       "title": "Vertical Machining Center",
-      "text": "Workholding, offsets, tools, spindle direction, coolant, rapid motion, and cutting feeds must agree.",
+      "text": "Workholding, tools, clearance, and the finished shape must agree. True G/M code remains an optional Shop Class reference.",
       "image": "../../packages/assets/equipment/vmc-open-v1.png",
       "status": "playable",
       "location": "vmc_t2",
       "instructions": [
-        "Prove true G/M code, run the cycle, then inspect the completed part.",
+        "Confirm the physical setup, run the timed machining simulation, then inspect the completed part.",
         "Standard station time: 10 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "Qualified workers may queue customer-linked batches here; each installed machine adds one fixed-time parallel lane."
       ],
       "voice": "zach_tour_vmc",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_vmc.mp3"
     },
     {
@@ -6999,11 +7007,12 @@
       "instructions": [
         "Inspect chuck pressure, stock stickout, turret clearance, and the program.",
         "Standard station time: 12 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_lathe",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_lathe.mp3"
     },
     {
@@ -7017,11 +7026,12 @@
       "instructions": [
         "Verify workholding, position, clearance, spindle selection, and safe stopping.",
         "Standard station time: 8 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_manual_mill",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_manual_mill.mp3"
     },
     {
@@ -7035,11 +7045,12 @@
       "instructions": [
         "Break required edges without damaging controlled features.",
         "Standard station time: 3 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_deburr",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_deburr.mp3"
     },
     {
@@ -7053,11 +7064,12 @@
       "instructions": [
         "Confirm running, idle, stopped, and faulted signals match physical reality.",
         "Standard station time: 2 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_mtconnect",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_mtconnect.mp3"
     },
     {
@@ -7071,11 +7083,12 @@
       "instructions": [
         "Record completed work, quality concerns, and the exact next action.",
         "Standard station time: 1 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_handoff",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_handoff.mp3"
     },
     {
@@ -7089,11 +7102,12 @@
       "instructions": [
         "Review the chapter goal, completed tasks, quality gate, and next achievable step.",
         "No active production countdown at this station.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_missions",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_missions.mp3"
     },
     {
@@ -7107,11 +7121,12 @@
       "instructions": [
         "Review the manufacturing principle behind the current task.",
         "No active production countdown at this station.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": "zach_tour_shop_class",
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection.",
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_tour_shop_class.mp3"
     },
     {
@@ -7125,11 +7140,12 @@
       "instructions": [
         "Review guarding, payload, reach, end effector, and validated handoff behavior.",
         "Standard station time: 6 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": null,
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material."
     },
     {
       "number": 164,
@@ -7142,11 +7158,12 @@
       "instructions": [
         "Review route clearance, traffic rules, payload identity, and safe stops.",
         "Standard station time: 4 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": null,
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material."
     },
     {
       "number": 165,
@@ -7159,11 +7176,12 @@
       "instructions": [
         "Inspect shared facilities and restore service safely when maintenance is required.",
         "Standard station time: 5 minutes.",
-        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser."
+        "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
+        "No unattended production queue is exposed unless this workflow becomes mechanically playable."
       ],
       "voice": null,
       "success": "Station opens its task/detail surface and reports an honest active, ready, locked, or orientation state.",
-      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection."
+      "note": "Runtime station-operation evidence; 5-minute saw and 10-minute VMC jobs persist and require collection or inspection. True G/M code is optional Shop Class material."
     },
     {
       "number": 166,
@@ -7275,20 +7293,20 @@
     {
       "number": 172,
       "section": "Production Tutorials",
-      "title": "PROVE GCODE",
-      "text": "Read the program one block at a time. Know where the tool will go before you press cycle start.",
+      "title": "PREPARE CNC RUN",
+      "text": "If the setup does not look right, stop. A safe pause costs less than a crash.",
       "image": "../../packages/assets/equipment/vmc-open-v1.png",
       "status": "playable",
       "location": "Center machine island \u00b7 VMC",
       "instructions": [
-        "Verify the work offset",
-        "Verify clockwise spindle direction",
-        "Verify coolant command",
-        "Correct every invalid G or M code field"
+        "Match the blank to the part picture",
+        "Secure the stock",
+        "Confirm the loaded tool",
+        "Start the timed production simulation"
       ],
-      "voice": "zach_gcode_intro",
-      "success": "All proofing fields pass validation",
-      "voiceSrc": "../../packages/assets/audio/zach/zach_gcode_intro.mp3"
+      "voice": "zach_response_safe_stop",
+      "success": "The VMC timer starts and the player can return to the factory floor",
+      "voiceSrc": "../../packages/assets/audio/zach/zach_response_safe_stop.mp3"
     },
     {
       "number": 173,
@@ -7299,13 +7317,13 @@
       "status": "playable",
       "location": "Center machine island \u00b7 VMC",
       "instructions": [
-        "Review the simulated path",
-        "Press cycle start",
+        "Open the running station when desired",
         "Observe feed motion, coolant, chips, and tool clearance",
-        "Allow the cycle to reach part complete"
+        "Return to the floor while the timer continues",
+        "Inspect the completed part"
       ],
       "voice": "zach_response_safe_stop",
-      "success": "Machining animation completes without an invalid setup",
+      "success": "Timed machining simulation completes without an invalid setup",
       "voiceSrc": "../../packages/assets/audio/zach/zach_response_safe_stop.mp3"
     },
     {

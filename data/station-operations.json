@@ -5,6 +5,11 @@
     "continuesWhileAway": true,
     "continuesWhileClosed": true,
     "completionRequiresCollection": true,
+    "workerQueueDepthPerInstalledStation": 3,
+    "qualifiedWorkerRequired": true,
+    "parallelCapacityUsesInstalledEquipment": true,
+    "queueableStations": ["saw_t1", "vmc_t2"],
+    "workerRouting": "customer work order -> ordered material -> saw blank WIP -> VMC finished output",
     "designIntent": "Farm-style readable waits create time for parallel planning, purchasing, hiring, and other station work."
   },
   "stations": {
@@ -15,7 +20,7 @@
     "tool_cart": {"name":"Tool Cart","mode":"playable","cycleMinutes":3,"mission":"Select, gauge, and install the complete three-tool CNC kit.","details":"Tool choice, stickout, probe length, and chamfer-tool length determine whether the setup is safe."},
     "presetter_t4": {"name":"Tool Presetter","mode":"orientation","cycleMinutes":2,"mission":"Measure tool length and diameter before controlled release.","details":"Presetting keeps offsets traceable and reduces spindle time spent measuring tools."},
     "toolcrib_rfid_t4": {"name":"RFID Tool Crib","mode":"orientation","cycleMinutes":1,"mission":"Issue the correct controlled tool and preserve its identity.","details":"The crib tracks tool location, life, calibration, and approved substitutions."},
-    "vmc_t2": {"name":"Vertical Machining Center","mode":"playable","cycleMinutes":10,"mission":"Prove true G/M code, run the cycle, then inspect the completed part.","details":"Workholding, offsets, tools, spindle direction, coolant, rapid motion, and cutting feeds must agree."},
+    "vmc_t2": {"name":"Vertical Machining Center","mode":"playable","cycleMinutes":10,"mission":"Confirm the physical setup, run the timed machining simulation, then inspect the completed part.","details":"Workholding, tools, clearance, and the finished shape must agree. True G/M code remains an optional Shop Class reference."},
     "lathe_cnc_t2": {"name":"CNC Lathe","mode":"orientation","cycleMinutes":12,"mission":"Inspect chuck pressure, stock stickout, turret clearance, and the program.","details":"The lathe rotates stock against controlled tools for turned diameters, faces, grooves, and threads."},
     "mill_manual_t1": {"name":"Manual Mill","mode":"orientation","cycleMinutes":8,"mission":"Verify workholding, position, clearance, spindle selection, and safe stopping.","details":"Manual machining develops judgment about forces, references, feeds, depths, and direct control."},
     "bench_deburr_t1": {"name":"Deburr Bench","mode":"orientation","cycleMinutes":3,"mission":"Break required edges without damaging controlled features.","details":"Deburring makes a part safe to handle and prepares it for reliable inspection and assembly."},

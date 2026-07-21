@@ -35,17 +35,17 @@ with sync_playwright() as playwright:
         page.screenshot(path=ROOT / "tmp" / f"live-machining-{job_id}.png")
         page.evaluate("closeOverlay();state.machineRun=null")
 
-    # Added equipment represents parallel lot capacity and keeps the cell occupied.
+    # Added equipment adds parallel lanes without unrealistically shortening one machine's cycle.
     page.evaluate("""
       state.job=JOBS[0];state.equipment.vmc=2;
       startAutonomousRun(state.job);
     """)
     assert page.evaluate("state.machineRun.capacity") == 2
-    assert page.evaluate("state.machineRun.durationMs") == 5 * 60 * 1000
+    assert page.evaluate("state.machineRun.durationMs") == 10 * 60 * 1000
     page.evaluate("startAutonomousRun(state.job)")
     assert page.evaluate("state.machineRun.capacity") == 2
 
     assert not errors, errors
     browser.close()
 
-print("PASS: live timed drilling, bounded pocket milling, and retained dome geometry render; purchased VMCs add lot capacity")
+print("PASS: live timed drilling, bounded pocket milling, and retained dome geometry render; purchased VMCs add fixed-time parallel lanes")

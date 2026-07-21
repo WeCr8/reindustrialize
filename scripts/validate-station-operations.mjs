@@ -6,6 +6,7 @@ const root = process.cwd();
 const read = (file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
 const operations = read("data/station-operations.json");
 const maps = [read("data/maps/bay_01.json"), read("data/maps/bay_02.json")];
+const roster = read("data/hiring-roster.json");
 const failures = [];
 const modes = new Set(["playable", "orientation", "management", "facility"]);
 
@@ -26,6 +27,17 @@ for (const map of maps) {
   }
 }
 
+const queueableStations = operations.timeModel?.queueableStations || [];
+for (const sprite of queueableStations) {
+  const station = operations.stations[sprite];
+  if (!station || station.mode !== "playable" || station.cycleMinutes <= 0) failures.push(`${sprite}: queue policy requires a timed playable station`);
+  const qualified = roster.candidates.filter((candidate) => candidate.qualifications.includes(sprite));
+  if (!qualified.length) failures.push(`${sprite}: timed worker queue has no qualified hire`);
+}
+for (const [sprite, station] of Object.entries(operations.stations)) {
+  if (station.mode === "orientation" && queueableStations.includes(sprite)) failures.push(`${sprite}: orientation-only station cannot expose production queues`);
+}
+
 for (const [sprite, minutes] of [["saw_t1", 5], ["vmc_t2", 10]]) {
   const station = operations.stations[sprite];
   if (station?.mode !== "playable") failures.push(`${sprite}: must remain playable`);
@@ -42,4 +54,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`PASS: ${Object.keys(operations.stations).length} station definitions cover both maps; saw 5m, VMC 10m, persistent collection-gated timers`);
+console.log(`PASS: ${Object.keys(operations.stations).length} station definitions cover both maps; every production timer has qualified worker coverage and persistent collection-gated queues`);

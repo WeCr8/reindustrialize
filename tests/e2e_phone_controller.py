@@ -21,7 +21,6 @@ try:
         for _ in range(4): host.locator("#preFounderNext").click()
         host.locator("#newGame").click()
         for _ in range(3): host.locator("#introNext").click()
-        host.locator("#tourNext").wait_for(timeout=10000);host.evaluate("tourMandatory=false;finishTour()")
         x0 = host.evaluate("P.x")
         host.locator("#bphone").click()
         host.locator("#pairStart").click()

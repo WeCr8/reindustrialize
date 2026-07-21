@@ -13,7 +13,6 @@ with sync_playwright() as p:
     page.locator("#newGame").click()
     for _ in range(3):
         page.locator("#introNext").click()
-    page.locator("#tourNext").wait_for(timeout=10000);page.evaluate("tourMandatory=false;finishTour()")
 
     # Clicking a distant walkable floor tile follows a complete path, not one step.
     box = page.locator("#cv").bounding_box()

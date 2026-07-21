@@ -79,17 +79,8 @@ with sync_playwright() as p:
     assert page.locator("#pp .nm").inner_text() == "JORDAN RIVERA"
     page.locator("#introNext").click()
     assert not page.locator("#intro").is_visible()
-    page.locator("#tourNext").wait_for(timeout=10000)
-    assert page.locator("#tourSkip").count() == 0
-    for _ in range(page.evaluate("SHOP_TOUR.stops.length")):
-        page.locator("#tourNext").click()
-        page.locator("#tourNext").click()
-        page.wait_for_function("document.querySelector('#task').dataset.tourPhase === 'practice'",timeout=10000)
-        for _ in range(2):
-            correct=page.evaluate("ONBOARDING_PRACTICE[SHOP_TOUR.stops[tourIndex].id][tourPracticeStep].correct")
-            page.locator(".practiceChoice").nth(correct).click()
-            page.wait_for_timeout(650)
-    assert page.locator("#task").get_attribute("data-completed-tour-stops").count(",") == 13
+    assert not page.locator("#task").is_visible()
+    assert page.locator("#btour").is_visible()
     assert "done" in page.locator('[data-m="meet_zach"]').get_attribute("class")
     assert page.evaluate("currentObjective().action") == "customers"
     page.locator("#objectiveAction").click()
@@ -149,16 +140,9 @@ with sync_playwright() as p:
         stand_by(page, "vmc_t2")
         page.evaluate("state.equipmentCooldownUntil=0")
         page.locator("#objectiveAction").click()
-        for key, value in {"o": "54", "s": "03", "c": "08"}.items():
-            field = page.locator(f'[data-b="{key}"]')
-            if field.evaluate("el => el.tagName === 'SELECT'"):
-                field.select_option(value)
-            elif field.get_attribute("type") == "hidden":
-                page.locator(f'[data-code-key="{key}"][data-code-value="{value}"]').click()
-            else:
-                field.fill(value)
-        page.locator("#cycst").click()
-        page.evaluate("startAutonomousRun(state.job)")
+        page.locator('[data-setup-check]').nth(0).click()
+        page.locator('[data-setup-check]').nth(1).click()
+        page.locator("#startProduction").click()
         page.evaluate("state.machineRun.endAt=Date.now()-1;renderProductionHud()")
         page.locator("#machineFlag").click()
         page.locator("#inspectPart").click()
