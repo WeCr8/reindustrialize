@@ -35,13 +35,13 @@ with sync_playwright() as playwright:
         page.screenshot(path=ROOT / "tmp" / f"live-machining-{job_id}.png")
         page.evaluate("closeOverlay();state.machineRun=null")
 
-    # Added equipment adds parallel lanes without unrealistically shortening one machine's cycle.
+    # Added equipment adds parallel lanes without shortening one accelerated RPG cycle.
     page.evaluate("""
       state.job=JOBS[0];state.equipment.vmc=2;
       startAutonomousRun(state.job);
     """)
     assert page.evaluate("state.machineRun.capacity") == 2
-    assert page.evaluate("state.machineRun.durationMs") == 10 * 60 * 1000
+    assert page.evaluate("state.machineRun.durationMs") == 40 * 1000
     page.evaluate("startAutonomousRun(state.job)")
     assert page.evaluate("state.machineRun.capacity") == 2
 
