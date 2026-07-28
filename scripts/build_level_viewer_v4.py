@@ -3,7 +3,7 @@
 Tool Setup (pick twist drill / end mill / ball mill + set stickout to the line)
 -> CNC Run at the VMC (solve easy G/M blanks -> animated toolpath scene).
 Zach explains every step; ASK ZACH gives progressive hints. Grades A-F feed coins/XP."""
-import base64, json, os
+import base64, json, os, re
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 SPR = os.path.join(ROOT, "packages", "assets", "sprites")
@@ -39,6 +39,11 @@ tool_art = {n[:-4]: base64.b64encode(open(os.path.join(tool_art_dir, n), "rb").r
             for n in os.listdir(tool_art_dir) if n.endswith(".png") and not n.endswith("-source.png")}
 hire_roster = json.load(open(os.path.join(ROOT, "data", "hiring-roster.json")))
 founder_profiles = json.load(open(os.path.join(ROOT, "data", "founder-profiles.json")))
+founder_choices = "".join(
+    f'<button class="avatarChoice{" selected" if index == 0 else ""}" data-avatar="{profile["avatar"]}">'
+    f'<canvas width="64" height="96" aria-hidden="true"></canvas><span>{profile["displayName"]}</span></button>'
+    for index, profile in enumerate(founder_profiles["profiles"])
+)
 workforce_conversations = json.load(open(os.path.join(ROOT, "data", "workforce-conversations.json")))
 mentor_conversations = json.load(open(os.path.join(ROOT, "data", "zach-mentor-conversations.json")))
 customer_contracts = json.load(open(os.path.join(ROOT, "data", "customer-contracts.json")))
@@ -486,7 +491,7 @@ function selectControl(mode){const changed=inputMode!==mode;inputMode=mode;local
 document.querySelectorAll(".controlChoice").forEach(b=>b.onclick=()=>selectControl(b.dataset.control));
 document.getElementById("inputMode").onchange=e=>selectControl(e.target.value);renderControlSelection();
 let learnerMode=localStorage.getItem("reindustrialize.learnerMode")!=="off";
-function renderLearnerMode(){let button=document.getElementById("learnerMode");if(!button){button=document.createElement("button");button.id="learnerMode";document.querySelector(".controlSelect").append(button);button.onclick=()=>{learnerMode=!learnerMode;localStorage.setItem("reindustrialize.learnerMode",learnerMode?"on":"off");renderLearnerMode();};}button.textContent=learnerMode?"★ GUIDED LEARNER HELP: ON · BIG HINTS + EASIER FIRST JOBS":"GUIDED LEARNER HELP: OFF";button.setAttribute("aria-pressed",String(learnerMode));}
+function renderLearnerMode(){let button=document.getElementById("learnerMode");if(!button){button=document.createElement("button");button.id="learnerMode";document.querySelector(".controlSelect").append(button);button.onclick=()=>{learnerMode=!learnerMode;localStorage.setItem("reindustrialize.learnerMode",learnerMode?"on":"off");renderLearnerMode();};}button.textContent=learnerMode?"★ PLAY STYLE: GUIDED · KIDS, FAMILIES & NEW PLAYERS · BIG HINTS":"PLAY STYLE: STANDARD · EXPERIENCED PLAYERS · FULL SHOP TOUR";button.setAttribute("aria-pressed",String(learnerMode));button.setAttribute("aria-label","Change play style. Current: "+(learnerMode?"Guided":"Standard"));}
 renderLearnerMode();
 const kidExplain=text=>learnerMode?text.replaceAll("traveler","job instruction card").replaceAll("certification","proof of the exact metal type").replaceAll("work offset","saved part starting point").replaceAll("protrusion","tool length outside the holder").replaceAll("first article","first finished part"):text;
 function phoneInput(key){if(key==="menu"&&gameStarted){togglePause();return}if(!accepts("phone"))return;const d=DIRS[key];if(d)move(d[0],d[1],false,phoneRun);else if(key==="run")phoneRun=!phoneRun;else if(key==="action")interact();}
@@ -1288,6 +1293,14 @@ function start(){renderFounderPreview();setTitleArt();setStoryArt("opening");set
 const runtimeErrors=[];function recordRuntimeError(kind,message){runtimeErrors.push({at:new Date().toISOString(),kind,message:String(message).slice(0,500)});while(runtimeErrors.length>20)runtimeErrors.shift();cv.dataset.runtimeErrors=runtimeErrors.length;if(debugOpen)document.getElementById("debugHud").textContent+="\nLAST ERROR "+kind+": "+String(message).slice(0,100)}addEventListener("error",e=>recordRuntimeError("ERROR",e.message));addEventListener("unhandledrejection",e=>recordRuntimeError("PROMISE",e.reason));
 </script></body></html>
 """
+html = re.sub(
+    r'(<div class="avatarChoices">).*?(</div><input id="founderName")',
+    lambda match: match.group(1) + founder_choices + match.group(2),
+    html,
+    count=1,
+)
+html = html.replace("CREATE YOUR FOUNDER. BUILD AN INDUSTRIAL POWERHOUSE.", "CHOOSE ONE FOUNDER. BUILD YOUR INDUSTRIAL POWERHOUSE.")
+html = html.replace('<div class="hint">CHOOSE YOUR FOUNDER</div>', '<div class="hint">FOUNDER PROFILES · CHOOSE ONE</div>')
 html = (html.replace("__SPRITES__", json.dumps(sprites))
             .replace("__ATLAS__", json.dumps(atlas))
             .replace("__MAPS__", json.dumps(maps))

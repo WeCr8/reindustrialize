@@ -26,7 +26,7 @@ with sync_playwright() as p:
     page.wait_for_function("loaded === total")
 
     assert page.locator("#preFounder").is_visible()
-    expected_pre = ["WELCOME TO REINDUSTRIALIZE", "FROM GARAGE TO POWERHOUSE", "BUILD YOUR FOUNDER"]
+    expected_pre = ["WELCOME TO REINDUSTRIALIZE", "FROM GARAGE TO POWERHOUSE", "NEXT: MEET THE FOUNDERS"]
     assert expected_pre[0] in page.locator("#preFounderKicker").inner_text()
     page.locator("#preFounderNext").click()
     assert page.evaluate("zachAudio && !zachAudio.paused")

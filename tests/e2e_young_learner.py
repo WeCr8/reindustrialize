@@ -8,7 +8,7 @@ with sync_playwright() as p:
     page.on("pageerror",lambda error:errors.append(str(error)))
     page.add_init_script("localStorage.setItem('reindustrialize.learnerMode','on')")
     page.goto(URL);page.wait_for_function("loaded===total")
-    assert "GUIDED LEARNER HELP: ON" in page.locator("#learnerMode").inner_text()
+    assert "PLAY STYLE: GUIDED" in page.locator("#learnerMode").inner_text()
     for _ in range(4): page.locator("#preFounderNext").click()
     page.locator("#newGame").click()
     for _ in range(3): page.locator("#introNext").click()
