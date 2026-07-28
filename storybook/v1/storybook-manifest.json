@@ -1327,7 +1327,7 @@
       "path": "packages/assets/audio/generated/voice/zach_welcome.mp3",
       "src": "../../packages/assets/audio/generated/voice/zach_welcome.mp3",
       "lifecycle": "generated-candidate",
-      "referenceCount": 14,
+      "referenceCount": 13,
       "bytes": 86561
     },
     {
@@ -2527,7 +2527,7 @@
       "path": "packages/assets/audio/zach/zach_welcome.mp3",
       "src": "../../packages/assets/audio/zach/zach_welcome.mp3",
       "lifecycle": "implemented-reference",
-      "referenceCount": 14,
+      "referenceCount": 13,
       "bytes": 86561
     },
     {
@@ -4843,7 +4843,7 @@
     {
       "number": 4,
       "section": "Founder Selection",
-      "title": "Founder A",
+      "title": "Mateo Reyes",
       "text": "Machining Craft \u2014 First Part Focus: First setup each job receives a small quality bonus. Stats: technical 4/5, operations 3/5, business 2/5, leadership 2/5, innovation 2/5. Upgrade path: Master Machinist to Process Mentor.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
@@ -4856,7 +4856,7 @@
     {
       "number": 5,
       "section": "Founder Selection",
-      "title": "Founder B",
+      "title": "Marcus Cole",
       "text": "Shop Operations \u2014 Steady Flow: Completed handoffs reduce the next setup time. Stats: technical 3/5, operations 4/5, business 2/5, leadership 3/5, innovation 1/5. Upgrade path: Cell Leader to Operations Director.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
@@ -4869,7 +4869,7 @@
     {
       "number": 6,
       "section": "Founder Selection",
-      "title": "Founder C",
+      "title": "Elena Torres",
       "text": "Customer Growth \u2014 Trusted Supplier: High-quality deliveries improve repeat-order value. Stats: technical 2/5, operations 2/5, business 4/5, leadership 3/5, innovation 2/5. Upgrade path: Account Builder to Market Leader.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
@@ -4882,7 +4882,7 @@
     {
       "number": 7,
       "section": "Founder Selection",
-      "title": "Founder D",
+      "title": "Amina Brooks",
       "text": "Quality Systems \u2014 Evidence First: Inspection hints reveal one additional risk. Stats: technical 3/5, operations 3/5, business 2/5, leadership 2/5, innovation 3/5. Upgrade path: Quality Architect to Continuous Improvement Leader.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
@@ -4895,7 +4895,7 @@
     {
       "number": 8,
       "section": "Founder Selection",
-      "title": "Founder E",
+      "title": "Owen Miller",
       "text": "Industrial Software \u2014 Connected Decisions: Machine data objectives award additional founder XP. Stats: technical 3/5, operations 2/5, business 2/5, leadership 2/5, innovation 4/5. Upgrade path: Systems Builder to Digital Factory Leader.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
@@ -4908,7 +4908,7 @@
     {
       "number": 9,
       "section": "Founder Selection",
-      "title": "Founder F",
+      "title": "Claire Bennett",
       "text": "Finance & Reinvestment \u2014 Capital Discipline: The first equipment purchase in a facility receives a discount. Stats: technical 2/5, operations 3/5, business 4/5, leadership 2/5, innovation 2/5. Upgrade path: Investment Planner to Industrial Strategist.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
@@ -4921,7 +4921,7 @@
     {
       "number": 10,
       "section": "Founder Selection",
-      "title": "Founder G",
+      "title": "Samir Haddad",
       "text": "Supply Chain \u2014 Material Ready: Certified material deliveries arrive with reduced delay. Stats: technical 2/5, operations 4/5, business 3/5, leadership 2/5, innovation 2/5. Upgrade path: Supply Coordinator to Network Director.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
@@ -4934,7 +4934,7 @@
     {
       "number": 11,
       "section": "Founder Selection",
-      "title": "Founder H",
+      "title": "Layla Mansour",
       "text": "People Leadership \u2014 Teach the Team: Assigned employees gain role XP faster. Stats: technical 2/5, operations 2/5, business 3/5, leadership 4/5, innovation 2/5. Upgrade path: Coach to Plant Leader.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
@@ -4947,7 +4947,7 @@
     {
       "number": 12,
       "section": "Founder Selection",
-      "title": "Founder I",
+      "title": "Arjun Patel",
       "text": "Automation \u2014 Safe Automation: Automation prove-outs recover faster from a safe stop. Stats: technical 3/5, operations 2/5, business 2/5, leadership 2/5, innovation 4/5. Upgrade path: Automation Builder to Lights-Out Architect.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
@@ -4960,7 +4960,7 @@
     {
       "number": 13,
       "section": "Founder Selection",
-      "title": "Founder J",
+      "title": "Nisha Rao",
       "text": "Product & Process Design \u2014 Design for Making: New job reviews expose manufacturability risks before setup. Stats: technical 4/5, operations 2/5, business 2/5, leadership 2/5, innovation 3/5. Upgrade path: Design Engineer to Product Platform Leader.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
@@ -4973,337 +4973,337 @@
     {
       "number": 14,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder A",
+      "title": "Founder Title \u00b7 Mateo Reyes",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_01",
       "sprite": "../../packages/assets/sprites/av_m_01.png",
-      "note": "Exact Founder A identity overlay; shared male cinematic background."
+      "note": "Exact Mateo Reyes identity overlay; shared male cinematic background."
     },
     {
       "number": 15,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder B",
+      "title": "Founder Title \u00b7 Marcus Cole",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_founder_02_hd",
       "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
-      "note": "Exact Founder B identity overlay; shared male cinematic background."
+      "note": "Exact Marcus Cole identity overlay; shared male cinematic background."
     },
     {
       "number": 16,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder C",
+      "title": "Founder Title \u00b7 Elena Torres",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_founder_hd",
       "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
-      "note": "Exact Founder C identity overlay; shared female cinematic background."
+      "note": "Exact Elena Torres identity overlay; shared female cinematic background."
     },
     {
       "number": 17,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder D",
+      "title": "Founder Title \u00b7 Amina Brooks",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_founder_02_hd",
       "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
-      "note": "Exact Founder D identity overlay; shared female cinematic background."
+      "note": "Exact Amina Brooks identity overlay; shared female cinematic background."
     },
     {
       "number": 18,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder E",
+      "title": "Founder Title \u00b7 Owen Miller",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_blonde_hd",
       "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
-      "note": "Exact Founder E identity overlay; shared male cinematic background."
+      "note": "Exact Owen Miller identity overlay; shared male cinematic background."
     },
     {
       "number": 19,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder F",
+      "title": "Founder Title \u00b7 Claire Bennett",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_blonde_hd",
       "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
-      "note": "Exact Founder F identity overlay; shared female cinematic background."
+      "note": "Exact Claire Bennett identity overlay; shared female cinematic background."
     },
     {
       "number": 20,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder G",
+      "title": "Founder Title \u00b7 Samir Haddad",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_middle_eastern_hd",
       "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
-      "note": "Exact Founder G identity overlay; shared male cinematic background."
+      "note": "Exact Samir Haddad identity overlay; shared male cinematic background."
     },
     {
       "number": 21,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder H",
+      "title": "Founder Title \u00b7 Layla Mansour",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_middle_eastern_hd",
       "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
-      "note": "Exact Founder H identity overlay; shared female cinematic background."
+      "note": "Exact Layla Mansour identity overlay; shared female cinematic background."
     },
     {
       "number": 22,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder I",
+      "title": "Founder Title \u00b7 Arjun Patel",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_indian_hd",
       "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
-      "note": "Exact Founder I identity overlay; shared male cinematic background."
+      "note": "Exact Arjun Patel identity overlay; shared male cinematic background."
     },
     {
       "number": 23,
       "section": "Founder Scene Variants",
-      "title": "Founder Title \u00b7 Founder J",
+      "title": "Founder Title \u00b7 Nisha Rao",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-title-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_indian_hd",
       "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
-      "note": "Exact Founder J identity overlay; shared female cinematic background."
+      "note": "Exact Nisha Rao identity overlay; shared female cinematic background."
     },
     {
       "number": 24,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder A",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Mateo Reyes",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_01",
       "sprite": "../../packages/assets/sprites/av_m_01.png",
-      "note": "Exact Founder A identity overlay; shared male cinematic background."
+      "note": "Exact Mateo Reyes identity overlay; shared male cinematic background."
     },
     {
       "number": 25,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder B",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Marcus Cole",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_founder_02_hd",
       "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
-      "note": "Exact Founder B identity overlay; shared male cinematic background."
+      "note": "Exact Marcus Cole identity overlay; shared male cinematic background."
     },
     {
       "number": 26,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder C",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Elena Torres",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_founder_hd",
       "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
-      "note": "Exact Founder C identity overlay; shared female cinematic background."
+      "note": "Exact Elena Torres identity overlay; shared female cinematic background."
     },
     {
       "number": 27,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder D",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Amina Brooks",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_founder_02_hd",
       "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
-      "note": "Exact Founder D identity overlay; shared female cinematic background."
+      "note": "Exact Amina Brooks identity overlay; shared female cinematic background."
     },
     {
       "number": 28,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder E",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Owen Miller",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_blonde_hd",
       "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
-      "note": "Exact Founder E identity overlay; shared male cinematic background."
+      "note": "Exact Owen Miller identity overlay; shared male cinematic background."
     },
     {
       "number": 29,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder F",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Claire Bennett",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_blonde_hd",
       "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
-      "note": "Exact Founder F identity overlay; shared female cinematic background."
+      "note": "Exact Claire Bennett identity overlay; shared female cinematic background."
     },
     {
       "number": 30,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder G",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Samir Haddad",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_middle_eastern_hd",
       "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
-      "note": "Exact Founder G identity overlay; shared male cinematic background."
+      "note": "Exact Samir Haddad identity overlay; shared male cinematic background."
     },
     {
       "number": 31,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder H",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Layla Mansour",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_middle_eastern_hd",
       "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
-      "note": "Exact Founder H identity overlay; shared female cinematic background."
+      "note": "Exact Layla Mansour identity overlay; shared female cinematic background."
     },
     {
       "number": 32,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder I",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Arjun Patel",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_indian_hd",
       "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
-      "note": "Exact Founder I identity overlay; shared male cinematic background."
+      "note": "Exact Arjun Patel identity overlay; shared male cinematic background."
     },
     {
       "number": 33,
       "section": "Founder Scene Variants",
-      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Founder J",
+      "title": "Chapter 1 \u00b7 Garage Bay \u00b7 Nisha Rao",
       "text": "{playerName} signed the lease for {companyName} on an almost-empty garage bay. This is your manufacturing company: one borrowed machine, limited capital, and a chance to build something enormous. Welcome to the shop. This is your manufacturing company. You will start small, learn every station, and build it into an industrial powerhouse. I'm Zach. I'll teach you how real shops win while you choose the customers, equipment, people, and risks. Your first customer job is on the planning desk. I advise. You own every decision. Deliver Job 1042 well, reinvest the profit, outgrow this garage, hire a capable team, and build {companyName} into an American manufacturing powerhouse.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_indian_hd",
       "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
-      "note": "Exact Founder J identity overlay; shared female cinematic background."
+      "note": "Exact Nisha Rao identity overlay; shared female cinematic background."
     },
     {
       "number": 34,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder A",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Mateo Reyes",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_01",
       "sprite": "../../packages/assets/sprites/av_m_01.png",
-      "note": "Exact Founder A identity overlay; shared male cinematic background."
+      "note": "Exact Mateo Reyes identity overlay; shared male cinematic background."
     },
     {
       "number": 35,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder B",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Marcus Cole",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_founder_02_hd",
       "sprite": "../../packages/assets/sprites/av_m_founder_02_hd.png",
-      "note": "Exact Founder B identity overlay; shared male cinematic background."
+      "note": "Exact Marcus Cole identity overlay; shared male cinematic background."
     },
     {
       "number": 36,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder C",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Elena Torres",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_founder_hd",
       "sprite": "../../packages/assets/sprites/av_f_founder_hd.png",
-      "note": "Exact Founder C identity overlay; shared female cinematic background."
+      "note": "Exact Elena Torres identity overlay; shared female cinematic background."
     },
     {
       "number": 37,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder D",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Amina Brooks",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_founder_02_hd",
       "sprite": "../../packages/assets/sprites/av_f_founder_02_hd.png",
-      "note": "Exact Founder D identity overlay; shared female cinematic background."
+      "note": "Exact Amina Brooks identity overlay; shared female cinematic background."
     },
     {
       "number": 38,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder E",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Owen Miller",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_blonde_hd",
       "sprite": "../../packages/assets/sprites/av_m_blonde_hd.png",
-      "note": "Exact Founder E identity overlay; shared male cinematic background."
+      "note": "Exact Owen Miller identity overlay; shared male cinematic background."
     },
     {
       "number": 39,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder F",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Claire Bennett",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_blonde_hd",
       "sprite": "../../packages/assets/sprites/av_f_blonde_hd.png",
-      "note": "Exact Founder F identity overlay; shared female cinematic background."
+      "note": "Exact Claire Bennett identity overlay; shared female cinematic background."
     },
     {
       "number": 40,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder G",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Samir Haddad",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_middle_eastern_hd",
       "sprite": "../../packages/assets/sprites/av_m_middle_eastern_hd.png",
-      "note": "Exact Founder G identity overlay; shared male cinematic background."
+      "note": "Exact Samir Haddad identity overlay; shared male cinematic background."
     },
     {
       "number": 41,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder H",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Layla Mansour",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_middle_eastern_hd",
       "sprite": "../../packages/assets/sprites/av_f_middle_eastern_hd.png",
-      "note": "Exact Founder H identity overlay; shared female cinematic background."
+      "note": "Exact Layla Mansour identity overlay; shared female cinematic background."
     },
     {
       "number": 42,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder I",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Arjun Patel",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
       "founder": "av_m_indian_hd",
       "sprite": "../../packages/assets/sprites/av_m_indian_hd.png",
-      "note": "Exact Founder I identity overlay; shared male cinematic background."
+      "note": "Exact Arjun Patel identity overlay; shared male cinematic background."
     },
     {
       "number": 43,
       "section": "Founder Scene Variants",
-      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Founder J",
+      "title": "Chapter 2 \u00b7 Job Shop \u00b7 Nisha Rao",
       "text": "{companyName} delivered five customer jobs and reinvested the profit. You are moving into a real job shop with more CNC capacity, a toolroom, and room for your first hires. This job shop gives you more capacity and more ways to fail. Standardize the handoffs before volume exposes them. You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
       "founder": "av_f_indian_hd",
       "sprite": "../../packages/assets/sprites/av_f_indian_hd.png",
-      "note": "Exact Founder J identity overlay; shared female cinematic background."
+      "note": "Exact Nisha Rao identity overlay; shared female cinematic background."
     },
     {
       "number": 44,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder A",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Mateo Reyes",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5312,13 +5312,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 45,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder B",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Marcus Cole",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5327,13 +5327,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 46,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder C",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Elena Torres",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5342,13 +5342,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 47,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder D",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Amina Brooks",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5357,13 +5357,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 48,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder E",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Owen Miller",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5372,13 +5372,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 49,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder F",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Claire Bennett",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5387,13 +5387,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 50,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder G",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Samir Haddad",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5402,13 +5402,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 51,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder H",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Layla Mansour",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5417,13 +5417,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 52,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder I",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Arjun Patel",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5432,13 +5432,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 53,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Founder J",
+      "title": "CHAPTER 1 \u00b7 THE FIRST PROMISE \u00b7 Nisha Rao",
       "text": "Your first customer job is on the planning desk. I advise. You own every decision.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5447,13 +5447,13 @@
       "voice": "zach_first_job",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_call",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_job.mp3"
     },
     {
       "number": 54,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder A",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Mateo Reyes",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5462,13 +5462,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 55,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder B",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Marcus Cole",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5477,13 +5477,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 56,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder C",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Elena Torres",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5492,13 +5492,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 57,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder D",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Amina Brooks",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5507,13 +5507,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 58,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder E",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Owen Miller",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5522,13 +5522,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 59,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder F",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Claire Bennett",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5537,13 +5537,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 60,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder G",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Samir Haddad",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5552,13 +5552,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 61,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder H",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Layla Mansour",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5567,13 +5567,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 62,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder I",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Arjun Patel",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5582,13 +5582,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 63,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Founder J",
+      "title": "FOUNDER DECISION \u00b7 ACCEPT THE WORK \u00b7 Nisha Rao",
       "text": "The customer is hiring your company, not me. Read the requirements, decide whether your shop can keep the promise, and release the work order only when you are ready.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5597,13 +5597,13 @@
       "voice": "zach_first_customer_owner",
       "storySequence": "first_customer",
       "storyBeat": "first_customer_owner",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_customer_owner.mp3"
     },
     {
       "number": 64,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder A",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Mateo Reyes",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5612,13 +5612,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 65,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder B",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Marcus Cole",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5627,13 +5627,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 66,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder C",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Elena Torres",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5642,13 +5642,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 67,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder D",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Amina Brooks",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5657,13 +5657,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 68,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder E",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Owen Miller",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5672,13 +5672,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 69,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder F",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Claire Bennett",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5687,13 +5687,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 70,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder G",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Samir Haddad",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5702,13 +5702,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 71,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder H",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Layla Mansour",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5717,13 +5717,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 72,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder I",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Arjun Patel",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5732,13 +5732,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 73,
       "section": "Chapter 1 Milestones",
-      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Founder J",
+      "title": "MATERIAL RECEIVING \u00b7 NOX DELIVERY \u00b7 Nisha Rao",
       "text": "The NOX delivery has arrived with the material certification. Verify the alloy, dimensions, quantity, and paperwork before you release this stock to your process.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5747,13 +5747,13 @@
       "voice": "zach_nox_delivery",
       "storySequence": "nox_delivery",
       "storyBeat": "nox_delivery_arrives",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_nox_delivery.mp3"
     },
     {
       "number": 74,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder A",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Mateo Reyes",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5762,13 +5762,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 75,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder B",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Marcus Cole",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5777,13 +5777,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 76,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder C",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Elena Torres",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5792,13 +5792,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 77,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder D",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Amina Brooks",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5807,13 +5807,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 78,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder E",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Owen Miller",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5822,13 +5822,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 79,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder F",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Claire Bennett",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5837,13 +5837,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 80,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder G",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Samir Haddad",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5852,13 +5852,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 81,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder H",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Layla Mansour",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5867,13 +5867,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 82,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder I",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Arjun Patel",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5882,13 +5882,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 83,
       "section": "Chapter 1 Milestones",
-      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Founder J",
+      "title": "QUALITY GATE \u00b7 FIRST ARTICLE \u00b7 Nisha Rao",
       "text": "The first part is evidence, not inventory. Inspect it before you commit the rest of the material.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5897,13 +5897,13 @@
       "voice": "zach_first_article",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_evidence",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_article.mp3"
     },
     {
       "number": 84,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder A",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Mateo Reyes",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5912,13 +5912,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 85,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder B",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Marcus Cole",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5927,13 +5927,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 86,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder C",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Elena Torres",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5942,13 +5942,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 87,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder D",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Amina Brooks",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5957,13 +5957,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 88,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder E",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Owen Miller",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -5972,13 +5972,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 89,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder F",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Claire Bennett",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -5987,13 +5987,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 90,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder G",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Samir Haddad",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6002,13 +6002,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 91,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder H",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Layla Mansour",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6017,13 +6017,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 92,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder I",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Arjun Patel",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6032,13 +6032,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 93,
       "section": "Chapter 1 Milestones",
-      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Founder J",
+      "title": "PROCESS VERIFIED \u00b7 RECORD THE RESULT \u00b7 Nisha Rao",
       "text": "Good part. Record what worked so the next operator can repeat it.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6047,13 +6047,13 @@
       "voice": "zach_quality_pass",
       "storySequence": "first_verified_article",
       "storyBeat": "first_article_record",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_quality_pass.mp3"
     },
     {
       "number": 94,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder A",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Mateo Reyes",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6062,13 +6062,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 95,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder B",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Marcus Cole",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6077,13 +6077,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 96,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder C",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Elena Torres",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6092,13 +6092,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 97,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder D",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Amina Brooks",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6107,13 +6107,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 98,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder E",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Owen Miller",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6122,13 +6122,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 99,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder F",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Claire Bennett",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6137,13 +6137,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 100,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder G",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Samir Haddad",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6152,13 +6152,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 101,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder H",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Layla Mansour",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6167,13 +6167,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 102,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder I",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Arjun Patel",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6182,13 +6182,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 103,
       "section": "Chapter 1 Milestones",
-      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Founder J",
+      "title": "TEAM MILESTONE \u00b7 FIRST HIRE \u00b7 Nisha Rao",
       "text": "Hire for the work you need now and the capability you will need next. A strong team compounds.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6197,13 +6197,13 @@
       "voice": "zach_hiring",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_team",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_hiring.mp3"
     },
     {
       "number": 104,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder A",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Mateo Reyes",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6212,13 +6212,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 105,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder B",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Marcus Cole",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6227,13 +6227,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 106,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder C",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Elena Torres",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6242,13 +6242,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 107,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder D",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Amina Brooks",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6257,13 +6257,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 108,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder E",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Owen Miller",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6272,13 +6272,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 109,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder F",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Claire Bennett",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6287,13 +6287,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 110,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder G",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Samir Haddad",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6302,13 +6302,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 111,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder H",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Layla Mansour",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6317,13 +6317,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 112,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder I",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Arjun Patel",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-male-founder-v1.png",
       "status": "implemented",
@@ -6332,13 +6332,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 113,
       "section": "Chapter 1 Milestones",
-      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Founder J",
+      "title": "FOUNDER RESPONSIBILITY \u00b7 LEAD THE TEAM \u00b7 Nisha Rao",
       "text": "You made the hiring decision. Now give your new teammate a clear station assignment, a safe standard, and enough context to succeed in your company.",
       "image": "../../packages/assets/story-opening-female-founder-v1.png",
       "status": "implemented",
@@ -6347,13 +6347,13 @@
       "voice": "zach_first_hire_owner",
       "storySequence": "first_hire",
       "storyBeat": "first_hire_owner",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_first_hire_owner.mp3"
     },
     {
       "number": 114,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder A",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Mateo Reyes",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6362,13 +6362,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 115,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder B",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Marcus Cole",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6377,13 +6377,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 116,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder C",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Elena Torres",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6392,13 +6392,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 117,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder D",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Amina Brooks",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6407,13 +6407,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 118,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder E",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Owen Miller",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6422,13 +6422,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 119,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder F",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Claire Bennett",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6437,13 +6437,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 120,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder G",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Samir Haddad",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6452,13 +6452,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 121,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder H",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Layla Mansour",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6467,13 +6467,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 122,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder I",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Arjun Patel",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6482,13 +6482,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 123,
       "section": "Chapter 1 Milestones",
-      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Founder J",
+      "title": "CHAPTER 1 COMPLETE \u00b7 THE FIRST PROMISE \u00b7 Nisha Rao",
       "text": "Your company has shipped five customer jobs at a passing quality average. The garage proved your process, your judgment, and your promise to customers.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6497,13 +6497,13 @@
       "voice": "zach_garage_graduation",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_proof",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_garage_graduation.mp3"
     },
     {
       "number": 124,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder A",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Mateo Reyes",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6512,13 +6512,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder A identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Mateo Reyes identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 125,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder B",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Marcus Cole",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6527,13 +6527,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder B identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Marcus Cole identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 126,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder C",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Elena Torres",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6542,13 +6542,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder C identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Elena Torres identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 127,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder D",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Amina Brooks",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6557,13 +6557,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder D identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Amina Brooks identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 128,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder E",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Owen Miller",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6572,13 +6572,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder E identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Owen Miller identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 129,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder F",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Claire Bennett",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6587,13 +6587,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder F identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Claire Bennett identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 130,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder G",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Samir Haddad",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6602,13 +6602,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder G identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Samir Haddad identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 131,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder H",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Layla Mansour",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6617,13 +6617,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder H identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Layla Mansour identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 132,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder I",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Arjun Patel",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-male-founder-v1.png",
       "status": "implemented",
@@ -6632,13 +6632,13 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder I identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Arjun Patel identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {
       "number": 133,
       "section": "Chapter 1 Milestones",
-      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Founder J",
+      "title": "ZACH \u00b7 THE NEXT FACILITY \u00b7 Nisha Rao",
       "text": "You have outgrown the garage. Now build systems, not just parts.",
       "image": "../../packages/assets/story-expansion-female-founder-v1.png",
       "status": "implemented",
@@ -6647,7 +6647,7 @@
       "voice": "zach_expansion",
       "storySequence": "garage_graduation",
       "storyBeat": "garage_graduation_expansion",
-      "note": "Exact runtime caption and Founder J identity proof; Zach is mentor and the founder owns the company decision.",
+      "note": "Exact runtime caption and Nisha Rao identity proof; Zach is mentor and the founder owns the company decision.",
       "voiceSrc": "../../packages/assets/audio/zach/zach_expansion.mp3"
     },
     {

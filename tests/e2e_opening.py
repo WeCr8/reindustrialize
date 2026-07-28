@@ -1,10 +1,12 @@
 """Full opening-shift E2E test. Run with: python tests/e2e_opening.py"""
 from pathlib import Path
+import json
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 URL = (ROOT / "apps/wecr8-info/prototypes/shop-floor-viewer.html").as_uri()
 EXPECTED_ZACH_VOICES = len(list((ROOT / "packages/assets/audio/zach").glob("*.mp3")))
+EXPECTED_FOUNDERS = json.loads((ROOT / "data/founder-profiles.json").read_text(encoding="utf-8"))["profiles"]
 
 
 def stand_by(page, sprite):
@@ -36,7 +38,7 @@ with sync_playwright() as p:
 
     assert page.locator("#titleScreen").is_visible()
     assert page.locator(".avatarChoice").count() == 10
-    assert page.locator(".avatarChoice span").all_inner_texts() == [f"Founder {letter}" for letter in "ABCDEFGHIJ"]
+    assert page.locator(".avatarChoice span").all_inner_texts() == [founder["displayName"] for founder in EXPECTED_FOUNDERS]
     assert page.locator(".founderCardPortrait").count() == 10
     assert page.locator("#founderProfile").is_visible()
     assert "FIRST PART FOCUS" in page.locator("#founderProfile").inner_text().upper()
@@ -46,6 +48,7 @@ with sync_playwright() as p:
         assert page.locator("#founderProfile .atlasPortrait").is_visible()
         assert page.locator(f'[data-avatar="{avatar}"] .founderCardPortrait').is_visible()
         assert "SIGNATURE SKILL" in page.locator("#founderProfile").inner_text()
+        assert page.locator("#founderProfile .founderBackstory").inner_text().strip()
         assert "PLAY STYLE:" in page.locator("#founderProfile").inner_text()
         assert "GROWTH AREA:" in page.locator("#founderProfile").inner_text()
         assert page.locator("#founderProfile .founderStat").count() == 5
