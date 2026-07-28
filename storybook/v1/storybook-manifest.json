@@ -3293,7 +3293,7 @@
       "path": "packages/assets/sprites/lathe_cnc_t2.png",
       "src": "../../packages/assets/sprites/lathe_cnc_t2.png",
       "lifecycle": "implemented-reference",
-      "referenceCount": 32,
+      "referenceCount": 40,
       "bytes": 35479,
       "dimensions": [
         192,
@@ -7000,12 +7000,12 @@
       "number": 156,
       "section": "Station Missions & Timers",
       "title": "CNC Lathe",
-      "text": "The lathe rotates stock against controlled tools for turned diameters, faces, grooves, and threads.",
+      "text": "The lathe runs qualified-worker production queues in parallel with the VMC and converts controlled saw blanks into finished turned output.",
       "image": "../../packages/assets/equipment/lathe-open-v1.png",
-      "status": "orientation",
+      "status": "playable",
       "location": "lathe_cnc_t2",
       "instructions": [
-        "Inspect chuck pressure, stock stickout, turret clearance, and the program.",
+        "Route a prepared blank, assign a qualified worker, verify chuck pressure, stock stickout, turret clearance, and collect the completed turned part.",
         "Standard station time: 12 minutes.",
         "Selected missions route through safe prerequisites; active timers continue while the founder explores or closes the browser.",
         "No unattended production queue is exposed unless this workflow becomes mechanically playable."

@@ -62,4 +62,4 @@ if (!byMachine.has("restroom_station")) fail("restroom_station facility maintena
 const playable = records.filter((record) => record.implementationStatus === "playable").map((record) => record.machineId);
 const orientation = records.filter((record) => record.implementationStatus !== "playable").map((record) => record.machineId);
 console.log(`Maintenance visuals OK: ${records.length} assets, ${Object.keys(manifest.atlases).length} atlases, ${expectedStates.length} states each.`);
-console.log(`Mechanically playable: ${playable.join(", ")}. Visual/orientation ready: ${orientation.join(", ")}.`);
+console.log(`Maintenance recovery implemented: ${playable.join(", ")}. Maintenance visuals only: ${orientation.join(", ")}.`);

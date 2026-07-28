@@ -28,7 +28,7 @@ with sync_playwright() as playwright:
     assert page.evaluate("stationWorkerQueue('saw_t1').length") == 3
     assert page.evaluate("stationWorkerQueue('saw_t1').filter(item=>item.status==='running').length") == 2
     assert page.evaluate("stationWorkerQueue('saw_t1').filter(item=>item.status==='queued').length") == 1
-    assert page.evaluate("stationWorkerQueue('saw_t1').every(item=>item.durationMs===5*60*1000)")
+    assert page.evaluate("stationWorkerQueue('saw_t1').every(item=>item.durationMs===18*1000)")
     page.locator("#workerFlag-saw_t1").wait_for()
 
     # Saved absolute times and queued work survive a browser restart.
@@ -50,24 +50,37 @@ with sync_playwright() as playwright:
     assert page.evaluate("coins") == coins_before
     assert page.evaluate("state.workerWip.sawBlanks") == 3
 
-    # Collected saw WIP can be routed into a qualified VMC queue and reserves the worker.
-    page.evaluate("assignWorker(HIRE_ROSTER.candidates.find(entry=>entry.id==='luis_ortega'),'vmc_t2');state.toolReady=true;state.toolsSet=['PRIMARY','PROBE','CHAMFER']")
+    # Collected saw WIP can be routed concurrently through qualified VMC and lathe workers.
+    page.evaluate("""
+      assignWorker(HIRE_ROSTER.candidates.find(entry=>entry.id==='luis_ortega'),'vmc_t2');
+      const latheCandidate=HIRE_ROSTER.candidates.find(entry=>entry.id==='maya_chen');
+      hired.add(latheCandidate.id);
+      workers.push({id:latheCandidate.id,candidate:latheCandidate,x:P.x,y:P.y,assignment:'lathe_cnc_t2',status:'WORKING',nextMove:Date.now()+999999,workPulse:0});
+      state.toolReady=true;state.toolsSet=['PRIMARY','PROBE','CHAMFER'];
+    """)
     assert page.evaluate("queueWorkerTask('vmc_t2')")
     assert page.evaluate("state.workerWip.sawBlanks") == 2
+    assert page.evaluate("queueWorkerTask('lathe_cnc_t2')")
+    assert page.evaluate("state.workerWip.sawBlanks") == 1
+    assert page.evaluate("stationWorkerQueue('vmc_t2')[0].status") == "running"
+    assert page.evaluate("stationWorkerQueue('lathe_cnc_t2')[0].status") == "running"
+    assert page.evaluate("stationWorkerQueue('lathe_cnc_t2')[0].operation") == "TURN PART"
     page.evaluate("assignWorker(HIRE_ROSTER.candidates.find(entry=>entry.id==='luis_ortega'),'saw_t1')")
     assert page.evaluate("workers[0].assignment") == "vmc_t2"
     page.evaluate("stationWorkerQueue('vmc_t2')[0].endAt=Date.now()-1;processWorkerQueues();collectWorkerTasks('vmc_t2')")
     assert page.evaluate("state.workerWip.finishedParts") == 1
     assert page.evaluate("coins") > coins_before
+    page.evaluate("stationWorkerQueue('lathe_cnc_t2')[0].endAt=Date.now()-1;processWorkerQueues();collectWorkerTasks('lathe_cnc_t2')")
+    assert page.evaluate("state.workerWip.finishedParts") == 2
 
     # Orientation/management surfaces never pretend to be unattended production equipment.
     assert not page.evaluate("queueableStation('planning_desk')")
-    assert not page.evaluate("queueableStation('lathe_cnc_t2')")
+    assert page.evaluate("queueableStation('lathe_cnc_t2')")
 
     # Runtime qualification is enforced even if stale state assigns the wrong worker.
     page.evaluate("workers[0].candidate={...workers[0].candidate,qualifications:['vmc_t2']};workers[0].assignment='saw_t1'")
     assert not page.evaluate("queueWorkerTask('saw_t1')")
-    assert page.evaluate("""(()=>{const snapshot=saveSnapshot();snapshot.state.workerQueues.lathe_cnc_t2=[{station:'lathe_cnc_t2'}];try{validateSaveSnapshot(snapshot);return false}catch{return true}})()""")
+    assert page.evaluate("""(()=>{const snapshot=saveSnapshot();snapshot.state.workerQueues.planning_desk=[{station:'planning_desk'}];try{validateSaveSnapshot(snapshot);return false}catch{return true}})()""")
     assert not errors, errors
     browser.close()
 

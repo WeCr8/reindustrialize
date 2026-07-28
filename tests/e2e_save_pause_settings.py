@@ -12,11 +12,13 @@ try:
     time.sleep(0.8)
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page = browser.new_page(viewport={"width": 1440, "height": 1000})
+        context = browser.new_context(viewport={"width": 1440, "height": 1000})
+        page = context.new_page()
         page.goto("http://127.0.0.1:8803/game")
         page.wait_for_function("loaded===total")
         page.evaluate("preFounder.classList.add('closed')")
         page.locator("#newGame").click()
+        assert page.evaluate("JSON.parse(localStorage.getItem('reindustrialize.save.v1')).companyName") == "AMERICAN FORGE WORKS"
         page.evaluate("""intro.classList.add('closed'); state.jobsShipped=2; coins=7123; P.x=7; P.y=8;
             tourActive=true; tourMandatory=true; tourIndex=3; tourPhase=2; tourPracticeStep=1;
             completedTourStops.clear(); SHOP_TOUR.stops.slice(0,3).forEach(stop=>completedTourStops.add(stop.id));""")
@@ -32,7 +34,9 @@ try:
         page.locator("#resumeGame").click()
         assert page.evaluate("paused") is False
 
-        page.reload()
+        page.close()
+        page = context.new_page()
+        page.goto("http://127.0.0.1:8803/game")
         page.wait_for_function("loaded===total")
         page.evaluate("preFounder.classList.add('closed')")
         assert page.locator("#continueGame").is_enabled()

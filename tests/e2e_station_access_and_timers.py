@@ -61,7 +61,7 @@ with sync_playwright() as playwright:
     )
     page.locator("#cutStock").click()
     saw_duration = page.evaluate("stationRuns().saw_t1.durationMs")
-    assert saw_duration == 5 * 60 * 1000
+    assert saw_duration == 18 * 1000
     assert page.locator("#sawFlag").is_visible()
     assert "REMAINING" in page.locator("#sawFlag").inner_text()
     page.reload()
@@ -77,7 +77,7 @@ with sync_playwright() as playwright:
 
     # The initial VMC has a ten-minute persisted cycle, progress UI, and inspection-ready state.
     page.evaluate("state.toolReady=true;state.toolsSet=['PRIMARY','PROBE','CHAMFER'];startAutonomousRun(state.job)")
-    assert page.evaluate("state.machineRun.durationMs") == 10 * 60 * 1000
+    assert page.evaluate("state.machineRun.durationMs") == 40 * 1000
     assert "REMAINING" in page.locator("#machineFlag").inner_text()
     page.locator("#machineFlag").click()
     page.locator("#activeStationTimer").wait_for()

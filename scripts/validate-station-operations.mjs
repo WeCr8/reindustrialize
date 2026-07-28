@@ -24,6 +24,9 @@ for (const map of maps) {
     if (!Number.isFinite(station.cycleMinutes) || station.cycleMinutes < 0) {
       failures.push(`${placement.sprite}: cycleMinutes must be a non-negative number`);
     }
+    if (operations.timeModel.queueableStations.includes(placement.sprite) && (!Number.isFinite(station.gameplaySeconds) || station.gameplaySeconds < 10 || station.gameplaySeconds > 60)) {
+      failures.push(`${placement.sprite}: playable RPG wait must be 10–60 seconds`);
+    }
   }
 }
 
@@ -38,7 +41,7 @@ for (const [sprite, station] of Object.entries(operations.stations)) {
   if (station.mode === "orientation" && queueableStations.includes(sprite)) failures.push(`${sprite}: orientation-only station cannot expose production queues`);
 }
 
-for (const [sprite, minutes] of [["saw_t1", 5], ["vmc_t2", 10]]) {
+for (const [sprite, minutes] of [["saw_t1", 5], ["vmc_t2", 10], ["lathe_cnc_t2", 12]]) {
   const station = operations.stations[sprite];
   if (station?.mode !== "playable") failures.push(`${sprite}: must remain playable`);
   if (station?.cycleMinutes !== minutes) failures.push(`${sprite}: expected ${minutes}-minute standard cycle`);
