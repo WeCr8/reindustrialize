@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "rule": "Every purchasable equipment type has a stopped, repairable visual state. Damage never depicts an unsafe running machine or an injured person.",
+  "atlases": {
+    "garage": {"asset": "garage-equipment-damaged-atlas-v1", "columns": 3, "rows": 1},
+    "aerospace": {"asset": "aerospace-equipment-market-damaged-atlas-v1", "columns": 3, "rows": 3},
+    "robotics": {"asset": "factory-robotics-damaged-atlas-v1", "columns": 2, "rows": 2}
+  },
+  "states": [
+    {"equipment":"saw","atlas":"garage","cell":0,"fault":"blade and coolant service","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician"]},
+    {"equipment":"vmc","atlas":"garage","cell":1,"fault":"controls, coolant, or spindle service","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"inspection","atlas":"garage","cell":2,"fault":"calibration failure","qualifiedRoles":["quality_inspector","maintenance_technician"]},
+    {"equipment":"tig_manual","atlas":"aerospace","cell":3,"fault":"torch, extraction, or power fault","qualifiedRoles":["maintenance_technician","electrical_maintenance_technician"]},
+    {"equipment":"surface_grinder","atlas":"aerospace","cell":4,"fault":"wheel, lubrication, or axis service","qualifiedRoles":["mechanical_maintenance_technician","maintenance_technician"]},
+    {"equipment":"cnc_lathe","atlas":"aerospace","cell":1,"fault":"drive, turret, or coolant fault","qualifiedRoles":["maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"polymer_print_farm","atlas":"aerospace","cell":6,"fault":"extrusion, thermal, or ventilation fault","qualifiedRoles":["maintenance_technician","electrical_maintenance_technician"]},
+    {"equipment":"five_axis_vmc","atlas":"aerospace","cell":0,"fault":"rotary axis, spindle, or controls fault","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"robotic_tig","atlas":"aerospace","cell":2,"fault":"robot, weld source, or interlock fault","qualifiedRoles":["automation_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"metal_additive","atlas":"aerospace","cell":5,"fault":"laser, gas, filter, or recoater fault","qualifiedRoles":["maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"cmm","atlas":"aerospace","cell":8,"fault":"probe, air, axis, or calibration fault","qualifiedRoles":["maintenance_technician","quality_inspector"]},
+    {"equipment":"xray","atlas":"aerospace","cell":7,"fault":"interlock or imaging system fault","qualifiedRoles":["electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"cobot","atlas":"aerospace","cell":2,"fault":"interlock, gripper, or controls fault","qualifiedRoles":["automation_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"starter_tugger_agv","atlas":"robotics","cell":0,"fault":"battery, drive, or route sensor fault","qualifiedRoles":["maintenance_technician","electrical_maintenance_technician"]},
+    {"equipment":"amr_wip_fleet","atlas":"robotics","cell":1,"fault":"wheel, lidar, battery, or fleet fault","qualifiedRoles":["automation_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"heavy_mobile_robot_platform","atlas":"robotics","cell":2,"fault":"drive, docking, or safety interlock fault","qualifiedRoles":["automation_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"equipment":"humanoid_factory_assistant","atlas":"robotics","cell":3,"fault":"supervised dock, actuator, or diagnostic fault","qualifiedRoles":["automation_technician","electrical_maintenance_technician","reliability_lead"]}
+  ]
+}

@@ -5,7 +5,7 @@ import {Promo} from './promo';
 import {FullGameplayV3} from './full-gameplay';
 import fullGameplay from '../../../data/full-gameplay-video.json';
 import {RealGameplayPromo,horizontal60,gameplay45,social30} from './real-gameplay-promo';
-import {HumanBotFullGameplayV5,botHorizontal60,botFeature45,botSocial30} from './human-bot-gameplay';
+import {HeroCampaignV7,HeroCampaignV8,HeroGameplayDemoV6,HumanBotFullGameplayV5,botHorizontal60,botFeature45,botSocial30} from './human-bot-gameplay';
 import humanBot from '../../../data/human-bot-gameplay-video.json';
 export const RemotionRoot: React.FC = () => <>
  <Composition id="ReindustrializeDemo" component={GameDemo} durationInFrames={1800} fps={30} width={1920} height={1080}/>
@@ -40,4 +40,7 @@ export const RemotionRoot: React.FC = () => <>
  <Composition id="HumanBotFeature45V5" component={RealGameplayPromo} defaultProps={{segments:botFeature45,music:'precision_run',edition:'BOT FEATURE V5',source:humanBot.source}} durationInFrames={1350} fps={30} width={1920} height={1080}/>
  <Composition id="HumanBotVerticalShortV5" component={RealGameplayPromo} defaultProps={{segments:botSocial30,music:'garage_shift',edition:'BOT SHORT V5',source:humanBot.source}} durationInFrames={900} fps={30} width={1080} height={1920}/>
  <Composition id="HumanBotSquareV5" component={RealGameplayPromo} defaultProps={{segments:botSocial30,music:'factory_expansion',edition:'BOT SOCIAL V5',source:humanBot.source}} durationInFrames={900} fps={30} width={1080} height={1080}/>
+ <Composition id="HeroGameplayDemoV6" component={HeroGameplayDemoV6} durationInFrames={1350} fps={30} width={1920} height={1080}/>
+ <Composition id="HeroCampaignV7" component={HeroCampaignV7} durationInFrames={1440} fps={30} width={1920} height={1080}/>
+ <Composition id="HeroCampaignV8" component={HeroCampaignV8} durationInFrames={1440} fps={30} width={1920} height={1080}/>
 </>;

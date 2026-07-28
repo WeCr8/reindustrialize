@@ -44,6 +44,10 @@ Release truth is separate from design completion. Chapter 1 is the playable alph
 
 The intended main campaign is a full-length progression of approximately **25–35 hours**. Optional contracts, mastery grades, hidden interactions, team stories, and Easter eggs extend a thorough playthrough to approximately **40–55 hours** without making repetition a graduation requirement. Chapters 1–2 remain family-friendly and highly guided; deeper management constraints phase in only after the player has learned the underlying shop actions through play.
 
+## Industry direction
+
+Chapters 1–2 teach a common job-shop foundation and never force a new player to choose an industry they do not understand. Chapter 3 introduces pilot contracts across multiple markets. The founder selects a primary specialization in Chapter 4, scales its departments and supply chain in Chapter 5, and completes a sector-specific strategic program in Chapter 6. Adjacent contracts remain available and one pre-scale pivot prevents a long save from becoming trapped. See [`INDUSTRY_SPECIALIZATION_ROADMAP.md`](INDUSTRY_SPECIALIZATION_ROADMAP.md) and [`data/industry-specializations.json`](../data/industry-specializations.json).
+
 ## Easter egg scale
 
 Target **24 discoverable Easter eggs** across the six chapters: three visible environmental secrets and one deeper multi-step secret per facility. Rewards should be original and manufacturing-themed—hidden Zach shop sayings, unusual machine animations, prototype parts, founder cosmetics, historic manufacturing references, secret NOX shipments, and a final mentor-room reveal. Discovery may grant cosmetics, lore, music, or modest coins, but never competency-gate progress or paid power.

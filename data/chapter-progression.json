@@ -21,25 +21,25 @@
     {
       "chapter": 2, "levels": [6, 10], "facility": "job_shop", "targetHours": [3, 4], "releaseStatus": "development",
       "title": "From Craftsperson to Team", "graduation": "Job-Shop Owner",
-      "taskArcs": ["quote and route repeat work", "hire operator and programmer", "assign qualifications", "run VMC and lathe jobs concurrently", "build inspection and shipping disciplines", "cover payroll and reinvest profit"],
+      "taskArcs": ["quote and route repeat work", "hire operator and programmer", "assign qualifications", "run VMC and lathe jobs concurrently", "qualify manual TIG welding and surface grinding", "print fixtures and soft jaws", "build inspection and shipping disciplines", "cover payroll and reinvest profit"],
       "gate": {"jobsShippedInChapter": 12, "requiredProductionOperations": 48, "minimumAverageQuality": 4.0, "onTimeRate": 0.85, "maximumScrapRate": 0.12, "headcount": 3, "peakConcurrentJobs": 2, "concurrentJobsCompleted": 5, "documentedInspections": 8, "positiveCashShifts": 3}
     },
     {
       "chapter": 3, "levels": [11, 15], "facility": "connected_plant", "targetHours": [4, 5.5], "releaseStatus": "locked",
       "title": "Manage What You Cannot See", "graduation": "Connected-Plant Leader",
-      "taskArcs": ["connect machines", "read OEE and downtime", "schedule machining cells", "establish maintenance and toolroom ownership", "recover bottlenecks", "lead a multi-shift team"],
+      "taskArcs": ["connect machines", "read OEE and downtime", "schedule machining cells", "learn indexed and simultaneous 5-axis CNC", "validate robotic TIG schedules", "establish maintenance and toolroom ownership", "recover bottlenecks", "lead a multi-shift team"],
       "gate": {"jobsShippedInChapter": 20, "requiredProductionOperations": 80, "minimumAverageQuality": 4.1, "onTimeRate": 0.88, "maximumScrapRate": 0.08, "machinesConnected": 8, "oeeReviewDays": 10, "rootCauseRecoveries": 3, "headcount": 8, "peakConcurrentJobs": 3}
     },
     {
       "chapter": 4, "levels": [16, 20], "facility": "smart_factory", "targetHours": [5, 6.5], "releaseStatus": "locked",
       "title": "Standardize and Automate", "graduation": "Smart-Factory Architect",
-      "taskArcs": ["preset and control tools", "standardize digital handoffs", "design fixtures and cells", "install safe cobots", "validate automation capability", "improve flow without hiding defects"],
+      "taskArcs": ["preset and control tools", "standardize digital handoffs", "design fixtures and cells", "commission metal additive and post-processing", "program traceable CMM inspection", "install safe cobots", "validate automation capability", "improve flow without hiding defects"],
       "gate": {"jobsShippedInChapter": 30, "requiredProductionOperations": 120, "minimumAverageQuality": 4.2, "onTimeRate": 0.9, "maximumScrapRate": 0.06, "headcount": 12, "peakConcurrentJobs": 4, "toolsPreset": 100, "cleanHandoffStreak": 14, "validatedAutomatedCells": 3, "processImprovements": 5}
     },
     {
       "chapter": 5, "levels": [21, 25], "facility": "lights_out_complex", "targetHours": [5.5, 7.5], "releaseStatus": "locked",
       "title": "Reliability at Industrial Scale", "graduation": "Lights-Out Operations Leader",
-      "taskArcs": ["design unattended-ready processes", "coordinate robots and AMRs", "protect material flow", "build preventive maintenance", "plan fault recovery", "complete reliable night production"],
+      "taskArcs": ["design unattended-ready processes", "coordinate robots and AMRs", "operate controlled industrial X-ray inspection", "protect aerospace traceability and material flow", "build preventive maintenance", "plan fault recovery", "complete reliable night production"],
       "gate": {"jobsShippedInChapter": 40, "requiredProductionOperations": 160, "minimumAverageQuality": 4.3, "onTimeRate": 0.92, "maximumScrapRate": 0.03, "headcount": 20, "peakConcurrentJobs": 6, "validatedAutomatedCells": 6, "robotCycles": 500, "successfulLightsOutNights": 10, "recoveryDrills": 5}
     },
     {

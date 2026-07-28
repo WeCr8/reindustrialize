@@ -1,6 +1,6 @@
 # Final Gameplay and E2E Status
 
-Last verified: **2026-07-18**
+Last verified: **2026-07-19**
 
 > The first playable milestone passes end to end. The complete six-chapter game is **not yet complete**; unfinished systems are listed below.
 
@@ -47,7 +47,7 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [x] VMC interaction and opened machine view
 - [x] G-code loading, cycle start, part grading, and quest completion
 - [x] Chapter 2 story transition and move from Garage Bay to Job Shop/Bay 2
-- [ ] Persisted Continue flow backed by save data
+- [x] Persisted Continue flow with validated current, temporary, and backup local recovery checkpoints
 
 ## Chapters and progression
 
@@ -79,6 +79,16 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 
 ## Tasks and equipment
 
+- [x] Staged 17-item factory market covers machining, welding, grinding, additive, inspection, and a capped robotics ladder from one Job Shop tugger through AMRs, heavy mobile platforms, and a supervised late-campus humanoid pilot
+- [x] Robotics catalog data gates purchases by genuine facility growth, WIP department route, dedicated logistics space, named roster roles, safety approvals, maintenance coverage, cash, and fleet caps
+- [x] Store cards show detailed 32-bit equipment imagery plus chapter, facility, utility/space, price, unlock, ownership, and honest playable/orientation status
+- [x] All 17 store assets expose five comparable stats, capacity, real setup/cycle estimates, compressed game completion time, dependencies, utilities, space, and maintenance information
+- [x] AGV, AMR, and supervised humanoid store previews animate from transparent 8 FPS sprite sheets; the humanoid has dedicated profile art
+- [x] Zach's store walkthrough and live growth check teach when to buy, what full installation needs to include, and when to review the next facility
+- [x] Store spending revalidates job, headcount, maintenance, and cash gates at purchase time; ownership and exact escalating prices persist in local saves
+- [x] Later VMC wear produces service warnings and a production lockout that only a hired maintenance technician can repair through a paid, saved maintenance action
+- [x] Founder selection uses large profile portraits at a portrait-safe aspect ratio and keeps movement sprites off the profile cards
+
 - [x] Job planning and guided task sequence
 - [x] Layered/opened equipment views
 - [x] Tool choice, G-code, cycle, and grading interactions
@@ -89,7 +99,8 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [ ] Bandsaw, manual mill, deburr, inspection, and shipping interactions
 - [ ] Lathe production workflow
 - [ ] Equipment purchasing and placement
-- [ ] Breakdowns, maintenance, and repair
+- [x] VMC breakdown, lockout, qualified repair, test, and release
+- [ ] Breakdown and repair mechanics for the remaining visual-ready machines
 - [ ] MTConnect, tool presetter, and digital-handoff gameplay
 - [ ] Robot/cobot and lights-out equipment loops
 
@@ -109,6 +120,7 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [x] Automatic input detection
 - [x] Keyboard movement and actions
 - [x] Mouse/touch UI and on-screen mobile directions
+- [x] Phone/tablet thumb controls, held movement, sprint toggle, haptics, compact guidance trays, and portrait/landscape no-text-takeover checks
 - [x] Xbox/gamepad movement and start action
 - [x] Visible active-control status and explicit Keyboard, Xbox, and Phone choices
 - [x] QR session generation, phone pairing, haptics, held-button repeat, and remote input
@@ -127,9 +139,11 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [x] Zach mentor scenes use the selected **hat** version
 - [ ] Final high-detail Job Shop/Bay 2 environment
 - [ ] High-detail maps for Chapters 3–6
-- [ ] Final production sprites for every machine and equipment state
+- [x] Repairable damage-state art mapped for every current equipment-store type
+- [x] Four-state transparent maintenance floor sprites mapped for every placed machine
 - [ ] Final Zach floor sprite matching the selected portrait
-- [ ] Apprentice and hired-worker floor sprites
+- [x] Hired-worker floor sprites, including the expanded maintenance team
+- [ ] Apprentice floor sprites for the later academy chapter
 
 ## Platform and release needs
 
@@ -143,6 +157,11 @@ Launch with `pnpm --filter @wecr8/game-server start`, then open `http://localhos
 - [ ] QR session expiration, rate limiting, and production security review
 
 ## Release decision
+
+- [x] Maintenance roster provides five stat-bearing, qualified repair/facilities hires with matching profile and floor art.
+- [x] All 17 store equipment types have validated repairable damage-state mappings; VMC damage renders during lockout.
+- [x] Job Shop restroom incident enforces qualified five-step repair, exact spending, morale, and saved reopening.
+- [x] Analytics consent defaults to denied, persists accept/decline, and filters sensitive gameplay/profile values.
 
 - [x] Suitable for demonstrating and testing the **first playable milestone**
 - [x] Suitable for continued Chapter 2 gameplay development

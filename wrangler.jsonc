@@ -1,13 +1,17 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "reindustrialize",
+  "main": "worker/index.js",
   "compatibility_date": "2026-07-19",
   "workers_dev": true,
   "preview_urls": true,
   "assets": {
     "directory": "./cloudflare-dist",
+    "binding": "ASSETS",
     "not_found_handling": "single-page-application"
   },
+  "durable_objects": { "bindings": [{ "name": "CONTROLLER_SESSIONS", "class_name": "ControllerSession" }] },
+  "migrations": [{ "tag": "v1-controller-sessions", "new_sqlite_classes": ["ControllerSession"] }],
   "routes": [
     { "pattern": "playreind.com", "custom_domain": true },
     { "pattern": "www.playreind.com", "custom_domain": true }

@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "animationRule": "Store previews may animate at the declared FPS. Runtime factory movement remains locked until the platform's playable chapter, route, safety, staffing, and maintenance systems are implemented.",
+  "platforms": [
+    {
+      "equipment": "starter_tugger_agv",
+      "displayName": "Starter Tugger AGV",
+      "spriteAtlas": "agv-amr-sprite-atlas-v1",
+      "columns": 4,
+      "rows": 2,
+      "frames": [0, 1, 2, 3],
+      "fps": 8,
+      "stats": {"payload": 3, "routeFlexibility": 1, "safety": 4, "maintenanceComplexity": 2},
+      "role": "Fixed-route cart movement between early Job Shop departments"
+    },
+    {
+      "equipment": "amr_wip_fleet",
+      "displayName": "AMR / AGR Utility Platform",
+      "spriteAtlas": "agv-amr-sprite-atlas-v1",
+      "columns": 4,
+      "rows": 2,
+      "frames": [4, 5, 6, 7],
+      "fps": 8,
+      "stats": {"payload": 2, "routeFlexibility": 4, "safety": 4, "maintenanceComplexity": 3},
+      "role": "Mapped autonomous WIP movement with safe obstacle stops and supervised recovery"
+    },
+    {
+      "equipment": "humanoid_factory_assistant",
+      "displayName": "Supervised Humanoid Assistant",
+      "profileImage": "humanoid-assistant-profile-v1",
+      "spriteAtlas": "humanoid-assistant-sprite-atlas-v1",
+      "columns": 4,
+      "rows": 2,
+      "frames": [0, 1, 2, 3, 4, 5, 6, 7],
+      "fps": 8,
+      "stats": {"payload": 2, "dexterity": 4, "supervisionNeed": 5, "safety": 4, "maintenanceComplexity": 5},
+      "approvedTasks": ["supervised kitting", "inspection paperwork", "maintenance-parts delivery"],
+      "prohibitedTasks": ["unsupervised hazardous work", "replacing a qualified operator", "working outside an approved risk assessment"]
+    }
+  ]
+}

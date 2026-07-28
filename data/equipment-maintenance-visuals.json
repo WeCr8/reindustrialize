@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "coverageVersion": "0.7.0-alpha-maintenance-v1",
+  "stateOrder": ["available", "locked_out", "service_in_progress", "restored"],
+  "truthPolicy": "A visual-ready machine has all four floor states. Only VMC and restroom maintenance are currently mechanically playable; remaining records are orientation-ready until their failure loops ship.",
+  "atlases": {
+    "garage-machine-maintenance-sprite-atlas-v1": {
+      "file": "packages/assets/sprites/garage-machine-maintenance-sprite-atlas-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 768,
+      "height": 512
+    },
+    "toolroom-machine-maintenance-sprite-atlas-v1": {
+      "file": "packages/assets/sprites/toolroom-machine-maintenance-sprite-atlas-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 700,
+      "height": 560
+    },
+    "automation-facility-maintenance-sprite-atlas-v1": {
+      "file": "packages/assets/sprites/automation-facility-maintenance-sprite-atlas-v1.png",
+      "columns": 4,
+      "rows": 4,
+      "width": 628,
+      "height": 628
+    }
+  },
+  "equipment": [
+    {"machineId":"saw_t1","atlas":"garage-machine-maintenance-sprite-atlas-v1","row":0,"implementationStatus":"visual_ready","fault":"Blade wear, drive fault, or coolant loss","preventiveTask":"Inspect blade tension, guides, guards, and coolant","returnToServiceCheck":"Guard closed; dry-cycle and square-cut check pass","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","reliability_lead"]},
+    {"machineId":"mill_manual_t1","atlas":"garage-machine-maintenance-sprite-atlas-v1","row":1,"implementationStatus":"visual_ready","fault":"Lubrication, belt, way, or spindle fault","preventiveTask":"Lock out, inspect lubrication, belt, ways, and fasteners","returnToServiceCheck":"Guards restored; spindle and axis checks pass","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","reliability_lead"]},
+    {"machineId":"bench_deburr_t1","atlas":"garage-machine-maintenance-sprite-atlas-v1","row":2,"implementationStatus":"visual_ready","fault":"Wheel wear, damaged guard, or extraction fault","preventiveTask":"Inspect wheel, rests, guards, cords, and extraction","returnToServiceCheck":"Guard and tool-rest gap verified before spin test","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","reliability_lead"]},
+    {"machineId":"vmc_t2","atlas":"garage-machine-maintenance-sprite-atlas-v1","row":3,"implementationStatus":"playable","fault":"Spindle, lubrication, coolant, servo, or probe fault","preventiveTask":"Review alarms, lock out, inspect spindle systems, ways, coolant, and toolchanger","returnToServiceCheck":"Panels closed; warm-up, reference return, and test cut pass","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"machineId":"lathe_cnc_t2","atlas":"toolroom-machine-maintenance-sprite-atlas-v1","row":0,"implementationStatus":"visual_ready","fault":"Chuck, turret, spindle, lubrication, or servo fault","preventiveTask":"Lock out and inspect chuck, turret, lubrication, guarding, and chip control","returnToServiceCheck":"Guard closed; chuck-pressure, home, and test-turn checks pass","qualifiedRoles":["maintenance_technician","mechanical_maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"machineId":"presetter_t4","atlas":"toolroom-machine-maintenance-sprite-atlas-v1","row":1,"implementationStatus":"orientation_only","fault":"Optics, calibration, spindle, or communication fault","preventiveTask":"Clean optics, inspect spindle, verify calibration artifact and connections","returnToServiceCheck":"Calibration master repeats within tolerance","qualifiedRoles":["mechanical_maintenance_technician","electrical_maintenance_technician","reliability_lead"]},
+    {"machineId":"toolcrib_rfid_t4","atlas":"toolroom-machine-maintenance-sprite-atlas-v1","row":2,"implementationStatus":"orientation_only","fault":"Reader, lock, inventory sensor, or terminal fault","preventiveTask":"Inspect reader, locks, network, cabinet and inventory sensors","returnToServiceCheck":"Badge, checkout, return, and inventory reconciliation pass","qualifiedRoles":["electrical_maintenance_technician","reliability_lead"]},
+    {"machineId":"network_node_t3","atlas":"toolroom-machine-maintenance-sprite-atlas-v1","row":3,"implementationStatus":"orientation_only","fault":"Power, switch, agent, cabling, or telemetry fault","preventiveTask":"Inspect power, cable strain relief, ports, cooling and agent health","returnToServiceCheck":"Machine heartbeat and data-quality checks pass","qualifiedRoles":["maintenance_technician","electrical_maintenance_technician","facilities_technician","reliability_lead"]},
+    {"machineId":"handoff_terminal_t4","atlas":"automation-facility-maintenance-sprite-atlas-v1","row":0,"implementationStatus":"orientation_only","fault":"Display, input, power, network, or software fault","preventiveTask":"Inspect power, display, input device, mount and network connection","returnToServiceCheck":"Login, handoff entry, sync, and acknowledgement pass","qualifiedRoles":["electrical_maintenance_technician","facilities_technician","reliability_lead"]},
+    {"machineId":"cobot_t5","atlas":"automation-facility-maintenance-sprite-atlas-v1","row":1,"implementationStatus":"orientation_only","fault":"Protective stop, joint, gripper, sensor, or safety fault","preventiveTask":"Lock out cell and inspect joints, tooling, guarding, sensors, and cables","returnToServiceCheck":"Safety circuit, reduced-speed dry cycle, and recovery checks pass","qualifiedRoles":["electrical_maintenance_technician","reliability_lead"]},
+    {"machineId":"amr_t5","atlas":"automation-facility-maintenance-sprite-atlas-v1","row":2,"implementationStatus":"orientation_only","fault":"Battery, lidar, wheel, localization, or fleet fault","preventiveTask":"Isolate motion and inspect battery, wheels, sensors, bumpers, and route data","returnToServiceCheck":"Safety scan, localization, docking, and supervised route pass","qualifiedRoles":["electrical_maintenance_technician","reliability_lead"]}
+  ],
+  "facilityAssets": [
+    {"machineId":"restroom_station","atlas":"automation-facility-maintenance-sprite-atlas-v1","row":3,"implementationStatus":"playable","fault":"Fixture, drain, supply, or service-availability fault","preventiveTask":"Close area, isolate the affected fixture, clear obstruction, inspect supply and sanitation","returnToServiceCheck":"Leak, flush, drain, sanitation, and reopening checks pass","qualifiedRoles":["maintenance_technician","facilities_technician","reliability_lead"]}
+  ]
+}

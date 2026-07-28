@@ -25,6 +25,8 @@ try:
         page.evaluate("preFounder.classList.add('closed')")
         choices = page.locator(".controlChoice")
         assert choices.count() == 4
+        launch_box = page.locator("#newGame").bounding_box()
+        assert launch_box and launch_box["y"] >= 0 and launch_box["y"] + launch_box["height"] <= 1000
         assert "AUTO" in choices.nth(0).inner_text()
         assert "KEYBOARD" in choices.nth(1).inner_text()
         assert "XBOX" in choices.nth(2).inner_text()
@@ -37,6 +39,14 @@ try:
         page.wait_for_function("document.querySelector('#pairQr').getAttribute('src')?.startsWith('data:image')")
         assert page.locator("#inputMode").input_value() == "phone"
         assert page.locator("#pairUrl").inner_text().strip()
+        mobile = browser.new_page(viewport={"width": 390, "height": 844})
+        mobile.goto(URL)
+        mobile.wait_for_function("typeof loaded !== 'undefined' && loaded === total")
+        mobile.evaluate("preFounder.classList.add('closed')")
+        mobile_box = mobile.locator("#newGame").bounding_box()
+        assert mobile_box and mobile_box["y"] >= 0 and mobile_box["y"] + mobile_box["height"] <= 844
+        assert mobile.locator("body").evaluate("el => el.scrollWidth <= innerWidth")
+        mobile.close()
         browser.close()
 finally:
     if server:

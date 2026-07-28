@@ -56,8 +56,34 @@
     3,
     4
    ]
+  ],
+  "amenities": [
+   [
+    24,
+    8
+   ],
+   [
+    26,
+    10
+   ]
   ]
  },
+ "facilityAmenities": [
+  {
+   "id": "restroom_station",
+   "name": "Employee Restroom",
+   "tile": [
+    25,
+    8
+   ],
+   "footprint": [
+    2,
+    2
+   ],
+   "status": "playable",
+   "eventData": "facility-amenity-events.json"
+  }
+ ],
  "powerDrops": [
   [
    5,
@@ -291,6 +317,18 @@
     1,
     1
    ]
+  },
+  {
+   "sprite": "restroom_station",
+   "tile": [
+    25,
+    8
+   ],
+   "footprint": [
+    2,
+    2
+   ],
+   "label": "EMPLOYEE RESTROOM"
   },
   {
    "sprite": "tool_cart",

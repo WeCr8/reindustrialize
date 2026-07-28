@@ -72,7 +72,7 @@ for (const item of selected) {
   if (item.kind === "voice") {
     const selectedVoiceId = item.role === "player" ? item.voiceId : voiceId;
     if (!selectedVoiceId) throw new Error(`No voice ID configured for ${item.id}.`);
-    const body = { text: item.text, model_id: config.voice.modelId };
+    const body = { text: item.text, model_id: item.modelId || config.voice.modelId, ...(item.voiceSettings ? {voice_settings:item.voiceSettings} : {}) };
     const url = `${apiBase}/v1/text-to-speech/${encodeURIComponent(selectedVoiceId)}?output_format=${encodeURIComponent(config.voice.outputFormat)}&enable_logging=${config.voice.enableLogging}`;
     await saveAtomic("voice", item.id, await requestAudio(url, body), body);
   } else if (item.kind === "music") {

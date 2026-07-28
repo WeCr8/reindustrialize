@@ -14,6 +14,7 @@ with sync_playwright() as p:
     page.evaluate("preFounder.classList.add('closed');titleScreen.classList.add('closed');intro.classList.add('closed')")
     page.click("#bcustomerphone")
     assert page.locator("#customers").is_visible()
+    assert "ACCEPT TO JOBLINE QUEUE" in page.locator("#customerIntakeGuide").inner_text()
     assert page.locator("[data-customer]").count() == 4
     assert page.locator(".customerPortrait").evaluate("e => getComputedStyle(e).backgroundImage !== 'none'")
     assert page.locator(".companyImage").evaluate("e => getComputedStyle(e).backgroundImage !== 'none'")
@@ -21,6 +22,8 @@ with sync_playwright() as p:
     page.click("#acceptContract")
     assert page.evaluate("state.pendingContract.id") == "rfq_northstar_1042"
     assert page.evaluate("state.contracts[0].status") == "accepted"
+    assert page.locator('[data-mission-action="customers"]').evaluate("el => el.classList.contains('done')")
+    assert page.evaluate("currentObjective().action !== 'customers'")
     page.wait_for_function("document.querySelector('#intro').dataset.storyBeat === 'first_customer_call'")
     page.click("#introNext")
     page.click("#introNext")

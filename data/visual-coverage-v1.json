@@ -6,16 +6,32 @@
     "direction": "detailed 32-bit-inspired pixel art",
     "requirements": ["pixel-readable silhouettes", "industrial teal, charcoal, steel, amber and safety-color palette", "nearest-neighbor display for sprites", "consistent three-quarter or top-down shop perspective", "no ethnicity labels in founder selection", "Zach retains black cap and charcoal shacket"]
   },
+  "runtimeCounts": {"hires": 14, "customers": 4},
   "globalImplemented": [
     "packages/assets/sprites/founder-profile-atlas-v1.png",
     "packages/assets/sprites/workforce-atlas-v1.png",
     "packages/assets/sprites/workforce-profile-atlas-v1.png",
+    "packages/assets/sprites/maintenance-team-profile-atlas-v1.png",
+    "packages/assets/sprites/maintenance-team-sprite-atlas-v2.png",
+    "packages/assets/sprites/garage-machine-maintenance-sprite-atlas-v1.png",
+    "packages/assets/sprites/toolroom-machine-maintenance-sprite-atlas-v1.png",
+    "packages/assets/sprites/automation-facility-maintenance-sprite-atlas-v1.png",
+    "packages/assets/sprites/agv-amr-sprite-atlas-v1.png",
+    "packages/assets/sprites/humanoid-assistant-sprite-atlas-v1.png",
+    "packages/assets/sprites/restroom_station.png",
     "packages/assets/customers/customer-profiles-v1.png",
     "packages/assets/customers/customer-companies-v1.png",
     "packages/assets/customers/customer-sprites-v1.png",
     "packages/assets/tools/core-cutters-atlas-v1.png",
     "packages/assets/tools/setup-tools-atlas-v1.png",
-      "storybook/v1/index.html"
+    "packages/assets/equipment/garage-equipment-market-atlas-v1.png",
+    "packages/assets/equipment/garage-equipment-damaged-atlas-v1.png",
+    "packages/assets/equipment/aerospace-equipment-market-damaged-atlas-v1.png",
+    "packages/assets/equipment/factory-robotics-market-atlas-v1.png",
+    "packages/assets/equipment/factory-robotics-damaged-atlas-v1.png",
+    "packages/assets/equipment/humanoid-assistant-profile-v1.png",
+    "packages/assets/equipment/job-shop-restroom-states-v1.png",
+    "storybook/v1/index.html"
   ],
   "chapters": [
     {
@@ -60,7 +76,7 @@
       "chapter": 3,
       "releaseStatus": "locked",
       "implemented": [],
-      "missing": ["connected-plant-map-and-hd-background-v1", "connected-plant-exterior-v1", "machining-cell-sprite-set-v1", "mtconnect-node-open-view-v1", "oee-dashboard-and-downtime-visuals-v1", "maintenance-and-toolroom-equipment-set-v1", "multi-shift-workforce-sprites-and-profiles-v1", "bottleneck-material-flow-states-v1", "chapter-3-story-scene-variants-v1", "chapter-3-station-tutorial-set-v1", "smart-factory-reveal-v1"]
+      "missing": ["connected-plant-map-and-hd-background-v1", "connected-plant-exterior-v1", "machining-cell-sprite-set-v1", "mtconnect-node-open-view-v1", "oee-dashboard-and-downtime-visuals-v1", "toolroom-equipment-open-view-set-v1", "multi-shift-workforce-sprites-and-profiles-v1", "bottleneck-material-flow-states-v1", "chapter-3-story-scene-variants-v1", "chapter-3-station-tutorial-set-v1", "smart-factory-reveal-v1"]
     },
     {
       "chapter": 4,
@@ -72,7 +88,7 @@
       "chapter": 5,
       "releaseStatus": "locked",
       "implemented": [],
-      "missing": ["lights-out-complex-day-and-night-maps-v1", "lights-out-exterior-v1", "robot-and-amr-fleet-state-set-v1", "pallet-pool-and-material-flow-set-v1", "preventive-maintenance-and-fault-state-set-v1", "remote-monitoring-and-escalation-ui-v1", "unattended-run-success-and-recovery-scenes-v1", "night-shift-team-sprites-and-profiles-v1", "chapter-5-story-scene-variants-v1", "chapter-5-station-tutorial-set-v1", "titan-campus-reveal-v1"]
+      "missing": ["lights-out-complex-day-and-night-maps-v1", "lights-out-exterior-v1", "robot-and-amr-fleet-direction-and-load-state-set-v1", "pallet-pool-and-material-flow-set-v1", "remote-monitoring-and-escalation-ui-v1", "unattended-run-success-and-recovery-scenes-v1", "night-shift-team-sprites-and-profiles-v1", "chapter-5-story-scene-variants-v1", "chapter-5-station-tutorial-set-v1", "titan-campus-reveal-v1"]
     },
     {
       "chapter": 6,

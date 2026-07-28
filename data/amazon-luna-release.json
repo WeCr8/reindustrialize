@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "preparedForGameRelease": "0.7.0-alpha",
+  "bundleStatus": "pre-authorization-draft",
+  "submissionAttempted": false,
+  "amazonApprovalClaimed": false,
+  "developerIdentityVerified": false,
+  "authorizedAccountOwnerApproved": false,
+  "product": {
+    "title": "Reindustrialize",
+    "developerDisplayName": "WeCr8 Solutions",
+    "genre": ["Simulation", "Role-playing", "Strategy"],
+    "playerModes": ["Single player"],
+    "currentPlayableScope": "Chapter 1 Garage campaign through the Job Shop arrival",
+    "fullCampaignStatus": "planned-not-complete",
+    "website": "https://playreind.com/",
+    "gameUrl": "https://playreind.com/game/"
+  },
+  "luna": {
+    "status": "intake-not-authorized",
+    "publicDocumentationFinding": "Amazon's public Luna developer page describes reach and endpoints but does not expose a self-service binary submission specification. Amazon's official Luna/GOG announcement describes a GOG intake route for games available on GOG.",
+    "candidateRoutes": ["Amazon Luna partner intake", "GOG onboarding after a qualified downloadable PC release"],
+    "currentArtifact": "browser game",
+    "requiredAuthorizationActions": ["verify the legal developer/publisher identity", "obtain access to the applicable Luna or GOG intake", "receive platform-specific build and certification requirements", "agree commercial and distribution terms", "authorize submission and release timing"],
+    "technicalCertificationPending": ["approved distributable format", "cloud-session save behavior", "gamepad-only navigation", "Luna Controller compatibility", "keyboard and mouse compatibility", "controller disconnect and reconnect", "streaming latency tolerance", "session suspend and resume", "10-foot television readability", "regional availability and ratings"]
+  },
+  "appstoreAlternative": {
+    "status": "not-a-substitute-for-luna-and-not-submission-ready",
+    "currentBinaryAvailable": false,
+    "acceptedBinaryFamiliesFromOfficialDocs": ["Fire OS APK", "Fire OS AAB", "Vega OS VPKG"],
+    "requiredBeforeConsoleSubmission": ["authorized Amazon developer account and identity verification", "signed eligible binary", "device targeting", "physical Fire device test", "privacy questionnaire and policy decision", "content rating and target audience", "listing images and descriptions", "support contact", "export compliance review", "reviewer instructions and credentials if needed"]
+  },
+  "versionVisibility": {
+    "canonicalSource": "data/release-manifest.json",
+    "requiredFormat": "semantic release plus immutable source revision and UTC build timestamp",
+    "requiredLocations": ["title screen", "pause/settings or credits", "support/debug report", "submission metadata", "release notes", "artifact checksum manifest"],
+    "currentTitleToken": "FIRST PLAYABLE · BUILD 0.7",
+    "remainingImplementation": ["inject exact 0.7.0-alpha rather than shortened 0.7", "inject source revision at build time", "show exact version in pause or credits", "include exact version in exported support diagnostics"]
+  },
+  "authorizationBoundary": {
+    "repositoryMayPrepare": ["draft listing copy", "feature and control disclosure", "test route", "asset inventory", "privacy-data inventory", "version and checksum plan", "certification matrix", "known-issues disclosure"],
+    "authorizedHumanOnly": ["create or verify developer identity", "accept agreements", "provide tax or banking details", "choose pricing and territories", "make rating and privacy declarations", "upload a binary", "click Submit App", "accept Luna/GOG commercial terms", "approve public release"]
+  },
+  "officialSources": [
+    "https://developer.amazon.com/luna",
+    "https://amazonluna.blog/coming-soon-games-from-gog-coming-to-amazon-luna-e5695978f617",
+    "https://developer.amazon.com/docs/app-submission/getting-started.html",
+    "https://developer.amazon.com/docs/app-submission/submitting-apps-to-amazon-appstore.html",
+    "https://developer.amazon.com/docs/app-submission/presubmission-checklist.html",
+    "https://developer.amazon.com/docs/app-submission/appstore-details.html",
+    "https://developer.amazon.com/docs/app-submission/target-app.html",
+    "https://developer.amazon.com/docs/app-submission/appstore-privacy-labels.html",
+    "https://developer.amazon.com/docs/app-testing/test-criteria.html",
+    "https://developer.amazon.com/docs/app-submission/review-submit.html",
+    "https://developer.amazon.com/docs/app-submission/identity-verification.html"
+  ]
+}

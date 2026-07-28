@@ -1,4 +1,8 @@
-# REINDUSTRIALIZE — 16-bit Manufacturing Sim by WeCr8 Solutions
+# REINDUSTRIALIZE — 32-bit Manufacturing RPG by WeCr8 Solutions
+
+> **Release identity:** Development targets `0.7.0-alpha`. After each deployment, compare the current checkout with [https://playreind.com/release.json](https://playreind.com/release.json) and read [the public release notes](https://playreind.com/release-notes/). The source release note is [docs/releases/0.7.0-alpha.md](docs/releases/0.7.0-alpha.md).
+
+> **Amazon Luna preparation:** See [docs/AMAZON_LUNA_RELEASE_PREPARATION.md](docs/AMAZON_LUNA_RELEASE_PREPARATION.md). The bundle prepares listing, review, controller/TV, privacy, and artifact requirements but deliberately stops before identity authorization or submission.
 
 > **Build and test status:** See [FINAL_E2E_STATUS.md](FINAL_E2E_STATUS.md) for the verified gameplay journey, controls, facility progression, and remaining release work.
 
@@ -22,6 +26,8 @@
 
 > **Station asset and audio plan:** See [docs/STATION_ASSET_AUDIO_MASTER_PLAN.md](docs/STATION_ASSET_AUDIO_MASTER_PLAN.md) for the complete station-by-station visual, animation, SFX, narration, interaction, failure-state, and E2E requirements from the Garage Bay through the American Titan Campus.
 
+> **Maintenance visuals:** See [docs/EQUIPMENT_MAINTENANCE_VISUALS.md](docs/EQUIPMENT_MAINTENANCE_VISUALS.md) for the four-state floor-sprite contract, truthful playable/orientation status, machine-to-atlas rows, and the blocking `pnpm maintenance:visuals:check` validator.
+
 > **Accounts and cloud saves:** See [docs/BACKEND_OPTIONS_AND_RELEASE.md](docs/BACKEND_OPTIONS_AND_RELEASE.md) for disabled, local Supabase, direct Supabase, and Lovable-compatible deployment choices. Cloud features remain disabled by default.
 
 > **Future free-form Zach Q&A:** See [docs/LLM_MENTOR_READINESS.md](docs/LLM_MENTOR_READINESS.md) for the disabled, provider-neutral OpenRouter/Groq/Hugging Face adapter. The reviewed scripted mentor remains the default.
@@ -30,7 +36,7 @@
 
 > **Current promo slate:** V2 exports preserve V1 and add running/proximity gameplay across horizontal, vertical, square, long-form, Zach, founder, growth, and scripted-player cuts. See [videos/README.md](videos/README.md); rebuild all current exports with `pnpm media:render:v2` and verify them with `pnpm promo:check:v2-media`.
 
-> **Find the recommended demos:** Open [DEMO_VIDEO_INDEX.md](DEMO_VIDEO_INDEX.md) or run `OPEN_DEMO_VIDEOS.ps1`. V5 is the current recommended slate: a human-style bot completes the live campaign through visible controls, and its uninterrupted run supplies every frame in the new demos. Re-record with `pnpm bot:record:v5`; regenerate all cuts with `pnpm bot:render:slate:v5`.
+> **Current website film:** The V7 homepage campaign film uses real human-bot gameplay, expressive ElevenLabs narration, music ducking, burned-in captions, WebVTT captions, and a tested play-with-sound control. Render it with `pnpm hero:render:v7` and validate it with `pnpm hero:check:v7`. The broader V5 gameplay slate remains indexed in [DEMO_VIDEO_INDEX.md](DEMO_VIDEO_INDEX.md).
 
 > **Visual storybook review:** Open [storybook/v1/index.html](storybook/v1/index.html) for numbered slide-by-slide review of the prologue, all ten founder options, every founder scene variant, the shop tour, production tutorials, and planned art gaps. Rebuild and export every slide with `pnpm storybook:release`.
 

@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "status": "planned",
+  "releaseTruth": "Industry specialization is a production blueprint for Chapters 3-6. It is not selectable or playable in the current alpha.",
+  "designIntent": "Let the founder turn one credible job-shop foundation into a personally meaningful manufacturing powerhouse without splitting the early teaching game into unrelated campaigns.",
+  "commonFoundation": {
+    "chapters": [1, 2],
+    "skills": ["quoting", "material control", "stock preparation", "machining", "fabrication", "inspection", "maintenance", "delivery", "hiring", "cash discipline"],
+    "rule": "Every founder learns the common factory language before choosing a sector. No path changes the family-friendly Chapter 1-2 difficulty or skips a competency gate."
+  },
+  "choiceTimeline": [
+    {"chapter": 3, "phase": "explore", "playerAction": "Complete pilot contracts from at least three sectors and compare enjoyment, margin, process fit, risk, workforce, and facility needs.", "commitment": "none"},
+    {"chapter": 4, "phase": "commit", "playerAction": "Choose a primary market division after Zach's market-fit review and a visible capital plan.", "commitment": "primary specialization selected; adjacent work remains available"},
+    {"chapter": 5, "phase": "scale", "playerAction": "Build sector-specific departments, qualifications, supplier controls, and major-subassembly capability.", "commitment": "primary reputation and contract chain deepen"},
+    {"chapter": 6, "phase": "lead", "playerAction": "Operate as a specialist supplier, systems integrator, or original-equipment manufacturer and complete the capstone.", "commitment": "earned ending variant"}
+  ],
+  "portfolioRules": {
+    "contentMix": {"sharedFactorySystemsPercent": 70, "sectorTailoringPercent": 20, "signatureContentPercent": 10},
+    "primaryDivision": "One primary path controls the main customer arc, signature facility modules, capstone, and ending.",
+    "adjacentWork": "Compatible contracts from other sectors remain available when equipment, qualifications, capacity, and risk controls fit.",
+    "pivoting": "The primary division may change once before the Chapter 5 scale investment, with visible retraining, requalification, relationship, and capital consequences.",
+    "difficulty": "Paths change decisions and process emphasis, not basic control difficulty or hidden statistical penalties.",
+    "noFalseScale": "Early chapters make components and fixtures. Complete vehicles, aircraft, launch stages, and complex systems appear only after the company has credible facilities, staff, suppliers, systems, and capital."
+  },
+  "specializations": [
+    {
+      "id": "aircraft_aerospace", "displayName": "Aircraft & Aerospace Systems",
+      "founderFantasy": "Grow from precision brackets and tooling into flight-critical assemblies and a major aircraft program.",
+      "chapterProducts": {"3": ["actuator housings", "avionics trays", "ground-support tooling"], "4": ["control-surface fittings", "landing-gear components", "welded subassemblies"], "5": ["wing and fuselage assemblies", "engine-adjacent structures", "automated aerospace cells"], "6": ["certified aircraft shipsets", "major airframe assemblies", "prototype regional aircraft program"]},
+      "signatureProcesses": ["5-axis machining", "thin-wall machining", "aerospace TIG welding", "non-destructive inspection", "serialized traceability"],
+      "facilityModules": ["controlled material cage", "aerospace quality lab", "large assembly bay", "non-destructive inspection cell"],
+      "workforceEmphasis": ["manufacturing engineer", "aerospace quality engineer", "NDT technician", "program manager"],
+      "qualificationThemes": ["AS9100-style quality systems", "first-article inspection", "special-process supplier control"],
+      "customerArchetypes": ["regional aircraft builder", "engine and systems supplier", "advanced-air-mobility startup"],
+      "riskLessons": ["flight-critical traceability", "distortion and thin-wall scrap", "configuration control"],
+      "signatureEquipment": ["large-envelope 5-axis mill", "industrial X-ray cell", "airframe assembly fixtures"],
+      "capstone": "Deliver a complete traceable aircraft shipset, then choose elite supplier growth or a prototype aircraft integration program.",
+      "visualIdentity": "aerospace blue, titanium gray, clean assembly fixtures, riveted airframe forms"
+    },
+    {
+      "id": "space_launch", "displayName": "Spacecraft & Launch Systems",
+      "founderFantasy": "Turn difficult prototype work into reliable propulsion, structure, and orbital-hardware production.",
+      "chapterProducts": {"3": ["satellite brackets", "test-stand adapters", "ground-support fittings"], "4": ["propellant manifolds", "tank domes", "thermal-control hardware"], "5": ["engine subassemblies", "launch-vehicle structures", "satellite bus frames"], "6": ["integrated launch stages", "orbital manufacturing hardware", "reusable vehicle shipsets"]},
+      "signatureProcesses": ["high-temperature alloy machining", "precision welding", "leak and pressure testing", "clean assembly", "mission-lot traceability"],
+      "facilityModules": ["clean assembly room", "pressure-test bunker", "cylindrical fabrication bay", "mission control room"],
+      "workforceEmphasis": ["propulsion manufacturing engineer", "welding engineer", "test technician", "mission program manager"],
+      "qualificationThemes": ["mission assurance", "weld procedure qualification", "pressure-system cleanliness and traceability"],
+      "customerArchetypes": ["commercial launch provider", "satellite manufacturer", "space research organization"],
+      "riskLessons": ["low-volume schedule volatility", "leak-free joining", "single-mission consequence management"],
+      "signatureEquipment": ["advanced robotic welding cell", "large pressure-test system", "cleanroom assembly tooling"],
+      "capstone": "Manufacture and prove a traceable launch-stage or orbital-platform shipset through test, recovery, and customer acceptance.",
+      "visualIdentity": "deep navy, white thermal surfaces, copper accents, cylindrical tanks and test stands"
+    },
+    {
+      "id": "automotive_mobility", "displayName": "Automotive & Mobility",
+      "founderFantasy": "Scale from prototype vehicle parts into repeatable production and a complete specialty vehicle line.",
+      "chapterProducts": {"3": ["prototype suspension parts", "battery fixtures", "motorsport components"], "4": ["e-drive housings", "brake assemblies", "body and chassis tooling"], "5": ["battery enclosures", "axle modules", "automated vehicle subassembly lines"], "6": ["commercial EV platforms", "specialty vehicles", "complete mobility programs"]},
+      "signatureProcesses": ["high-rate CNC", "robotic welding", "stamping and forming", "in-line gauging", "error-proof assembly"],
+      "facilityModules": ["prototype garage", "body and weld shop", "battery-safe assembly area", "end-of-line test track"],
+      "workforceEmphasis": ["industrial engineer", "controls engineer", "supplier quality engineer", "launch manager"],
+      "qualificationThemes": ["IATF-style automotive quality", "production part approval", "measurement-system and process capability"],
+      "customerArchetypes": ["commercial vehicle startup", "Tier 1 mobility supplier", "motorsport engineering company"],
+      "riskLessons": ["rate versus quality", "supplier disruption", "model-change launch pressure"],
+      "signatureEquipment": ["robotic body welding line", "high-rate machining cell", "end-of-line dynamometer"],
+      "capstone": "Launch a commercial or specialty electric vehicle while holding quality, delivery, warranty, and supplier performance.",
+      "visualIdentity": "performance red, graphite, bright line markings, body fixtures and moving assembly carriers"
+    },
+    {
+      "id": "robotics_automation", "displayName": "Robotics & Factory Automation",
+      "founderFantasy": "Build the machines that help other factories move, inspect, assemble, and recover safely.",
+      "chapterProducts": {"3": ["robot bases", "sensor mounts", "custom end effectors"], "4": ["cobot cells", "machine-tending systems", "vision-inspection stations"], "5": ["AMR fleets", "flexible assembly lines", "warehouse automation modules"], "6": ["complete robotic production systems", "industrial humanoid pilot cells", "turnkey smart-factory programs"]},
+      "signatureProcesses": ["mechatronic assembly", "controls programming", "machine safety validation", "vision calibration", "factory acceptance testing"],
+      "facilityModules": ["controls lab", "robot integration floor", "guarding fabrication area", "customer acceptance hall"],
+      "workforceEmphasis": ["robotics engineer", "controls programmer", "machine-safety specialist", "field service technician"],
+      "qualificationThemes": ["risk assessment", "functional safety", "electrical and software change control"],
+      "customerArchetypes": ["regional manufacturer", "distribution center", "advanced research lab"],
+      "riskLessons": ["unsafe automation", "integration scope growth", "service and uptime obligations"],
+      "signatureEquipment": ["robot simulation lab", "vision metrology cell", "full-scale factory acceptance floor"],
+      "capstone": "Build and support a complete automated line without hiding safety, quality, or maintainability problems.",
+      "visualIdentity": "electric cyan, safety amber, cable trays, test cages and animated material flow"
+    },
+    {
+      "id": "energy_power", "displayName": "Energy & Power Systems",
+      "founderFantasy": "Advance from rugged precision parts into machines and skids that generate, store, and move energy.",
+      "chapterProducts": {"3": ["pump housings", "heat-exchanger plates", "turbine tooling"], "4": ["valve assemblies", "generator structures", "power-conversion cooling systems"], "5": ["turbomachinery modules", "grid-storage enclosures", "hydrogen and thermal skids"], "6": ["power-generation modules", "grid-scale energy systems", "industrial decarbonization plants"]},
+      "signatureProcesses": ["large-part machining", "pressure-boundary welding", "balancing", "hydrostatic testing", "long-life documentation"],
+      "facilityModules": ["heavy machining hall", "pressure-test bay", "rotor balance bunker", "skid assembly floor"],
+      "workforceEmphasis": ["mechanical engineer", "welding engineer", "test engineer", "field commissioning lead"],
+      "qualificationThemes": ["pressure-equipment quality", "weld traceability", "calibrated performance testing"],
+      "customerArchetypes": ["turbomachinery OEM", "renewable-energy developer", "industrial utility contractor"],
+      "riskLessons": ["long-lead material", "pressure integrity", "field commissioning and warranty"],
+      "signatureEquipment": ["large horizontal machining center", "rotor balance system", "high-capacity pressure-test skid"],
+      "capstone": "Commission a modular power system that meets pressure, performance, documentation, and uptime commitments.",
+      "visualIdentity": "power green, copper, dark steel, pipe skids, rotors and heavy lifting systems"
+    },
+    {
+      "id": "medical_precision", "displayName": "Medical & Precision Devices",
+      "founderFantasy": "Make small, exact, fully documented products that improve lives and cannot tolerate careless shortcuts.",
+      "chapterProducts": {"3": ["surgical-tool blanks", "laboratory fixtures", "diagnostic housings"], "4": ["instrument assemblies", "implant trial components", "fluid-control devices"], "5": ["validated surgical kits", "automated diagnostic modules", "sterile-packaging equipment"], "6": ["complete medical device families", "precision robotic surgery modules", "high-volume diagnostic platforms"]},
+      "signatureProcesses": ["micro machining", "clean assembly", "finishing control", "validated inspection", "device history records"],
+      "facilityModules": ["clean machining cell", "controlled assembly room", "precision metrology lab", "validation and packaging suite"],
+      "workforceEmphasis": ["quality systems engineer", "validation engineer", "precision machinist", "regulatory program lead"],
+      "qualificationThemes": ["ISO 13485-style quality systems", "process validation", "biocompatible material and cleanliness control"],
+      "customerArchetypes": ["surgical instrument company", "diagnostic startup", "medical robotics manufacturer"],
+      "riskLessons": ["documentation completeness", "contamination control", "validated change management"],
+      "signatureEquipment": ["Swiss-style precision lathe", "clean assembly suite", "automated optical inspection cell"],
+      "capstone": "Validate and launch a precision device family with clean records, controlled processes, and no unresolved patient-risk escapes.",
+      "visualIdentity": "clean white, medical teal, brushed stainless, magnified parts and controlled work cells"
+    },
+    {
+      "id": "heavy_agriculture", "displayName": "Heavy Equipment & Agriculture",
+      "founderFantasy": "Build durable machines that work in dirt, weather, mines, farms, and construction sites for years.",
+      "chapterProducts": {"3": ["hydraulic manifolds", "pins and bushings", "weld fixtures"], "4": ["loader arms", "gearbox housings", "cab structures"], "5": ["hydraulic power modules", "autonomous implement systems", "chassis assemblies"], "6": ["specialty construction machines", "autonomous farm equipment", "heavy-equipment product lines"]},
+      "signatureProcesses": ["heavy fabrication", "large turning and boring", "hydraulic assembly", "durability testing", "serviceability design"],
+      "facilityModules": ["heavy weld hall", "large machining bay", "hydraulic clean room", "outdoor durability course"],
+      "workforceEmphasis": ["welding supervisor", "hydraulic technician", "durability engineer", "service engineering lead"],
+      "qualificationThemes": ["structural weld qualification", "hydraulic cleanliness", "fatigue and durability validation"],
+      "customerArchetypes": ["farm equipment OEM", "construction machinery builder", "mining-service company"],
+      "riskLessons": ["fatigue failure", "repair access", "seasonal demand and field uptime"],
+      "signatureEquipment": ["large robotic welding cell", "horizontal boring mill", "hydraulic endurance test stand"],
+      "capstone": "Launch a durable specialty machine through accelerated life testing, field service, and a peak-season ramp.",
+      "visualIdentity": "construction yellow, forest green, heavy plate, overhead cranes and outdoor test areas"
+    },
+    {
+      "id": "durable_hardware", "displayName": "Tools, Appliances & Durable Hardware",
+      "founderFantasy": "Transform a clever hardware idea into an affordable, repairable product used by thousands of people.",
+      "chapterProducts": {"3": ["hand-tool components", "outdoor hardware", "small appliance fixtures"], "4": ["power-tool housings", "commercial kitchen assemblies", "repairable consumer mechanisms"], "5": ["automated product lines", "modular appliance platforms", "professional tool families"], "6": ["national durable-goods brands", "connected commercial equipment", "multi-product hardware campuses"]},
+      "signatureProcesses": ["molding and casting coordination", "sheet-metal forming", "high-rate assembly", "end-of-line testing", "design for repair"],
+      "facilityModules": ["product development lab", "tooling and mold area", "mixed-model assembly hall", "reliability and abuse-test lab"],
+      "workforceEmphasis": ["product engineer", "tooling engineer", "industrial designer", "reliability and warranty lead"],
+      "qualificationThemes": ["product safety", "supplier part approval", "reliability and repairability validation"],
+      "customerArchetypes": ["professional tool brand", "commercial appliance company", "inventor-led hardware startup"],
+      "riskLessons": ["cost versus durability", "warranty feedback", "forecasting and retail launch timing"],
+      "signatureEquipment": ["mixed-model assembly line", "environmental reliability lab", "high-rate forming and fastening cells"],
+      "capstone": "Launch and support a recognizable durable product family while balancing cost, quality, repairability, demand, and trust.",
+      "visualIdentity": "bold product colors, warm steel, packaging lines, test labs and recognizable finished goods"
+    }
+  ]
+}

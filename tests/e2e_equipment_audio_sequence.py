@@ -23,7 +23,8 @@ with sync_playwright() as p:
       stopSfxLoop=()=>{};
       state.job=JOBS[0];state.tool='twist';runAnim(state.job);
     }""")
-    page.wait_for_function("document.getElementById('tdone')!==null", timeout=35_000)
+    page.wait_for_function("state.machineRun?.status === 'running'", timeout=35_000)
+    page.evaluate("state.machineRun.endAt=Date.now()-1;renderProductionHud()")
     page.wait_for_timeout(800)
     log = page.evaluate("window.sfxLog")
     expected = ["cnc_door_close", "cnc_tool_change", "spindle_start", "coolant_on", "cnc_rapid_traverse", "drill_cut_aluminum", "coolant_off", "spindle_stop"]

@@ -15,7 +15,9 @@ with sync_playwright() as p:
     assert page.evaluate("ambienceId") == "shop_ambience_small"
     assert page.evaluate("ambienceAudio.loop") is True
     assert abs(page.evaluate("ambienceAudio.volume") - 0.16) < 0.001
-    page.click("#testVoice")
+    # Exercise the player-facing voice toggle: mute, then re-enable narration.
+    page.click("#bvoice")
+    page.click("#bvoice")
     page.wait_for_function("zachAudio && zachAudio.duration > 0 && zachAudio.currentTime > 0")
     assert page.evaluate("zachAudio.error === null")
     assert abs(page.evaluate("zachAudio.volume") - 1) < 0.001

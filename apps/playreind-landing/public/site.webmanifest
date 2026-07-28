@@ -1,0 +1,14 @@
+{
+  "name": "REINDUSTRIALIZE",
+  "short_name": "PlayReInd",
+  "description": "A manufacturing business RPG.",
+  "start_url": "/game/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#071019",
+  "theme_color": "#071019",
+  "icons": [
+    {"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"},
+    {"src":"/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
