@@ -34,9 +34,10 @@ with sync_playwright() as p:
         page.locator("#preFounderNext").click()
         assert kicker in page.locator("#preFounderKicker").inner_text()
     page.locator("#preFounderNext").click()
-    assert not page.locator("#preFounder").is_visible()
-
-    assert page.locator("#titleScreen").is_visible()
+    assert page.locator("#preFounder").is_visible()
+    assert page.locator("#preFounder").evaluate("el => el.classList.contains('selecting')")
+    assert not page.locator("#titleScreen").is_visible()
+    assert page.locator("#preFounder #titleUi").is_visible()
     assert page.locator(".avatarChoice").count() == 10
     assert page.locator(".avatarChoice span").all_inner_texts() == [founder["displayName"] for founder in EXPECTED_FOUNDERS]
     assert page.locator(".founderCardPortrait").count() == 10

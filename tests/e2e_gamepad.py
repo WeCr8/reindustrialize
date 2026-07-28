@@ -16,7 +16,7 @@ with sync_playwright() as p:
     page.wait_for_function("loaded === total")
     for _ in range(5):
         page.evaluate("padButton(0,true)"); page.wait_for_timeout(50); page.evaluate("padButton(0,false)"); page.wait_for_timeout(50)
-    page.wait_for_function("document.querySelector('#titleScreen').classList.contains('closed')")
+    page.wait_for_function("document.querySelector('#preFounder').classList.contains('closed')")
     for _ in range(3): page.locator("#introNext").click()
     page.evaluate("inputMode='gamepad';document.querySelector('#inputMode').value='gamepad'")
     x0 = page.evaluate("P.x")
